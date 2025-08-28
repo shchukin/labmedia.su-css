@@ -1,0 +1,7 @@
+@font-face {
+    font-display: swap;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/rubik-v30-cyrillic_latin-regular.woff2") format("woff2");
+}
