@@ -22,11 +22,11 @@
     background-color: var(--accent-main-blue-2);
 }
 
-
 .button:active {
     translate: 0 1px;
     transition: none;
 }
+
 
 .button:disabled,
 .button:disabled:hover,
@@ -36,14 +36,23 @@
     cursor: default;
 }
 
+
 .button--secondary {
-    box-shadow: inset 0 0 0 2px var(--action-color);
-    background-color: transparent;
-    color: var(--action-color);
+    background-color: var(--fill-total-white);
+    color: var(--txt-dark-blue);
 }
 
 .button--secondary:hover {
-    background-color: #F3F9FF;
+    background-color: var(--fill-hover-white);
+    color: var(--txt-dark-blue);
+}
+
+
+.button--secondary:disabled,
+.button--secondary:disabled:hover,
+.button--secondary:disabled:active {
+    background-color: var(--fill-total-white);
+    opacity: 50%;
 }
 
 
