@@ -2,13 +2,13 @@
     display: inline-block;
     vertical-align: top;
     border: none;
-    padding: 13px 24px;
-    min-width: 100px;
-    background-color: var(--action-color);
-    border-radius: 4px;
+    padding: 16px 30px;
+    min-width: 110px;
+    background-color: var(--accent-main-blue);
+    border-radius: 8px;
     font-family: inherit;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
     color: #FFFFFF;
     text-align: center;
     text-decoration: none;
@@ -19,7 +19,7 @@
 }
 
 .button:hover {
-    background-color: var(--action-color-hover);
+    background-color: var(--accent-main-blue-2);
 }
 
 
@@ -31,8 +31,7 @@
 .button:disabled,
 .button:disabled:hover,
 .button:disabled:active {
-    background-color: #F6F6F6;
-    color: var(--disabled-color);
+    background-color: var(--accent-main-blue-50);
     translate: none;
     cursor: default;
 }

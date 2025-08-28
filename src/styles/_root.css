@@ -1,20 +1,20 @@
 :root {
     --font: "Rubik", sans-serif;
-    --body-font-size: 16px;
-    --body-line-height: 24px;
-    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    /*--body-font-size: 16px;*/
+    /*--body-line-height: 24px;*/
+    /*--ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);*/
     --transition-hover: 100ms ease;
-    --transition-show: 1200ms var(--ease-out-quint);
-    --image-fallback: #F3F5F4;
-    --container-padding: 40px;
-    --action-color: #0D7FC5;
-    --action-color-hover: #2FA5ED;
-    --input-border: #B3B3B3;
-    --input-border-hover-and-focus: #7E7E7E;
-    --placeholder-color: #999999;
-    --disabled-background: #F6F6F6;
-    --disabled-color: #999999;
-    --error: #FF0033;
+    /*--transition-show: 1200ms var(--ease-out-quint);*/
+    /*--image-fallback: #F3F5F4;*/
+    /*--container-padding: 40px;*/
+
+    /*--action-color-hover: #2FA5ED;*/
+    /*--input-border: #B3B3B3;*/
+    /*--input-border-hover-and-focus: #7E7E7E;*/
+    /*--placeholder-color: #999999;*/
+    /*--disabled-background: #F6F6F6;*/
+    /*--disabled-color: #999999;*/
+    /*--error: #FF0033;*/
 }
 
 @media (350px <= width < 740px) {
@@ -27,4 +27,51 @@
     :root {
         --container-padding: 16px;
     }
+}
+
+
+
+
+:root {
+    --bg-white-purple-darker: #ECEBF1;
+    --bg-total-white: #FFFFFF;
+    --bg-white-purple: #F7F6FB;
+    --bg-violet: #7F58FF;
+    --txt-dark-blue: #0E1726;
+    --txt-total-white: #FFFFFF;
+    --txt-simple-gray: #6F7071;
+    --fill-dark-blue: #0E1726;
+    --fill-total-white: #FFFFFF;
+    --fill-light-black: #050505;
+    --fill-gray: #EEEFF0;
+    --fill-light-gray: #F5F5F5;
+    --fill-blue-gray-1: #F3F4F7;
+    --fill-blue-gray-2: #E8EAF1;
+    --fill-blue-gray-3: #52678B;
+    --fill-wite-purple-darker: #F0EFF5;
+    --fill-white-purple-darker-2: #E7E6EC;
+    --fill-white-purpule-darker-3: #EEECF4;
+    --fill-white-purple-80: rgb(240 239 245 / 80%);
+    --fill-total-white-32: rgb(255 255 255 / 32%);
+    --fill-total-white-20: rgb(255 255 255 / 20%);
+    --fill-total-white-15: rgb(255 255 255 / 15%);
+    --fill-dark-blue-32: rgb(14 23 38 / 32%);
+    --fill-dark-blue-15: rgb(14 23 38 / 15%);
+    --fill-coral-50: rgb(193 242 255 / 50%);
+    --fill-main-blue-25: rgb(0 175 240 / 25%);
+    --fill-main-blue-10: rgb(0 175 240 / 10%);
+    --fill-red-light: #FEF2F2;
+    --fill-red-50: #FFFBFA;
+    --fill-green-30: #B8F1D2;
+    --fill-gray-on-gray: #E8EAF1;
+    --fill-hover-white: #E1E1E1;
+    --stroke-darkblue: #0E1726;
+    --stroke-total-white: #FFFFFF;
+    --stroke-gray: #EBEBEB;
+    --stroke-gray-border: #C8CDD5;
+    --stroke-blue-50: rgb(0 175 240 / 50%);
+    --stroke-gray-border-2: #E6E6E6;
+    --accent-main-blue: #00AFF0;
+    --accent-main-blue-2: #009DD9;
+    --accent-main-blue-50: rgb(0 175 240 / 50%);
 }
