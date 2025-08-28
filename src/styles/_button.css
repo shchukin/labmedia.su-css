@@ -27,7 +27,6 @@
     transition: none;
 }
 
-
 .button:disabled,
 .button:disabled:hover,
 .button:disabled:active {
@@ -35,6 +34,7 @@
     translate: none;
     cursor: default;
 }
+
 
 
 .button--secondary {
@@ -47,11 +47,77 @@
     color: var(--txt-dark-blue);
 }
 
-
 .button--secondary:disabled,
 .button--secondary:disabled:hover,
 .button--secondary:disabled:active {
     background-color: var(--fill-total-white);
+    opacity: 50%;
+}
+
+
+
+.button--outline-blue {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border);
+    color: var(--txt-dark-blue);
+}
+
+.button--outline-blue:hover {
+    background-color: var(--fill-white-purple-darker-2);
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border);
+    color: var(--txt-dark-blue);
+}
+
+.button--outline-blue:disabled,
+.button--outline-blue:disabled:hover,
+.button--outline-blue:disabled:active {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border);
+    opacity: 50%;
+}
+
+
+
+.button--outline-white {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border-2);
+    color: var(--txt-dark-blue);
+}
+
+.button--outline-white:hover {
+    background-color: var(--fill-light-gray);
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border-2);
+    color: var(--txt-dark-blue);
+}
+
+.button--outline-white:disabled,
+.button--outline-white:disabled:hover,
+.button--outline-white:disabled:active {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border-2);
+    opacity: 50%;
+}
+
+
+
+
+
+.button--blur {
+    background-color: var(--fill-total-white-15);
+    color: var(--txt-dark-blue);
+    backdrop-filter: blur(15px);
+}
+
+.button--blur:hover {
+    background-color: var(--fill-total-white);
+    color: var(--txt-dark-blue);
+}
+
+.button--blur:disabled,
+.button--blur:disabled:hover,
+.button--blur:disabled:active {
+    background-color: var(--fill-total-white-15);
+    backdrop-filter: blur(15px);
     opacity: 50%;
 }
 
