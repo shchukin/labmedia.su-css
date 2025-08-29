@@ -1,38 +1,49 @@
 .input {
-
+    position: relative;
 }
     .input__widget {
         vertical-align: top;
         width: 100%;
         height: 50px;
-        padding: 11px 22px;
-        background-color: #FFFFFF; /* reset grey background in some cases, such as <select> */
+        padding: 15px 17px;
+        background-color: var(--fill-light-gray); /* reset grey background in some cases, such as <select> */
         background-clip: padding-box; /* hack for iOS to make box-shadow works (same as border-radius in the past) */
-        border: 2px solid var(--input-border);
+        border: 1px solid transparent;
         outline: none;
-        border-radius: 4px;
+        border-radius: 8px;
         font-family: inherit;
-        font-size: 16px; /* not less than 16px (otherwise mobile browsers will zoom in on focus) */
-        line-height: 24px;
-        color: #000000;
+        font-size: 14px; /* not less than 16px (otherwise mobile browsers will zoom in on focus) */
+        line-height: 20px;
+        color: var(--txt-dark-blue);
         opacity: 1; /* reset select:disabled default fade on iOS */
         -webkit-tap-highlight-color: transparent;
         transition: background-color var(--transition-hover),
-                    border-color var(--transition-hover);
+                    border-color var(--transition-hover),
+                    color var(--transition-hover);
     }
 
     .input__widget::placeholder {
         opacity: 1; /* reset opacity drop Firefox */
-        color: var(--placeholder-color);
+        color: var(--txt-simple-gray);
+        transition: color var(--transition-hover);
     }
+
 
     .input__widget:hover {
-        border-color: var(--input-border-hover-and-focus);
+        border-color: var(--stroke-gray-border-2);
+    }
+    .input__widget:hover::placeholder {
+        border-color: var(--stroke-gray-border-2);
     }
 
+
     .input__widget:focus-visible {
-        border-color: var(--input-border-hover-and-focus);
-        box-shadow: 0 0 0 1px var(--input-border-hover-and-focus);
+        border-color: var(--stroke-gray-border-2);
+        background-color: var(--fill-total-white);
+        transition: none;
+    }
+    .input__widget:focus-visible::placeholder {
+        color: var(--stroke-gray-border);
         transition: none;
     }
 
@@ -60,14 +71,16 @@
 
 
 /* Disabled */
-.input__widget:disabled {
-    border-color: var(--input-border);
-    background-color: var(--disabled-background);
-    color: var(--disabled-color);
+.input__widget:disabled,
+.input__widget:disabled:hover {
+    background-color: var(--fill-blue-gray-1);
+    border-color: transparent;
+    color: var(--txt-dark-blue);
+    opacity: 50%;
 }
 
 .input__widget:disabled::placeholder {
-    color: var(--disabled-color);
+    color: var(--txt-dark-blue);
 }
 
 
@@ -76,16 +89,22 @@
 
 }
     .input--error .input__widget {
+        background-color: var(--fill-red-50);
         color: var(--error);
-        border-color: var(--error);
     }
 
     .input--error .input__widget:hover {
-        border-color: var(--input-border-hover-and-focus);
+        background-color: var(--fill-light-gray); /* reset grey background in some cases, such as <select> */
+        border-color: var(--stroke-gray-border-2);
+        color: var(--txt-dark-blue);
     }
 
     .input--error .input__widget::placeholder {
         color: var(--error);
+    }
+
+    .input--error .input__widget:hover::placeholder {
+        color: var(--txt-simple-gray);
     }
 
 
@@ -111,7 +130,7 @@ select.input__widget {
 
 select.input__widget:hover {
     box-shadow: none; /* same as base, not hover input */
-    border-color: var(--input-border); /* same as base, not hover input */
+    border-color: var(--stroke-gray-border-2); /* same as base, not hover input */
     background-color: #F6F6F6;
 }
 
@@ -128,22 +147,31 @@ select.input__widget:disabled {
 }
 
 .input--error select.input__widget:hover {
-    border-color: var(--error);
+    border-color: var(--stroke-gray-border-2);
+    color: var(--txt-dark-blue);
 }
 
 .input--placeholder-is-chosen {
 
 }
+
+.input--placeholder-is-chosen:hover {
+    color: var(--txt-simple-gray);
+}
     .input--placeholder-is-chosen select.input__widget {
-        color: var(--placeholder-color);
+        color: var(--txt-simple-gray);
     }
 
     .input--placeholder-is-chosen select.input__widget:disabled {
-        color: var(--disabled-color);
+        color: var(--txt-dark-blue);
     }
 
     .input--placeholder-is-chosen.input--error select.input__widget {
         color: var(--error);
+    }
+
+    .input--placeholder-is-chosen.input--error select.input__widget:hover {
+        color: var(--txt-simple-gray);
     }
         .input--placeholder-is-chosen select.input__widget option {
             color: #000000; /* Browsers on Windows inherit grey color from <select> to <option>`s. Reset it. */

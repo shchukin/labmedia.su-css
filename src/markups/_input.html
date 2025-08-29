@@ -27,47 +27,16 @@
             <br>
             <br>
             <br>
-            <h2>С <a href="_label.html">.label</a> и <a href="_helper.html">.helper</a></h2>
-            <p>
-                Эти два компонента, вообще говоря, не часть <b><i>.input</i></b>.
-                Но очень часто используются вместе. Выводим их друг за другом:
-            </p>
-
-            <label class="label" for="bp24napi">
-                Ваше имя
-            </label>
-
-            <div class="input">
-                <input class="input__widget" type="text" id="bp24napi">
-            </div>
-
-            <div class="helper">
-                Нельзя будет изменить
-            </div>
-
-            <p>
-                Далее этот же компонент <b><i>.helper</i></b> будет использоваться для вывода ошибок.
-            </p>
-
-            <br>
-            <br>
-            <br>
             <h2>:disabled</h2>
 
             <div class="input">
                 <input class="input__widget" type="text" placeholder="Ваше имя" disabled>
-            </div>
-            <div class="helper">
-                Пожалуйста, сначала выберите контракт
             </div>
 
             <br>
 
             <div class="input">
                 <input class="input__widget" type="text" placeholder="Ваше имя" value="Konstantin Konstantinopolsky" disabled>
-            </div>
-            <div class="helper">
-                Нельзя будет изменить
             </div>
 
 
@@ -83,36 +52,11 @@
             <div class="input input--error">
                 <input class="input__widget" type="text" placeholder="First name">
             </div>
-            <div class="helper helper--error">
-                Обязательно для заполнения
-            </div>
 
             <br>
 
             <div class="input input--error">
                 <input class="input__widget" type="email" placeholder="Email" value="foobar@example.">
-            </div>
-            <div class="helper helper--error">
-                Неверный формат почты
-            </div>
-
-            <br>
-            <p>Если ошибок несколько, то выводим <b><i>.helper</i></b>`ы друг за другом:</p>
-
-            <div class="input input--error">
-                <input class="input__widget" type="password" placeholder="Password" value="0xFoo">
-            </div>
-            <div class="helper helper--error">
-                Пароль слишком короткий
-            </div>
-            <div class="helper helper--error">
-                Пароль должен содержать хотя бы один спецсимвол
-            </div>
-            <div class="helper helper--error">
-                Пароль должно быть сложно подобрать. Не допускается использование дат, номеров телефона. Так же не доспукается использование информации доступной публично
-            </div>
-            <div class="helper helper--error">
-                Новый пароль совпадает с текущим
             </div>
 
 
@@ -164,6 +108,9 @@
             <br>
             <br>
             <h2>&lt;select&gt;</h2>
+            <p>
+                Не вижу, чтобы селекты использовались в проект, но для совместимости оставляю заготовку из шаблона:
+            </p>
 
             <div class="input">
                 <select class="input__widget">
@@ -268,7 +215,7 @@
             <h2>Остальные типы</h2>
             <br>
 
-            <label class="label" for="uzoyce97">
+            <label for="uzoyce97">
                 type="email"
             </label>
             <div class="input">
@@ -277,7 +224,7 @@
 
             <br>
 
-            <label class="label" for="qv6hko4q">
+            <label for="qv6hko4q">
                 type="tel"
             </label>
             <div class="input">
@@ -286,7 +233,7 @@
 
             <br>
 
-            <label class="label" for="dqx2iwgu">
+            <label for="dqx2iwgu">
                 type="url"
             </label>
             <div class="input">
@@ -295,7 +242,7 @@
 
             <br>
 
-            <label class="label" for="ey58yjk9">
+            <label for="ey58yjk9">
                 type="search"
             </label>
             <div class="input">
@@ -304,7 +251,7 @@
 
             <br>
 
-            <label class="label" for="h68i9f7g">
+            <label for="h68i9f7g">
                 type="number"
             </label>
             <div class="input">
@@ -313,7 +260,7 @@
 
             <br>
 
-            <label class="label" for="8fq2k8fo">
+            <label for="8fq2k8fo">
                 type="color"
             </label>
             <div class="input">
@@ -322,7 +269,7 @@
 
             <br>
 
-            <label class="label" for="vecqj15p">
+            <label for="vecqj15p">
                 type="date"
             </label>
             <div class="input">
@@ -331,7 +278,7 @@
 
             <br>
 
-            <label class="label" for="8xg4jfb3">
+            <label for="8xg4jfb3">
                 type="datetime-local"
             </label>
             <div class="input">
@@ -340,7 +287,7 @@
 
             <br>
 
-            <label class="label" for="brif3gg2">
+            <label for="brif3gg2">
                 type="week"
             </label>
             <div class="input">
@@ -349,7 +296,7 @@
 
             <br>
 
-            <label class="label" for="iei6tkvf">
+            <label for="iei6tkvf">
                 type="month"
             </label>
             <div class="input">
@@ -358,7 +305,7 @@
 
             <br>
 
-            <label class="label" for="33s23mr7">
+            <label for="33s23mr7">
                 type="time"
             </label>
             <div class="input">
