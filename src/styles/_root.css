@@ -73,5 +73,7 @@
     --stroke-gray-border-2: #E6E6E6;
     --accent-main-blue: #00AFF0;
     --accent-main-blue-2: #009DD9;
+    --accent-main-blue-15: rgb(0 175 240 / 15%);
     --accent-main-blue-50: rgb(0 175 240 / 50%);
+    --accent-main-blue-80: rgb(0 175 240 / 80%);
 }

@@ -3,23 +3,23 @@
     display: block;
     width: fit-content;
     min-width: 20px;
-    min-height: 34px;
+    min-height: 32px;
 }
     .choice__widget {
         opacity: 0;
         position: absolute;
         left: 2px;
-        top: 12px;
+        top: 11px;
     }
 
     .choice__label {
         position: relative;
         display: flex;
         vertical-align: top;
-        padding: 7px 0 7px 30px;
-        font-size: 14px;
-        line-height: 20px;
-        color: #0E132B;
+        padding: 6px 0 6px 28px;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--txt-dark-blue);
         cursor: pointer;
         user-select: none;
     }
@@ -27,15 +27,15 @@
     .choice__icon {
         position: absolute;
         left: 0;
-        top: 8px;
-        width: 18px;
-        height: 18px;
-        border: 2px solid var(--input-border);
+        top: 6px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--stroke-blue-50);
         background-color: #FFFFFF;
-        background-size: 16px 16px;
+        background-size: 18px 18px;
         background-repeat: no-repeat;
         background-position: center center;
-        border-radius: 2px;
+        border-radius: 4px;
         pointer-events: none; /* Since this icon is positioned higher than label, let's make it possible to click through, so that the user interacts only with the label. For now, this icon won't generate its own cursor, for example. */
         transition: background-color var(--transition-hover),
                     border-color var(--transition-hover);
@@ -54,8 +54,8 @@
 /* Hovered */
 
 .choice__label:hover ~ .choice__icon {
-    background-color: transparent;
-    border-color: var(--input-border-hover-and-focus);
+    background-color: var(--accent-main-blue-15);
+    /*border-color: var(--input-border-hover-and-focus);*/
 }
 
 
@@ -63,7 +63,7 @@
 
 .choice__widget:checked ~ .choice__icon {
     transition: none;
-    background-color: var(--action-color);
+    background-color: var(--accent-main-blue);
     border-color: transparent;
 }
 
@@ -71,8 +71,7 @@
 /* Checked & Hovered */
 
 .choice__widget:checked ~ .choice__label:hover ~ .choice__icon {
-    background-color: var(--action-color-hover);
-    border-color: var(--action-color-hover);
+    background-color: var(--accent-main-blue-80);
 }
 
 .choice__widget[type="radio"]:checked ~ .choice__label {
@@ -80,8 +79,7 @@
 }
 
 .choice__widget[type="radio"]:checked ~ .choice__label:hover ~ .choice__icon {
-    background-color: var(--action-color); /* checked radio button can’t be hovered, so taket the original color back */
-    border-color: transparent; /* checked radio button can’t be hovered, so taket the original color back */
+    background-color: var(--accent-main-blue); /* checked radio button can’t be hovered, so taket the original color back */
 }
 
 
