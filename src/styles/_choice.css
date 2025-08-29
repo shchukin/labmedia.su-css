@@ -93,18 +93,18 @@
 /* Disabled */
 .choice__widget:disabled ~ .choice__label {
     cursor: default;
-    color: var(--disabled-color);
+    opacity: 50%;
 }
 
 .choice__widget:disabled ~ .choice__icon,
 .choice__widget:disabled ~ .choice__label:hover ~ .choice__icon {
     background-color: transparent;
-    border-color: var(--input-border);
+    border-color: var(--fill-blue-gray-1);
 }
 
 .choice__widget:disabled:checked ~ .choice__icon,
 .choice__widget:disabled:checked ~ .choice__label:hover ~ .choice__icon {
-    background-color: var(--input-border);
+    background-color: var(--fill-blue-gray-1);
     border-color: transparent;
 }
 
