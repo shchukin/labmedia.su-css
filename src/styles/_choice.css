@@ -125,6 +125,28 @@
     }
 
 
+    /* Отменяем оригинальный ховер */
+    .choice--card .choice__label:hover ~ .choice__icon {
+        background-color: transparent;
+    }
+
+    .choice--card .choice__widget:checked ~ .choice__label:hover ~ .choice__icon {
+        background-color: var(--accent-main-blue);
+    }
+
+    /* добавляем ховер специфичный для варианта card */
+    .choice--card .choice__label:hover {
+        border-color: var(--stroke-gray-border);
+    }
+
+    .choice__widget[type="radio"]:checked ~ .choice__label {
+        border-color: var(--stroke-gray-border-2);
+    }
+
+
+
+
+
 .choice--full-width {
     width: 100%;
 }
