@@ -62,6 +62,62 @@
                 <i class="switch__icon" role="presentation"></i>
             </label>
 
+
+
+            <br>
+            <br>
+            <h2>.switch--full-width</h2>
+
+            <p>
+                По умолчанию, элемент <b><i>.switch</i></b> имеет ширину, соответствующую его содержимому
+                (<b class="nobr"><i>fit-content</i></b>). Однако в некоторых случаях требуется ширина в 100%. Например,
+                в списке опций в сайдбаре или в выпадающем меню. В таких случаях необходимо, чтобы элементы
+                были доступны для наведения курсора и клика по всей своей ширине, даже если некоторые
+                из них короче других.
+            </p>
+
+            <label class="switch switch--filter switch--full-width">
+                <input class="switch__widget" type="checkbox">
+                <span class="switch__label">Label</span>
+                <i class="switch__icon" role="presentation"></i>
+            </label>
+
+            <br>
+
+            <label class="switch switch--filter switch--full-width">
+                <input class="switch__widget" type="checkbox" checked>
+                <span class="switch__label">Label</span>
+                <i class="switch__icon" role="presentation"></i>
+            </label>
+
+
+            <br>
+            <p>
+                С другой стороны, если это не узенький сайдбар, а просто широкая область
+                как в примере выше, то наведение и нажатие на пустоту далеко справа ощущается странно.
+                Имеет смысл обернуть чекбоксы вертикальным флексом с <b class="nobr"><i>fit-content</i></b>
+                или <b><i>inline-flex</i></b>`ом. Тогда чекбоксы буду растягиваться на всю
+                ширину родителя, но вся секция будет ограничена шириной самого длинного элемента.
+            </p>
+
+            <div style="display: flex; width: fit-content; flex-direction: column;">
+
+                <label class="switch switch--filter">
+                    <input class="switch__widget" type="checkbox">
+                    <span class="switch__label">Label</span>
+                    <i class="switch__icon" role="presentation"></i>
+                </label>
+
+                <br>
+
+                <label class="switch switch--filter">
+                    <input class="switch__widget" type="checkbox" checked>
+                    <span class="switch__label">Label</span>
+                    <i class="switch__icon" role="presentation"></i>
+                </label>
+
+            </div>
+
             <br>
             <br>
             <br>
