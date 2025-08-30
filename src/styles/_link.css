@@ -8,7 +8,7 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: #1B73E8;
+    color: var(--accent-main-blue);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.25em;
@@ -31,6 +31,17 @@
 .link--text-alike,
 .wysiwyg .link--text-alike {
     color: inherit;
+}
+
+.link--inverted-text-alike,
+.wysiwyg .link--inverted-text-alike {
+    color: inherit;
+    text-decoration-color: transparent;
+}
+
+.link--inverted-text-alike:hover,
+.wysiwyg .link--inverted-text-alike:hover {
+    text-decoration-color: currentColor;
 }
 
 
