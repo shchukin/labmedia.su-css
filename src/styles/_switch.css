@@ -73,11 +73,11 @@
 
 
 
-/*!* Focused *!*/
-
+/* Focused */
 .switch__widget:focus-visible ~ .switch__icon {
     outline: auto;
 }
+
 
 
 /* Disabled */
@@ -86,7 +86,6 @@
     opacity: 50%;
 }
     /* Cancel hover: */
-
     .switch__widget:disabled ~ .switch__label:hover ~ .switch__icon {
         background-color: var(--fill-dark-blue-15);
     }
@@ -129,7 +128,6 @@
     cursor: default;
     opacity: 50%;
 }
-
 
 
 

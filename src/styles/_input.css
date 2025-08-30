@@ -151,6 +151,7 @@ select.input__widget:disabled {
     color: var(--txt-dark-blue);
 }
 
+
 .input--placeholder-is-chosen {
 
 }
