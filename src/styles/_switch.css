@@ -1,0 +1,172 @@
+.switch {
+    position: relative;
+    display: block;
+    width: fit-content;
+    min-width: 20px;
+    min-height: 32px;
+}
+    .switch__widget {
+        opacity: 0;
+        position: absolute;
+        left: 2px;
+        top: 11px;
+    }
+
+    .switch__label {
+        position: relative;
+        display: block;
+        padding: 6px 42px 6px 0;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--txt-dark-blue);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .switch__icon {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 34px;
+        height: 18px;
+        background-color: var(--fill-dark-blue-15);
+        border-radius: 18px;
+        pointer-events: none; /* Since this icon is positioned higher than label, let's make it possible to click through, so that the user interacts only with the label. For now, this icon won't generate its own cursor, for example. */
+        transition: background-color var(--transition-hover);
+    }
+        .switch__icon::after {
+            content: "";
+            position: absolute;
+            left: 1.5px;
+            top: 1.5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--fill-total-white);
+            box-shadow: 0 0.77px 0.77px rgb(0 0 0 / 12%),
+                        0 1.55px 3.86px rgb(103 110 118 / 8%);
+            transition: left 300ms var(--ease-out-quint);
+        }
+
+
+/* Hovered */
+
+.switch__label:hover ~ .switch__icon {
+    background-color: var(--fill-dark-blue-20);
+}
+
+
+/* Checked */
+
+.switch__widget:checked ~ .switch__icon {
+    background-color: #2ED57D;
+}
+    .switch__widget:checked ~ .switch__icon::after {
+        left: 17.5px;
+    }
+
+    /* Checked & Hovered */
+
+    .switch__widget:checked ~ .switch__label:hover ~ .switch__icon {
+        background-color: #30DE83;
+    }
+
+
+
+/*!* Focused *!*/
+
+.switch__widget:focus-visible ~ .switch__icon {
+    outline: auto;
+}
+
+
+/* Disabled */
+.switch__widget:disabled ~ .switch__label {
+    cursor: default;
+    opacity: 50%;
+}
+
+
+
+
+.switch--filter {
+    min-height: 52px;
+}
+    .switch--filter .switch__label {
+        padding: 15px 58px 15px 16px;
+        background-color: var(--fill-white-purpule-darker-3);
+        border-radius: 8px;
+        /*padding: 6px 42px 6px 0;*/
+        /*font-size: 16px;*/
+        /*line-height: 22px;*/
+        /*color: var(--txt-dark-blue);*/
+        /*cursor: pointer;*/
+        /*user-select: none;*/
+    }
+
+    .switch--filter .switch__icon {
+/*        position: absolute;*/
+        right: 16px;
+        top: 17px;
+/*        width: 34px;*/
+/*        height: 18px;*/
+/*        background-color: var(--fill-dark-blue-15);*/
+/*        border-radius: 18px;*/
+/*        pointer-events: none; !* Since this icon is positioned higher than label, let's make it possible to click through, so that the user interacts only with the label. For now, this icon won't generate its own cursor, for example. *!*/
+/*        transition: background-color var(--transition-hover);*/
+    }
+/*        .switch--filter .switch__icon::after {*/
+/*            content: "";*/
+/*            position: absolute;*/
+/*            left: 1.5px;*/
+/*            top: 1.5px;*/
+/*            width: 15px;*/
+/*            height: 15px;*/
+/*            border-radius: 50%;*/
+/*            background-color: var(--fill-total-white);*/
+/*            box-shadow: 0 0.77px 0.77px rgb(0 0 0 / 12%),*/
+/*                        0 1.55px 3.86px rgb(103 110 118 / 8%);*/
+/*            transition: left 300ms var(--ease-out-quint);*/
+/*        }*/
+
+
+/*!* Hovered *!*/
+
+/*.switch__label:hover ~ .switch__icon {*/
+/*    background-color: var(--fill-dark-blue-20);*/
+/*}*/
+
+
+/*!* Checked *!*/
+
+.switch--filter .switch__widget:checked ~ .switch__label {
+    background-color: var(--fill-total-white);
+}
+    .switch--filter .switch__widget:checked ~ .switch__icon::after {
+        left: 17.5px;
+    }
+
+
+/*!* Checked & Hovered *!*/
+
+/*.switch__widget:checked ~ .switch__label:hover ~ .switch__icon {*/
+/*    background-color: #2FDA80;*/
+/*}*/
+
+
+
+
+
+/* Disabled */
+.switch__widget:disabled ~ .switch__label {
+    cursor: default;
+    opacity: 50%;
+}
+
+
+
+
+
+/*.switch--full-width {*/
+/*    width: 100%;*/
+/*}*/
