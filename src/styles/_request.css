@@ -1,49 +1,36 @@
 .request {
-    display: grid;
-    grid-template-columns: 471fr 544fr;
-    gap: 29px;
-    padding: 48px;
-    background-color: #FFFFFF;
-    border-radius: 16px;
+    width: 628px;
+    padding: 48px 40px 40px;
 }
-    .request__intro {
-
+    .request__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 40px;
+        text-align: center;
+        letter-spacing: -0.75px;
     }
-        .request__heading {
-            margin-top: 0;
-            margin-bottom: 0;
-            font-weight: normal;
-            font-size: 36px;
-            line-height: 40px;
-            letter-spacing: -0.75px;
-        }
 
-        .request__description {
-            margin-top: 16px;
-            max-width: 429px;
-            font-size: 16px;
-            line-height: 22px;
-        }
+    .request__description {
+        margin-top: 12px;
+        max-width: 456px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+    }
 
     .request__form {
-
+        margin-top: 40px;
     }
-        .request__name {
-
-        }
-
-        .request__channel-fields {
+        .request__field {
             margin-top: 16px;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
         }
-            .request__contact {
-
-            }
 
     .request__footer {
-        margin-top: 24px;
+        margin-top: 16px;
         display: flex;
         align-items: flex-start;
         gap: 24px;
@@ -62,43 +49,31 @@
 @media (width < 740px) {
 
     .request {
+        width: 100%;
+        max-width: 440px;
         display: block;
         padding: 32px;
     }
-        .request__intro {
-
+        .request__heading {
+            font-size: 32px;
+            line-height: 38px;
         }
-            .request__heading {
-                font-size: 32px;
-                line-height: 38px;
-            }
 
-            .request__description {
-                margin-top: 8px;
-                font-size: 14px;
-                line-height: 20px;
-            }
+        .request__description {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 20px;
+        }
 
         .request__form {
             margin-top: 24px;
         }
-            .request__name {
+            .full-request__field {
 
             }
-
-            .request__channel-fields {
-                display: block;
-            }
-                .request__contact {
-                    margin-top: 12px;
-                }
-
-                .request__contact:first-child {
-                    margin-top: 0;
-                }
 
         .request__footer {
-            margin-top: 12px;
+            margin-top: 28px;
             display: block;
         }
             .request__agreement {

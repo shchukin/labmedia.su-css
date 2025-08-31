@@ -1,0 +1,114 @@
+.callback {
+    display: grid;
+    grid-template-columns: 471fr 544fr;
+    gap: 29px;
+    padding: 48px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+}
+    .callback__intro {
+
+    }
+        .callback__heading {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 40px;
+            letter-spacing: -0.75px;
+        }
+
+        .callback__description {
+            margin-top: 16px;
+            max-width: 429px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+    .callback__form {
+
+    }
+        .callback__name {
+
+        }
+
+        .callback__channel-fields {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+            .callback__contact {
+
+            }
+
+    .callback__footer {
+        margin-top: 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+    }
+        .callback__agreement {
+            margin-top: 4px;
+            flex-grow: 1;
+        }
+
+        .callback__submit {
+
+        }
+
+
+
+@media (width < 740px) {
+
+    .callback {
+        display: block;
+        padding: 32px;
+    }
+        .callback__intro {
+
+        }
+            .callback__heading {
+                font-size: 32px;
+                line-height: 38px;
+            }
+
+            .callback__description {
+                margin-top: 8px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+        .callback__form {
+            margin-top: 24px;
+        }
+            .callback__name {
+
+            }
+
+            .callback__channel-fields {
+                display: block;
+            }
+                .callback__contact {
+                    margin-top: 12px;
+                }
+
+                .callback__contact:first-child {
+                    margin-top: 0;
+                }
+
+        .callback__footer {
+            margin-top: 12px;
+            display: block;
+        }
+            .callback__agreement {
+
+            }
+
+            .callback__submit {
+                margin-top: 22px;
+            }
+                .callback__submit .button {
+                    width: 100%;
+                }
+}

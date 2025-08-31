@@ -58,22 +58,61 @@
         <div class="container">
             Hello, World!
 
-            <a class="link mfp-handler" href="#login">Login</a>
+            <a class="link mfp-handler" href="#full-request">Login</a>
 
         </div>
 
 
         <!-- .mfp -->
-        <div class="window mfp-hide" id="login">
+        <div class="window mfp-hide" id="full-request">
             <button class="window__close mfp-close" type="button">
-                Close
+                Закрыть
             </button>
-            <div class="login">
-                <h2 class="login__heading">
-                    Magnific Popup!
+            <div class="request">
+                <h2 class="request__heading">
+                    Напишите свой вопрос!
                 </h2>
-                <div class="login__body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur debitis eligendi fugiat provident sed, velit! At debitis dolore fuga ipsum laudantium nemo reiciendis temporibus voluptates? Ab, accusantium aspernatur cumque dicta ducimus eaque eius eos eum in maxime nihil nulla numquam velit. Accusamus, aliquid atque beatae culpa cupiditate fugiat iure iusto non odit pariatur quae saepe ullam voluptatibus.
+                <div class="request__description">
+                    Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку
+                </div>
+                <div class="request__form">
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Имя*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="email" placeholder="Email*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Компания*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <textarea class="input__widget" placeholder="Напишите свой вопрос...*" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="request__footer">
+                        <div class="request__agreement">
+                            <label class="choice choice--smaller">
+                                <input class="choice__widget" type="checkbox">
+                                <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                <i class="choice__icon" role="presentation"></i>
+                            </label>
+                        </div>
+                        <div class="request__submit">
+                            <button class="button" type="button">Отправить</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,42 +122,42 @@
 
             <footer class="footer">
                 <div class="footer__request container">
-                    <div class="request">
-                        <div class="request__intro">
-                            <h2 class="request__heading">
+                    <div class="callback">
+                        <div class="callback__intro">
+                            <h2 class="callback__heading">
                                 Поможем решить все&nbsp;вопросы
                             </h2>
-                            <div class="request__description">
+                            <div class="callback__description">
                                 Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку — и мы перезвоним
                             </div>
                         </div>
-                        <div class="request__form">
-                            <div class="request__name">
+                        <div class="callback__form">
+                            <div class="callback__name">
                                 <div class="input">
                                     <input class="input__widget" type="text" placeholder="Имя*">
                                 </div>
                             </div>
-                            <div class="request__channel-fields">
-                                <div class="request__contact">
+                            <div class="callback__channel-fields">
+                                <div class="callback__contact">
                                     <div class="input">
                                         <input class="input__widget" type="tel" placeholder="Телефон*">
                                     </div>
                                 </div>
-                                <div class="request__contact">
+                                <div class="callback__contact">
                                     <div class="input">
                                         <input class="input__widget" type="email" placeholder="Email*">
                                     </div>
                                 </div>
                             </div>
-                            <div class="request__footer">
-                                <div class="request__agreement">
+                            <div class="callback__footer">
+                                <div class="callback__agreement">
                                     <label class="choice choice--smaller">
                                         <input class="choice__widget" type="checkbox">
                                         <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
                                         <i class="choice__icon" role="presentation"></i>
                                     </label>
                                 </div>
-                                <div class="request__submit">
+                                <div class="callback__submit">
                                     <button class="button" type="button">Отправить</button>
                                 </div>
                             </div>
