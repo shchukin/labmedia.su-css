@@ -22,9 +22,66 @@
     .footer__info {
         padding-top: 80px;
         padding-bottom: 80px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
     }
+        .footer__brands {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+            .footer__brand-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+            }
+                .footer__brand-logo {
+                    vertical-align: top;
+                }
+
+                .footer__brand-title {
+                    margin-top: 3px;
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+
+        .footer__description {
+
+        }
+            .footer__about {
+                margin-bottom: 24px;
+                font-size: 12px;
+                line-height: 17px;
+            }
+
+            .footer__description-link {
+                margin-top: 8px;
+                font-size: 12px;
+                line-height: 17px;
+            }
 
     .footer__legalities {
         padding-top: 35px;
         padding-bottom: 37px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: 17px;
     }
+        .footer__copy-right {
+
+        }
+
+        .footer__policy {
+            margin-left: 24px;
+        }
+
+        .footer__media {
+            margin-top: -1px;
+            margin-left: 85px;
+        }
+
+        .footer__developers {
+            margin-left: auto;
+        }

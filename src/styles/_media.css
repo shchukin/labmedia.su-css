@@ -1,0 +1,13 @@
+.media {
+    display: flex;
+    align-items: flex-start;
+    margin: -6px;
+}
+    .media__link {
+        display: block;
+        padding: 6px;
+    }
+        .media__icon {
+            vertical-align: top;
+            fill: var(--fill-dark-blue);
+        }
