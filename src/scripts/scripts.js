@@ -1,5 +1,7 @@
 (function($) {
 
+    const $html = $('html');
+
     /* Inputs */
 
     /* Select placeholder */
@@ -55,7 +57,8 @@
     });
 
 
-    /* Footer */
+
+    /* Подвал */
 
     $('.footer__menu-column:has(.footer__sub-menu) .footer__link').on('click', function (event) {
         event.preventDefault();
@@ -65,5 +68,51 @@
     $('.footer__info-handler').on('click', function () {
         $(this).parents('.footer__info').toggleClass('footer__info--expanded');
     });
+
+
+
+    /* Page scrolling и шапка */
+
+    var scrolled = $(window).scrollTop();
+
+    function stickHeader() {
+        scrolled = $(window).scrollTop();
+        if ( scrolled > 0 ) {
+            $html.addClass('scrolled');
+        } else {
+            $html.removeClass('scrolled');
+        }
+
+
+        if ( scrolled > 126 ) {
+            $html.addClass('scrolled126plus');
+        } else {
+            $html.removeClass('scrolled126plus');
+        }
+    }
+
+    $(window).on('scroll', stickHeader);
+    $(window).on('resize', stickHeader);
+    $(document).ready(stickHeader);
+
+
+
+    var scrolledBefore = scrolled;
+
+    function hideNav() {
+        scrolled = $(window).scrollTop();
+
+        if ( scrolled > scrolledBefore ) {
+            $html.addClass('scrolling-down').removeClass('scrolling-up');
+        } else {
+            $html.removeClass('scrolling-down').addClass('scrolling-up');
+        }
+
+        scrolledBefore = scrolled;
+    }
+
+    $(window).on('scroll', hideNav);
+    $(window).on('resize', hideNav);
+    $(document).ready(hideNav);
 
 })(jQuery);

@@ -5,7 +5,8 @@
     --transition-dropdown: 600ms var(--ease-out-quint);
     /*--image-fallback: #F3F5F4;*/
     --container-padding: 40px;
-
+    --header-height: 84px;
+    --info-height: 56px;
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/
     /*--input-border-hover-and-focus: #7E7E7E;*/

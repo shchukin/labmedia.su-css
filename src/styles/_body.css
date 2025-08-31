@@ -1,5 +1,4 @@
 body {
-    height: 100%;
     background-color: var(--bg-white-purple-darker);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
