@@ -8,8 +8,8 @@
 
 .mfp-container {
     display: inline-block;
-    padding-left: calc(var(--container-padding) / 2);      /* horizontal spacing */
-    padding-right: calc(var(--container-padding) / 2);     /* horizontal spacing */
+    padding-left: 64px;  /* horizontal spacing */
+    padding-right: 64px; /* horizontal spacing */
     vertical-align: top;
     width: auto;
     min-width: 100%;
@@ -17,8 +17,8 @@
 }
 
 .mfp-content {
-    margin-top: calc(var(--container-padding) / 2);        /* vertical spacing */
-    margin-bottom: calc(var(--container-padding) / 2);     /* vertical spacing */
+    margin-top: 16px;    /* vertical spacing */
+    margin-bottom: 16px; /* vertical spacing */
     text-align: center;
 }
 
@@ -66,5 +66,20 @@
 
 button.mfp-close:focus-visible {
     outline: 2px auto black;
+}
+
+
+
+@media (width < 740px) {
+
+    .mfp-container {
+        padding-left: var(--container-padding);  /* horizontal spacing */
+        padding-right: var(--container-padding); /* horizontal spacing */
+    }
+
+    .mfp-content {
+        margin-top: 64px;    /* vertical spacing */
+        margin-bottom: 64px; /* vertical spacing */
+    }
 }
 
