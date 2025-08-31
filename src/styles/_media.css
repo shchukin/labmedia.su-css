@@ -10,6 +10,11 @@
         .media__icon {
             vertical-align: top;
             fill: var(--fill-dark-blue);
+            transition: fill var(--transition-hover);
+        }
+
+        .media__link:hover .media__icon {
+            fill: var(--accent-main-blue);
         }
 
 
