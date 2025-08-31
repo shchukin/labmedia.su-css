@@ -73,38 +73,24 @@
 
     /* Page scrolling и шапка */
 
-    var scrolled = $(window).scrollTop();
+    let scrolled = $(window).scrollTop();
+    let scrolledBefore = 0;
+    const sensitivity = 5;
 
-    function stickHeader() {
+    function scrolling() {
         scrolled = $(window).scrollTop();
         if ( scrolled > 0 ) {
             $html.addClass('scrolled');
         } else {
             $html.removeClass('scrolled');
         }
+        // if ( scrolled > 126 ) {
+        //     $html.addClass('scrolled126plus');
+        // } else {
+        //     $html.removeClass('scrolled126plus');
+        // }
 
-
-        if ( scrolled > 126 ) {
-            $html.addClass('scrolled126plus');
-        } else {
-            $html.removeClass('scrolled126plus');
-        }
-    }
-
-    $(window).on('scroll', stickHeader);
-    $(window).on('resize', stickHeader);
-    $(document).ready(stickHeader);
-
-
-
-    var scrolledBefore = 0;
-    var sensitivity = 5;
-
-    function hideNav() {
-        scrolled = $(window).scrollTop();
-        scrollDiff = scrolled - scrolledBefore;
-
-        if (Math.abs(scrollDiff) > sensitivity) {
+        if (Math.abs(scrolled - scrolledBefore) > sensitivity) {
             if (scrolled > scrolledBefore) {
                 $('html').addClass('scrolling-down').removeClass('scrolling-up');
             } else {
@@ -114,8 +100,9 @@
         }
     }
 
-    $(window).on('scroll', hideNav);
-    $(window).on('resize', hideNav);
-    $(document).ready(hideNav);
+    $(window).on('scroll', scrolling);
+    $(window).on('resize', scrolling);
+    $(document).ready(scrolling);
+
 
 })(jQuery);
