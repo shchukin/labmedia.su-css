@@ -11,3 +11,19 @@
             vertical-align: top;
             fill: var(--fill-dark-blue);
         }
+
+
+
+@media (width < 740px) {
+
+    .media {
+
+    }
+        .media__link {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+            .media__icon {
+
+            }
+}

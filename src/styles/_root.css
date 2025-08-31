@@ -1,7 +1,5 @@
 :root {
     --font: "Rubik", sans-serif;
-    --body-md-regular-font-size: 16px;
-    --body-md-regular-line-height: 22px;
     --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
     --transition-hover: 100ms ease;
     --transition-dropdown: 600ms var(--ease-out-quint);
@@ -17,13 +15,7 @@
     --error: #F34141;
 }
 
-@media (350px <= width < 740px) {
-    :root {
-        --container-padding: 24px;
-    }
-}
-
-@media (width < 350px) {
+@media (width < 740px) {
     :root {
         --container-padding: 16px;
     }

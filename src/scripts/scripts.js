@@ -57,8 +57,13 @@
 
     /* Footer */
 
-    $('.footer__menu-column:has(.footer__sub-menu) .footer__link').on('click', function () {
+    $('.footer__menu-column:has(.footer__sub-menu) .footer__link').on('click', function (event) {
+        event.preventDefault();
         $(this).parents('.footer__menu-column').toggleClass('footer__menu-column--expanded');
+    });
+
+    $('.footer__info-handler').on('click', function () {
+        $(this).parents('.footer__info').toggleClass('footer__info--expanded');
     });
 
 })(jQuery);

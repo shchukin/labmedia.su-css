@@ -144,8 +144,20 @@
 
 
 
-
-
 .choice--full-width {
     width: 100%;
 }
+
+.choice--smaller {
+
+}
+    .choice--smaller .choice__icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .choice--smaller .choice__label {
+        padding-left: 24px;
+        font-size: 12px;
+        line-height: 17px;
+    }
