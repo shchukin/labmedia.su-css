@@ -4,7 +4,7 @@
     --transition-hover: 100ms ease;
     --transition-dropdown: 600ms var(--ease-out-quint);
     /*--image-fallback: #F3F5F4;*/
-    /*--container-padding: 40px;*/
+    --container-padding: 40px;
 
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/

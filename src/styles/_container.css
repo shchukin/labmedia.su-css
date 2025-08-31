@@ -1,15 +1,18 @@
 .container {
-    width: 1140px;
+    width: calc(1140px + 2 * var(--container-padding));
     border-left: var(--container-padding) solid transparent;
     border-right: var(--container-padding) solid transparent;
     margin-left: auto;
     margin-right: auto;
 }
 
+
+/* этот контейнер уже резиновый: */
 .container--wide {
     width: 100%;
-    max-width: 1280px;
+    max-width: calc(1280px + 2 * var(--container-padding));
 }
+
 
 @media (width < 740px) {
 
