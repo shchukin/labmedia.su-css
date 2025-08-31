@@ -55,5 +55,10 @@
     });
 
 
+    /* Footer */
+
+    $('.footer__menu-column:has(.footer__sub-menu) .footer__link').on('click', function () {
+        $(this).parents('.footer__menu-column').toggleClass('footer__menu-column--expanded');
+    });
 
 })(jQuery);
