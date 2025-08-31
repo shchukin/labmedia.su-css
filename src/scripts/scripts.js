@@ -97,18 +97,21 @@
 
 
 
-    var scrolledBefore = scrolled;
+    var scrolledBefore = 0;
+    var sensitivity = 5;
 
     function hideNav() {
         scrolled = $(window).scrollTop();
+        scrollDiff = scrolled - scrolledBefore;
 
-        if ( scrolled > scrolledBefore ) {
-            $html.addClass('scrolling-down').removeClass('scrolling-up');
-        } else {
-            $html.removeClass('scrolling-down').addClass('scrolling-up');
+        if (Math.abs(scrollDiff) > sensitivity) {
+            if (scrolled > scrolledBefore) {
+                $('html').addClass('scrolling-down').removeClass('scrolling-up');
+            } else {
+                $('html').addClass('scrolling-up').removeClass('scrolling-down');
+            }
+            scrolledBefore = scrolled; // Update scrolledBefore only when classes are toggled
         }
-
-        scrolledBefore = scrolled;
     }
 
     $(window).on('scroll', hideNav);
