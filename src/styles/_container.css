@@ -18,5 +18,6 @@
 
     .container {
         width: auto;
+        max-width: calc(400px + 2 * var(--container-padding));
     }
 }
