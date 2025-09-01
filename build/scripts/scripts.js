@@ -38,6 +38,33 @@
     });
 
 
+    /* Cleartype (крестик для стирания текста) */
+
+    function updateClearButton($input) {
+        const $inputWidget = $input.find('.input__widget');
+        const $clearButtonContainer = $input.find('.input__clear-type');
+        $clearButtonContainer.toggleClass('input__clear-type--visible', $inputWidget.val().length > 0);
+    }
+
+    // При загрузке страницы
+    $('.input:has(.input__clear-type)').each(function() {
+        updateClearButton($(this));
+    });
+
+    // В момент печати
+    $('.input:has(.input__clear-type) .input__widget').on('input', function() {
+        updateClearButton($(this).closest('.input'));
+    });
+
+    // Обработчик клика по кнопке очистки
+    $('.input__clear-type .button').on('click', function() {
+        const $input = $(this).closest('.input');
+        const $inputWidget = $input.find('.input__widget');
+        $inputWidget.val('');
+        updateClearButton($input);
+    });
+
+
 
     /* Init magnific popup */
 
@@ -63,10 +90,6 @@
         callbacks: {
             open: function() {
                 const $popup = $.magnificPopup.instance.content;
-                const $expandableInputs = $popup.find('.input--expandable .input__widget');
-                $expandableInputs.each(function() {
-                    expandTextarea($(this));
-                });
                 if ($popup.attr('id') === 'search') {
                     $('html').addClass('search-expanded');
                 }
