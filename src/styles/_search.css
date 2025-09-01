@@ -19,6 +19,7 @@
         }
             .search__field .input__widget {
                 padding-left: 44px;
+                padding-right: 144px !important; /* Перебиваем более сложный паддинг внутри _input.scss */
             }
 
             .search__field .input__clear-type {

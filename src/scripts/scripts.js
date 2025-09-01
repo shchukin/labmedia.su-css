@@ -40,21 +40,28 @@
 
     /* Cleartype (крестик для стирания текста) */
 
-    function updateClearButton() {
-        $('.input:has(.input__clear-type)').each(function() {
-            const $input = $(this).find('.input__widget');
-            const $clearButton = $(this).find('.input__clear-type');
-            $clearButton.toggleClass('input__clear-type--visible', $input.val().length > 0);
-        });
+    function updateClearButton($input) {
+        const $inputWidget = $input.find('.input__widget');
+        const $clearButtonContainer = $input.find('.input__clear-type');
+        $clearButtonContainer.toggleClass('input__clear-type--visible', $inputWidget.val().length > 0);
     }
 
-    $('.input:has(.input__clear-type) .input__widget').on('input', updateClearButton);
-    updateClearButton();
+    // При загрузке страницы
+    $('.input:has(.input__clear-type)').each(function() {
+        updateClearButton($(this));
+    });
 
+    // В момент печати
+    $('.input:has(.input__clear-type) .input__widget').on('input', function() {
+        updateClearButton($(this).closest('.input'));
+    });
+
+    // Обработчик клика по кнопке очистки
     $('.input__clear-type .button').on('click', function() {
-        const $input = $(this).closest('.input').find('.input__widget');
-        $input.val('');
-        $(this).removeClass('input__clear-type--visible');
+        const $input = $(this).closest('.input');
+        const $inputWidget = $input.find('.input__widget');
+        $inputWidget.val('');
+        updateClearButton($input);
     });
 
 
