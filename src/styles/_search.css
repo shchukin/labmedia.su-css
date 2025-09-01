@@ -5,6 +5,16 @@
     .search__form {
         position: relative;
     }
+
+        /* Сбрасываем стили контейнера, они будут нужны только на смартфонах */
+        @media (740px <= width) {
+            .search__form.container {
+                width: auto;
+                border-left: none;
+                border-right: none;
+            }
+        }
+
         .search__icon {
             position: absolute;
             z-index: 10;
@@ -42,6 +52,15 @@
         padding-right: 4px;
         max-height: calc(100svh - 2 * var(--popup-vertical-padding) - 100px); /* 100px -- это размер формы поиска и сумма всех вертикальных отступов внутри */
         overflow-y: auto;
+    }
+
+    /* Сбрасываем стили контейнера, они будут нужны только на смартфонах */
+    @media (740px <= width) {
+        .search__results.container {
+            width: auto;
+            border-left: none;
+            border-right: none;
+        }
     }
         .search__item {
             width: 100%;
@@ -83,7 +102,8 @@
             left: 0;
             top: 0;
             right: 0;
-            border: 8px solid transparent;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
             background-color: #FFFFFF;
         }
             .search__icon {
@@ -179,7 +199,7 @@
             }
 
     .search-expanded .mfp-bg {
-        display: none;
+        background-color: transparent;
     }
 
     .search-expanded .window {
