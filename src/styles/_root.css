@@ -7,6 +7,8 @@
     --container-padding: 40px;
     --header-height: 84px;
     --info-height: 56px;
+    --popup-vertical-padding: 8px;
+    --popup-horizontal-padding: 64px;
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/
     /*--input-border-hover-and-focus: #7E7E7E;*/
@@ -19,6 +21,8 @@
 @media (width < 740px) {
     :root {
         --container-padding: 16px;
+        --popup-vertical-padding: 64px;
+        --popup-horizontal-padding: var(--container-padding);
     }
 }
 

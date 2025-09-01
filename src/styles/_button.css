@@ -1,11 +1,12 @@
 .button {
     display: inline-flex; /* для иконок */
     align-items: center;
+    justify-content: center;
     gap: 10px;
     vertical-align: top;
     border: none;
     padding: 16px 30px;
-    min-width: 110px;
+    min-width: 90px;
     height: 52px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
     background-color: var(--accent-main-blue);
     border-radius: 8px;

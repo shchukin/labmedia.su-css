@@ -5,15 +5,15 @@
         vertical-align: top;
         width: 100%;
         height: 52px;
-        padding: 15px 17px;
+        padding: 14px 17px;
         background-color: var(--fill-light-gray); /* reset grey background in some cases, such as <select> */
         background-clip: border-box; /* hack for iOS to make box-shadow works (same as border-radius in the past) */
         border: 1px solid transparent;
         outline: none;
         border-radius: 8px;
         font-family: inherit;
-        font-size: 14px; /* not less than 16px (otherwise mobile browsers will zoom in on focus) */
-        line-height: 20px;
+        font-size: 16px; /* not less than 16px (otherwise mobile browsers will zoom in on focus) */
+        line-height: 22px;
         color: var(--txt-dark-blue);
         opacity: 1; /* reset select:disabled default fade on iOS */
         -webkit-tap-highlight-color: transparent;
@@ -111,8 +111,8 @@
 /* stylelint-disable */
 textarea.input__widget {
     height: auto; /* user rows="" attribute to set a default height */
-    min-height: 50px; /* 1 row */
-    max-height: calc(10*24px + 2*11px + 2*2px); /* rows + vertical paddings + vertical borders */
+    min-height: 52px; /* 1 row */
+    max-height: calc(10*22px + 2*14px + 2*2px); /* rows + vertical paddings + vertical borders */
     resize: vertical;
 }
 /* stylelint-enable */

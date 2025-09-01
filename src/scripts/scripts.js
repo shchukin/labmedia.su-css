@@ -56,6 +56,27 @@
         }
     });
 
+    $('.mfp-search-handler').magnificPopup({
+        type: 'inline',
+        removalDelay: 0,
+        showCloseBtn: false,
+        callbacks: {
+            open: function() {
+                const $popup = $.magnificPopup.instance.content;
+                const $expandableInputs = $popup.find('.input--expandable .input__widget');
+                $expandableInputs.each(function() {
+                    expandTextarea($(this));
+                });
+                if ($popup.attr('id') === 'search') {
+                    $('html').addClass('search-expanded');
+                }
+            },
+            close: function() {
+                $('html').removeClass('search-expanded');
+            }
+        }
+    });
+
 
 
     /* Подвал */

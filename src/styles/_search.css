@@ -1,0 +1,168 @@
+.search {
+    width: 704px;
+    padding: 8px 8px 24px;
+}
+    .search__form {
+        position: relative;
+    }
+        .search__icon {
+            position: absolute;
+            z-index: 10;
+            left: 14px;
+            top: 18px;
+            stroke: var(--txt-simple-gray);
+            pointer-events: none;
+        }
+
+        .search__field {
+
+        }
+            .search__field .input__widget {
+                padding-left: 44px;
+            }
+
+        .search__submit {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+            .search__submit .button {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+    .search__results {
+        margin-top: 16px;
+        padding-left: 4px;
+        padding-right: 4px;
+        max-height: calc(100svh - 2 * var(--popup-vertical-padding) - 100px); /* 100px -- это размер формы поиска и сумма всех вертикальных отступов внутри */
+        overflow-y: auto;
+    }
+        .search__item {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: transparent;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--txt-dark-blue);
+            text-align: left;
+            cursor: pointer;
+            transition: background-color var(--transition-hover);
+        }
+
+        .search__item:hover {
+            background-color: var(--fill-light-gray);
+        }
+
+
+/* Отменяем вертикальное центрирование в модалке */
+.search-expanded .mfp-container::before {
+    display: none;
+}
+
+
+
+@media (width < 740px) {
+
+    .search {
+        width: 100%;
+        /*padding: 8px 8px 24px;*/
+        padding-top: 68px;
+    }
+        .search__form {
+            /*position: relative;*/
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            border: 8px solid transparent;
+            background-color: #FFFFFF;
+        }
+            .search__icon {
+                /*position: absolute;*/
+                /*z-index: 10;*/
+                /*left: 14px;*/
+                /*top: 18px;*/
+                /*stroke: var(--txt-simple-gray);*/
+                /*pointer-events: none;*/
+            }
+
+            .search__field {
+
+            }
+                .search__field .input__widget {
+                    /*padding-left: 44px;*/
+                }
+
+            .search__submit {
+                /*position: absolute;*/
+                /*right: 4px;*/
+                /*top: 4px;*/
+            }
+                .search__submit .button {
+                    /*padding-left: 24px;*/
+                    /*padding-right: 24px;*/
+                }
+
+        .search__results {
+            /*margin-top: 16px;*/
+            /*padding-left: 4px;*/
+            /*padding-right: 4px;*/
+            max-height: none;
+            /*overflow-y: auto;*/
+        }
+            .search__item {
+                /*width: 100%;*/
+                /*padding: 8px 12px;*/
+                /*background-color: transparent;*/
+                /*border: none;*/
+                /*border-radius: 8px;*/
+                /*font-family: inherit;*/
+                /*font-size: 16px;*/
+                /*line-height: 22px;*/
+                /*color: var(--txt-dark-blue);*/
+                /*text-align: left;*/
+                /*cursor: pointer;*/
+                /*transition: background-color var(--transition-hover);*/
+            }
+
+            .search__item:hover {
+                /*background-color: var(--fill-light-gray);*/
+            }
+}
+
+
+
+/* на смартфонах убираем всё, что связано с модальным окном: */
+@media (width < 740px) {
+
+    .search-expanded body {
+        background-color: #FFFFFF;
+    }
+
+    .search-expanded .info,
+    .search-expanded .header,
+    .search-expanded .page {
+        display: none;
+    }
+
+    .search-expanded .mfp-container {
+        padding: 0;
+    }
+
+    .search-expanded .mfp-content {
+        margin: 0;
+        transition: none;
+    }
+
+    .search-expanded .mfp-bg {
+        display: none;
+    }
+
+    .search-expanded .window {
+        background-color: transparent;
+    }
+}
