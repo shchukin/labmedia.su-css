@@ -38,6 +38,26 @@
     });
 
 
+    /* Cleartype (крестик для стирания текста) */
+
+    function updateClearButton() {
+        $('.input:has(.input__clear-type)').each(function() {
+            const $input = $(this).find('.input__widget');
+            const $clearButton = $(this).find('.input__clear-type');
+            $clearButton.toggleClass('input__clear-type--visible', $input.val().length > 0);
+        });
+    }
+
+    $('.input:has(.input__clear-type) .input__widget').on('input', updateClearButton);
+    updateClearButton();
+
+    $('.input__clear-type').on('click', function() {
+        const $input = $(this).closest('.input').find('.input__widget');
+        $input.val('').focus();
+        $(this).removeClass('input__clear-type--visible');
+    });
+
+
 
     /* Init magnific popup */
 

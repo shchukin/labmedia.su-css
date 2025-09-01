@@ -15,7 +15,7 @@
         }
 
         .search__field {
-
+            position: relative;
         }
             .search__field .input__widget {
                 padding-left: 44px;

@@ -70,6 +70,42 @@
     }
 
 
+.input:has(.input__clear-type) .input__widget {
+    padding-right: 52px;
+}
+    .input__clear-type {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 100ms ease,
+                    visibility 100ms ease;
+    }
+
+    .input__clear-type:hover {
+        background-color: red;
+    }
+
+    .input__clear-type--visible {
+        opacity: 1;
+        visibility: visible;
+    }
+        .input__cross-icon {
+            vertical-align: top;
+            stroke: var(--stroke-darkblue);
+        }
+
+
 /* Disabled */
 .input__widget:disabled,
 .input__widget:disabled:hover {
