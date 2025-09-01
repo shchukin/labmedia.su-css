@@ -1,0 +1,10 @@
+.desktop-only {
+
+}
+
+@media (740px <= width) {
+
+    .desktop-only {
+        display: none !important;
+    }
+}

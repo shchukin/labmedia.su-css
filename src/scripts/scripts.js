@@ -90,10 +90,6 @@
         callbacks: {
             open: function() {
                 const $popup = $.magnificPopup.instance.content;
-                const $expandableInputs = $popup.find('.input--expandable .input__widget');
-                $expandableInputs.each(function() {
-                    expandTextarea($(this));
-                });
                 if ($popup.attr('id') === 'search') {
                     $('html').addClass('search-expanded');
                 }

@@ -20,8 +20,6 @@
 .scrolled126plus .header {
 
 }
-
-
     .header__wrap {
         height: 100%;
         padding-top: 14px;
@@ -67,3 +65,84 @@
                 .header__request {
 
                 }
+                    .header__request .button {
+
+                    }
+
+
+
+@media (width < 740px) {
+
+    .header {
+        /*position: sticky;*/
+        /*z-index: 1000;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*height: var(--header-height);*/
+        /*pointer-events: none;*/
+        /*transition: top 500ms ease;*/
+    }
+
+    .scrolled .header {
+        /*top: -200px !important;*/
+    }
+
+    .scrolling-up .header {
+        /*top: 0 !important;*/
+    }
+
+    .scrolled126plus .header {
+
+    }
+        .header__wrap {
+            /*height: 100%;*/
+            /*padding-top: 14px;*/
+            /*padding-bottom: 14px;*/
+        }
+            .header__panel {
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*height: 100%;*/
+                /*padding: 6px;*/
+                /*background-color: var(--fill-total-white);*/
+                /*border-radius: 10px;*/
+                /*pointer-events: auto;*/
+            }
+                .header__logo {
+                    /*display: block;*/
+                    /*width: 132px;*/
+                    /*height: 40px;*/
+                    /*margin-left: 18px;*/
+                    /*background-image: url("../images/logo.svg");*/
+                    /*background-size: contain;*/
+                    /*background-repeat: no-repeat;*/
+                    /*background-position: center center;*/
+                    /*text-indent: 200%;*/
+                    /*white-space: normal;*/
+                    /*overflow: hidden;*/
+                }
+
+                .header__actions {
+                    /*margin-left: auto;*/
+                    /*display: flex;*/
+                    /*align-items: flex-start;*/
+                    gap: 4px;
+                }
+                    .header__phone {
+
+                    }
+
+                    .header__call {
+                        /*display: none;*/
+                    }
+
+                    .header__request {
+
+                    }
+                        .header__request .button {
+                            width: 44px;
+                            min-width: 0;
+                            box-shadow: none;
+                        }
+}

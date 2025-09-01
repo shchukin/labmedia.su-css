@@ -178,7 +178,7 @@
         display: none;
     }
 
-    .mfp-wrap {
+    .search-expanded .mfp-wrap {
         position: static;
         overflow: visible !important;
     }

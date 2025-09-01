@@ -29,4 +29,6 @@
 @import url("_header.css");
 @import url("_info.css");
 @import url("_search.css");
+@import url("_desktop-only.css");
+@import url("_smartphone-only.css");
 

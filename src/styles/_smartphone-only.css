@@ -1,0 +1,10 @@
+.smartphone-only {
+
+}
+
+@media (width < 740px) {
+
+    .smartphone-only {
+        display: none !important;
+    }
+}
