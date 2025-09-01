@@ -139,6 +139,10 @@
 /* на смартфонах убираем всё, что связано с модальным окном: */
 @media (width < 740px) {
 
+    .search-expanded {
+        overflow: visible !important;
+    }
+
     .search-expanded body {
         background-color: #FFFFFF;
     }
@@ -149,14 +153,25 @@
         display: none;
     }
 
-    .search-expanded .mfp-container {
-        padding: 0;
+    .mfp-wrap {
+        position: static;
+        overflow: visible !important;
     }
+        .search-expanded .mfp-container {
+            display: block;
+            padding: 0;
+            min-width: 0;
+        }
+            .search-expanded .mfp-container::before {
+                display: none;
+            }
 
-    .search-expanded .mfp-content {
-        margin: 0;
-        transition: none;
-    }
+            .search-expanded .mfp-content {
+                display: block;
+                width: auto;
+                margin: 0;
+                transition: none;
+            }
 
     .search-expanded .mfp-bg {
         display: none;
@@ -165,4 +180,7 @@
     .search-expanded .window {
         background-color: transparent;
     }
+        .search-expanded .window__close {
+            display: none;
+        }
 }
