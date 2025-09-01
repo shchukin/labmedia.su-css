@@ -192,6 +192,17 @@
 }
 
 
+.button--input-action {
+    background-color: transparent;
+    color: var(--fill-dark-blue);
+}
+
+.button--input-action:hover {
+    background-color: #ECEBF0;
+    color: var(--stroke-darkblue);
+}
+
+
 
 
 .button--smaller {

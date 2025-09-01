@@ -77,23 +77,10 @@
         position: absolute;
         right: 4px;
         top: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background-color: transparent;
-        padding: 0;
-        width: 44px;
-        height: 44px;
-        cursor: pointer;
         opacity: 0;
         visibility: hidden;
         transition: opacity 100ms ease,
                     visibility 100ms ease;
-    }
-
-    .input__clear-type:hover {
-        background-color: red;
     }
 
     .input__clear-type--visible {

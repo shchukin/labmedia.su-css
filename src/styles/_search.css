@@ -21,6 +21,10 @@
                 padding-left: 44px;
             }
 
+            .search__field .input__clear-type {
+                right: 98px;
+            }
+
         .search__submit {
             position: absolute;
             right: 4px;
