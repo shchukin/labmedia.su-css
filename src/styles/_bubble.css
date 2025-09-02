@@ -45,7 +45,7 @@
             line-height: 17px;
         }
 
-    .bubble__angle {
+    .bubble__chevron {
         position: absolute;
         z-index: 10;
         bottom: -10px;
