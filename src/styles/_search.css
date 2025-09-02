@@ -46,6 +46,7 @@
                 padding-right: 24px;
             }
 
+    /* stylelint-disable */
     .search__results {
         margin-top: 16px;
         padding-left: 4px;
@@ -53,6 +54,7 @@
         max-height: calc(100svh - 2 * var(--popup-vertical-padding) - 100px); /* 100px -- это размер формы поиска и сумма всех вертикальных отступов внутри */
         overflow-y: auto;
     }
+    /* stylelint-enable */
 
     /* Сбрасываем стили контейнера, они будут нужны только на смартфонах */
     @media (740px <= width) {
