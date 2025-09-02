@@ -21,6 +21,13 @@
                 line-height: 40px;
                 letter-spacing: -0.75px;
             }
+                .footer__call .explain {
+                    margin-left: -12px;
+                    margin-top: -13px;
+                }
+                    .footer__call .explain__icon {
+                        background-size: 18px 18px;
+                    }
 
             .footer__number-extensions {
                 margin-top: 24px;
