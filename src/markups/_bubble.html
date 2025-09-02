@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>.bubble</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/styles.css">
+    </head>
+    <body>
+
+        <div style="max-width: 720px; margin: 0 auto; padding: 0 var(--container-padding);">
+            <br>
+            <br>
+            <h1>.bubble</h1>
+            <p>
+                Смотри так же <a href="_explain.html">.explain</a>
+            </p>
+            <p>
+                Минимальное содержимое -- кусок текста сразу идёт внутри <b>.bubble__body</b>.
+                Такое подходит для 1-5 слов, без переноса текста, и так чтобы умещалось в экран смартфона:
+            </p>
+
+            <div class="bubble" style="visibility: visible; opacity: 1;">
+                <div class="bubble__body">
+                    Lorem ipsum dolor sit amet
+                </div>
+                <i class="bubble__angle"></i>
+            </div>
+
+
+            <br>
+            <br>
+            <p>
+                Поскольку баблы позиционируются абсолютно, то текст в них схлопывается, пытаясь занять как можно меньше места.
+                Если вбить много текста, то переносы строк будут случаться после каждого слова. Чтобы этого избежать в баблах
+                по-умолчанию запрещены переносы строк (стоит <b><i>white-space: nowrap</i></b>):
+            </p>
+
+            <div class="bubble" style="visibility: visible; opacity: 1;">
+                <div class="bubble__body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur consequuntur debitis deleniti ex excepturi expedita facilis fuga non nulla, obcaecati omnis pariatur perferendis praesentium quasi quia quidem reprehenderit similique suscipit vel velit veritatis voluptatibus! Accusantium assumenda, deleniti deserunt dolorum error inventore labore mollitia numquam porro quas, quod, saepe. Dolorum?
+                </div>
+                <i class="bubble__angle"></i>
+            </div>
+
+            <p>
+                Переносы либо проставляем вручную <b><i>(&lt;br&gt;)</i></b> -- подходит так же для небольших баблов:
+            </p>
+
+            <div class="bubble" style="visibility: visible; opacity: 1;">
+                <div class="bubble__body">
+                    Lorem ipsum dolor sit amet,<br>
+                    consectetur adipisicing elit.<br>
+                    Animi aspernatur consequuntur<br> debitis deleniti ex excepturi.
+                </div>
+                <i class="bubble__angle"></i>
+            </div>
+
+            <p>
+                Либо, чтобы иметь больше контроля (особенно в адаптиве), пишем кастомную разметку.
+                Пишем дополнительные компоненты, в которых жёстко проставлена ширина и отменён nowrap.
+                В таком случае можно выводить любой текст рассчитывая что он будет переноситься от ширины:
+            </p>
+
+            <div class="bubble" style="visibility: visible; opacity: 1;">
+                <div class="bubble__body">
+                    <style>
+                        .foo-bar-baz {
+                            width: 300px;
+                            white-space: normal;
+                        }
+
+                        @media (width < 740px) {
+                            .foo-bar-baz {
+                                width: 200px;
+                            }
+                        }
+                    </style>
+                    <div class="foo-bar-baz">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eius in voluptatem. Consectetur culpa cupiditate deleniti illo in iste qui. Eos ex explicabo impedit, numquam officia provident sunt unde vitae!
+                    </div>
+                </div>
+                <i class="bubble__angle"></i>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Бабл с заголовком</h2>
+            <p>
+                Есть стандартный вид для текстовых баблов. Не обязательно, но можно использовать дополнительные:
+                <br><b><i>.bubble__heading</i></b>
+                <br><b><i>.bubble__description</i></b>
+                <br><b><i>.bubble__link</i></b>
+            </p>
+
+            <div class="bubble" style="visibility: visible; opacity: 1;">
+                <div class="bubble__body">
+                    <span class="bubble__heading">
+                        Многоканальный телефон
+                    </span>
+                    <span class="bubble__description">
+                        Для связи с нужным отделом позвоните<br> по номеру и введите добавочный номер
+                    </span>
+                    <span class="bubble__link">
+                        <a class="link" href="#">Ссылка</a>
+                    </span>
+                </div>
+                <i class="bubble__angle"></i>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <h2>Показ бабла</h2>
+            <p>
+                Клик по <b><i>.bubble-handler</i></b> ищет и показывает соответствующий бабл.
+                Соответствующий этот тот, который находится внутри <b><i>.bubble-context</i></b> вместе с тем
+                <b><i>.bubble-handler</i></b> на который кликнули. Это нужно главным образом для мобилок без ховера.
+            </p>
+            <p>
+                Ещё бабл показывается обычным CSS-ным наведением на <b>.bubble-context</b>
+            </p>
+
+            <span class="bubble-context">
+                <button class="bubble-handler" type="button">
+                    Подсказка
+                </button>
+                <span class="bubble">
+                    <span class="bubble__body">
+                        Lorem ipsum dolor sit amet
+                    </span>
+                    <i class="bubble__angle"></i>
+                </span>
+            </span>
+
+            <p>
+                В этой кнопке и в самом нет позиционирования бабла, только JS.
+                Каждый компонент позиционирует нужные ему баблы самостоятельно.
+                Смотри, например, <a href="_explain.html">.explain</a>
+            </p>
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+
+        <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
+        <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="../scripts/scripts.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,87 @@
+.bubble {
+    position: relative;
+    z-index: 100;
+    display: inline-block;
+    vertical-align: top;
+    opacity: 0;
+    visibility: hidden;
+    cursor: text;
+}
+    .bubble__body {
+        position: relative;
+        z-index: 20;
+        display: block;
+        padding: 14px 16px;
+        background-color: #FFFFFF;
+        /*box-shadow: 0 2px 4px 1px #EAEAEA;*/
+        border-radius: 8px;
+        font-family: var(--font);
+        font-weight: normal;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 17px;
+        white-space: nowrap;
+        text-transform: none;
+        text-align: left;
+        text-indent: 0;
+    }
+        .bubble__heading {
+            display: block;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .bubble__description {
+            margin-top: 4px;
+            display: block;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+        .bubble__link {
+            margin-top: 2px;
+            display: block;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+    .bubble__angle {
+        position: absolute;
+        z-index: 10;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 22px;
+        height: 14px;
+        background-image: url("../vectors/bubble-angle.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+
+
+
+
+.bubble--visible {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 9px; /* эффект выезжания */
+}
+
+
+/* Если работаем мышью, то показываем c анимациями и по таймауту */
+@media (hover: hover) {
+    .bubble-context:hover .bubble {
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 9px; /* эффект выезжания */
+        transition: opacity 0.3s ease 0.15s,
+                    visibility 0.3s ease 0.15s,
+                    margin-bottom 0.3s ease 0.15s;
+    }
+}
+
+
