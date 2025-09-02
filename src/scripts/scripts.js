@@ -1,6 +1,7 @@
 (function($) {
 
     /* Глобальные константы */
+
     const $html = $('html');
     let rememberedPageScrollPosition = 0;
     let isDesktop;
@@ -13,9 +14,11 @@
     window.addEventListener('resize', initGlobalConstant);
 
 
-    /* Inputs */
 
-    /* Select placeholder */
+    /* Инпуты */
+
+    /* Плейсхолдер у селекта */
+
     function selectPlaceholder($element) {
         if ($element.val() === 'placeholder') {
             $element.parent('.input').addClass('input--placeholder-is-chosen');
@@ -30,7 +33,9 @@
         selectPlaceholder($(this));
     });
 
-    /* Expanding textarea */
+
+    /* Расхлопывающаяся при печати textarea */
+
     function expandTextarea($element) {
         $element.css('height', 'auto');
         $element.css('height', ($element[0].scrollHeight + 2 * parseInt($element.css('border-width'), 10)) + 'px');
@@ -42,7 +47,9 @@
         expandTextarea($(this));
     });
 
-    /* Error field */
+
+    /* Состояние ошибки */
+
     $('.input__widget').on('focus', function () {
         $(this).parents('.input').removeClass('input--error');
         $(this).parents('.input').nextUntil(':not(.helper--error)').remove();
@@ -57,17 +64,23 @@
         $clearButtonContainer.toggleClass('input__clear-type--visible', $inputWidget.val().length > 0);
     }
 
-    // При загрузке страницы
+
+    /* При загрузке страницы */
+
     $('.input:has(.input__clear-type)').each(function() {
         updateClearButton($(this));
     });
 
-    // В момент печати
+
+    /* В момент печати */
+
     $('.input:has(.input__clear-type) .input__widget').on('input', function() {
         updateClearButton($(this).closest('.input'));
     });
 
-    // Обработчик клика по кнопке очистки
+
+    /* Очистка по клику */
+
     $('.input__clear-type .button').on('click', function() {
         const $input = $(this).closest('.input');
         const $inputWidget = $input.find('.input__widget');
@@ -149,7 +162,9 @@
 
 
 
-    /* Скролл и шапка */
+    /* Шапка */
+
+    /* Классы scrolled, scrolling-down, scrolling-up */
 
     let scrolled = $(window).scrollTop();
     let scrolledBefore = 0;
@@ -182,8 +197,10 @@
     $(window).on('resize', scrolling);
     $(document).ready(scrolling);
 
-    $('.header__burger').on('click', function () {
 
+    /* Бургер */
+
+    $('.header__burger').on('click', function () {
         if( ! $html.hasClass('burger-expanded') ) {
             rememberedPageScrollPosition = $(window).scrollTop(); /* Запомнить скролл пользователя, так как display: none на .page его сбросит (смотри .burger-expanded .page) */
             $html.addClass('burger-expanded');
@@ -195,7 +212,6 @@
         }
     });
 
-
     $(document).on('click', function(event) {
         if (!$(event.target).closest('.header').length) {
             if($html.hasClass('burger-expanded')) {
@@ -206,10 +222,33 @@
     });
 
 
+    /* Аккордион в шапке (раляет только на смартфонах) */
+
     $('.header__item:has(.header__menu-dropdown) .header__link').on('click', function (event) {
         event.preventDefault();
         $(this).parents('.header__item').toggleClass('header__item--expanded');
     });
 
+
+
+    /* Баблы */
+
+    $('.bubble-handler').on('click', function () {
+        var $target = $(this).parents('.bubble-context').find('.bubble');
+        $('.bubble--visible').not($target).removeClass('bubble--visible'); /* закрываем все остальные */
+        $target.toggleClass('bubble--visible');
+    });
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.bubble, .bubble-handler').length) {
+            $('.bubble--visible').removeClass('bubble--visible');
+        }
+    });
+
+    $(document).on('keyup', function(event) {
+        if (event.keyCode === 27) {
+            $('.bubble--visible').removeClass('bubble--visible');
+        }
+    });
 
 })(jQuery);
