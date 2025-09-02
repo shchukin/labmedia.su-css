@@ -161,4 +161,22 @@
         $html.toggleClass('burger-expanded');
     });
 
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.header').length) {
+            $html.removeClass('burger-expanded');
+        }
+    });
+
+
+
+    $('.header__item:has(.header__menu-dropdown) .header__link').on('click', function (event) {
+        event.preventDefault();
+        $(this).parents('.header__item').toggleClass('header__item--expanded');
+    });
+
+    $('.footer__info-handler').on('click', function () {
+        $(this).parents('.footer__info').toggleClass('footer__info--expanded');
+    });
+
 })(jQuery);
