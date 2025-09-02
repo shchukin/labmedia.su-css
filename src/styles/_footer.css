@@ -322,7 +322,7 @@
 
                 .footer__sub-menu {
                     margin-top: 0;
-                    padding-bottom: 24px;
+                    padding-bottom: 16  px;
                     display: none;
                 }
 
@@ -332,7 +332,9 @@
                 }
 
                     .footer__sub-link {
-
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        color: var(--txt-simple-gray);
                     }
 
                     .footer__sub-link:hover {
