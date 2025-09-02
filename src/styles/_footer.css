@@ -253,6 +253,13 @@
                     line-height: 38px;
                 }
 
+                @media (width < 350px) {
+                    .footer__call {
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                }
+
                 .footer__number-extensions {
                     display: none;
                 }
