@@ -117,6 +117,7 @@ gulp.task('manifest', function () {
         'src/browserconfig.xml',
         'src/manifest.json',
         'src/humans.txt',
+        'src/index.html',
         'src/favicon.ico'], {encoding: false})
         .pipe(plumber())
         .pipe(gulp.dest('build/'))
