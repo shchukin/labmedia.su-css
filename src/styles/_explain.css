@@ -1,5 +1,4 @@
 .explain {
-    position: relative; /* для баблов внутри */
     display: inline-block;
     vertical-align: top;
 }
@@ -21,14 +20,9 @@
         cursor: help;
     }
 
-    .explain__popover,
-    .explain__popover.bubble {
-        position: absolute;
-        right: 50%;
+    .explain .bubble {
         bottom: calc(100% - 2px);
-        transform: translateX(50%);
     }
-
 
 
 .explain--larger {
@@ -39,7 +33,6 @@
         background-size: 32px 32px;
     }
 
-    .explain--larger .explain__popover,
-    .explain--larger .explain__popover.bubble {
+    .explain--larger .bubble {
         bottom: calc(100% + 5px);
     }

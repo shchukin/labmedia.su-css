@@ -1,8 +1,11 @@
 .bubble {
-    position: relative;
+    position: absolute;
+    right: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(50%);
     z-index: 100;
-    display: inline-block;
-    vertical-align: top;
+    display: block;
+    width: fit-content;
     opacity: 0;
     visibility: hidden;
     cursor: text;
