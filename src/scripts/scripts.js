@@ -91,11 +91,11 @@
             open: function() {
                 const $popup = $.magnificPopup.instance.content;
                 if ($popup.attr('id') === 'search') {
-                    $('html').addClass('search-expanded');
+                    $html.addClass('search-expanded');
                 }
             },
             close: function() {
-                $('html').removeClass('search-expanded');
+                $html.removeClass('search-expanded');
             }
         }
     });
@@ -115,7 +115,7 @@
 
 
 
-    /* Page scrolling и шапка */
+    /* Скролл и шапка */
 
     let scrolled = $(window).scrollTop();
     let scrolledBefore = 0;
@@ -136,9 +136,9 @@
 
         if (Math.abs(scrolled - scrolledBefore) > sensitivity) {
             if (scrolled > scrolledBefore) {
-                $('html').addClass('scrolling-down').removeClass('scrolling-up');
+                $html.addClass('scrolling-down').removeClass('scrolling-up');
             } else {
-                $('html').addClass('scrolling-up').removeClass('scrolling-down');
+                $html.addClass('scrolling-up').removeClass('scrolling-down');
             }
             scrolledBefore = scrolled; // Update scrolledBefore only when classes are toggled
         }
@@ -148,5 +148,8 @@
     $(window).on('resize', scrolling);
     $(document).ready(scrolling);
 
+    $('.header__burger').on('click', function () {
+        $html.toggleClass('burger-expanded');
+    });
 
 })(jQuery);
