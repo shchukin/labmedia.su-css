@@ -89,7 +89,7 @@
             .header__nav {
                 position: absolute;
                 left: 150px; /* ширина логотипа */
-                right: 149px; /* Полагаемся на ширину кнопки "связаться", поскольку навигация идёт отдельно от всей шапки */
+                right: 169px; /* Полагаемся на ширину кнопки "связаться", поскольку навигация идёт отдельно от всей шапки */
                 top: 0;
                 bottom: 0;
                 display: flex;
@@ -153,31 +153,25 @@
                         visibility: visible;
                     }
                         .header__sub-menu {
-                            padding-top: 12px;
-                            padding-bottom: 12px;
+                            padding: 12px;
                             background-color: #FFFFFF;
                             border-radius: 12px;
                         }
                             .header__sub-link {
                                 display: block;
-                                padding-left: 12px;
-                                padding-right: 12px;
-                                color: inherit;
+                                padding: 8px 24px 8px 12px;
+                                border-radius: 8px;
+                                font-size: 14px;
+                                line-height: 20px;
                                 text-decoration: none;
+                                color: inherit;
+                                white-space: nowrap;
+                                transition: background-color var(--transition-hover);
                             }
-                                .header__sub-link-inner {
-                                    padding: 8px 24px 8px 12px;
-                                    display: block;
-                                    border-radius: 8px;
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    white-space: nowrap;
-                                    transition: background-color var(--transition-hover);
-                                }
 
-                                .header__sub-link:hover .header__sub-link-inner {
-                                    background-color: var(--fill-light-gray);
-                                }
+                            .header__sub-link:hover {
+                                background-color: var(--fill-light-gray);
+                            }
 
 
 @media (width < 740px) {
