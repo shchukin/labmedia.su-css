@@ -79,6 +79,12 @@
                 $expandableInputs.each(function() {
                     expandTextarea($(this));
                 });
+                setTimeout(function (){
+                    const $firstInput = $popup.find('input').first();
+                    if ($firstInput.length) {
+                        $firstInput.focus();
+                    }
+                }, 100);
             }
         }
     });
@@ -93,6 +99,9 @@
                 if ($popup.attr('id') === 'search') {
                     $html.addClass('search-expanded');
                 }
+                setTimeout(function (){
+                    $('.search__field .input__widget').focus();
+                }, 100);
             },
             close: function() {
                 $html.removeClass('search-expanded');
