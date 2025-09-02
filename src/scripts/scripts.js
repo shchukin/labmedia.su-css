@@ -1,7 +1,17 @@
 (function($) {
 
+    /* Глобальные константы */
     const $html = $('html');
     let rememberedPageScrollPosition = 0;
+    let isDesktop;
+
+    function initGlobalConstant() {
+        isDesktop = window.matchMedia("(min-width: 740px)").matches;
+    }
+
+    initGlobalConstant();
+    window.addEventListener('resize', initGlobalConstant);
+
 
     /* Inputs */
 
@@ -67,19 +77,25 @@
 
 
 
-    /* Init magnific popup */
+    /* Инициализация библиотеки magnific popup -- модалки */
 
     $('.mfp-handler').magnificPopup({
-        type: 'inline',
-        removalDelay: 200,
+        type: 'inline', // не картинки, а html-код
+        removalDelay: 200, // анимация закрытия
         showCloseBtn: false,
         callbacks: {
             open: function() {
                 const $popup = $.magnificPopup.instance.content;
+
+                /* Если внутри есть input--expandable, перезапустить инициализацию, чтобы высоты обсчитались правильно (а то при инициализации по document ready они были скрыты) */
                 const $expandableInputs = $popup.find('.input--expandable .input__widget');
-                $expandableInputs.each(function() {
-                    expandTextarea($(this));
-                });
+                if($expandableInputs.length) {
+                    $expandableInputs.each(function() {
+                        expandTextarea($(this));
+                    });
+                }
+
+                /* Фокус на первый инпут, если есть */
                 setTimeout(function (){
                     const $firstInput = $popup.find('input').first();
                     if ($firstInput.length) {
@@ -90,22 +106,30 @@
         }
     });
 
+
+    /* Поиск -- отдельная специфичная модалка */
+
     $('.mfp-search-handler').magnificPopup({
         type: 'inline',
         removalDelay: 0,
         showCloseBtn: false,
         callbacks: {
             open: function() {
-                const $popup = $.magnificPopup.instance.content;
-                if ($popup.attr('id') === 'search') {
-                    $html.addClass('search-expanded');
-                }
-                setTimeout(function (){
+
+                /* Запомнить скролл пользователя, так как display: none на .page его сбросит (смотри .search-expanded .page) -- актуально на смартфонах */
+                rememberedPageScrollPosition = $(window).scrollTop();
+
+                /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
+                $html.addClass('search-expanded');
+
+                /* Фокус на поле поиска */
+                setTimeout(function () {
                     $('.search__field .input__widget').focus();
                 }, 100);
             },
             close: function() {
                 $html.removeClass('search-expanded');
+                $(window).scrollTop(rememberedPageScrollPosition);/* При закрытии меню скролл должен быть там, где пользователь его оставил */
             }
         }
     });
@@ -180,14 +204,10 @@
     });
 
 
-
     $('.header__item:has(.header__menu-dropdown) .header__link').on('click', function (event) {
         event.preventDefault();
         $(this).parents('.header__item').toggleClass('header__item--expanded');
     });
 
-    $('.footer__info-handler').on('click', function () {
-        $(this).parents('.footer__info').toggleClass('footer__info--expanded');
-    });
 
 })(jQuery);
