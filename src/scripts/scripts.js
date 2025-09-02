@@ -235,60 +235,50 @@
 
     /* Баблы */
 
+    /* Показ (тап на смартфонах) */
     $('.bubble-handler').on('click', function () {
         var $target = $(this).parents('.bubble-context').find('.bubble');
-
-        // Закрываем все остальные открытые подсказки
         $('.bubble--visible').not($target).removeClass('bubble--visible');
-
-        // Переключаем видимость текущей подсказки
         $target.toggleClass('bubble--visible');
-
-        // Корректируем положение, если подсказка видима
-        if ($target.hasClass('bubble--visible')) {
-            adjustBubblePosition($target);
-        }
     });
 
-// Закрытие подсказки при клике вне элемента
     $(document).on('click', function(event) {
         if (!$(event.target).closest('.bubble, .bubble-handler').length) {
             $('.bubble--visible').removeClass('bubble--visible');
         }
     });
 
-// Закрытие подсказки при нажатии на Esc
     $(document).on('keyup', function(event) {
         if (event.keyCode === 27) {
             $('.bubble--visible').removeClass('bubble--visible');
         }
     });
 
-// Функция для корректировки положения подсказки
-    function adjustBubblePosition($bubble) {
-        // Сбрасываем предыдущие стили, чтобы избежать накопления
-        // $bubble.css({ left: '', right: '', transform: '' });
 
-        // Получаем размеры и координаты элемента
+    /* Проверяем не обрезаются ли баблы краем экрана */
+
+    function adjustBubblePosition($bubble) {
+
         const rect = $bubble[0].getBoundingClientRect();
         const windowWidth = window.innerWidth;
 
-        console.log(rect)
-
-
-        // Проверяем, выходит ли элемент за левый край
+        /* Выходит ли за левый край */
         if (rect.left < 0) {
             const shiftDistance = rect.left - (containerPadding / 2);
             $bubble.css('margin-right', shiftDistance + 'px');
             $bubble.find('.bubble__chevron').css('left', (shiftDistance * 2) + 'px');
         }
-        // Проверяем, выходит ли элемент за правый край
+        /* Выходит ли за правый край */
         else if (rect.right > windowWidth) {
             const shiftDistance = rect.right - windowWidth + (containerPadding / 2);
             $bubble.css('margin-right', shiftDistance + 'px');
             $bubble.find('.bubble__chevron').css('right', (-1 * shiftDistance * 2) + 'px');
         }
     }
+
+    $('.bubble').each(function() {
+        adjustBubblePosition($(this));
+    });
 
 
 })(jQuery);
