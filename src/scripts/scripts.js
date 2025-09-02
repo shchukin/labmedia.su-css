@@ -198,8 +198,10 @@
 
     $(document).on('click', function(event) {
         if (!$(event.target).closest('.header').length) {
-            $html.removeClass('burger-expanded');
-            $(window).scrollTop(rememberedPageScrollPosition);/* При закрытии меню скролл должен быть там, где пользователь его оставил */
+            if($html.hasClass('burger-expanded')) {
+                $html.removeClass('burger-expanded');
+                $(window).scrollTop(rememberedPageScrollPosition); /* При закрытии меню скролл должен быть там, где пользователь его оставил */
+            }
         }
     });
 
