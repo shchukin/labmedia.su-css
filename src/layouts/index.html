@@ -62,51 +62,91 @@
 
         <header class="header">
             <div class="header__wrap container">
-                <div class="header__desktop-panel">
-                    <div class="header__smartphone-panel">
-                        <a class="header__logo" href="#">
-                            Лабмедиа
-                        </a>
-                        <div class="header__actions">
-                            <div class="header__phone">
-                                <a class="button button--square button--smaller button--header-action mfp-search-handler" href="#search">
-                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
-                                    </svg>
-                                    <span class="visuallyhidden">Поиск</span>
+                <div class="header__panel">
+                    <div class="header__smartphone">
+                        <div class="header__smartphone-wrap container">
+                            <div class="header__smartphone-panel">
+                                <a class="header__logo" href="#">
+                                    Лабмедиа
                                 </a>
+                                <div class="header__actions">
+                                    <div class="header__phone">
+                                        <a class="button button--square button--smaller button--header-action mfp-search-handler" href="#search">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                                            </svg>
+                                            <span class="visuallyhidden">Поиск</span>
+                                        </a>
+                                    </div>
+                                    <div class="header__request">
+                                        <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
+                                            <svg class="button__icon desktop-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
+                                            </svg>
+                                            <span class="smartphone-only">Связаться</span>
+                                        </a>
+                                    </div>
+                                    <button class="header__burger">
+                                        <svg class="header__burger-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.25H13M3 11.75H13M3 8H13" stroke-width="1.3" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="header__burger-cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 11.5L11.5 4.5M4.5 4.5L11.5 11.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="visuallyhidden">Меню</span>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="header__request">
-                                <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
-                                    <svg class="button__icon desktop-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
-                                    </svg>
-                                    <span class="smartphone-only">Связаться</span>
-                                </a>
-                            </div>
-                            <button class="header__burger">
-                                <svg class="header__burger-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 4.25H13M3 11.75H13M3 8H13" stroke-width="1.3" stroke-linecap="round"/>
-                                </svg>
-                                <svg class="header__burger-cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.5 11.5L11.5 4.5M4.5 4.5L11.5 11.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span class="visuallyhidden">Меню</span>
-                            </button>
                         </div>
                     </div>
                     <div class="header__nav">
                         <div class="header__item">
-                            <a class="header__link" href="#">Продукты</a>
-                        </div>
-                        <div class="header__item">
-                            <a class="header__link" href="#">О Лабмедиа</a>
+                            <a class="header__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Вовлекай</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">ДелайКурс</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Готовые курсы</div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="header__item">
                             <a class="header__link" href="#">Кейсы</a>
                         </div>
                         <div class="header__item">
                             <a class="header__link" href="#">Услуги</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">О нас</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Документы</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Вакансии</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Партнерам</div>
+                                    </a>
+                                    <a class="header__sub-link" href="#">
+                                        <div class="header__sub-link-inner">Контакты</div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="header__item">
                             <a class="header__link" href="#">Блог</a>
