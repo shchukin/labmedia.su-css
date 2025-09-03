@@ -325,6 +325,11 @@
                                 height: 20px;
                                 background-image: url("../vectors/footer-chevron.svg");
                                 background-size: contain;
+                                transition: transform 200ms ease;
+                            }
+
+                            .header__item--expanded .header__link::after {
+                                transform: scaleY(-1);
                             }
 
                         .header__menu-dropdown {
@@ -339,6 +344,7 @@
 
                         .header__item--expanded .header__menu-dropdown {
                             display: block;
+                            animation: slide-down var(--transition-slide);
                         }
 
                         .header__item:hover .header__menu-dropdown {

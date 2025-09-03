@@ -227,8 +227,10 @@
     /* Аккордион в шапке (раляет только на смартфонах) */
 
     $('.header__item:has(.header__menu-dropdown) .header__link').on('click', function (event) {
-        event.preventDefault();
-        $(this).parents('.header__item').toggleClass('header__item--expanded');
+        if( ! isDesktop ) {
+            event.preventDefault();
+            $(this).parents('.header__item').toggleClass('header__item--expanded');
+        }
     });
 
 
