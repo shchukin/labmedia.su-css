@@ -124,6 +124,30 @@
 
     /* Поиск -- отдельная специфичная модалка */
 
+    function focusAndOpenKeyboard(el, timeout) {
+        if (!timeout) {
+            timeout = 300; // Устанавливаем задержку по умолчанию 300 мс, чтобы синхронизироваться с анимацией Magnific Popup
+        }
+        if (el) {
+            // Создаём временный input для вызова клавиатуры
+            var __tempEl__ = document.createElement('input');
+            __tempEl__.style.position = 'absolute';
+            __tempEl__.style.top = (el.offsetTop + 7) + 'px';
+            __tempEl__.style.left = el.offsetLeft + 'px';
+            __tempEl__.style.height = 0;
+            __tempEl__.style.opacity = 0;
+            document.body.appendChild(__tempEl__);
+            __tempEl__.focus();
+
+            // Переключаем фокус на целевой элемент после задержки
+            setTimeout(function() {
+                el.focus();
+                el.click(); // Дополнительный клик для имитации пользовательского взаимодействия
+                document.body.removeChild(__tempEl__);
+            }, timeout);
+        }
+    }
+
     $('.mfp-search-handler').magnificPopup({
         type: 'inline',
         removalDelay: 0,
@@ -139,18 +163,12 @@
                 $html.addClass('search-expanded');
 
                 /* Фокус на поле поиска */
-                setTimeout(function () {
-                    // $('.search__field .input__widget').focus();
-                    // $('.search__field .input__widget').click();
-                }, 100);
-
-                    setTimeout(function () {
-                        const $input = $('.search__field .input__widget');
-                        // Создаём событие input для активации клавиатуры
-                        const event = new Event('touchstart', { bubbles: true });
-                        $input[0].dispatchEvent(event);
-                        $input.focus();
-                    }, 300);
+                    var $input = $('.search__field .input__widget');
+                    if ($input.length && $input.is(':visible')) {
+                        focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
+                    } else {
+                        console.log('Элемент ввода не найден или невидим');
+                    }
 
             },
             close: function() {
