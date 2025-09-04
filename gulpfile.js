@@ -152,7 +152,7 @@ gulp.task('styles', function () {
         }))
         .pipe(postcss(processors))
         .pipe(base64({
-            maxImageSize: 20 * 1024, // 200KB threshold
+            maxImageSize: 20 * 1024, // 20KB threshold
             exclude: ['images']
         }))
         .pipe(gulp.dest('build/styles/'))
