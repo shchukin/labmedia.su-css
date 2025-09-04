@@ -175,6 +175,9 @@
     });
 
 
+    var $testInput = $('#test-input');
+    focusAndOpenKeyboard($testInput[0], 1000); // Передаём DOM-элемент и задержку
+
 
 
     /* Подвал */
