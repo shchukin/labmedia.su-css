@@ -164,11 +164,7 @@
 
                 /* Фокус на поле поиска */
                     var $input = $('.search__field .input__widget');
-                    if ($input.length && $input.is(':visible')) {
-                        focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
-                    } else {
-                        console.log('Элемент ввода не найден или невидим');
-                    }
+                    focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
 
             },
             close: function() {
@@ -177,6 +173,7 @@
             }
         }
     });
+
 
 
 
