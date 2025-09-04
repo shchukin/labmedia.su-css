@@ -124,29 +124,81 @@
 
     /* Поиск -- отдельная специфичная модалка */
 
-    function focusAndOpenKeyboard(el, timeout) {
-        if (!timeout) {
-            timeout = 300; // Устанавливаем задержку по умолчанию 300 мс, чтобы синхронизироваться с анимацией Magnific Popup
+    function focusAndOpenKeyboard(element) {
+        if (!element) {
+            console.log('Целевой элемент не передан');
+            return;
         }
-        if (el) {
-            // Создаём временный input для вызова клавиатуры
-            var __tempEl__ = document.createElement('input');
+
+        // Функция проверки видимости элемента
+        function isVisible(el) {
+            return el && el.offsetParent !== null;
+        }
+
+        // Функция для фокуса на целевой элемент и очистки
+        function focusOnElementAndCleanup(observer) {
+            element.focus();
+            element.click(); // Дополнительный клик для iOS
+            console.log('Фокус установлен на целевой элемент');
+            if (document.body.contains(__tempEl__)) {
+                document.body.removeChild(__tempEl__);
+                console.log('Временный элемент удалён');
+            }
+            if (observer) {
+                observer.disconnect();
+                console.log('MutationObserver отключён');
+            }
+        }
+
+        // Создание временного input для вызова клавиатуры
+        function focusOnDummyElementToOpenIOSKeyboard() {
+            __tempEl__ = document.createElement('input');
             __tempEl__.style.position = 'absolute';
-            __tempEl__.style.top = (el.offsetTop + 7) + 'px';
-            __tempEl__.style.left = el.offsetLeft + 'px';
-            __tempEl__.style.height = 0;
-            __tempEl__.style.opacity = 0;
+            __tempEl__.style.top = (element.offsetTop + 7) + 'px';
+            __tempEl__.style.left = element.offsetLeft + 'px';
+            __tempEl__.style.height = '0';
+            __tempEl__.style.opacity = '0';
             document.body.appendChild(__tempEl__);
             __tempEl__.focus();
+            console.log('Фокус установлен на временный элемент');
+        }
 
-            // Переключаем фокус на целевой элемент после задержки
-            setTimeout(function() {
-                el.focus();
-                el.click(); // Дополнительный клик для имитации пользовательского взаимодействия
-                document.body.removeChild(__tempEl__);
-            }, timeout);
+        let __tempEl__;
+        // Проверяем, виден ли элемент
+        if (isVisible(element)) {
+            console.log('Элемент уже видим, устанавливаем фокус');
+            focusOnElementAndCleanup();
+        } else {
+            console.log('Элемент невидим, создаём временный input и наблюдаем DOM');
+            focusOnDummyElementToOpenIOSKeyboard();
+
+            // Создаём MutationObserver для отслеживания изменений
+            let observer = new MutationObserver(function (mutationsList) {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList' && isVisible(element)) {
+                        focusOnElementAndCleanup(observer);
+                        break;
+                    }
+                }
+            });
+
+            // Наблюдаем за изменениями в DOM (ограничиваем наблюдение родителем попапа, если возможно)
+            observer.observe(document.body, { childList: true, subtree: true });
+
+            // Устанавливаем таймаут для отключения наблюдателя, чтобы избежать бесконечного ожидания
+            setTimeout(function () {
+                if (observer) {
+                    observer.disconnect();
+                    console.log('MutationObserver отключён по таймауту');
+                    if (document.body.contains(__tempEl__)) {
+                        document.body.removeChild(__tempEl__);
+                        console.log('Временный элемент удалён по таймауту');
+                    }
+                }
+            }, 1000); // Таймаут 1 секунда
         }
     }
+
 
     $('.mfp-search-handler').magnificPopup({
         type: 'inline',
@@ -155,21 +207,20 @@
         // focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
         callbacks: {
             open: function() {
-
-                /* Запомнить скролл пользователя, так как display: none на .page его сбросит (смотри .search-expanded .page) -- актуально на смартфонах */
+                /* Запомнить скролл пользователя */
                 rememberedPageScrollPosition = $(window).scrollTop();
-
-                /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
                 $html.addClass('search-expanded');
 
-                /* Фокус на поле поиска */
-                    var $input = $('.search__field .input__widget');
-                    if ($input.length && $input.is(':visible')) {
-                        focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
+                /* Вызываем функцию только на iOS */
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                    const $input = $('.search__field .input__widget');
+                    if ($input.length) {
+                        console.log('Запуск focusAndOpenKeyboard для .search__field .input__widget');
+                        focusAndOpenKeyboard($input[0]);
                     } else {
-                        console.log('Элемент ввода не найден или невидим');
+                        console.log('Элемент .search__field .input__widget не найден');
                     }
-
+                }
             },
             close: function() {
                 $html.removeClass('search-expanded');
