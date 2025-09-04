@@ -137,6 +137,12 @@
 
                 /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
                 $html.addClass('search-expanded');
+
+                /* Фокус на поле поиска */
+                setTimeout(function () {
+                    $('.search__field .input__widget').focus();
+                    $('.search__field .input__widget').click();
+                }, 100);
             },
             close: function() {
                 $html.removeClass('search-expanded');
