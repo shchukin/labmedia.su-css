@@ -111,12 +111,12 @@
                 }
 
                 /* Фокус на первый инпут, если есть */
-                setTimeout(function (){
-                    const $firstInput = $popup.find('input').first();
-                    if ($firstInput.length) {
-                        $firstInput.focus();
-                    }
-                }, 100);
+                // setTimeout(function (){
+                //     const $firstInput = $popup.find('input').first();
+                //     if ($firstInput.length) {
+                //         $firstInput.focus();
+                //     }
+                // }, 100);
             }
         }
     });
@@ -128,7 +128,7 @@
         type: 'inline',
         removalDelay: 0,
         showCloseBtn: false,
-        focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
+        // focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
         callbacks: {
             open: function() {
 
@@ -140,9 +140,18 @@
 
                 /* Фокус на поле поиска */
                 setTimeout(function () {
-                    $('.search__field .input__widget').focus();
-                    $('.search__field .input__widget').click();
+                    // $('.search__field .input__widget').focus();
+                    // $('.search__field .input__widget').click();
                 }, 100);
+
+                    setTimeout(function () {
+                        const $input = $('.search__field .input__widget');
+                        // Создаём событие input для активации клавиатуры
+                        const event = new Event('touchstart', { bubbles: true });
+                        $input[0].dispatchEvent(event);
+                        $input.focus();
+                    }, 300);
+
             },
             close: function() {
                 $html.removeClass('search-expanded');
