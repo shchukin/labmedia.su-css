@@ -128,6 +128,7 @@
         type: 'inline',
         removalDelay: 0,
         showCloseBtn: false,
+        focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
         callbacks: {
             open: function() {
 
@@ -136,11 +137,6 @@
 
                 /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
                 $html.addClass('search-expanded');
-
-                /* Фокус на поле поиска */
-                setTimeout(function () {
-                    $('.search__field .input__widget').focus();
-                }, 100);
             },
             close: function() {
                 $html.removeClass('search-expanded');
