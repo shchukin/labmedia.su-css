@@ -1,4 +1,8 @@
 .search {
+    --search-submit-width: 90px;
+}
+
+.search {
     width: 704px;
     padding: 8px 8px 24px;
 }
@@ -19,7 +23,8 @@
             position: absolute;
             z-index: 10;
             left: 14px;
-            top: 18px;
+            top: 50%;
+            margin-top: -8px;
             stroke: var(--txt-simple-gray);
             pointer-events: none;
         }
@@ -29,12 +34,20 @@
         }
             .search__field .input__widget {
                 padding-left: 44px;
-                padding-right: 144px !important; /* Перебиваем более сложный паддинг внутри _input.scss */
             }
 
-            .search__field .input__clear-type {
-                right: 94px;
+            .search:has(.search__submit) .input__widget {
+                padding-right: calc(var(--search-submit-width) + 54px) !important; /* Перебиваем более сложный паддинг внутри _input.scss */
             }
+
+            .search__close {
+                display: none !important;
+            }
+                .search__cross {
+                    vertical-align: top;
+                    stroke: var(--stroke-darkblue);
+                    pointer-events: none; /* Баг в mfp */
+                }
 
         .search__submit {
             position: absolute;
@@ -42,6 +55,7 @@
             top: 4px;
         }
             .search__submit .button {
+                width: var(--search-submit-width);
                 padding-left: 24px;
                 padding-right: 24px;
             }
@@ -122,7 +136,32 @@
             }
                 .search__field .input__widget {
                     /*padding-left: 44px;*/
+                    height: 56px;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
                 }
+
+                .search__close {
+                    position: absolute;
+                    top: 0 !important; /* important потому что конфлик с классом mfp */
+                    bottom: 0;
+                    right: 0;
+                    display: flex !important; /* important потому что конфлик с классом mfp */
+                    align-items: center;
+                    justify-content: center;
+                    width: 44px;
+                    height: auto !important; /* important потому что конфлик с классом mfp */
+                    opacity: 100% !important; /* important потому что конфлик с классом mfp */
+                }
+
+                .search:has(.search__submit) .search__close {
+                    right: 94px;
+                }
+                    .search__cross {
+                        vertical-align: top;
+                        stroke: var(--stroke-darkblue);
+                        pointer-events: none; /* Баг в mfp */
+                    }
 
             .search__submit {
                 /*position: absolute;*/
@@ -132,6 +171,9 @@
                 .search__submit .button {
                     /*padding-left: 24px;*/
                     /*padding-right: 24px;*/
+                    height: 48px;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
                 }
 
         .search__results {
