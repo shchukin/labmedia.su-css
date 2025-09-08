@@ -149,6 +149,9 @@
                     display: flex !important; /* important потому что конфлик с классом mfp */
                     align-items: center;
                     justify-content: center;
+                    border: none;
+                    padding: 0;
+                    background-color: transparent;
                     width: 44px;
                     height: auto !important; /* important потому что конфлик с классом mfp */
                     opacity: 100% !important; /* important потому что конфлик с классом mfp */
