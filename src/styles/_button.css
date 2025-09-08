@@ -194,7 +194,7 @@
 }
 
 .button--input-action:hover {
-    background-color: #ECEBF0;
+    background-color: transparent;
     color: var(--stroke-darkblue);
 }
 
