@@ -248,6 +248,10 @@
                     display: block;
                 }
 
+    .search-expanded .mfp-wrap {
+         background-color: transparent;
+    }
+
     .search-expanded .mfp-bg {
         background-color: transparent;
         display: none; /* Хотелось бы оставить, но из-за него продуцируется огромный вертикальный скролл на iOS */

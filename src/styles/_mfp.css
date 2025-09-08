@@ -4,6 +4,7 @@
     right: 0;
     bottom: 0;
     overflow-x: auto !important; /* take back horizontal scrollbar */
+    background-color: rgba(0 0 0 / 80%);
 }
 
 .mfp-container {
@@ -22,13 +23,9 @@
     text-align: center;
 }
 
-/* background color */
+/* Плохо работает на смартфонах, убираем, а фоновый цвет добавлен на mfp-wrap */
 .mfp-bg {
-    width: auto;
-    height: auto;
-    right: 0;
-    bottom: 0;
-    background: rgba(0 0 0 / 80%);
+    display: none;
 }
 
 /* overlay at start */
