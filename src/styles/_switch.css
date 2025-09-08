@@ -28,7 +28,7 @@
         right: 0;
         top: 8px;
         width: 34px;
-        height: 18px;
+        height: 19px;
         background-color: var(--fill-dark-blue-15);
         border-radius: 18px;
         pointer-events: none; /* Since this icon is positioned higher than label, let's make it possible to click through, so that the user interacts only with the label. For now, this icon won't generate its own cursor, for example. */
@@ -37,8 +37,8 @@
         .switch__icon::after {
             content: "";
             position: absolute;
-            left: 1.5px;
-            top: 1.5px;
+            left: 2px;
+            top: 2px;
             width: 15px;
             height: 15px;
             border-radius: 50%;
@@ -62,7 +62,7 @@
     background-color: #2ED57D;
 }
     .switch__widget:checked ~ .switch__icon::after {
-        left: 17.5px;
+        left: 17px;
     }
 
     /* Checked & Hovered */
