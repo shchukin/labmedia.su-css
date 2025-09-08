@@ -40,12 +40,11 @@
                     border-color var(--transition-hover);
     }
 
-    .choice__widget[type="checkbox"] ~ .choice__icon {
-        background-image: url("../vectors/choice-checkbox.svg"); /* by default it can't be seen because of white background */
+    .choice__widget[type="checkbox"]:checked ~ .choice__icon {
+
     }
 
-    .choice__widget[type="radio"] ~ .choice__icon {
-        background-image: url("../vectors/choice-radio.svg"); /* by default it can't be seen because of white background */
+    .choice__widget[type="radio"]:checked ~ .choice__icon {
         border-radius: 50%;
     }
 
@@ -65,6 +64,13 @@
     background-color: var(--accent-main-blue);
     border-color: transparent;
 }
+    .choice__widget[type="checkbox"]:checked ~ .choice__icon {
+        background-image: url("../vectors/choice-checkbox.svg"); /* by default it can't be seen because of white background */
+    }
+
+    .choice__widget[type="radio"]:checked ~ .choice__icon {
+        background-image: url("../vectors/choice-radio.svg"); /* by default it can't be seen because of white background */
+    }
 
 
 /* Checked & Hovered */
