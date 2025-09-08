@@ -6,14 +6,6 @@
     margin-right: auto;
 }
 
-
-/* этот контейнер уже резиновый: */
-.container--wide {
-    width: 100%;
-    max-width: calc(1280px + 2 * var(--container-padding));
-}
-
-
 @media (width < 740px) {
 
     .container {

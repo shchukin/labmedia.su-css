@@ -131,19 +131,21 @@
                 }
 
 
-
-    .footer__separator {
-
+    .footer__info {
+        position: relative;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
-        .footer__line {
+        .footer__info::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
             height: 1px;
             background-color: var(--stroke-gray-border);
         }
 
-    .footer__info {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
         .footer__info-inner {
 
         }
@@ -363,19 +365,15 @@
                     }
 
 
-
-        .footer__separator {
-
-        }
-            .footer__line {
-                display: none;
-            }
-
         .footer__info {
             padding-top: 0;
             padding-bottom: 0;
             display: block;
         }
+            .footer__info::before {
+                display: none;
+            }
+
             .footer__info-inner {
                 border-bottom: 1px solid var(--stroke-gray-border);
             }
