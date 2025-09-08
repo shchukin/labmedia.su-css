@@ -28,10 +28,6 @@
     background-color: var(--accent-main-blue-2);
 }
 
-.button:active {
-    translate: 0 1px;
-    transition: none;
-}
 
 .button:disabled,
 .button:disabled:hover,
