@@ -110,13 +110,13 @@
                     });
                 }
 
-                /* Фокус на первый инпут, если есть */
-                // setTimeout(function (){
-                //     const $firstInput = $popup.find('input').first();
-                //     if ($firstInput.length) {
-                //         $firstInput.focus();
-                //     }
-                // }, 100);
+                /* Focus on the first input, if any */
+                setTimeout(function () {
+                    const $firstInput = $popup.find('input').first();
+                    if ($firstInput.length) {
+                        $firstInput.focus();
+                    }
+                }, 100);
             }
         }
     });
@@ -124,35 +124,11 @@
 
     /* Поиск -- отдельная специфичная модалка */
 
-    function focusAndOpenKeyboard(el, timeout) {
-        if (!timeout) {
-            timeout = 300; // Устанавливаем задержку по умолчанию 300 мс, чтобы синхронизироваться с анимацией Magnific Popup
-        }
-        if (el) {
-            // Создаём временный input для вызова клавиатуры
-            var __tempEl__ = document.createElement('input');
-            __tempEl__.style.position = 'absolute';
-            __tempEl__.style.top = (el.offsetTop + 7) + 'px';
-            __tempEl__.style.left = el.offsetLeft + 'px';
-            __tempEl__.style.height = 0;
-            __tempEl__.style.opacity = 0;
-            document.body.appendChild(__tempEl__);
-            __tempEl__.focus();
-
-            // Переключаем фокус на целевой элемент после задержки
-            setTimeout(function() {
-                el.focus();
-                el.click(); // Дополнительный клик для имитации пользовательского взаимодействия
-                document.body.removeChild(__tempEl__);
-            }, timeout);
-        }
-    }
-
     $('.mfp-search-handler').magnificPopup({
         type: 'inline',
         removalDelay: 0,
         showCloseBtn: false,
-        // focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
+        focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
         callbacks: {
             open: function() {
 
@@ -161,10 +137,6 @@
 
                 /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
                 $html.addClass('search-expanded');
-
-                /* Фокус на поле поиска */
-                var $input = $('.search__field .input__widget');
-                focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
 
                 /* Очистка и закрытие по внутреннему крестику */
                 $('.search__close').on('click', function() {
@@ -179,11 +151,6 @@
             }
         }
     });
-
-
-    var $testInput = $('#test-input');
-    focusAndOpenKeyboard($testInput[0], 1000); // Передаём DOM-элемент и задержку
-
 
 
     /* Подвал */
