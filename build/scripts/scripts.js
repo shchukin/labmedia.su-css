@@ -163,12 +163,18 @@
                 $html.addClass('search-expanded');
 
                 /* Фокус на поле поиска */
-                    var $input = $('.search__field .input__widget');
-                    focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
+                var $input = $('.search__field .input__widget');
+                focusAndOpenKeyboard($input[0], 2000); // Передаём DOM-элемент и задержку
 
+                /* Очистка и закрытие по внутреннему крестику */
+                $('.search__close').on('click', function() {
+                    $.magnificPopup.instance.close();
+                });
             },
             close: function() {
                 $html.removeClass('search-expanded');
+                $('.search__field .input__widget').val('');
+                $('.search__close').off('click');
                 $(window).scrollTop(rememberedPageScrollPosition);/* При закрытии меню скролл должен быть там, где пользователь его оставил */
             }
         }

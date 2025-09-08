@@ -44,7 +44,7 @@
 
         <!-- assets -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../styles/styles.css?1756967208">
+        <link rel="stylesheet" href="../styles/styles.css?1757338295">
 
     </head>
     <body>
@@ -56,9 +56,14 @@
         <![endif]-->
 
 
-        <div class="info">
-            Это баннер
-        </div>
+        <!-- Здесь либо вёрстка. Любой вариант любой высоты. ВАЖНО! Не используем слова типа Banner -- блокировщики рекламы забанят. У меня кодовое слово info: -->
+        <a class="info" href="#">
+            <picture>
+                <source srcset="../temp/banner/banner-desktop@2x.jpg 2x, ../temp/banner/banner-desktop@1x.jpg 1x" media="(min-width: 740px)">
+                <source srcset="../temp/banner/banner-smartphone@2x.jpg 2x, ../temp/banner/banner-smartphone@1x.jpg 1x" media="(max-width: 739px)">
+                <img class="info__image" src="../temp/banner/banner-desktop@1x.jpg" width="1920" height="56" alt="">
+            </picture>
+        </a>
 
         <header class="header">
             <div class="header__wrap container">
@@ -458,14 +463,12 @@
                     <div class="search__field">
                         <div class="input">
                             <input class="input__widget" type="text" placeholder="Что ищем?">
-                            <div class="input__clear-type">
-                                <button class="button button--square button--smaller button--input-action" type="button" tabindex="-1">
-                                    <svg class="button__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12L12 4M4 4L12 12"/>
-                                    </svg>
-                                </button>
-                            </div>
                         </div>
+                        <button class="search__close" type="button">
+                            <svg class="search__cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12L12 4M4 4L12 12"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="search__submit">
                         <button class="button button--smaller" type="button">
@@ -543,7 +546,7 @@
 
         <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
         <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-        <script src="../scripts/scripts.js?1756967208"></script>
+        <script src="../scripts/scripts.js?1757338295"></script>
 
     </body>
 </html>
