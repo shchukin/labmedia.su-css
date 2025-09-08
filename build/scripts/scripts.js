@@ -172,16 +172,28 @@
 
     let scrolled = $(window).scrollTop();
     let scrolledBefore = 0;
-    const sensitivity = 5;
+    const sensitivity = 40;
+
+    function throttle(func, delay) {
+        let lastCall = 0;
+        return function(...args) {
+            const now = new Date().getTime();
+            if (now - lastCall < delay) {
+                return;
+            }
+            lastCall = now;
+            return func.apply(this, args);
+        };
+    }
 
     function scrolling() {
         scrolled = $(window).scrollTop();
-        if ( scrolled > 0 ) {
+        if (scrolled > 0) {
             $html.addClass('scrolled');
         } else {
             $html.removeClass('scrolled');
         }
-        // if ( scrolled > 126 ) {
+        // if (scrolled > 126) {
         //     $html.addClass('scrolled126plus');
         // } else {
         //     $html.removeClass('scrolled126plus');
@@ -197,10 +209,11 @@
         }
     }
 
-    $(window).on('scroll', scrolling);
-    $(window).on('resize', scrolling);
-    $(document).ready(scrolling);
+    const throttledScrolling = throttle(scrolling, 100);
 
+    $(window).on('scroll', throttledScrolling);
+    $(window).on('resize', throttledScrolling);
+    $(document).ready(throttledScrolling);
 
     /* Бургер */
 
