@@ -165,56 +165,58 @@
     });
 
 
-
-    /* Шапка */
-
-    /* Классы scrolled, scrolling-down, scrolling-up */
-
-    let scrolled = $(window).scrollTop();
-    let scrolledBefore = 0;
-    const sensitivity = 40;
-
-    function throttle(func, delay) {
-        let lastCall = 0;
-        return function(...args) {
-            const now = new Date().getTime();
-            if (now - lastCall < delay) {
-                return;
-            }
-            lastCall = now;
-            return func.apply(this, args);
-        };
-    }
-
-    function scrolling() {
-        scrolled = $(window).scrollTop();
-        if (scrolled > 0) {
-            $html.addClass('scrolled');
-        } else {
-            $html.removeClass('scrolled');
-        }
-        // if (scrolled > 126) {
-        //     $html.addClass('scrolled126plus');
-        // } else {
-        //     $html.removeClass('scrolled126plus');
-        // }
-
-        if (Math.abs(scrolled - scrolledBefore) > sensitivity) {
-            if (scrolled > scrolledBefore) {
-                $html.addClass('scrolling-down').removeClass('scrolling-up');
-            } else {
-                $html.addClass('scrolling-up').removeClass('scrolling-down');
-            }
-            scrolledBefore = scrolled; // Update scrolledBefore only when classes are toggled
-        }
-    }
-
-    const throttledScrolling = throttle(scrolling, 100);
-
-    $(window).on('scroll', throttledScrolling);
-    $(window).on('resize', throttledScrolling);
-    $(document).ready(throttledScrolling);
-
+    //
+    // /* Шапка */
+    //
+    // /* Классы scrolled, scrolling-down, scrolling-up */
+    //
+    // let scrolled = $(window).scrollTop();
+    // let scrolledBefore = 0;
+    // const sensitivity = 40;
+    //
+    // function throttle(func, delay) {
+    //     let lastCall = 0;
+    //     return function(...args) {
+    //         const now = new Date().getTime();
+    //         if (now - lastCall < delay) {
+    //             return;
+    //         }
+    //         lastCall = now;
+    //         return func.apply(this, args);
+    //     };
+    // }
+    //
+    // function scrolling() {
+    //     scrolled = $(window).scrollTop();
+    //     if (scrolled > 0) {
+    //         $html.addClass('scrolled');
+    //     } else {
+    //         $html.removeClass('scrolled');
+    //     }
+    //     // if (scrolled > 126) {
+    //     //     $html.addClass('scrolled126plus');
+    //     // } else {
+    //     //     $html.removeClass('scrolled126plus');
+    //     // }
+    //
+    //     if (Math.abs(scrolled - scrolledBefore) > sensitivity) {
+    //         if (scrolled > scrolledBefore) {
+    //             $html.addClass('scrolling-down').removeClass('scrolling-up');
+    //         } else {
+    //             $html.addClass('scrolling-up').removeClass('scrolling-down');
+    //         }
+    //         scrolledBefore = scrolled; // Update scrolledBefore only when classes are toggled
+    //     }
+    // }
+    //
+    // const throttledScrolling = throttle(scrolling, 100);
+    //
+    // $(window).on('scroll', throttledScrolling);
+    // $(window).on('resize', throttledScrolling);
+    // $(document).ready(throttledScrolling);
+    //
+    //
+    //
     /* Бургер */
 
     $('.header__burger').on('click', function () {
