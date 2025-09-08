@@ -31,6 +31,7 @@
 /* Константы из фигмы */
 :root {
     --modal-shadow: 0 15px 35px 0 rgb(50 47 61 / 8%);
+    --blur-15: blur(5px); /* Браузеру нужно сильно меньшее значение, чем в фигме */
     --bg-white-purple-darker: #ECEBF1;
     --bg-total-white: #FFFFFF;
     --bg-white-purple: #F7F6FB;

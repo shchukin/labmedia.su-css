@@ -56,9 +56,14 @@
         <![endif]-->
 
 
-        <div class="info">
-            Это баннер
-        </div>
+        <!-- Здесь либо вёрстка. Любой вариант любой высоты. ВАЖНО! Не используем слова типа Banner -- блокировщики рекламы забанят. У меня кодовое слово info: -->
+        <a class="info" href="#">
+            <picture>
+                <source srcset="../temp/banner/banner-desktop@2x.jpg 2x, ../temp/banner/banner-desktop@1x.jpg 1x" media="(min-width: 740px)">
+                <source srcset="../temp/banner/banner-smartphone@2x.jpg 2x, ../temp/banner/banner-smartphone@1x.jpg 1x" media="(max-width: 739px)">
+                <img class="info__image" src="../temp/banner/banner-desktop@1x.jpg" width="1920" height="56" alt="">
+            </picture>
+        </a>
 
         <header class="header">
             <div class="header__wrap container">

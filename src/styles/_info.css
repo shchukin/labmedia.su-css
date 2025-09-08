@@ -2,7 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* обрезаем широкую картинку */
     height: 56px;
-    background-color: purple;
-    color: white;
+    background-color: #271718;
 }
+    .info__image {
+        vertical-align: top;
+        width: auto;
+        height: 100%;
+    }
