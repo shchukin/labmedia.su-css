@@ -107,7 +107,7 @@
 .button--blur {
     background-color: var(--fill-total-white-15);
     color: var(--txt-dark-blue);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
 }
 
 .button--blur:hover {
@@ -119,7 +119,7 @@
 .button--blur:disabled:hover,
 .button--blur:disabled:active {
     background-color: var(--fill-total-white-15);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
     opacity: 50%;
 }
 
@@ -168,7 +168,7 @@
 .button--product-action {
     background-color: var(--fill-total-white-15);
     color: var(--fill-total-white);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
 }
 
 .button--product-action:hover {
