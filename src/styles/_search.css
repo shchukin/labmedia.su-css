@@ -108,13 +108,13 @@
 @media (width < 740px) {
 
     .search {
+        padding-top: 0;
         width: 100%;
         /*padding: 8px 8px 24px;*/
-        padding-top: 68px;
     }
         .search__form {
             /*position: relative;*/
-            position: fixed;
+            position: sticky; /* логично было бы fixed, но не работает на айфоне */
             left: 0;
             top: 0;
             right: 0;
@@ -244,9 +244,13 @@
                 margin: 0;
                 transition: none;
             }
+                .search-expanded .window {
+                    display: block;
+                }
 
     .search-expanded .mfp-bg {
         background-color: transparent;
+        display: none; /* Хотелось бы оставить, но из-за него продуцируется огромный вертикальный скролл на iOS */
     }
 
     .search-expanded .window {
