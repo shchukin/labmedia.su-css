@@ -28,9 +28,9 @@
 }
 
 
-
-
+/* Константы из фигмы */
 :root {
+    --modal-shadow: 0 15px 35px 0 rgb(50 47 61 / 8%);
     --bg-white-purple-darker: #ECEBF1;
     --bg-total-white: #FFFFFF;
     --bg-white-purple: #F7F6FB;

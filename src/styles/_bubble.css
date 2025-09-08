@@ -16,7 +16,7 @@
         display: block;
         padding: 14px 16px;
         background-color: #FFFFFF;
-        /*box-shadow: 0 2px 4px 1px #EAEAEA;*/
+        box-shadow: var(--modal-shadow);
         border-radius: 8px;
         font-family: var(--font);
         font-weight: normal;
@@ -50,7 +50,7 @@
 
     .bubble__chevron {
         position: absolute;
-        z-index: 10;
+        z-index: 20;
         bottom: -10px;
         left: 0;
         right: 0;
