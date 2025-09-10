@@ -245,17 +245,24 @@
 }
 
 
-/* В чистом виде пока не встречалась (только квадратная).  */
+/* В чистом виде пока не встречалась (используется только квадратная). Можно добавь font-size и отступы */
 .button--medium {
     height: 48px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
 }
+
+.button--medium:has(.button__icon) {
+
+}
+    .button--medium .button__icon {
+        width: 16px;
+        height: 16px;
+    }
 
 .button--medium.button--square {
     width: 48px;
     padding-left: 0;
     padding-right: 0;
 }
-
 
 
 
