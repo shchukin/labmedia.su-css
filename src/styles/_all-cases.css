@@ -1,5 +1,6 @@
 .all-cases {
     padding-top: var(--top-padding);
+    padding-bottom: 136px;
 }
     .all-cases__heading {
         margin-top: 0;
@@ -16,4 +17,31 @@
         margin-top: 32px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
     }
+
+
+
+@media (width < 740px) {
+
+    .all-cases {
+        /*padding-top: var(--top-padding);*/
+        padding-bottom: 80px;
+    }
+        .all-cases__heading {
+            /*margin-top: 0;*/
+            /*margin-bottom: 0;*/
+        }
+
+        .all-cases__filters {
+            /*margin-top: 48px;*/
+            /*height: 52px;*/
+            /*background: red;*/
+        }
+
+        .all-cases__list {
+            /*margin-top: 32px;*/
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 16px;
+        }
+}
