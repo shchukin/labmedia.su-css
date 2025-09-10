@@ -37,7 +37,7 @@
             }
 
             .search:has(.search__submit) .input__widget {
-                padding-right: calc(var(--search-submit-width) + 54px) !important; /* Перебиваем более сложный паддинг внутри _input.scss */
+                padding-right: calc(var(--search-submit-width) + 16px) !important; /* Перебиваем более сложный паддинг внутри _input.scss */
             }
 
             .search__close {
@@ -136,9 +136,14 @@
             }
                 .search__field .input__widget {
                     /*padding-left: 44px;*/
+                    padding-right: 40px;
                     height: 56px;
                     padding-top: 16px;
                     padding-bottom: 16px;
+                }
+
+                .search:has(.search__submit) .input__widget {
+                    padding-right: calc(var(--search-submit-width) + 44px) !important; /* Перебиваем более сложный паддинг внутри _input.scss */
                 }
 
                 .search__close {
@@ -155,6 +160,7 @@
                     width: 44px;
                     height: auto !important; /* important потому что конфлик с классом mfp */
                     opacity: 100% !important; /* important потому что конфлик с классом mfp */
+                    cursor: pointer;
                 }
 
                 .search:has(.search__submit) .search__close {

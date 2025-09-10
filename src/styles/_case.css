@@ -48,7 +48,7 @@
 
     .case__body {
         position: relative;
-        padding: 16px;
+        padding: 8px 16px 22px;
     }
         .case__filters {
             display: flex;
@@ -66,7 +66,7 @@
                     content: "";
                     position: absolute;
                     left: 8px;
-                    top: 7px;
+                    top: 15px;
                     width: 6px;
                     height: 6px;
                     background-color: var(--fill-white-purple-darker-2);
@@ -80,6 +80,8 @@
                 .case__filter-link {
                     display: block;
                     width: fit-content;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
                     font-size: 14px;
                     line-height: 20px;
                     color: var(--accent-main-blue);
@@ -91,26 +93,44 @@
                 }
 
         .case__heading {
+            margin-top: 4px;
+            margin-bottom: 0;
             font-size: 24px;
             line-height: 29px;
+            letter-spacing: -0.5px;
         }
 
         .case__description {
-
+            margin-top: 12px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         .case__data {
-
+            margin-top: 24px;
         }
             .case__stat {
+                margin-top: 10px;
+            }
 
+            .case__stat:first-child {
+                margin-top: 0;
             }
                 .case__param {
-
+                    display: inline;
+                    vertical-align: baseline;
+                    font-weight: 300;
+                    font-size: 40px;
+                    line-height: 48px;
+                    letter-spacing: -0.25px;
                 }
 
                 .case__value {
-
+                    margin-left: 4px;
+                    display: inline;
+                    vertical-align: baseline;
+                    font-size: 14px;
+                    line-height: 20px;
                 }
 
         .case__details {
@@ -118,6 +138,3 @@
             right: 16px;
             bottom: 16px;
         }
-            .case__chevron {
-
-            }

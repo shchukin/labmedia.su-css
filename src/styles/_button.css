@@ -160,7 +160,7 @@
 
 .button--case-action:hover {
     background-color: var(--fill-light-gray);
-    box-shadow: inset 0 0 0 var(--stroke-gray);
+    box-shadow: inset 0 0 0 1px var(--stroke-gray-border-2);
     color: var(--stroke-darkblue);
 }
 
@@ -200,16 +200,6 @@
 
 
 
-
-.button--smaller {
-    height: 44px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
-    padding: 12px 30px;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-
-
 .button:has(.button__icon) {
     padding-left: 16px;
     padding-right: 16px;
@@ -219,6 +209,24 @@
         height: 20px;
         stroke: currentColor;
     }
+
+
+.button--square {
+    min-width: 0;
+    width: 52px;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+}
+
+
+
+.button--smaller {
+    height: 44px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    padding: 12px 30px;
+    font-size: 14px;
+    line-height: 20px;
+}
 
 .button--smaller:has(.button__icon) {
     gap: 8px;
@@ -230,21 +238,24 @@
         height: 16px;
     }
 
-
-
-.button--square {
-    min-width: 0;
-    width: 52px;
-    padding-left: 0;
-    padding-right: 0;
-    justify-content: center;
-}
-
-.button--square:has(.button__icon) {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.button--square.button--smaller {
+.button--smaller.button--square {
     width: 44px;
+    padding-left: 0;
+    padding-right: 0;
 }
+
+
+/* В чистом виде пока не встречалась (только квадратная).  */
+.button--medium {
+    height: 48px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
+}
+
+.button--medium.button--square {
+    width: 48px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
+
