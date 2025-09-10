@@ -85,7 +85,8 @@
                     font-size: 14px;
                     line-height: 20px;
                     color: var(--accent-main-blue);
-                    text-decoration: none;
+                    text-decoration: 1px underline transparent;
+                    text-underline-offset: 4px;
                 }
 
                 .case__filter-link:hover {
@@ -99,6 +100,17 @@
             line-height: 29px;
             letter-spacing: -0.5px;
         }
+            .case__link {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                color: inherit;
+                text-decoration: 1.5px underline transparent;
+                text-underline-offset: 3px;
+            }
+
+            .case__link:hover {
+                text-decoration-color: currentColor;
+            }
 
         .case__description {
             margin-top: 12px;
