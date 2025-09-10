@@ -215,6 +215,8 @@
     $(window).on('resize', throttledScrolling);
     $(document).ready(throttledScrolling);
 
+
+
     /* Бургер */
 
     $('.header__burger').on('click', function () {
