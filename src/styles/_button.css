@@ -188,12 +188,12 @@
 }
 
 
-.button--input-action {
+.button--cleartype-action {
     background-color: transparent;
     color: var(--fill-dark-blue);
 }
 
-.button--input-action:hover {
+.button--cleartype-action:hover {
     background-color: transparent;
     color: var(--stroke-darkblue);
 }
