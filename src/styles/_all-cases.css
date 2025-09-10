@@ -1,0 +1,19 @@
+.all-cases {
+    padding-top: var(--top-padding);
+}
+    .all-cases__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .all-cases__filters {
+        margin-top: 48px;
+        height: 52px;
+        background: red;
+    }
+
+    .all-cases__list {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }

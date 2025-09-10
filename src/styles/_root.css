@@ -10,6 +10,7 @@
     --info-height: 56px;
     --popup-vertical-padding: 8px;
     --popup-horizontal-padding: 64px;
+    --top-padding: 64px;
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/
     /*--input-border-hover-and-focus: #7E7E7E;*/
@@ -32,6 +33,8 @@
 :root {
     --modal-shadow: 0 15px 35px 0 rgb(50 47 61 / 8%);
     --blur-15: blur(5px); /* Браузеру нужно сильно меньшее значение, чем в фигме */
+    --blur-32: blur(10px); /* Браузеру нужно сильно меньшее значение, чем в фигме */
+    --background-blur: blur(10px);
     --bg-white-purple-darker: #ECEBF1;
     --bg-total-white: #FFFFFF;
     --bg-white-purple: #F7F6FB;

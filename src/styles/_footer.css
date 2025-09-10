@@ -1,5 +1,5 @@
 .footer {
-
+    background-color: var(--bg-white-purple-darker);
 }
     .footer__request {
         padding-top: 100px;

@@ -1,0 +1,123 @@
+.case {
+    padding: 8px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+}
+    .case__preview {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+        .case__illustration {
+            vertical-align: top;
+            width: 100%;
+            aspect-ratio: 348/264;
+            object-fit: cover;
+        }
+
+        .case__badges {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .case__screenshot-wrap {
+            position: absolute;
+            inset: 0;
+            padding: 29px 42px;
+            opacity: 0;
+            backdrop-filter: var(--background-blur);
+            visibility: hidden;
+            transition: opacity 200ms ease,
+                        visibility 200ms ease;
+        }
+
+        .case__preview:hover .case__screenshot-wrap {
+            opacity: 100%;
+            visibility: visible;
+        }
+            .case__screenshot {
+                position: absolute;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+
+    .case__body {
+        position: relative;
+        padding: 16px;
+    }
+        .case__filters {
+            display: flex;
+            align-items: flex-start;
+        }
+            .case__filter-item {
+                position: relative;
+                padding-left: 22px;
+            }
+
+            .case__filter-item:first-child {
+                padding-left: 0;
+            }
+                .case__filter-item::before {
+                    content: "";
+                    position: absolute;
+                    left: 8px;
+                    top: 7px;
+                    width: 6px;
+                    height: 6px;
+                    background-color: var(--fill-white-purple-darker-2);
+                    border-radius: 50%;
+                }
+
+                .case__filter-item:first-child::before {
+                    display: none;
+                }
+
+                .case__filter-link {
+                    display: block;
+                    width: fit-content;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: var(--accent-main-blue);
+                    text-decoration: none;
+                }
+
+                .case__filter-link:hover {
+                    text-decoration-color: currentColor;
+                }
+
+        .case__heading {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        .case__description {
+
+        }
+
+        .case__data {
+
+        }
+            .case__stat {
+
+            }
+                .case__param {
+
+                }
+
+                .case__value {
+
+                }
+
+        .case__details {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+        }
+            .case__chevron {
+
+            }

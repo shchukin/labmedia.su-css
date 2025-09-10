@@ -1,0 +1,58 @@
+.badge {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 6px;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.badge--awards {
+    background-color: rgb(255 255 255 / 40%);
+    background-image: url("../images/badges/badge-award.svg");
+    backdrop-filter: var(--blur-32);
+}
+
+
+.badge--vovlekai {
+    background-color: #F5E76E;
+    background-image: url("../images/badges/badge-vovlekai@1x.png");
+}
+
+@media (min-resolution: 1.5dppx) {
+
+    .badge--vovlekai {
+        background-image: url("../images/badges/badge-vovlekai@2x.png");
+    }
+}
+
+
+
+.badge--delai-kurs {
+    background-color: #DDC2FF;
+    background-image: url("../images/badges/badge-delai-kurs@1x.png");
+}
+
+@media (min-resolution: 1.5dppx) {
+
+    .badge--delai-kurs {
+        background-image: url("../images/badges/badge-delai-kurs@2x.png");
+    }
+}
+
+
+
+.badge--new {
+    width: fit-content;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #2ED57D;
+    color: #FFFFFF;
+    text-indent: 0;
+}

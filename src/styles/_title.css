@@ -1,0 +1,9 @@
+.title {
+    font-weight: normal;
+    letter-spacing: -0.03em;
+}
+
+.title--main {
+    font-size: 48px;
+    line-height: 53px;
+}

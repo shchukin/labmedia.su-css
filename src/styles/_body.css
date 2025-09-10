@@ -1,5 +1,5 @@
 body {
-    background-color: var(--bg-white-purple-darker);
+    background-color: var(--bg-white-purple);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: var(--font);
