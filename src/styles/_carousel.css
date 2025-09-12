@@ -14,7 +14,7 @@
 
                 }
                     .carousel__widget .swiper-slide {
-
+                        height: auto; /* Изначально в свайпере стоит 100%, что как раз наоборот не работает с align-items: stretch на родителе */
                     }
 
 .carousel--top-right-arrows {
