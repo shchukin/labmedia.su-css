@@ -1,7 +1,21 @@
 .carousel {
 
 }
+    .carousel {
 
+    }
+        .carousel__widget {
+
+        }
+            .carousel__widget .swiper {
+
+            }
+                .carousel__widget .swiper-wrapper {
+
+                }
+                    .carousel__widget .swiper-slide {
+
+                    }
 
 .carousel--top-right-arrows {
     position: relative;
@@ -114,7 +128,7 @@
             display: none;
         }
 
-        .carousel--css-disable-on-smartphone::before {
+        .carousel--css-disable-on-desktop::before {
             display: none; /* Фон под стрелочками в некоторых скинах */
         }
 
