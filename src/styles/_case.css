@@ -1,0 +1,23 @@
+.case {
+    display: grid;
+    grid-template-columns: 267px 558px 267px;
+    gap: 24px;
+    padding-top: 86px;
+}
+    .case__sidebar {
+
+    }
+        .case__table-of-contains {
+
+        }
+
+    .case__body {
+
+    }
+
+    .case__aside {
+
+    }
+        .case__desktop-poster {
+
+        }
