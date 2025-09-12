@@ -122,6 +122,33 @@
     });
 
 
+
+
+
+    /* Карусели */
+
+    document.querySelectorAll('.carousel').forEach(($carousel) => {
+
+        if( $carousel.classList.contains('carousel--js-init-case') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 24,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+            });
+        }
+    });
+
+
+
+
+
+
+
     /* Поиск -- отдельная специфичная модалка */
 
     $('.mfp-search-handler').magnificPopup({

@@ -1,0 +1,123 @@
+.carousel {
+
+}
+
+
+/* Похожие кейсы */
+
+.carousel--css-skin-cases {
+
+}
+
+@media (740px <= width) {
+
+    .carousel--css-skin-cases .carousel {
+
+    }
+        .carousel--css-skin-cases .carousel__widget {
+
+        }
+            .carousel--css-skin-cases .carousel__widget .swiper {
+                overflow: visible;
+            }
+                .carousel--css-skin-cases .carousel__widget .swiper-wrapper {
+
+                }
+                    .carousel--css-skin-cases .swiper-slide {
+
+                    }
+}
+
+@media (width < 740px) {
+
+    /* Исходим из того, что на смартфонах эта карусель заблокирована
+       классом carousel--css-disable-on-smartphone
+       Остаётся добавить отступ и скрыть всё кроме первых двух элементов
+     */
+
+    .carousel--css-skin-cases .swiper-slide {
+        margin-top: 8px;
+    }
+
+    .carousel--css-skin-cases .swiper-slide:nth-child(n+3) {
+        display: none;
+    }
+
+    .carousel--css-skin-cases .swiper-slide:first-child {
+        margin-top: 0;
+    }
+}
+
+
+
+
+
+/* Довольно запарно выключать слайдер на одном из разрешений.
+   В данном случае на десктопах. Проще перебить пару стилей:
+ */
+.carousel--css-disable-on-desktop {
+
+}
+
+@media (740px <= width) {
+
+    .carousel--css-disable-on-desktop {
+
+    }
+        .carousel--css-disable-on-desktop .carousel__widget .swiper {
+            overflow: visible;
+        }
+            .carousel--css-disable-on-desktop .carousel__widget .swiper-wrapper {
+                display: block !important;
+                height: auto !important;
+                transform: none !important;
+            }
+                .carousel--css-disable-on-desktop .swiper-slide {
+                    width: auto !important;
+                    margin-right: 0 !important;
+                }
+
+        .carousel--css-disable-on-desktop .carousel__pagination {
+            display: none;
+        }
+
+        .carousel--css-disable-on-desktop .carousel__button {
+            display: none !important;
+        }
+}
+
+
+/* Довольно запарно выключать слайдер на одном из разрешений.
+   В данном случае на смартфонах. Проще перебить пару стилей:
+ */
+.carousel--css-disable-on-smartphone {
+
+}
+
+@media (width < 740px) {
+
+    .carousel--css-disable-on-smartphone {
+
+    }
+        .carousel--css-disable-on-smartphone .carousel__widget .swiper {
+            overflow: visible;
+        }
+            .carousel--css-disable-on-smartphone .carousel__widget .swiper-wrapper {
+                display: block !important;
+                height: auto !important;
+                transform: none !important;
+            }
+                .carousel--css-disable-on-smartphone .swiper-slide {
+                    width: auto !important;
+                    margin-right: 0 !important;
+                }
+
+        .carousel--css-disable-on-smartphone .carousel__pagination {
+            display: none;
+        }
+
+        .carousel--css-disable-on-smartphone .carousel__button {
+            display: none !important;
+        }
+}
+

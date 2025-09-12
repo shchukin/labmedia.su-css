@@ -1,0 +1,22 @@
+.related {
+    padding-top: 106px;
+}
+    .related__wrap {
+
+    }
+        .related__heading {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .related__body {
+            margin-top: 46px;
+        }
+
+    .related::after {
+        content: "";
+        display: block;
+        height: 12px;
+        margin-top: 112px;
+        background-image: linear-gradient(to right, #95C0FF, #E29CFF 75%, #8E8FFF 100%);
+    }
