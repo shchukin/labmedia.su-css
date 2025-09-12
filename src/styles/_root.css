@@ -4,7 +4,7 @@
     --transition-hover: 100ms ease;
     --transition-dropdown: 100ms ease;
     --transition-slide: 600ms var(--ease-out-quint);
-    /*--image-fallback: #F3F5F4;*/
+    --image-fallback: #EEECF4;
     --container-padding: 40px;
     --header-height: 84px;
     --info-height: 56px;

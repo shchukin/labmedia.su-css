@@ -1,0 +1,46 @@
+.video-preview {
+    position: relative;
+    display: block !important; /* Если конфликтует со ссылкой внутри .wysiwyg */
+    padding: 0 !important; /* Если конфликтует со ссылкой внутри .wysiwyg */
+    border-radius: 16px;
+    overflow: hidden; /* Обрезаем и картинку и оврелей */
+}
+    .video-preview__image {
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+        background-color: var(--image-fallback);
+    }
+
+    .video-preview::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0 0 0 / 20%);
+        transition: opacity var(--transition-hover);
+    }
+
+    .video-preview:hover::before {
+        opacity: 0;
+    }
+
+    .video-preview::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        display: block;
+        width: 48px;
+        height: 48px;
+        background-color: #AB8B71;
+        background-image: url("../vectors/video-preview-play-icon.svg");
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 6px;
+        transition: opacity var(--transition-hover);
+    }
+
+    .video-preview:hover::after {
+        opacity: 0;
+    }
