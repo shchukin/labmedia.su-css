@@ -360,4 +360,67 @@
     $(window).on('resize', adjustBubblePosition)
 
 
+    /* Кейсы */
+
+    // Add IDs to h2 elements and collect their text for TOC
+    const tocMap = [];
+
+    $('.case__content h2').each(function(index) {
+        const id = `section-${index + 1}`;
+        $(this).attr('id', id);
+        tocMap.push({
+            id: id,
+            text: $(this).text()
+        });
+    });
+
+    // Generate TOC links
+    const $tocList = $('.table-of-contains__list');
+    $tocList.empty(); // Clear existing links
+    tocMap.forEach(link => {
+        $tocList.append(
+            `<a class="table-of-contains__link" href="#${link.id}">${link.text}</a>`
+        );
+    });
+
+    // Smooth scroll to section on link click
+    $('.table-of-contains__link').on('click', function(e) {
+        e.preventDefault();
+        const targetId = $(this).attr('href');
+        const targetElement = $(targetId);
+        const targetOffset = targetElement.offset().top;
+        const currentScroll = $(window).scrollTop();
+        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
+
+        // Adjust offset: 40px if scrolling down, 40px + header height if scrolling up
+        const offset = currentScroll < targetOffset ? 40 : 40 + headerHeight;
+
+        $('html, body').animate({
+            scrollTop: targetOffset - offset
+        }, 800);
+    });
+
+    // Scrollspy functionality with throttle
+    const scrollSpy = throttle(function() {
+        let currentSection = '';
+
+        $('.case__content h2').each(function() {
+            const sectionTop = $(this).offset().top;
+            const scrollPosition = $(window).scrollTop();
+
+            // Check if section is in viewport (adjust 100px offset as needed)
+            if (scrollPosition >= sectionTop - 100) {
+                currentSection = `#${$(this).attr('id')}`;
+            }
+        });
+
+        // Update active class
+        $('.table-of-contains__link').removeClass('table-of-contains__link--current');
+        if (currentSection) {
+            $(`.table-of-contains__link[href="${currentSection}"]`).addClass('table-of-contains__link--current');
+        }
+    }, 100); // Throttle delay set to 100ms
+
+    $(window).on('scroll', scrollSpy);
+
 })(jQuery);

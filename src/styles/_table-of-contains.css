@@ -24,9 +24,14 @@
             color: var(--txt-dark-blue);
             text-decoration: 1px underline transparent;
             text-underline-offset: 4px;
-            transition: text-decoration-color var(--transition-hover);
+            transition: text-decoration-color var(--transition-hover),
+                        color var(--transition-hover);
         }
 
         .table-of-contains__link:hover {
             text-decoration-color: currentColor;
+        }
+
+        .table-of-contains__link--current {
+            color: var(--accent-main-blue);
         }
