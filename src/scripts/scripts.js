@@ -423,5 +423,7 @@
     }, 100); // Throttle delay set to 100ms
 
     $(window).on('scroll', scrollSpy);
+    $(window).on('load', scrollSpy);
+    $(document).on('ready', scrollSpy);
 
 })(jQuery);
