@@ -122,6 +122,52 @@
     });
 
 
+
+
+
+    /* Карусели */
+
+    document.querySelectorAll('.carousel').forEach(($carousel) => {
+
+        if( $carousel.classList.contains('carousel--js-init-case') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 24,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+            });
+        }
+
+        if( $carousel.classList.contains('carousel--js-article-gallery') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 24,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.carousel__pagination',
+                    bulletClass: 'carousel__bullet',
+                    bulletActiveClass: 'carousel__bullet--current',
+                },
+            });
+        }
+    });
+
+
+
+
+
+
+
     /* Поиск -- отдельная специфичная модалка */
 
     $('.mfp-search-handler').magnificPopup({
@@ -313,5 +359,73 @@
     adjustBubblePosition();
     $(window).on('resize', adjustBubblePosition)
 
+
+
+    /* Содержание на деталке кейса (аббревеатура TOC = Table of Contains)*/
+
+    const tocMap = [];
+    const $tocList = $('.table-of-contains__list');
+    const $tocTargetedHeadings = $('.case__content h2');
+    let $tocLinks;
+
+    /* Список заголовков */
+    $tocTargetedHeadings.each(function(index) {
+        const id = `section-${index + 1}`;
+        $(this).attr('id', id);
+        tocMap.push({
+            id: id,
+            text: $(this).text()
+        });
+    });
+
+    /* Генерируем само содержание */
+    $tocList.empty();
+    tocMap.forEach(link => {
+        $tocList.append(
+            `<a class="table-of-contains__link" href="#${link.id}">${link.text}</a>`
+        );
+    });
+
+    $tocLinks = $('.table-of-contains__link');
+
+    /* Якоря */
+    $tocLinks.on('click', function(e) {
+        e.preventDefault();
+        const targetId = $(this).attr('href');
+        const targetElement = $(targetId);
+        const targetOffset = targetElement.offset().top;
+        const currentScroll = $(window).scrollTop();
+        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
+
+        // Будем тормозить скролл чуть раньше (визуальный отступ). На 50px если скроллим вниз и на 50+шапка, если вверх (при скролле вверх шапка появляется)
+        const offset = currentScroll < targetOffset ? 50 : 50 + headerHeight;
+
+        $('html, body').animate({
+            scrollTop: targetOffset - offset
+        }, 800);
+    });
+
+    /* Scrollspy -- подсветка активного компонента меню */
+    const scrollSpy = throttle(function() {
+        let currentSection = '';
+
+        $tocTargetedHeadings.each(function() {
+            const sectionTop = $(this).offset().top;
+            const scrollPosition = $(window).scrollTop();
+
+            if (scrollPosition >= sectionTop - 200) {
+                currentSection = `#${$(this).attr('id')}`;
+            }
+        });
+
+        $tocLinks.removeClass('table-of-contains__link--current');
+        if (currentSection) {
+            $tocLinks.filter(`[href="${currentSection}"]`).addClass('table-of-contains__link--current');
+        }
+    }, 100);
+
+    $(window).on('scroll', scrollSpy);
+    $(window).on('load', scrollSpy);
+    $(document).on('ready', scrollSpy);
 
 })(jQuery);
