@@ -360,11 +360,13 @@
     $(window).on('resize', adjustBubblePosition)
 
 
-    /* Кейсы */
 
-    // Add IDs to h2 elements and collect their text for TOC
+    /* Содержание на деталке кейса (аббревеатура TOC = Table of Contains)*/
+
     const tocMap = [];
+    const $tocList = $('.table-of-contains__list');
 
+    /* Список заголовков */
     $('.case__content h2').each(function(index) {
         const id = `section-${index + 1}`;
         $(this).attr('id', id);
@@ -374,16 +376,15 @@
         });
     });
 
-    // Generate TOC links
-    const $tocList = $('.table-of-contains__list');
-    $tocList.empty(); // Clear existing links
+    /* Генерируем само содержание */
+    $tocList.empty();
     tocMap.forEach(link => {
         $tocList.append(
             `<a class="table-of-contains__link" href="#${link.id}">${link.text}</a>`
         );
     });
 
-    // Smooth scroll to section on link click
+    /* Якоря */
     $('.table-of-contains__link').on('click', function(e) {
         e.preventDefault();
         const targetId = $(this).attr('href');
@@ -392,15 +393,15 @@
         const currentScroll = $(window).scrollTop();
         const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
 
-        // Adjust offset: 40px if scrolling down, 40px + header height if scrolling up
-        const offset = currentScroll < targetOffset ? 40 : 40 + headerHeight;
+        // Будем тормозить скролл чуть раньше (визуальный отступ). На 50px если скроллим вниз и на 50+шапка, если вверх (при скролле вверх шапка появляется)
+        const offset = currentScroll < targetOffset ? 50 : 50 + headerHeight;
 
         $('html, body').animate({
             scrollTop: targetOffset - offset
         }, 800);
     });
 
-    // Scrollspy functionality with throttle
+    /* Scrollspy -- подсветка активного компонента меню */
     const scrollSpy = throttle(function() {
         let currentSection = '';
 
