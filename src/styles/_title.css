@@ -30,3 +30,17 @@
         line-height: 38px;
     }
 }
+
+
+.title--smallest {
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@media (width < 740px) {
+
+    .title--smallest {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
