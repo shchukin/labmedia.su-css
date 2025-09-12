@@ -65,47 +65,8 @@
         padding: 8px 16px 22px;
     }
         .project__filters {
-            display: flex;
-            align-items: flex-start;
+
         }
-            .project__filter-item {
-                position: relative;
-                padding-left: 22px;
-            }
-
-            .project__filter-item:first-child {
-                padding-left: 0;
-            }
-                .project__filter-item::before {
-                    content: "";
-                    position: absolute;
-                    left: 8px;
-                    top: 15px;
-                    width: 6px;
-                    height: 6px;
-                    background-color: var(--fill-white-purple-darker-2);
-                    border-radius: 50%;
-                }
-
-                .project__filter-item:first-child::before {
-                    display: none;
-                }
-
-                .project__filter-link {
-                    display: block;
-                    width: fit-content;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    font-size: 14px;
-                    line-height: 20px;
-                    color: var(--accent-main-blue);
-                    text-decoration: 1px underline transparent;
-                    text-underline-offset: 4px;
-                }
-
-                .project__filter-link:hover {
-                    text-decoration-color: currentColor;
-                }
 
         .project__heading {
             margin-top: 4px;
@@ -216,30 +177,30 @@
         .project__body {
             padding-bottom: 16px;
         }
-            .project__filters {
+            .simplified-filters {
 
             }
-                .project__filter-item {
+                .simplified-filters__item {
 
                 }
 
-                .project__filter-item:first-child {
+                .simplified-filters__item:first-child {
 
                 }
-                    .project__filter-item::before {
+                    .simplified-filters__item::before {
                         top: 13px;
                     }
 
-                    .project__filter-item:first-child::before {
+                    .simplified-filters__item:first-child::before {
 
                     }
 
-                    .project__filter-link {
+                    .simplified-filters__link {
                         font-size: 12px;
                         line-height: 17px;
                     }
 
-                    .project__filter-link:hover {
+                    .simplified-filters__link:hover {
 
                     }
 
