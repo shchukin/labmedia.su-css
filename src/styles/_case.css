@@ -8,8 +8,16 @@
 
     }
         .case__table-of-contains {
-
+            position: sticky;
+            top: 40px;
+            transition: top var(--header-visibility-transition);
         }
+
+        /* Если возвращается шапка */
+        .scrolling-up .case__table-of-contains {
+            top: calc(40px + var(--header-height));
+        }
+
 
     .case__body {
 
@@ -53,5 +61,12 @@
 
     }
         .case__desktop-poster {
+            position: sticky;
+            top: 40px;
+            transition: top var(--header-visibility-transition);
+        }
 
+        /* Если возвращается шапка */
+        .scrolling-up .case__desktop-poster {
+            top: calc(40px + var(--header-height));
         }

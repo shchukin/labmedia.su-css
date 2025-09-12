@@ -1,5 +1,9 @@
 .poster {
-    height: 386px;
-    background: purple;
+    display: block;
     border-radius: 12px;
+    overflow: hidden; /* Обрезаем уголки всему, что внутри */
 }
+    .poster__image {
+        vertical-align: top;
+        background-color: var(--image-fallback);
+    }
