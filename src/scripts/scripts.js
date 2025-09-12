@@ -365,9 +365,11 @@
 
     const tocMap = [];
     const $tocList = $('.table-of-contains__list');
+    const $tocTargetedHeadings = $('.case__content h2');
+    let $tocLinks;
 
     /* Список заголовков */
-    $('.case__content h2').each(function(index) {
+    $tocTargetedHeadings.each(function(index) {
         const id = `section-${index + 1}`;
         $(this).attr('id', id);
         tocMap.push({
@@ -384,8 +386,10 @@
         );
     });
 
+    $tocLinks = $('.table-of-contains__link');
+
     /* Якоря */
-    $('.table-of-contains__link').on('click', function(e) {
+    $tocLinks.on('click', function(e) {
         e.preventDefault();
         const targetId = $(this).attr('href');
         const targetElement = $(targetId);
@@ -405,7 +409,7 @@
     const scrollSpy = throttle(function() {
         let currentSection = '';
 
-        $('.case__content h2').each(function() {
+        $tocTargetedHeadings.each(function() {
             const sectionTop = $(this).offset().top;
             const scrollPosition = $(window).scrollTop();
 
@@ -414,12 +418,11 @@
             }
         });
 
-        // Update active class
-        $('.table-of-contains__link').removeClass('table-of-contains__link--current');
+        $tocLinks.removeClass('table-of-contains__link--current');
         if (currentSection) {
-            $(`.table-of-contains__link[href="${currentSection}"]`).addClass('table-of-contains__link--current');
+            $tocLinks.filter(`[href="${currentSection}"]`).addClass('table-of-contains__link--current');
         }
-    }, 100); // Throttle delay set to 100ms
+    }, 100);
 
     $(window).on('scroll', scrollSpy);
     $(window).on('load', scrollSpy);
