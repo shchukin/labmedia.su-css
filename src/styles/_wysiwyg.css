@@ -60,7 +60,6 @@
     .wysiwyg--larger ul,
     .wysiwyg--larger ol,
     .wysiwyg--larger hr,
-    .wysiwyg--larger figure,
     .wysiwyg--larger blockquote {
         margin-top: 22px;
         margin-bottom: 22px;
@@ -73,7 +72,6 @@
 .wysiwyg ul:first-child,
 .wysiwyg ol:first-child,
 .wysiwyg hr:first-child,
-.wysiwyg figure:first-child,
 .wysiwyg blockquote:first-child {
     margin-top: 0;
 }
@@ -82,35 +80,54 @@
 .wysiwyg ul:last-child,
 .wysiwyg ol:last-child,
 .wysiwyg hr:last-child,
-.wysiwyg figure:last-child,
 .wysiwyg blockquote:last-child {
     margin-bottom: 0;
 }
 
 
 .wysiwyg h2 {
-
+    margin-top: 72px;
+    margin-bottom: 32px;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
 }
+    @media (width < 740px) {
+        .wysiwyg h2 {
+            margin-top: 48px;
+            margin-bottom: 24px;
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
 
 .wysiwyg h3 {
-
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
 }
-
-.wysiwyg h4 {
-
-}
+    @media (width < 740px) {
+        .wysiwyg h3 {
+            margin-top: 24px;
+            margin-bottom: -12px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
 
 .wysiwyg h2:first-child,
-.wysiwyg h3:first-child,
-.wysiwyg h4:first-child {
+.wysiwyg h3:first-child {
     margin-top: 0;
 }
 
 .wysiwyg h2:last-child,
-.wysiwyg h3:last-child,
-.wysiwyg h4:last-child {
+.wysiwyg h3:last-child {
     margin-bottom: 0;
 }
+
+
 
 .wysiwyg img {
     width: 100%;
@@ -121,8 +138,15 @@
 
 
 .wysiwyg figure {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 40px 0;
+}
+
+.wysiwyg figure:first-child {
+    margin-top: 0;
+}
+
+.wysiwyg figure:last-child {
+    margin-bottom: 0;
 }
     .wysiwyg figcaption {
         margin-top: 12px;
@@ -133,7 +157,8 @@
 @media (width < 740px) {
 
     .wysiwyg figure {
-
+        margin-top: 32px;
+        margin-bottom: 32px;
     }
         .wysiwyg figcaption {
             margin-top: 8px;
