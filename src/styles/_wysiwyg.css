@@ -1,18 +1,21 @@
 .wysiwyg {
     --list-padding: 24px;
+    --font-size: 16px;
+    --line-height: 22px;
 }
 
 @media (width < 740px) {
     .wysiwyg {
         --list-padding: 20px;
+        --font-size: 14px;
+        --line-height: 20px;
     }
-
 }
 
 .wysiwyg {
     overflow-wrap: break-word;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
 }
 
 .wysiwyg p,
@@ -21,26 +24,8 @@
 .wysiwyg hr,
 .wysiwyg figure,
 .wysiwyg blockquote {
-    margin-top: 22px;
-    margin-bottom: 22px;
-}
-
-@media (width < 740px) {
-
-    .wysiwyg {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .wysiwyg p,
-    .wysiwyg ul,
-    .wysiwyg ol,
-    .wysiwyg hr,
-    .wysiwyg figure,
-    .wysiwyg blockquote {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+    margin-top: var(--line-height);
+    margin-bottom: var(--line-height);
 }
 
 
@@ -50,32 +35,32 @@
     line-height: 28px;
 }
 
-.wysiwyg--larger p,
-.wysiwyg--larger ul,
-.wysiwyg--larger ol,
-.wysiwyg--larger hr,
-.wysiwyg--larger figure,
-.wysiwyg--larger blockquote {
-    margin-top: 28px;
-    margin-bottom: 28px;
-}
+/*.wysiwyg--larger p,*/
+/*.wysiwyg--larger ul,*/
+/*.wysiwyg--larger ol,*/
+/*.wysiwyg--larger hr,*/
+/*.wysiwyg--larger figure,*/
+/*.wysiwyg--larger blockquote {*/
+/*    margin-top: 28px;*/
+/*    margin-bottom: 28px;*/
+/*}*/
 
-@media (width < 740px) {
+/*@media (width < 740px) {*/
 
-    .wysiwyg--larger {
-        font-size: 16px;
-        line-height: 22px;
-    }
+/*    .wysiwyg--larger {*/
+/*        font-size: 16px;*/
+/*        line-height: 22px;*/
+/*    }*/
 
-    .wysiwyg--larger p,
-    .wysiwyg--larger ul,
-    .wysiwyg--larger ol,
-    .wysiwyg--larger hr,
-    .wysiwyg--larger blockquote {
-        margin-top: 22px;
-        margin-bottom: 22px;
-    }
-}
+/*    .wysiwyg--larger p,*/
+/*    .wysiwyg--larger ul,*/
+/*    .wysiwyg--larger ol,*/
+/*    .wysiwyg--larger hr,*/
+/*    .wysiwyg--larger blockquote {*/
+/*        margin-top: 22px;*/
+/*        margin-bottom: 22px;*/
+/*    }*/
+/*}*/
 
 
 
@@ -184,7 +169,7 @@
     padding-left: var(--list-padding);
 }
     .wysiwyg li {
-        margin-top: 11px;
+        margin-top: calc(var(--line-height) / 2);
     }
 
     .wysiwyg li:first-child {
