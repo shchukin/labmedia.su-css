@@ -71,6 +71,12 @@
         right: 16px;
     }
 
+@media (width < 740px) {
+    .carousel--css-inner-arrows .carousel__button {
+        display: none;
+    }
+}
+
 
 
 /* Скин буллетов навигации Bottom White */
@@ -101,6 +107,10 @@
                 height: 6px;
                 background-color: var(--fill-dark-blue-32);
                 border-radius: 3px;
+            }
+
+            .carousel--css-bottom-gray-bullets .carousel__bullet:hover::after {
+                background-color: var(--fill-dark-blue-80);
             }
 
             .carousel--css-bottom-gray-bullets .carousel__bullet--current::after {

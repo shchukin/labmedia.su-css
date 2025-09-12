@@ -195,20 +195,20 @@
 }
 
 
-.button--half-white-slider-action {
-    background-color: rgb(255 255 255 / 50%);
-    color: var(--stroke-darkblue);
+.button-inner-slider-action {
+    background-color: var(--fill-dark-blue-80);
+    color: #FFFFFF;
 }
 
-.button--half-white-slider-action:hover {
-    background-color: rgb(255 255 255 / 80%);
-    color: var(--stroke-darkblue);
+.button-inner-slider-action:hover {
+    background-color: var(--fill-dark-blue-60);
+    color: #FFFFFF;
 }
 
-.button--half-white-slider-action:disabled,
-.button--half-white-slider-action:disabled:hover {
-    background-color: rgb(255 255 255 / 50%);
-    color: var(--stroke-darkblue);
+.button-inner-slider-action:disabled,
+.button-inner-slider-action:disabled:hover {
+    background-color: var(--fill-dark-blue-80);
+    color: #FFFFFF;
     opacity: 50%;
 }
 
