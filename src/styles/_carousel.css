@@ -18,6 +18,7 @@
                     }
 
 
+
 /* Скин для стрелок Top Right */
 
 .carousel--css-top-right-arrows {
@@ -69,6 +70,44 @@
     .carousel--css-inner-arrows .carousel__button--next {
         right: 16px;
     }
+
+
+
+/* Скин буллетов навигации Bottom White */
+
+.carousel--css-bottom-gray-bullets {
+    position: relative;
+}
+    .carousel--css-bottom-gray-bullets .carousel__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .carousel--css-bottom-gray-bullets .carousel__bullet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .carousel--css-bottom-gray-bullets .carousel__bullet--current {
+            cursor: default;
+        }
+            .carousel--css-bottom-gray-bullets .carousel__bullet::after {
+                content: "";
+                transition: width 200ms ease;
+                width: 6px;
+                height: 6px;
+                background-color: var(--fill-dark-blue-32);
+                border-radius: 3px;
+            }
+
+            .carousel--css-bottom-gray-bullets .carousel__bullet--current::after {
+                width: 24px;
+                background-color: var(--fill-dark-blue);
+            }
+
 
 
 

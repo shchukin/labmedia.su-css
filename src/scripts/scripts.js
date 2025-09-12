@@ -155,8 +155,8 @@
                 pagination: {
                     clickable: true,
                     el: '.carousel__pagination',
-                    bulletClass: 'carousel__dot',
-                    bulletActiveClass: 'carousel__dot--current',
+                    bulletClass: 'carousel__bullet',
+                    bulletActiveClass: 'carousel__bullet--current',
                 },
             });
         }
