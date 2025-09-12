@@ -20,8 +20,7 @@
 @media (width < 740px) {
 
     .comment {
-        /*padding-left: 25px;*/
-        /*border-left: 3px solid var(--accent-main-blue);*/
+
     }
         .comment__body {
 
@@ -33,6 +32,6 @@
             line-height: 20px;
         }
             .comment__name {
-                /*font-weight: 500;*/
+
             }
 }
