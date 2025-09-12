@@ -1,7 +1,7 @@
 .related {
     padding-top: 106px;
     overflow: hidden; /* Обрезаем карусель, у которой видим хвост ленты справа (выключен overflow: hidden). Смотри: ".carousel--css-skin-cases .carousel__widget .swiper" */
-    background-image: linear-gradient(204deg, transparent, transparent 50%, #F7F6FB 50%, #C9E0FF);
+    background-image: linear-gradient(204deg, transparent, transparent 50%, #F7F6FB 50%, #C0DCFF);
 }
     .related__wrap {
 
@@ -29,6 +29,7 @@
 
     .related {
         padding-top: 88px;
+        background-image: linear-gradient(185deg, transparent, transparent 50%, #F7F6FB 50%, #C8E9FF);
     }
         .related__wrap {
 
