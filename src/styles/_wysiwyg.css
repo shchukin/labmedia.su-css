@@ -1,4 +1,15 @@
 .wysiwyg {
+    --list-padding: 24px;
+}
+
+@media (width < 740px) {
+    .wysiwyg {
+        --list-padding: 20px;
+    }
+
+}
+
+.wysiwyg {
     overflow-wrap: break-word;
     font-size: 16px;
     line-height: 22px;
@@ -170,7 +181,7 @@
 
 .wysiwyg ul,
 .wysiwyg ol {
-    padding-left: 24px;
+    padding-left: var(--list-padding);
 }
     .wysiwyg li {
         margin-top: 11px;
@@ -193,7 +204,7 @@
             right: 100%;
             top: 0;
             display: block;
-            width: 24px;
+            width: var(--list-padding);
             font-size: 1.2em;
             text-align: center;
         }
