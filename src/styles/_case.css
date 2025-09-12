@@ -1,4 +1,4 @@
-.case {
+.project {
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -7,27 +7,27 @@
     border-radius: 16px;
 }
 
-.case--enlarged-on-hover {
+.project--enlarged-on-hover {
     transition: transform 200ms ease;
 }
 
-.case--enlarged-on-hover:hover {
+.project--enlarged-on-hover:hover {
     transform: scale(105%);
 }
-    .case__preview {
+    .project__preview {
         position: relative;
         display: block;
         overflow: hidden;
         border-radius: 12px;
     }
-        .case__illustration {
+        .project__illustration {
             vertical-align: top;
             width: 100%;
             aspect-ratio: 348/264;
             object-fit: cover;
         }
 
-        .case__badges {
+        .project__badges {
             position: absolute;
             left: 16px;
             top: 16px;
@@ -36,7 +36,7 @@
             gap: 6px;
         }
 
-        .case__screenshot-wrap {
+        .project__screenshot-wrap {
             position: absolute;
             inset: 0;
             padding: 29px 42px;
@@ -47,7 +47,7 @@
                         visibility 200ms ease;
         }
 
-        .case__preview:hover .case__screenshot-wrap {
+        .project__preview:hover .project__screenshot-wrap {
             opacity: 100%;
             visibility: visible;
         }
@@ -57,26 +57,26 @@
                 border-radius: 12px;
             }
 
-    .case__body {
+    .project__body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         position: relative;
         padding: 8px 16px 22px;
     }
-        .case__filters {
+        .project__filters {
             display: flex;
             align-items: flex-start;
         }
-            .case__filter-item {
+            .project__filter-item {
                 position: relative;
                 padding-left: 22px;
             }
 
-            .case__filter-item:first-child {
+            .project__filter-item:first-child {
                 padding-left: 0;
             }
-                .case__filter-item::before {
+                .project__filter-item::before {
                     content: "";
                     position: absolute;
                     left: 8px;
@@ -87,11 +87,11 @@
                     border-radius: 50%;
                 }
 
-                .case__filter-item:first-child::before {
+                .project__filter-item:first-child::before {
                     display: none;
                 }
 
-                .case__filter-link {
+                .project__filter-link {
                     display: block;
                     width: fit-content;
                     padding-top: 8px;
@@ -103,18 +103,18 @@
                     text-underline-offset: 4px;
                 }
 
-                .case__filter-link:hover {
+                .project__filter-link:hover {
                     text-decoration-color: currentColor;
                 }
 
-        .case__heading {
+        .project__heading {
             margin-top: 4px;
             margin-bottom: 0;
             font-size: 24px;
             line-height: 29px;
             letter-spacing: -0.5px;
         }
-            .case__link {
+            .project__link {
                 padding-top: 4px;
                 padding-bottom: 4px;
                 color: inherit;
@@ -122,11 +122,11 @@
                 text-underline-offset: 3px;
             }
 
-            .case__link:hover {
+            .project__link:hover {
                 text-decoration-color: currentColor;
             }
 
-        .case__description {
+        .project__description {
             margin-top: 12px;
             font-size: 16px;
             line-height: 22px;
@@ -139,19 +139,19 @@
             /*text-overflow: ellipsis;*/
         }
 
-        .case__data {
+        .project__data {
             margin-top: auto;
             padding-top: 24px;
             margin-left: -2px; /* визуально чуть лучше */
         }
-            .case__stat {
+            .project__stat {
                 margin-top: 10px;
             }
 
-            .case__stat:first-child {
+            .project__stat:first-child {
                 margin-top: 0;
             }
-                .case__param {
+                .project__param {
                     display: inline;
                     vertical-align: baseline;
                     font-weight: 300;
@@ -160,7 +160,7 @@
                     letter-spacing: -0.25px;
                 }
 
-                .case__value {
+                .project__value {
                     position: relative;
                     top: -1px; /* визуально чуть лучше */
                     margin-left: 4px;
@@ -170,7 +170,7 @@
                     line-height: 20px;
                 }
 
-        .case__details {
+        .project__details {
             position: absolute;
             right: 16px;
             bottom: 16px;
@@ -180,106 +180,106 @@
 
 @media (width < 740px) {
 
-    .case {
+    .project {
 
     }
 
-    .case--enlarged-on-hover {
+    .project--enlarged-on-hover {
 
     }
 
-    .case--enlarged-on-hover:hover {
+    .project--enlarged-on-hover:hover {
 
     }
-        .case__preview {
+        .project__preview {
 
         }
-            .case__illustration {
+            .project__illustration {
 
             }
 
-            .case__badges {
+            .project__badges {
 
             }
 
-            .case__screenshot-wrap {
+            .project__screenshot-wrap {
 
             }
 
-            .case__preview:hover .case__screenshot-wrap {
+            .project__preview:hover .project__screenshot-wrap {
 
             }
                 .case__screenshot {
 
                 }
 
-        .case__body {
+        .project__body {
             padding-bottom: 16px;
         }
-            .case__filters {
+            .project__filters {
 
             }
-                .case__filter-item {
+                .project__filter-item {
 
                 }
 
-                .case__filter-item:first-child {
+                .project__filter-item:first-child {
 
                 }
-                    .case__filter-item::before {
+                    .project__filter-item::before {
                         top: 13px;
                     }
 
-                    .case__filter-item:first-child::before {
+                    .project__filter-item:first-child::before {
 
                     }
 
-                    .case__filter-link {
+                    .project__filter-link {
                         font-size: 12px;
                         line-height: 17px;
                     }
 
-                    .case__filter-link:hover {
+                    .project__filter-link:hover {
 
                     }
 
-            .case__heading {
+            .project__heading {
                 margin-top: 2px;
             }
-                .case__link {
+                .project__link {
 
                 }
 
-                .case__link:hover {
+                .project__link:hover {
 
                 }
 
-            .case__description {
+            .project__description {
                 margin-top: 10px;
                 font-size: 14px;
                 line-height: 20px;
             }
 
-            .case__data {
+            .project__data {
                 padding-top: 20px;
             }
-                .case__stat {
+                .project__stat {
 
                 }
 
-                .case__stat:first-child {
+                .project__stat:first-child {
 
                 }
-                    .case__param {
+                    .project__param {
                         font-size: 32px;
                         line-height: 38px;
                     }
 
-                    .case__value {
+                    .project__value {
 
                     }
 
-            .case__details {
+            .project__details {
 
             }
 }
