@@ -3,6 +3,39 @@
 }
 
 
+.carousel--top-right-arrows {
+    position: relative;
+}
+    .carousel--top-right-arrows::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        margin-bottom: 48px;
+        width: 104px;
+        height: 56px;
+        background-color: var(--fill-wite-purple-darker);
+        border-radius: 8px;
+    }
+
+    .carousel--top-right-arrows .carousel__button {
+        position: absolute;
+        bottom: 100%;
+        margin-bottom: 52px;
+    }
+
+    .carousel--top-right-arrows .carousel__button--prev {
+        right: 52px;
+    }
+
+    .carousel--top-right-arrows .carousel__button--next {
+        right: 4px;
+    }
+        .carousel--top-right-arrows .carousel__chevron {
+            stroke: var(--fill-dark-blue);
+        }
+
+
 /* Похожие кейсы */
 
 .carousel--css-skin-cases {
@@ -18,7 +51,7 @@
 
         }
             .carousel--css-skin-cases .carousel__widget .swiper {
-                overflow: visible;
+                overflow: visible; /* Разрешаем ленти карусели идти вправо до упора, до края экран. А там его обрежет родительский компонент .related */
             }
                 .carousel--css-skin-cases .carousel__widget .swiper-wrapper {
 
@@ -81,6 +114,10 @@
             display: none;
         }
 
+        .carousel--css-disable-on-smartphone::before {
+            display: none; /* Фон под стрелочками в некоторых скинах */
+        }
+
         .carousel--css-disable-on-desktop .carousel__button {
             display: none !important;
         }
@@ -114,6 +151,10 @@
 
         .carousel--css-disable-on-smartphone .carousel__pagination {
             display: none;
+        }
+
+        .carousel--css-disable-on-smartphone::before {
+            display: none; /* Фон под стрелочками в некоторых скинах */
         }
 
         .carousel--css-disable-on-smartphone .carousel__button {

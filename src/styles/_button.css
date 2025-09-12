@@ -187,6 +187,13 @@
     color: var(--stroke-darkblue);
 }
 
+.button--slider-action:disabled,
+.button--slider-action:disabled:hover {
+    background-color: transparent;
+    color: var(--fill-dark-blue);
+    opacity: 50%;
+}
+
 
 .button--cleartype-action {
     background-color: transparent;
@@ -248,6 +255,7 @@
 /* В чистом виде пока не встречалась (используется только квадратная). Можно добавь font-size и отступы */
 .button--medium {
     height: 48px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    border-radius: 6px;
 }
 
 .button--medium:has(.button__icon) {

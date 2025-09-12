@@ -5,6 +5,14 @@
     background-color: #FFFFFF;
     border-radius: 16px;
 }
+
+.case--enlarged-on-hover {
+    transition: transform 200ms ease;
+}
+
+.case--enlarged-on-hover:hover {
+    transform: scale(105%);
+}
     .case__preview {
         position: relative;
         display: block;

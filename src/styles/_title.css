@@ -19,14 +19,14 @@
 
 
 .title--secondary {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 40px;
+    line-height: 44px;
 }
 
 @media (width < 740px) {
 
     .title--secondary {
-        font-size: 40px;
-        line-height: 44px;
+        font-size: 32px;
+        line-height: 38px;
     }
 }

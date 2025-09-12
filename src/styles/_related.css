@@ -1,5 +1,6 @@
 .related {
     padding-top: 106px;
+    overflow: hidden; /* Обрезаем карусель, у которой видим хвост ленты справа (выключен overflow: hidden). Смотри: ".carousel--css-skin-cases .carousel__widget .swiper" */
 }
     .related__wrap {
 
@@ -10,13 +11,37 @@
         }
 
         .related__body {
-            margin-top: 46px;
+            margin-top: 52px;
         }
 
     .related::after {
         content: "";
         display: block;
         height: 12px;
-        margin-top: 112px;
+        margin-top: 120px;
         background-image: linear-gradient(to right, #95C0FF, #E29CFF 75%, #8E8FFF 100%);
     }
+
+
+
+@media (width < 740px) {
+
+    .related {
+        padding-top: 88px;
+    }
+        .related__wrap {
+
+        }
+            .related__heading {
+
+            }
+
+            .related__body {
+                margin-top: 32px;
+            }
+
+        .related::after {
+            margin-top: 88px;
+            height: 8px;
+        }
+}
