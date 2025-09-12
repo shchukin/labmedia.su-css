@@ -106,7 +106,7 @@
         position: relative;
     }
         .wysiwyg ul li::before {
-            content: '\2022'; /* Юникод для круглого буллета */
+            content: "\2022"; /* Юникод для круглого буллета */
             position: absolute;
             right: 100%;
             top: 0;
