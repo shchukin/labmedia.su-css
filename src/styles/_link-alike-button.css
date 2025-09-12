@@ -1,0 +1,22 @@
+.link-alike-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    line-height: 22px;
+    color: inherit;
+    text-decoration: 1px underline transparent;
+    text-underline-offset: 3px;
+    transition: text-decoration-color var(--transition-hover);
+}
+
+.link-alike-button:hover {
+    text-decoration-color: currentColor;
+}
+
+    .link-alike-button__icon {
+        stroke: currentColor;
+    }

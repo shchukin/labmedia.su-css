@@ -1,5 +1,32 @@
 .table-of-contains {
-    height: 352px;
-    background: purple;
-    border-radius: 12px;
+
 }
+    .table-of-contains__back {
+        margin-top: -8px;
+    }
+
+    .table-of-contains__heading {
+        margin-top: 32px;
+        margin-bottom: 0;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .table-of-contains__list {
+        margin-top: 16px;
+    }
+        .table-of-contains__link {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 16px;
+            line-height: 22px;
+            color: var(--txt-dark-blue);
+            text-decoration: 1px underline transparent;
+            text-underline-offset: 4px;
+            transition: text-decoration-color var(--transition-hover);
+        }
+
+        .table-of-contains__link:hover {
+            text-decoration-color: currentColor;
+        }
