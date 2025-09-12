@@ -409,8 +409,7 @@
             const sectionTop = $(this).offset().top;
             const scrollPosition = $(window).scrollTop();
 
-            // Check if section is in viewport (adjust 100px offset as needed)
-            if (scrollPosition >= sectionTop - 100) {
+            if (scrollPosition >= sectionTop - 200) {
                 currentSection = `#${$(this).attr('id')}`;
             }
         });
