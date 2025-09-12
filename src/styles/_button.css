@@ -195,6 +195,25 @@
 }
 
 
+.button--half-white-slider-action {
+    background-color: rgb(255 255 255 / 50%);
+    color: var(--stroke-darkblue);
+}
+
+.button--half-white-slider-action:hover {
+    background-color: rgb(255 255 255 / 80%);
+    color: var(--stroke-darkblue);
+}
+
+.button--half-white-slider-action:disabled,
+.button--half-white-slider-action:disabled:hover {
+    background-color: rgb(255 255 255 / 50%);
+    color: var(--stroke-darkblue);
+    opacity: 50%;
+}
+
+
+
 .button--cleartype-action {
     background-color: transparent;
     color: var(--fill-dark-blue);

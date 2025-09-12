@@ -72,7 +72,8 @@
 
 
 
-.wysiwyg img {
+.wysiwyg img,
+.wysiwyg video {
     width: 100%;
     height: auto;
     vertical-align: top;

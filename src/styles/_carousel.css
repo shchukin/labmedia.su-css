@@ -17,10 +17,13 @@
                         height: auto; /* Изначально в свайпере стоит 100%, что как раз наоборот не работает с align-items: stretch на родителе */
                     }
 
-.carousel--top-right-arrows {
+
+/* Скин для стрелок Top Right */
+
+.carousel--css-top-right-arrows {
     position: relative;
 }
-    .carousel--top-right-arrows::before {
+    .carousel--css-top-right-arrows::before {
         content: "";
         position: absolute;
         right: 0;
@@ -32,25 +35,44 @@
         border-radius: 8px;
     }
 
-    .carousel--top-right-arrows .carousel__button {
+    .carousel--css-top-right-arrows .carousel__button {
         position: absolute;
         bottom: 100%;
         margin-bottom: 52px;
     }
 
-    .carousel--top-right-arrows .carousel__button--prev {
+    .carousel--css-top-right-arrows .carousel__button--prev {
         right: 52px;
     }
 
-    .carousel--top-right-arrows .carousel__button--next {
+    .carousel--css-top-right-arrows .carousel__button--next {
         right: 4px;
     }
-        .carousel--top-right-arrows .carousel__chevron {
-            stroke: var(--fill-dark-blue);
-        }
 
 
-/* Похожие кейсы */
+/* Скин для стрелок Inner */
+
+.carousel--css-inner-arrows {
+    position: relative;
+}
+    .carousel--css-inner-arrows .carousel__button {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        margin-top: -24px;
+    }
+
+    .carousel--css-inner-arrows .carousel__button--prev {
+        left: 16px;
+    }
+
+    .carousel--css-inner-arrows .carousel__button--next {
+        right: 16px;
+    }
+
+
+
+/* Карусель "Похожие кейсы" */
 
 .carousel--css-skin-cases {
 

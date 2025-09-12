@@ -141,6 +141,25 @@
                 },
             });
         }
+
+        if( $carousel.classList.contains('carousel--js-article-gallery') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 24,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.carousel__pagination',
+                    bulletClass: 'carousel__dot',
+                    bulletActiveClass: 'carousel__dot--current',
+                },
+            });
+        }
     });
 
 
