@@ -1,0 +1,6 @@
+.bold-bullets {
+
+}
+    .bold-bullets li::marker {
+        font-weight: 500;
+    }

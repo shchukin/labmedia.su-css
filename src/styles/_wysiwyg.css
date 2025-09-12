@@ -14,6 +14,26 @@
     margin-bottom: 22px;
 }
 
+@media (width < 740px) {
+
+    .wysiwyg {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .wysiwyg p,
+    .wysiwyg ul,
+    .wysiwyg ol,
+    .wysiwyg hr,
+    .wysiwyg figure,
+    .wysiwyg blockquote {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
 .wysiwyg--larger {
     font-size: 18px;
     line-height: 28px;
@@ -92,12 +112,68 @@
     margin-bottom: 0;
 }
 
-
 .wysiwyg img {
     width: 100%;
     height: auto;
     vertical-align: top;
+    border-radius: 16px;
 }
+
+
+.wysiwyg figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+    .wysiwyg figcaption {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+@media (width < 740px) {
+
+    .wysiwyg figure {
+
+    }
+        .wysiwyg figcaption {
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 17px;
+        }
+}
+
+
+.wysiwyg ul,
+.wysiwyg ol {
+    padding-left: 24px;
+}
+    .wysiwyg li {
+        margin-top: 11px;
+    }
+
+    .wysiwyg li:first-child {
+        margin-top: 0;
+    }
+
+
+.wysiwyg ul {
+    list-style: none;
+}
+    .wysiwyg ul li {
+        position: relative;
+    }
+        .wysiwyg ul li::before {
+            content: '\2022'; /* Юникод для круглого буллета */
+            position: absolute;
+            right: 100%;
+            top: 0;
+            display: block;
+            width: 24px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+
 
 .wysiwyg a {
     /* See .link component */
