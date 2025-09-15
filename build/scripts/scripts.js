@@ -201,6 +201,24 @@
                 },
             });
         }
+
+        if( $carousel.classList.contains('carousel--js-init-striped-gallery') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.carousel__pagination',
+                    bulletClass: 'carousel__bullet',
+                    bulletActiveClass: 'carousel__bullet--current',
+                },
+            });
+        }
     });
 
 
@@ -403,8 +421,13 @@
         const currentScroll = $(window).scrollTop();
         const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
 
-        // Будем тормозить скролл чуть раньше (визуальный отступ). На 50px если скроллим вниз и на 50+шапка, если вверх (при скролле вверх шапка появляется)
-        const offset = currentScroll < targetOffset ? 50 : 50 + headerHeight;
+        // Закрываем модальное окно, если оно открыто
+        if ($.magnificPopup && $.magnificPopup.instance.isOpen) {
+            $.magnificPopup.close();
+        }
+
+        // Будем тормозить скролл чуть раньше (визуальный отступ). На 48px если скроллим вниз и на 48+шапка, если вверх (при скролле вверх шапка появляется)
+        const offset = currentScroll < targetOffset ? 48 : 48 + headerHeight;
 
         $('html, body').animate({
             scrollTop: targetOffset - offset
