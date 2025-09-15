@@ -1,0 +1,45 @@
+.clients {
+    padding-top: 106px;
+    padding-bottom: 120px;
+}
+    .clients__head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+        .clients__heading {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .clients__filters {
+
+        }
+            .clients__filters-ribbon {
+
+            }
+                .clients__filters-handler {
+
+                }
+
+    .clients__body {
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+    }
+        .clients__item {
+            background-color: var(--fill-wite-purple-darker);
+            border-radius: 16px;
+            transition: background-color var(--transition-hover),
+                        transform var(--transition-hover);
+        }
+
+        .clients__item:hover {
+            background-color: var(--fill-total-white);
+            transform: scale(102%);
+        }
+
+            .clients__logo {
+
+            }
