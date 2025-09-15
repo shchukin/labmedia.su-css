@@ -3,6 +3,7 @@
     --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
     --transition-hover: 100ms ease;
     --transition-dropdown: 100ms ease;
+    --transition-scale-hover: 400ms var(--ease-out-quint);
     --transition-slide: 600ms var(--ease-out-quint);
     --image-fallback: #EEECF4;
     --container-padding: 40px;

@@ -8,7 +8,7 @@
 }
 
 .project--enlarged-on-hover {
-    transition: transform 200ms ease;
+    transition: transform var(--transition-scale-hover);
 }
 
 .project--enlarged-on-hover:hover {
