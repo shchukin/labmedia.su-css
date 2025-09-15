@@ -64,4 +64,19 @@
                     background-color: #FFFFFF;
                     box-shadow: none;
                 }
+
+
+    .related--4-tiles-on-smartphone {
+
+    }
+        .related--4-tiles-on-smartphone .swiper-slide:nth-child(n+5) {
+            display: none;
+        }
+
+    .related--2-tiles-on-smartphone {
+
+    }
+        .related--2-tiles-on-smartphone .swiper-slide:nth-child(n+3) {
+            display: none;
+        }
 }

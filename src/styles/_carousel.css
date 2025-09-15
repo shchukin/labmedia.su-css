@@ -157,10 +157,6 @@
         margin-top: 8px;
     }
 
-    .carousel--css-skin-cases .swiper-slide:nth-child(n+3) {
-        display: none;
-    }
-
     .carousel--css-skin-cases .swiper-slide:first-child {
         margin-top: 0;
     }
