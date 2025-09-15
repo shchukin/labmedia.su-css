@@ -4,17 +4,49 @@
     .striped-gallery__desktop-version {
 
     }
-        .striped-gallery__thumbnail {
+        .striped-gallery__line {
 
         }
-            .striped-gallery__image {
+            .striped-gallery__line-link {
+
+            }
+                .striped-gallery__line-image {
+                    vertical-align: top;
+                    background-color: var(--image-fallback);
+                    width: 356px;
+                    height: 200px;
+                    object-fit: cover;
+                }
+
+    .striped-gallery__smartphone-version {
+        display: none;
+    }
+        .striped-gallery__slide-link {
+            border-radius: 16px;
+        }
+            .striped-gallery__slide-image {
+
+            }
+
+
+@media (width < 740px) {
+
+    .striped-gallery__desktop-version {
+        display: none;
+    }
+
+    .striped-gallery__smartphone-version {
+        display: block;
+    }
+        .striped-gallery__slide-link {
+
+        }
+            .striped-gallery__slide-image {
                 vertical-align: top;
+                background-color: var(--image-fallback);
                 width: 100%;
                 height: auto;
                 aspect-ratio: 376/251;
                 object-fit: cover;
             }
-
-    .striped-gallery__smartphone-version {
-
-    }
+}
