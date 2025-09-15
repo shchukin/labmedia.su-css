@@ -79,7 +79,7 @@
 
 
 
-/* Скин буллетов навигации Bottom White */
+/* Скин буллетов навигации carousel--css-bottom-gray-bullets */
 
 .carousel--css-bottom-gray-bullets {
     position: relative;
@@ -116,6 +116,52 @@
             .carousel--css-bottom-gray-bullets .carousel__bullet--current::after {
                 width: 24px;
                 background-color: var(--fill-dark-blue);
+            }
+
+
+
+/* Скин буллетов навигации Overlapping White Bullets */
+
+.carousel--css-overlapping-white-bullets {
+    position: relative;
+}
+    .carousel--css-overlapping-white-bullets .carousel__pagination {
+        position: absolute;
+        z-index: 30;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .carousel--css-overlapping-white-bullets .carousel__bullet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 4px;
+            cursor: pointer;
+        }
+
+        .carousel--css-overlapping-white-bullets .carousel__bullet--current {
+            cursor: default;
+        }
+            .carousel--css-overlapping-white-bullets .carousel__bullet::after {
+                content: "";
+                transition: width 200ms ease;
+                width: 6px;
+                height: 6px;
+                background-color: rgb(255 255 255 / 50%);
+                border-radius: 3px;
+            }
+
+            .carousel--css-overlapping-white-bullets .carousel__bullet:hover::after {
+
+            }
+
+            .carousel--css-overlapping-white-bullets .carousel__bullet--current::after {
+                width: 24px;
+                background-color: #FFFFFF;
             }
 
 

@@ -1,0 +1,20 @@
+.striped-gallery {
+
+}
+    .striped-gallery__desktop-version {
+
+    }
+        .striped-gallery__thumbnail {
+
+        }
+            .striped-gallery__image {
+                vertical-align: top;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 376/251;
+                object-fit: cover;
+            }
+
+    .striped-gallery__smartphone-version {
+
+    }

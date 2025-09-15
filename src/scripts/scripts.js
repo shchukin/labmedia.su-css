@@ -201,6 +201,24 @@
                 },
             });
         }
+
+        if( $carousel.classList.contains('carousel--js-init-striped-gallery') ) {
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                navigation: {
+                    prevEl: $carousel.querySelector('.carousel__button--prev'),
+                    nextEl: $carousel.querySelector('.carousel__button--next'),
+                    disabledClass: 'carousel__button--disabled',
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.carousel__pagination',
+                    bulletClass: 'carousel__bullet',
+                    bulletActiveClass: 'carousel__bullet--current',
+                },
+            });
+        }
     });
 
 
