@@ -4,7 +4,7 @@
     background-image: linear-gradient(204deg, transparent, transparent 50%, #F7F6FB 50%, #C0DCFF);
 }
     .related__wrap {
-
+        position: relative;
     }
         .related__heading {
             margin-top: 0;
@@ -23,6 +23,12 @@
         background-image: linear-gradient(to right, #95C0FF, #E29CFF 75%, #8E8FFF 100%);
     }
 
+    .related__details {
+        position: absolute;
+        right: 136px;
+        top: -6px;
+    }
+
 
 
 @media (width < 740px) {
@@ -32,7 +38,8 @@
         background-image: linear-gradient(185deg, transparent, transparent 50%, #F7F6FB 50%, #C8E9FF);
     }
         .related__wrap {
-
+            display: flex;
+            flex-direction: column;
         }
             .related__heading {
 
@@ -42,8 +49,19 @@
                 margin-top: 32px;
             }
 
-        .related::after {
-            margin-top: 88px;
-            height: 8px;
-        }
+            .related::after {
+                margin-top: 88px;
+                height: 8px;
+            }
+
+            .related__details {
+                position: static;
+                order: 3;
+                margin-top: 24px;
+            }
+                .related__details .button {
+                    width: 100%;
+                    background-color: #FFFFFF;
+                    box-shadow: none;
+                }
 }
