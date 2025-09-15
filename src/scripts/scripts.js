@@ -94,7 +94,8 @@
 
     /* Инициализация библиотеки magnific popup -- модалки */
 
-    $('.mfp-handler').magnificPopup({
+    /* Общие настройки Magnific Popup */
+    const magnificPopupSettings = {
         type: 'inline', // не картинки, а html-код
         removalDelay: 200, // анимация закрытия
         showCloseBtn: false,
@@ -102,16 +103,16 @@
             open: function() {
                 const $popup = $.magnificPopup.instance.content;
 
-                /* Если внутри есть input--expandable, перезапустить инициализацию, чтобы высоты обсчитались правильно (а то при инициализации по document ready они были скрыты) */
+                /* Если внутри есть input--expandable, перезапустить инициализацию, чтобы высоты обсчитались правильно */
                 const $expandableInputs = $popup.find('.input--expandable .input__widget');
-                if($expandableInputs.length) {
+                if ($expandableInputs.length) {
                     $expandableInputs.each(function() {
                         expandTextarea($(this));
                     });
                 }
 
                 /* Focus on the first input, if any */
-                setTimeout(function () {
+                setTimeout(function() {
                     const $firstInput = $popup.find('input').first();
                     if ($firstInput.length) {
                         $firstInput.focus();
@@ -119,7 +120,47 @@
                 }, 100);
             }
         }
+    };
+
+    /* Инициализация mfp в общем случае */
+    $('.mfp-handler').magnificPopup(magnificPopupSettings);
+
+    /* Инициализация mfp-smartphone-only-handler, только если не десктоп */
+    if (!isDesktop) {
+        $('.mfp-smartphone-only-handler').magnificPopup(magnificPopupSettings);
+    }
+
+    
+    /* Поиск -- отдельная специфичная модалка */
+
+    $('.mfp-search-handler').magnificPopup({
+        type: 'inline',
+        removalDelay: 0,
+        showCloseBtn: false,
+        focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
+        callbacks: {
+            open: function() {
+
+                /* Запомнить скролл пользователя, так как display: none на .page его сбросит (смотри .search-expanded .page) -- актуально на смартфонах */
+                rememberedPageScrollPosition = $(window).scrollTop();
+
+                /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
+                $html.addClass('search-expanded');
+
+                /* Очистка и закрытие по внутреннему крестику */
+                $('.search__close').on('click', function() {
+                    $.magnificPopup.instance.close();
+                });
+            },
+            close: function() {
+                $html.removeClass('search-expanded');
+                $('.search__field .input__widget').val('');
+                $('.search__close').off('click');
+                $(window).scrollTop(rememberedPageScrollPosition);/* При закрытии меню скролл должен быть там, где пользователь его оставил */
+            }
+        }
     });
+
 
 
 
@@ -162,41 +203,6 @@
         }
     });
 
-
-
-
-
-
-
-    /* Поиск -- отдельная специфичная модалка */
-
-    $('.mfp-search-handler').magnificPopup({
-        type: 'inline',
-        removalDelay: 0,
-        showCloseBtn: false,
-        focus: '.search__field .input__widget', // Устанавливаем фокус на поле поиска
-        callbacks: {
-            open: function() {
-
-                /* Запомнить скролл пользователя, так как display: none на .page его сбросит (смотри .search-expanded .page) -- актуально на смартфонах */
-                rememberedPageScrollPosition = $(window).scrollTop();
-
-                /* На смартфонах этот класс полность скроет страницу и упростить саму модалку (смотри .search-expanded .page) */
-                $html.addClass('search-expanded');
-
-                /* Очистка и закрытие по внутреннему крестику */
-                $('.search__close').on('click', function() {
-                    $.magnificPopup.instance.close();
-                });
-            },
-            close: function() {
-                $html.removeClass('search-expanded');
-                $('.search__field .input__widget').val('');
-                $('.search__close').off('click');
-                $(window).scrollTop(rememberedPageScrollPosition);/* При закрытии меню скролл должен быть там, где пользователь его оставил */
-            }
-        }
-    });
 
 
     /* Подвал */

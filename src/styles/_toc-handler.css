@@ -1,0 +1,10 @@
+.toc-handler {
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+}
+    .toc-handler .button {
+        background-color: var(--fill-total-white);
+    }

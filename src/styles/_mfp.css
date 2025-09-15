@@ -67,5 +67,37 @@ button.mfp-close:focus-visible {
 
 
 
+/* mfp-smartphone-only */
 
+@media (740px <= width) {
+
+    .mfp-smartphone-only {
+        display: block !important;
+    }
+}
+
+
+
+/* mfp-grounded-on-smartphone */
+
+@media (width < 740px) {
+
+    .mfp-wrap:has(.mfp-grounded-on-smartphone) {
+
+    }
+        .mfp-container:has(.mfp-grounded-on-smartphone) {
+            padding-left: 0;
+            padding-right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+            .mfp-container:has(.mfp-grounded-on-smartphone)::before {
+                display: none;
+            }
+
+            .mfp-content:has(.mfp-grounded-on-smartphone) {
+                margin-top: auto;
+                margin-bottom: 0;
+            }
+}
 

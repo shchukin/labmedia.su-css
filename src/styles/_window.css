@@ -55,3 +55,35 @@
             }
 }
 
+
+
+
+
+
+/* mfp-smartphone-only */
+
+@media (740px <= width) {
+
+    .mfp-smartphone-only.window {
+        display: block;
+        background-color: transparent !important;
+    }
+}
+
+
+
+/* mfp-grounded-on-smartphone */
+
+.mfp-grounded-on-smartphone.window {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+    .mfp-grounded-on-smartphone .window__close {
+        right: 0 !important;
+        top: 0 !important;
+    }
+        .mfp-grounded-on-smartphone .window__close::after {
+            background-image: url("../vectors/window-close.svg");
+            background-size: 16px 16px;
+        }
