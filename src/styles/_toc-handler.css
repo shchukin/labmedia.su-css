@@ -1,10 +1,42 @@
 .toc-handler {
-    position: fixed;
-    z-index: 100;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
+    display: none;
 }
-    .toc-handler .button {
+
+@media (width < 740px) {
+
+    .toc-handler {
+        position: fixed;
+        z-index: 100;
+        left: 50%;
+        bottom: 16px;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 17px;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 15px;
         background-color: var(--fill-total-white);
+        border: 1px solid var(--stroke-gray);
+        border-radius: 6px;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--txt-dark-blue);
+        text-decoration: none;
     }
+        .toc-handler__icon {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+        }
+
+        .toc-handler::after {
+            content: "";
+            position: absolute;
+            left: 39px;
+            top: 17px;
+            bottom: 17px;
+            display: block;
+            width: 1px;
+            background-color: var(--stroke-gray);
+        }
+}
