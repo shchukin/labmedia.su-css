@@ -19,6 +19,7 @@
             font-size: 14px;
             line-height: 20px;
             color: var(--txt-dark-blue);
+            white-space: nowrap;
             cursor: pointer;
             transition: background-color var(--transition-hover);
         }
