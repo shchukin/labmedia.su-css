@@ -1,0 +1,42 @@
+.stats {
+    position: relative;
+    padding-top: 64px;
+    padding-bottom: 16px;
+    border-bottom: 100px solid transparent;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+    .stats__heading {
+        max-width: 411px;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    .stats__data {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 80px 24px;
+    }
+        .stats__item {
+
+        }
+            .stats__param {
+                font-weight: 300;
+                font-size: 80px;
+                line-height: 88px;
+                letter-spacing: -1px;
+            }
+
+            .stats__value {
+                margin-top: 8px;
+                margin-left: 4px;
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+    .stats__details {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
