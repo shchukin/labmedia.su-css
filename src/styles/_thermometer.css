@@ -1,4 +1,6 @@
 .thermometer {
+    display: block;
+    width: fit-content;
     background-color: var(--fill-wite-purple-darker);
     border-radius: 12px;
     padding: 6px;

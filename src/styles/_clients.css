@@ -1,5 +1,5 @@
 .clients {
-    padding-top: 106px;
+    padding-top: 100px;
     padding-bottom: 120px;
 }
     .clients__head {
@@ -8,7 +8,7 @@
         justify-content: space-between;
     }
         .clients__heading {
-            margin-top: 0;
+            margin-top: 7px;
             margin-bottom: 0;
         }
 
@@ -41,5 +41,14 @@
         }
 
             .clients__logo {
+                vertical-align: top;
+                filter: grayscale(100%);
+                opacity: 40%;
+                transition: filter var(--transition-hover),
+                            opacity var(--transition-hover);
+            }
 
+            .clients__item:hover .clients__logo {
+                filter: grayscale(0);
+                opacity: 100%;
             }
