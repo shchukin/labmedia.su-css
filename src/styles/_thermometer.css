@@ -48,7 +48,7 @@
 
     }
 
-    @media (width < 430px) {
+    @media (width < 442px) {
         .thermometer {
             margin-left: calc(-1 * var(--container-padding));
             margin-right: calc(-1 * var(--container-padding));
