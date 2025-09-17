@@ -6,6 +6,7 @@
     --transition-scale-hover: 400ms var(--ease-out-quint);
     --transition-slide: 600ms var(--ease-out-quint);
     --image-fallback: #EEECF4;
+    --container-width: 1140px;
     --container-padding: 40px;
     --header-height: 84px;
     --header-visibility-transition: 500ms ease;
@@ -13,6 +14,7 @@
     --popup-vertical-padding: 8px;
     --popup-horizontal-padding: 64px;
     --top-padding: 64px;
+    --main-slider-height: 694px;
     /*--action-color-hover: #2FA5ED;*/
     /*--input-border: #B3B3B3;*/
     /*--input-border-hover-and-focus: #7E7E7E;*/
@@ -20,6 +22,7 @@
     /*--disabled-background: #F6F6F6;*/
     /*--disabled-color: #999999;*/
     --error: #F34141;
+    --progress: 0;
 }
 
 @media (width < 740px) {

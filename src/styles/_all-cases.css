@@ -48,8 +48,9 @@
         }
 
         .all-cases__filters {
-            margin-top: 48px;
             overflow-x: auto;
+            margin-top: -60px; /* Даём баббликам больше места, чтобы скролл их не обрезал */
+            padding-top: 108px;
         }
 
         @media (width < 422px) {
@@ -63,22 +64,27 @@
                 width: fit-content;
                 padding-left: var(--container-padding);
                 padding-right: var(--container-padding);
-                /*display: flex;*/
-                /*align-items: stretch;*/
             }
                 .all-cases__filters-list {
-                    /*display: flex;*/
-                    /*align-items: stretch;*/
-                    /*gap: 10px;*/
+
                 }
+                    /* Отменяем корректировку на прижатие баблов к краю экрана, внутри скроллабара она работает неправильно и в общем-то не нужна */
+                    .all-cases__filters-list .bubble {
+                        margin-left: 0 !important;
+                        margin-right: 0 !important;
+                    }
+                        .all-cases__filters-list .bubble__chevron {
+                            right: auto !important;
+                            left: 50% !important;
+                            margin-left: -11px !important;
+                        }
+
 
                 .all-cases__reset {
-                    /*margin-left: auto;*/
-                    /*padding-left: 16px;*/
+
                 }
                     .all-cases__reset .button {
-                        /*padding-left: 23px;*/
-                        /*padding-right: 23px;*/
+
                     }
 
         .all-cases__list {

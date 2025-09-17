@@ -99,41 +99,25 @@
 @media (width < 740px) {
 
     .filter {
-        /*position: relative;*/
+
     }
         .filter__handler {
-            /*display: flex;*/
-            /*align-items: center;*/
-            /*width: fit-content;*/
-            /*padding: 16px;*/
-            /*background-color: #EEECF4;*/
-            /*border: none;*/
-            /*border-radius: 8px;*/
-            /*font-family: inherit;*/
-            /*font-size: 14px;*/
-            /*line-height: 20px;*/
-            /*color: var(--txt-dark-blue);*/
-            /*white-space: nowrap;*/
-            /*cursor: pointer;*/
-            /*user-select: none;*/
-            /*transition: background-color var(--transition-hover);*/
+
         }
 
         .filter__handler:hover {
-            /*background-color: #FFFFFF;*/
+
         }
 
         .filter--expanded .filter__handler {
-            /*background-color: #FFFFFF;*/
+
         }
             .filter__chevron {
-                /*margin-left: 8px;*/
-                /*stroke: currentColor;*/
-                /*transition: transform var(--transition-dropdown);*/
+
             }
 
             .filter--expanded .filter__chevron {
-                /*transform: scaleY(-1);*/
+
             }
 
 
@@ -142,32 +126,24 @@
             }
 
             .filter__body {
-                /*padding: 24px;*/
-                /*background-color: #FFFFFF;*/
-                /*box-shadow: var(--shadow-large);*/
-                /*border-radius: 8px;*/
-                /*white-space: nowrap;*/
+
             }
                 .filter__list {
 
                 }
                     .filter__body .choice {
-                        /*width: 100%;*/
+
                     }
 
                     .filter__body .choice__label {
-                        /*padding-right: 24px;*/
+
                     }
 
                     .filter__actions {
-                        /*margin-top: 12px;*/
-                        /*display: flex;*/
-                        /*align-items: center;*/
-                        /*gap: 6px;*/
+
                     }
                         .filter__actions .button {
-                            /*flex-grow: 1;*/
-                            /*flex-basis: 0;*/
+
                         }
 
 
@@ -179,8 +155,7 @@
         }
 
         .filter--expanded .filter__dropdown {
-            /*opacity: 100%;*/
-            /*visibility: visible;*/
+
         }
 }
 
