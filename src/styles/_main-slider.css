@@ -1,0 +1,21 @@
+.main-slider {
+    position: relative;
+}
+    .main-slider__background {
+
+    }
+
+    .main-slider__navigation {
+        position: absolute;
+        z-index: 40;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-color: var(--fill-total-white-15);
+        backdrop-filter: var(--blur-15);
+    }
+        .main-slider__nav-wrap {
+
+        }
