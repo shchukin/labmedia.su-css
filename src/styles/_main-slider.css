@@ -61,7 +61,7 @@
                             }
                                 .main-slider__nav-wrap .swiper-wrapper {
                                     display: inline-flex !important;
-                                    width: auto; !important;
+                                    width: auto !important;
                                     align-items: stretch !important;
                                     gap: 8px;
                                     padding-left: var(--container-padding);
