@@ -9,9 +9,25 @@
 
     .all-cases__filters {
         margin-top: 48px;
-        height: 52px;
-        background: purple;
     }
+        .all-cases__filters-ribbon {
+            display: flex;
+            align-items: stretch;
+        }
+            .all-cases__filters-list {
+                display: flex;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .all-cases__reset {
+                margin-left: auto;
+                padding-left: 24px;
+            }
+                .all-cases__reset .button {
+                    padding-left: 23px;
+                    padding-right: 23px;
+                }
 
     .all-cases__list {
         margin-top: 32px;
@@ -32,8 +48,38 @@
         }
 
         .all-cases__filters {
-
+            margin-top: 48px;
+            overflow-x: auto;
         }
+
+        @media (width < 422px) {
+            .all-cases__filters {
+                margin-left: calc(-1 * var(--container-padding));
+                margin-right: calc(-1 * var(--container-padding));
+            }
+        }
+
+            .all-cases__filters-ribbon {
+                width: fit-content;
+                padding-left: var(--container-padding);
+                padding-right: var(--container-padding);
+                /*display: flex;*/
+                /*align-items: stretch;*/
+            }
+                .all-cases__filters-list {
+                    /*display: flex;*/
+                    /*align-items: stretch;*/
+                    /*gap: 10px;*/
+                }
+
+                .all-cases__reset {
+                    /*margin-left: auto;*/
+                    /*padding-left: 16px;*/
+                }
+                    .all-cases__reset .button {
+                        /*padding-left: 23px;*/
+                        /*padding-right: 23px;*/
+                    }
 
         .all-cases__list {
             grid-template-columns: repeat(1, minmax(0, 1fr));

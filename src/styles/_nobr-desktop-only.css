@@ -1,0 +1,10 @@
+.nobr-desktop-only {
+
+}
+
+@media (740px <= width) {
+
+    .nobr-desktop-only {
+        white-space: nowrap;
+    }
+}

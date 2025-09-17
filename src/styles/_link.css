@@ -21,12 +21,6 @@
     text-decoration-color: transparent;
 }
 
-.link:active,
-.wysiwyg a:active {
-    color: #777777;
-    transition: none;
-}
-
 
 .link--text-alike,
 .wysiwyg .link--text-alike {

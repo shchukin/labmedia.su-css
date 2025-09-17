@@ -85,10 +85,10 @@
                                     </div>
                                     <div class="header__request">
                                         <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
-                                            <svg class="button__icon desktop-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                            <svg class="button__icon smartphone-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
                                             </svg>
-                                            <span class="smartphone-only">Связаться</span>
+                                            <span class="desktop-only">Связаться</span>
                                         </a>
                                     </div>
                                     <button class="header__burger">
@@ -178,6 +178,283 @@
         </header>
 
         <div class="page">
+            <section class="services-preview container">
+                <h2 class="services-preview__heading title title--secondary">
+                    Услуги компании
+                </h2>
+                <div class="services-preview__body">
+                    <div class="services-preview__item services-preview__item--online-courses">
+                        <h3 class="services-preview__sub-heading title title--smaller">
+                            Электронные курсы
+                        </h3>
+                        <div class="services-preview__description">
+                            Разрабатываем <span class="desktop-only">электронные</span> курсы,<br> <span class="desktop-only">серьёзные</span> обучающие игры,<br class="desktop-only"> <span class="nobr">бизнес-<br class="smartphone-only">тренажёры</span>, симуляторы
+                        </div>
+                        <div class="services-preview__details">
+                            <a class="button button--square button--medium button--blur" href="#">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="services-preview__item services-preview__item--gamification">
+                        <h3 class="services-preview__sub-heading title title--smaller">
+                            Геймификация
+                        </h3>
+                        <div class="services-preview__description">
+                            Повышаем важные<br class="smartphone-only"> для&nbsp;работы<br class="desktop-only"> показатели<br class="smartphone-only"> за&nbsp;счет игровых<br class="desktop-only"> механик
+                        </div>
+                        <div class="services-preview__details">
+                            <a class="button button--square button--medium button--blur" href="#">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="services-preview__item services-preview__item--video-courses">
+                        <h3 class="services-preview__sub-heading title title--smaller">
+                            Видеокурсы
+                        </h3>
+                        <div class="services-preview__description">
+                            Создаем видео, превращаем<br class="desktop-only"> требования в&nbsp;обучающий<br> контент
+                        </div>
+                        <div class="services-preview__details">
+                            <a class="button button--square button--medium button--blur" href="#">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="announcements">
+                <!--
+                   Адаптивность устроена таким образом, что на десктопах две раздельные карусели: background и body.
+                   На смартфонах фоновая карусель скрывается, а фоновые изображения становятся частью карусели body.
+                   Получается, что фоновые изображения надо продублировать: и для десктопов и для смартфонов.
+                   А в идеале ещё настоять на том, чтобы клиент подготавливал два варианта картинки:
+                   1920x746 -- для десктопов, сильно вытянутая по горизнтали, важная часть смещена вправо
+                   740x746 -- для смартфонов (верткальная, причём основная часть должна быть ближе к центру, потому что
+                   большинство смартфонов ~400px в ширину)
+                -->
+                <div class="announcements__background">
+                    <div class="
+                        carousel
+                        carousel--js-init-announcement-background
+                    ">
+                        <div class="carousel__widget">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="announcements__desktop-image"
+                                             srcset="../temp/announcements/announcement-a@2x.jpg 2x"
+                                             src="../temp/announcements/announcement-a@1x.jpg"
+                                             width="1920"
+                                             height="746"
+                                             alt=""
+                                        >
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="announcements__desktop-image"
+                                             srcset="../temp/announcements/announcement-b@2x.jpg 2x"
+                                             src="../temp/announcements/announcement-b@1x.jpg"
+                                             width="1920"
+                                             height="746"
+                                             alt=""
+                                        >
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="announcements__desktop-image"
+                                             srcset="../temp/announcements/announcement-c@2x.jpg 2x"
+                                             src="../temp/announcements/announcement-c@1x.jpg"
+                                             width="1920"
+                                             height="746"
+                                             alt=""
+                                        >
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="announcements__desktop-image"
+                                             srcset="../temp/announcements/announcement-d@2x.jpg 2x"
+                                             src="../temp/announcements/announcement-d@1x.jpg"
+                                             width="1920"
+                                             height="746"
+                                             alt=""
+                                        >
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="announcements__desktop-image"
+                                             srcset="../temp/announcements/announcement-e@2x.jpg 2x"
+                                             src="../temp/announcements/announcement-e@1x.jpg"
+                                             width="1920"
+                                             height="746"
+                                             alt=""
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="announcements__body container">
+                    <div class="announcements__inner-body">
+                        <div class="
+                            carousel
+                            carousel--js-init-announcement-body
+                            carousel--css-skin-announcement-body
+                        ">
+                            <div class="carousel__widget">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="announcements__card">
+                                                <img class="announcements__smartphone-image"
+                                                     srcset="../temp/announcements/announcement-a-smartphone@2x.jpg 2x"
+                                                     src="../temp/announcements/announcement-a-smartphone@1x.jpg"
+                                                     width="740"
+                                                     height="746"
+                                                     alt=""
+                                                >
+                                                <div class="announcements__card-inner container">
+                                                    <div class="announcements__tag">
+                                                        Анонс
+                                                    </div>
+                                                    <div class="announcements__heading title title--main ellipsis ellipsis--2-lines">
+                                                        Конференция Вовлекай
+                                                    </div>
+                                                    <div class="announcements__description ellipsis ellipsis--4-lines">
+                                                        Поговорим о том, как технологии и эмоции могут работать вместе, чтобы вовлечь каждого участника в процесс обучения
+                                                    </div>
+                                                    <div class="announcements__details">
+                                                        <a class="link link--text-alike" href="#">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="announcements__card">
+                                                <img class="announcements__smartphone-image"
+                                                     srcset="../temp/announcements/announcement-b-smartphone@2x.jpg 2x"
+                                                     src="../temp/announcements/announcement-b-smartphone@1x.jpg"
+                                                     width="740"
+                                                     height="746"
+                                                     alt=""
+                                                >
+                                                <div class="announcements__card-inner container">
+                                                    <div class="announcements__tag">
+                                                        Анонс
+                                                    </div>
+                                                    <div class="announcements__heading title title--main ellipsis ellipsis--2-lines">
+                                                        Новый подход к обучению
+                                                    </div>
+                                                    <div class="announcements__description ellipsis ellipsis--4-lines">
+                                                        Поговорим о том, как технологии и эмоции могут работать вместе
+                                                    </div>
+                                                    <div class="announcements__details">
+                                                        <a class="link link--text-alike" href="#">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="announcements__card">
+                                                <img class="announcements__smartphone-image"
+                                                     srcset="../temp/announcements/announcement-c-smartphone@2x.jpg 2x"
+                                                     src="../temp/announcements/announcement-c-smartphone@1x.jpg"
+                                                     width="740"
+                                                     height="746"
+                                                     alt=""
+                                                >
+                                                <div class="announcements__card-inner container">
+                                                    <div class="announcements__tag">
+                                                        Анонс
+                                                    </div>
+                                                    <div class="announcements__heading title title--main ellipsis ellipsis--2-lines">
+                                                        Вовлечение через инновации
+                                                    </div>
+                                                    <div class="announcements__description ellipsis ellipsis--4-lines">
+                                                        Изучим, как новые методы и эмоциональный подход делают обучение увлекательным для всех
+                                                    </div>
+                                                    <div class="announcements__details">
+                                                        <a class="link link--text-alike" href="#">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="announcements__card">
+                                                <img class="announcements__smartphone-image"
+                                                     srcset="../temp/announcements/announcement-d-smartphone@2x.jpg 2x"
+                                                     src="../temp/announcements/announcement-d-smartphone@1x.jpg"
+                                                     width="740"
+                                                     height="746"
+                                                     alt=""
+                                                >
+                                                <div class="announcements__card-inner container">
+                                                    <div class="announcements__tag">
+                                                        Анонс
+                                                    </div>
+                                                    <div class="announcements__heading title title--main ellipsis ellipsis--2-lines">
+                                                        Будущее российского образования
+                                                    </div>
+                                                    <div class="announcements__description ellipsis ellipsis--4-lines">
+                                                        Поговорим о том, как технологии и эмоции создают уникальный опыт обучения и развития для каждого сутрудника на уровне вдохновляющего обучения увлекательным для всех
+                                                    </div>
+                                                    <div class="announcements__details">
+                                                        <a class="link link--text-alike" href="#">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="announcements__card">
+                                                <img class="announcements__smartphone-image"
+                                                     srcset="../temp/announcements/announcement-e-smartphone@2x.jpg 2x"
+                                                     src="../temp/announcements/announcement-e-smartphone@1x.jpg"
+                                                     width="740"
+                                                     height="746"
+                                                     alt=""
+                                                >
+                                                <div class="announcements__card-inner container">
+                                                    <div class="announcements__tag">
+                                                        Анонс
+                                                    </div>
+                                                    <div class="announcements__heading title title--main ellipsis ellipsis--2-lines">
+                                                        Интерактивное обучение
+                                                    </div>
+                                                    <div class="announcements__description ellipsis ellipsis--4-lines">
+                                                        Обсудим, как технологии и эмоции преобразуют обучение, делая его доступным и вдохновляющим для всех.
+                                                    </div>
+                                                    <div class="announcements__details">
+                                                        <a class="link link--text-alike" href="#">Подробнее</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__pagination">
+
+                            </div>
+                            <div class="carousel__controls">
+                                <button class="carousel__button carousel__button--prev button button--square button--medium button--slider-white-action" type="button">
+                                    <svg class="button__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5 13L5.5 8L10.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="carousel__button carousel__button--next button button--square button--medium button--slider-white-action" type="button">
+                                    <svg class="button__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 13L10.5 8L5.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div class="related related--4-tiles-on-smartphone">
                 <div class="related__wrap container">
                     <div class="related__heading title title--secondary">
@@ -753,7 +1030,7 @@
                              src="../temp/clients/clients-client-a@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Т-банк"
                         >
                     </div>
                     <div class="clients__item">
@@ -762,7 +1039,7 @@
                              src="../temp/clients/clients-client-b@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Komatsu"
                         >
                     </div>
                     <div class="clients__item">
@@ -771,7 +1048,7 @@
                              src="../temp/clients/clients-client-c@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Сибур"
                         >
                     </div>
                     <div class="clients__item">
@@ -780,7 +1057,7 @@
                              src="../temp/clients/clients-client-d@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Норникель"
                         >
                     </div>
                     <div class="clients__item">
@@ -789,7 +1066,7 @@
                              src="../temp/clients/clients-client-e@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Газпром"
                         >
                     </div>
                     <div class="clients__item">
@@ -798,7 +1075,7 @@
                              src="../temp/clients/clients-client-f@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Tikkurila"
                         >
                     </div>
                     <div class="clients__item">
@@ -807,7 +1084,7 @@
                              src="../temp/clients/clients-client-g@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Volkswagen"
                         >
                     </div>
                     <div class="clients__item">
@@ -816,7 +1093,7 @@
                              src="../temp/clients/clients-client-h@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="EFES"
                         >
                     </div>
                     <div class="clients__item">
@@ -825,7 +1102,7 @@
                              src="../temp/clients/clients-client-i@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Росгоссстрах"
                         >
                     </div>
                     <div class="clients__item">
@@ -834,7 +1111,7 @@
                              src="../temp/clients/clients-client-j@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Komatsu"
                         >
                     </div>
                     <div class="clients__item">
@@ -852,359 +1129,411 @@
                              src="../temp/clients/clients-client-l@1x.png"
                              width="267"
                              height="160"
-                             alt=""
+                             alt="Северсталь"
                         >
                     </div>
                 </div>
             </section>
 
             <section class="striped-gallery">
-                <h2 class="visuallyhidden">
-                    Галлерея
-                </h2>
-                <div class="striped-gallery__desktop-version">
-                    <div class="striped-gallery__line">
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-a@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-a@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-b@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-b@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-c@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-c@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-d@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-f@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
+                <!--
+                    У этой секции две принципиально разные версии: отдельно десктоп, отдельно смартфоны.
+                    Обычно адаптивные стили переключают одно в другое, но тут проще продублировать.
+                    - На беке, в случае с десктопной версией нужно будет поделить все фотки на три части,
+                    и сгенерировать три компонента marquee. Не обязательно равные, можно, например: 8, 7, 7.
+                    - На смартфонах те же самые фотки продублировать и вывести одним списком, как обычно.
+                -->
+                <h2 class="visuallyhidden">Фото-галерея</h2>
+                <div class="striped-gallery__desktop-version" role="presentation" aria-hidden="true">
+                    <div class="marquee marquee--to-right">
+                        <div class="marquee__content">
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-a@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-a@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-b@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-b@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-c@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-c@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-d@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-f@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                        </div>
                     </div>
-                    <div class="striped-gallery__line">
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
+                    <div class="marquee marquee--to-left">
+                        <div class="marquee__content">
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                        </div>
                     </div>
-                    <div class="striped-gallery__line">
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-l@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-l@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-m@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-m@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-n@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-n@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-o@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-o@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-p@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-p@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
-                        <a class="striped-gallery__line-link" href="#">
-                            <img class="striped-gallery__line-image"
-                                 srcset="../temp/striped-gallery/striped-gallery-q@2x.jpg 2x"
-                                 src="../temp/striped-gallery/striped-gallery-q@1x.jpg"
-                                 alt=""
-                            >
-                        </a>
+                    <div class="marquee marquee--to-right">
+                        <div class="marquee__content">
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-l@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-l@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-m@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-m@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-n@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-n@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-o@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-o@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-p@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-p@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                            <a class="marquee__link" href="#">
+                                <img
+                                    class="marquee__image"
+                                    srcset="../temp/striped-gallery/striped-gallery-q@2x.jpg 2x"
+                                    src="../temp/striped-gallery/striped-gallery-q@1x.jpg"
+                                    alt=""
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="striped-gallery__smartphone-version">
-                    <div class="
-                            carousel
-                            carousel--js-init-striped-gallery
-                            carousel--css-overlapping-white-bullets
-                        ">
-                        <div class="carousel__widget">
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-a@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-a@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-b@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-b@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-c@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-c@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-d@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-f@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-l@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-l@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-m@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-m@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-n@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-n@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-o@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-o@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-p@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-p@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a class="striped-gallery__slide-link" href="#">
-                                            <img class="striped-gallery__slide-image"
-                                                 srcset="../temp/striped-gallery/striped-gallery-q@2x.jpg 2x"
-                                                 src="../temp/striped-gallery/striped-gallery-q@1x.jpg"
-                                                 alt=""
-                                            >
-                                        </a>
+                    <div class="theater container">
+                        <div class="theater__strut">
+                            <div class="carousel carousel--js-init-striped-gallery">
+                                <div class="carousel__widget">
+                                    <div class="swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-a@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-a@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-b@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-b@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-c@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-c@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-d@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-d@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-e@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-e@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-f@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-f@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-g@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-g@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-h@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-h@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-i@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-i@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-j@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-j@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-k@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-k@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-l@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-l@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-m@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-m@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-n@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-n@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-o@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-o@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-p@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-p@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a class="theater__link" href="#">
+                                                    <img
+                                                        class="theater__image"
+                                                        srcset="../temp/striped-gallery/striped-gallery-q@2x.jpg 2x"
+                                                        src="../temp/striped-gallery/striped-gallery-q@1x.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel__pagination">
+                                <div class="carousel__pagination">
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

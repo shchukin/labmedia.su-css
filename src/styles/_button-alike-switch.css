@@ -1,0 +1,37 @@
+.button-alike-switch {
+    position: relative;
+    display: block;
+    width: fit-content;
+}
+    .button-alike-switch__widget {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        opacity: 0;
+    }
+
+    .button-alike-switch__label {
+        display: block;
+        padding: 16px;
+        background-color: #EEECF4;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--txt-dark-blue);
+        white-space: nowrap;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .button-alike-switch__widget:checked ~ .button-alike-switch__label {
+        background-color: #FFFFFF;
+        border-color: var(--accent-main-blue-50);
+        color: var(--accent-main-blue);
+    }
+        .button-alike-switch__label .explain {
+            margin: -10px;
+        }
+            .button-alike-switch__widget:checked ~ .button-alike-switch__label .explain__icon {
+                background-image: url("../vectors/explain-accent-color.svg");
+            }

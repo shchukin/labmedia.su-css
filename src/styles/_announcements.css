@@ -1,0 +1,203 @@
+.announcements {
+    --announcements-background-height: 746px;
+    --announcements-body-height: 542px;
+}
+
+.announcements {
+    position: relative;
+    overflow: hidden; /* Обрезаем карусели */
+    height: var(--announcements-background-height);
+}
+    .announcements__background {
+        position: absolute;
+        inset: 0;
+    }
+        .announcements__desktop-image {
+            vertical-align: top;
+            width: 100%;
+            height: var(--announcements-background-height);
+            object-fit: cover;
+        }
+
+        /* Небольшое затемнение под слайдером */
+        .announcements__background::before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 879px;
+            background-image: linear-gradient(to right, rgb(0 0 0 / 50%), rgb(0 0 0 / 0));
+            pointer-events: none;
+        }
+
+    .announcements__body {
+        position: relative;
+        z-index: 20;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        pointer-events: none; /* Чтобы можно было кликать насквозь и свайпить фон */
+    }
+        .announcements__inner-body {
+            width: 518px;
+            height: var(--announcements-body-height);
+            background-color: var(--fill-total-white-20);
+            color: #FFFFFF;
+            backdrop-filter: var(--blur-20);
+            border-radius: 16px;
+            pointer-events: auto;
+        }
+
+
+.announcements__card {
+    height: var(--announcements-body-height);
+    padding: 128px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+    .announcements__smartphone-image {
+        display: none;
+    }
+
+    .announcements__card-inner {
+
+    }
+
+    @media (740px <= width) {
+        .announcements__card-inner {
+            width: auto;
+            border-left: none;
+            border-right: none;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+        .announcements__tag {
+            display: block;
+            width: fit-content;
+            padding: 8px 16px;
+            background-color: var(--fill-main-blue-10);
+            backdrop-filter: var(--blur-15);
+            border-radius: 6px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .announcements__heading {
+            margin-top: 24px;
+            margin-bottom: 0;
+        }
+
+        .announcements__description {
+            margin-top: 24px;
+            max-width: 396px;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        .announcements__details {
+            margin-top: 48px;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+
+
+@media (width < 740px) {
+
+    .announcements {
+        --announcements-height: 640px;
+    }
+
+    .announcements {
+        height: auto;
+    }
+        .announcements__background {
+            display: none;
+        }
+
+        .announcements__body {
+            height: auto;
+            display: block;
+            pointer-events: auto;
+        }
+
+        .announcements__body.container,
+        .announcements__body > .container {
+            border-left: none;
+            border-right: none;
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+            .announcements__inner-body {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                backdrop-filter: none;
+            }
+
+
+    .announcements__card {
+        position: relative;
+        height: var(--announcements-height);
+        padding: 0;
+    }
+        .announcements__smartphone-image {
+            display: block;
+            width: 100%;
+            height: var(--announcements-height);
+            object-fit: cover;
+        }
+
+        .announcements__card::before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 547px;
+            background-image: linear-gradient(to top, rgb(0 0 0 / 50%), rgb(0 0 0 / 0));
+            pointer-events: none;
+        }
+
+        .announcements__card-inner {
+            position: absolute;
+            z-index: 20;
+            left: var(--container-padding);
+            right: var(--container-padding);
+            bottom: 46px;
+
+            /* blur теперь внутри каждого слайда: */
+            padding: 32px 24px;
+            background-color: var(--fill-total-white-20);
+            backdrop-filter: var(--blur-20);
+            border-radius: 24px;
+        }
+            .announcements__tag {
+
+            }
+
+            .announcements__heading {
+                margin-top: 12px;
+            }
+
+            .announcements__description {
+                margin-top: 13px;
+                max-width: none;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .announcements__details {
+                margin-top: 16px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+}

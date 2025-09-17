@@ -1,0 +1,15 @@
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.ellipsis--2-lines { -webkit-line-clamp: 2; }
+.ellipsis--3-lines { -webkit-line-clamp: 3; }
+.ellipsis--4-lines { -webkit-line-clamp: 4; }
+.ellipsis--5-lines { -webkit-line-clamp: 5; }
+.ellipsis--6-lines { -webkit-line-clamp: 6; }
+.ellipsis--7-lines { -webkit-line-clamp: 7; }
+.ellipsis--8-lines { -webkit-line-clamp: 8; }
+.ellipsis--9-lines { -webkit-line-clamp: 9; }

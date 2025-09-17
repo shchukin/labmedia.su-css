@@ -2,45 +2,16 @@
 
 }
     .striped-gallery__desktop-version {
-        overflow: hidden;
-        padding-top: 10px; /* чтобы наведение не обрезалось */
-        padding-bottom: 10px; /* чтобы наведение не обрезалось */
+
     }
-        .striped-gallery__line {
-            margin-top: 24px;
-            display: flex;
-            align-items: stretch;
-            gap: 24px;
-        }
-
-        .striped-gallery__line:first-child {
-            margin-top: 0;
-        }
-            .striped-gallery__line-link {
-                flex-shrink: 0;
-                display: block;
-            }
-                .striped-gallery__line-image {
-                    vertical-align: top;
-                    background-color: var(--image-fallback);
-                    width: 356px;
-                    height: 200px;
-                    object-fit: cover;
-                    border-radius: 16px;
-                    transition: transform var(--transition-scale-hover);
-                }
-
-                .striped-gallery__line-link:hover .striped-gallery__line-image {
-                    transform: scale(105%);
-                }
 
     .striped-gallery__smartphone-version {
         display: none;
     }
-        .striped-gallery__slide-link {
-            border-radius: 16px;
+        .theater__link {
+
         }
-            .striped-gallery__slide-image {
+            .theater__slide-image {
 
             }
 
@@ -54,15 +25,32 @@
     .striped-gallery__smartphone-version {
         display: block;
     }
-        .striped-gallery__slide-link {
+        .theater__strut {
 
         }
-            .striped-gallery__slide-image {
+
+        @media (width < 442px) {
+            .theater__strut {
+                margin-left: calc(-1 * var(--container-padding));
+                margin-right: calc(-1 * var(--container-padding));
+            }
+        }
+
+        .theater__link {
+            border-radius: 16px;
+        }
+            .theater__slide-image {
                 vertical-align: top;
                 background-color: var(--image-fallback);
                 width: 100%;
                 height: auto;
                 aspect-ratio: 376/251;
                 object-fit: cover;
+            }
+
+            @media (442px <= width) {
+                .theater__slide-image {
+                    border-radius: 16px;
+                }
             }
 }

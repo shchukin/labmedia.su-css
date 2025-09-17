@@ -7,7 +7,7 @@
     border: none;
     padding: 16px 30px;
     min-width: 90px;
-    height: 52px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    height: 52px; /* Задаём высоту не только паддингом, но и явно на случай маленькой иконки внутри без текста (вертикальное центрирование) */
     background-color: var(--accent-main-blue);
     border-radius: 8px;
     font-family: inherit;
@@ -195,6 +195,24 @@
 }
 
 
+.button--slider-white-action {
+    background-color: transparent;
+    color: var(--txt-total-white);
+}
+
+.button--slider-white-action:hover {
+    background-color: var(--bg-total-white);
+    color: var(--fill-dark-blue);
+}
+
+.button--slider-white-action:disabled,
+.button--slider-white-action:disabled:hover {
+    background-color: transparent;
+    color: var(--txt-total-white);
+    opacity: 50%;
+}
+
+
 .button-inner-slider-action {
     background-color: var(--fill-dark-blue-80);
     color: #FFFFFF;
@@ -234,11 +252,12 @@
         width: 20px;
         height: 20px;
         stroke: currentColor;
+        transition: stroke var(--transition-hover);
     }
 
 
 .button--square {
-    min-width: 0;
+    min-width: 0 !important; /* Перебиваем все индивидуальные min-width, в вариациях */
     width: 52px;
     padding-left: 0;
     padding-right: 0;
@@ -247,8 +266,32 @@
 
 
 
+/* В чистом виде пока не встречалась (используется только квадратная). Можно добавь font-size и отступы */
+.button--medium {
+    height: 48px; /* Задаём высоту не только паддингом, но и явно на случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    border-radius: 6px;
+}
+
+.button--medium:has(.button__icon) {
+
+}
+    .button--medium .button__icon {
+        width: 16px;
+        height: 16px;
+    }
+
+.button--medium.button--square {
+    min-width: 0;
+    width: 48px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
 .button--smaller {
-    height: 44px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    min-width: 80px;
+    height: 44px; /* Задаём высоту не только паддингом, но и явно на случай маленькой иконки внутри без текста (вертикальное центрирование) */
     padding: 12px 30px;
     font-size: 14px;
     line-height: 20px;
@@ -265,28 +308,36 @@
     }
 
 .button--smaller.button--square {
+    min-width: 0;
     width: 44px;
     padding-left: 0;
     padding-right: 0;
 }
 
 
-/* В чистом виде пока не встречалась (используется только квадратная). Можно добавь font-size и отступы */
-.button--medium {
-    height: 48px; /* На случай маленькой иконки внутри без текста (вертикальное центрирование) */
-    border-radius: 6px;
+
+.button--micro {
+    min-width: 70px;
+    height: 40px; /* Задаём высоту не только паддингом, но и явно на случай маленькой иконки внутри без текста (вертикальное центрирование) */
+    padding: 10px 20px; /* Пока что эта кнопка не встречалась с горизонтальным паддингом (всё время используется с width: 100%), можно задать нужный при встрече */
+    font-size: 14px;
+    line-height: 20px;
 }
 
-.button--medium:has(.button__icon) {
-
+/* С иконкой пока не встречалась, можно задать размеры и отступы, если встретится: */
+.button--micro:has(.button__icon) {
+    gap: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
 }
-    .button--medium .button__icon {
+    .button--micro .button__icon {
         width: 16px;
         height: 16px;
     }
 
-.button--medium.button--square {
-    width: 48px;
+.button--micro.button--square {
+    min-width: 0;
+    width: 44px;
     padding-left: 0;
     padding-right: 0;
 }

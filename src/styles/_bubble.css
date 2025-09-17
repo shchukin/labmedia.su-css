@@ -23,6 +23,7 @@
         font-style: normal;
         font-size: 12px;
         line-height: 17px;
+        color: var(--txt-dark-blue);
         white-space: nowrap;
         text-transform: none;
         text-align: left;

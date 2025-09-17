@@ -100,9 +100,11 @@
     min-height: 52px;
 }
     .switch--filter .switch__label {
-        padding: 15px 58px 15px 16px;
+        padding: 16px 58px 16px 16px;
         background-color: var(--fill-white-purpule-darker-3);
         border-radius: 8px;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .switch--filter .switch__icon {

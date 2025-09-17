@@ -1,5 +1,5 @@
 .carousel {
-
+    position: relative;
 }
     .carousel {
 
@@ -16,6 +16,81 @@
                     .carousel__widget .swiper-slide {
                         height: auto; /* Изначально в свайпере стоит 100%, что как раз наоборот не работает с align-items: stretch на родителе */
                     }
+
+
+        /* По-умолчанию белые точечки поверх слайдера: */
+
+        .carousel__pagination {
+            position: absolute;
+            z-index: 10;
+            bottom: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            left: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            right: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            width: auto !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            height: auto !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            display: flex; /* Уберёт пробелы, если тип fraction */
+            align-items: center;
+            justify-content: center;
+            font-size: 16px; /* Если тип fraction */
+            line-height: 22px;
+        }
+            .carousel__bullet {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 16px 4px;
+                cursor: pointer;
+            }
+
+            .carousel__bullet--current {
+                cursor: default;
+            }
+                .carousel__bullet::after {
+                    content: "";
+                    transition: width 200ms ease;
+                    width: 6px;
+                    height: 6px;
+                    background-color: rgb(255 255 255 / 50%);
+                    border-radius: 3px;
+                }
+
+                .carousel__bullet:hover::after {
+                    background-color: rgb(255 255 255 / 80%);
+                }
+
+                .carousel__bullet--current::after,
+                .carousel__bullet--current:hover::after {
+                    width: 24px;
+                    background-color: #FFFFFF;
+                }
+
+
+ /* Скин Article Gallery */
+.carousel--css-article-gallery {
+
+}
+    .carousel--css-article-gallery .carousel__pagination {
+        position: static !important;
+    }
+        .carousel--css-article-gallery .carousel__bullet {
+
+        }
+
+        .carousel--css-article-gallery .carousel__bullet--current {
+
+        }
+            .carousel--css-article-gallery .carousel__bullet::after {
+                background-color: var(--fill-dark-blue-32);
+            }
+
+            .carousel--css-article-gallery .carousel__bullet:hover::after {
+                background-color: var(--fill-dark-blue-80);
+            }
+
+            .carousel--css-article-gallery .carousel__bullet--current::after {
+                background-color: var(--fill-dark-blue);
+            }
+
 
 
 
@@ -79,93 +154,6 @@
 
 
 
-/* Скин буллетов навигации carousel--css-bottom-gray-bullets */
-
-.carousel--css-bottom-gray-bullets {
-    position: relative;
-}
-    .carousel--css-bottom-gray-bullets .carousel__pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-        .carousel--css-bottom-gray-bullets .carousel__bullet {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px;
-            cursor: pointer;
-        }
-
-        .carousel--css-bottom-gray-bullets .carousel__bullet--current {
-            cursor: default;
-        }
-            .carousel--css-bottom-gray-bullets .carousel__bullet::after {
-                content: "";
-                transition: width 200ms ease;
-                width: 6px;
-                height: 6px;
-                background-color: var(--fill-dark-blue-32);
-                border-radius: 3px;
-            }
-
-            .carousel--css-bottom-gray-bullets .carousel__bullet:hover::after {
-                background-color: var(--fill-dark-blue-80);
-            }
-
-            .carousel--css-bottom-gray-bullets .carousel__bullet--current::after {
-                width: 24px;
-                background-color: var(--fill-dark-blue);
-            }
-
-
-
-/* Скин буллетов навигации Overlapping White Bullets */
-
-.carousel--css-overlapping-white-bullets {
-    position: relative;
-}
-    .carousel--css-overlapping-white-bullets .carousel__pagination {
-        position: absolute;
-        z-index: 30;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-        .carousel--css-overlapping-white-bullets .carousel__bullet {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 4px;
-            cursor: pointer;
-        }
-
-        .carousel--css-overlapping-white-bullets .carousel__bullet--current {
-            cursor: default;
-        }
-            .carousel--css-overlapping-white-bullets .carousel__bullet::after {
-                content: "";
-                transition: width 200ms ease;
-                width: 6px;
-                height: 6px;
-                background-color: rgb(255 255 255 / 50%);
-                border-radius: 3px;
-            }
-
-            .carousel--css-overlapping-white-bullets .carousel__bullet:hover::after {
-
-            }
-
-            .carousel--css-overlapping-white-bullets .carousel__bullet--current::after {
-                width: 24px;
-                background-color: #FFFFFF;
-            }
-
-
-
 
 /* Карусель "Похожие кейсы" */
 
@@ -181,10 +169,10 @@
         .carousel--css-skin-cases .carousel__widget {
 
         }
-            .carousel--css-skin-cases .carousel__widget .swiper {
-                overflow: visible; /* Разрешаем ленти карусели идти вправо до упора, до края экран. А там его обрежет родительский компонент .related */
+            .carousel--css-skin-cases .swiper {
+                overflow: visible; /* Разрешаем ленте карусели идти вправо до упора (до края экран). А там его обрежет родительский компонент .related */
             }
-                .carousel--css-skin-cases .carousel__widget .swiper-wrapper {
+                .carousel--css-skin-cases .swiper-wrapper {
 
                 }
                     .carousel--css-skin-cases .swiper-slide {
@@ -212,6 +200,54 @@
 
 
 
+/* Скин Announcement body */
+
+.carousel--css-skin-announcement-body {
+    overflow: hidden;
+}
+    @media (740px <= width) {
+
+        .carousel--css-skin-announcement-body .carousel__pagination {
+            position: absolute;
+            z-index: 20;
+            left: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            top: 53px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            bottom: auto !important;
+            right: auto !important;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .carousel--css-skin-announcement-body .carousel__controls {
+            position: absolute;
+            z-index: 20;
+            right: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            top: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            padding: 4px;
+            background-color: var(--fill-total-white-15);
+            border-radius: 8px;
+        }
+            .carousel--css-skin-announcement-body .carousel__button {
+
+            }
+    }
+
+
+@media (width < 740px) {
+
+    .carousel--css-skin-announcement-body .carousel__pagination {
+        bottom: 8px !important;
+    }
+
+    .carousel--css-skin-announcement-body .carousel__controls {
+        display: none;
+    }
+}
+
+
+
+
+
 /* Довольно запарно выключать слайдер на одном из разрешений.
    В данном случае на десктопах. Проще перебить пару стилей:
  */
@@ -224,10 +260,10 @@
     .carousel--css-disable-on-desktop {
 
     }
-        .carousel--css-disable-on-desktop .carousel__widget .swiper {
+        .carousel--css-disable-on-desktop .swiper {
             overflow: visible;
         }
-            .carousel--css-disable-on-desktop .carousel__widget .swiper-wrapper {
+            .carousel--css-disable-on-desktop .swiper-wrapper {
                 display: block !important;
                 height: auto !important;
                 transform: none !important;
@@ -263,10 +299,10 @@
     .carousel--css-disable-on-smartphone {
 
     }
-        .carousel--css-disable-on-smartphone .carousel__widget .swiper {
+        .carousel--css-disable-on-smartphone .swiper {
             overflow: visible;
         }
-            .carousel--css-disable-on-smartphone .carousel__widget .swiper-wrapper {
+            .carousel--css-disable-on-smartphone .swiper-wrapper {
                 display: block !important;
                 height: auto !important;
                 transform: none !important;

@@ -85,10 +85,10 @@
                                     </div>
                                     <div class="header__request">
                                         <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
-                                            <svg class="button__icon desktop-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                            <svg class="button__icon smartphone-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
                                             </svg>
-                                            <span class="smartphone-only">Связаться</span>
+                                            <span class="desktop-only">Связаться</span>
                                         </a>
                                     </div>
                                     <button class="header__burger">
@@ -183,8 +183,246 @@
                 <h1 class="all-cases__heading title title--main">
                     Кейсы
                 </h1>
-                <div class="all-cases__filters">
-
+                <div class="all-cases__filters hide-scrollbar">
+                    <div class="all-cases__filters-ribbon">
+                        <div class="all-cases__filters-list">
+                            <label class="switch switch--filter">
+                                <input class="switch__widget" type="checkbox">
+                                <span class="switch__label">Новинки</span>
+                                <i class="switch__icon" role="presentation"></i>
+                            </label>
+                            <div class="filter">
+                                <a class="filter__handler mfp-smartphone-only-handler" href="#case-type">
+                                    Тип кейса
+                                    <svg class="filter__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 5.5L8 10.5L3 5.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <div class="filter__dropdown">
+                                    <div class="window mfp-hide mfp-smartphone-only mfp-grounded-on-smartphone" id="case-type">
+                                        <div class="filter__body">
+                                            <div class="filter__list">
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Lorem ipsum dolor</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Sit amet consectetur</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Adipisicing elit</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                            </div>
+                                            <div class="filter__actions">
+                                                <button class="button button--micro" type="button">Готово</button>
+                                                <button class="button button--micro button--outline-blue" type="button">Сбросить</button>
+                                            </div>
+                                        </div>
+                                        <button class="window__close mfp-close" type="button">
+                                            Закрыть
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter">
+                                <a class="filter__handler mfp-smartphone-only-handler" href="#case-niche">
+                                    Ниша
+                                    <svg class="filter__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 5.5L8 10.5L3 5.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <div class="filter__dropdown">
+                                    <div class="window mfp-hide mfp-smartphone-only mfp-grounded-on-smartphone" id="case-niche">
+                                        <div class="filter__body">
+                                            <div class="filter__list">
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Реклама &&nbsp;Маркетинг</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Здоровье</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Розничная торговля</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Недвижимость</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Персонал</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Страхование</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Реклама &&nbsp;Маркетинг</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Здоровье</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Розничная торговля</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Недвижимость</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Персонал</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Страхование</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                            </div>
+                                            <div class="filter__actions">
+                                                <button class="button button--micro" type="button">Готово</button>
+                                                <button class="button button--micro button--outline-blue" type="button">Сбросить</button>
+                                            </div>
+                                        </div>
+                                        <button class="window__close mfp-close" type="button">
+                                            Закрыть
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter">
+                                <a class="filter__handler mfp-smartphone-only-handler" href="#case-clients">
+                                    Клиент
+                                    <svg class="filter__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 5.5L8 10.5L3 5.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <div class="filter__dropdown">
+                                    <div class="window mfp-hide mfp-smartphone-only mfp-grounded-on-smartphone" id="case-clients">
+                                        <div class="filter__body">
+                                            <div class="filter__list">
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Т-банк</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Komatsu</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Сибур</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Норникель</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Газпром</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Tikkurila</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Volkswagen</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">EFES</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                                <label class="choice">
+                                                    <input class="choice__widget" type="checkbox">
+                                                    <span class="choice__label">Росгоссстрах</span>
+                                                    <i class="choice__icon" role="presentation"></i>
+                                                </label>
+                                            </div>
+                                            <div class="filter__actions">
+                                                <button class="button button--micro" type="button">Готово</button>
+                                                <button class="button button--micro button--outline-blue" type="button">Сбросить</button>
+                                            </div>
+                                        </div>
+                                        <button class="window__close mfp-close" type="button">
+                                            Закрыть
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="button-alike-switch">
+                                <input class="button-alike-switch__widget" type="checkbox">
+                                <span class="button-alike-switch__label">
+                                    На наших продуктах
+                                    <div class="explain explain--accent-color bubble-context">
+                                        <button class="explain__icon bubble-handler" type="button">
+                                            Подсказка
+                                        </button>
+                                        <div class="bubble">
+                                            <div class="bubble__body">
+                                                  <div class="bubble__heading">Lorem ipsum</div>
+                                                <div class="bubble__description">Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit. Dignissimos, voluptate.</div>
+                                            </div>
+                                            <i class="bubble__chevron"></i>
+                                        </div>
+                                    </div>
+                                </span>
+                            </label>
+                            <label class="button-alike-switch">
+                                <input class="button-alike-switch__widget" type="checkbox">
+                                <span class="button-alike-switch__label">
+                                    Победители премии
+                                    <div class="explain explain--accent-color bubble-context">
+                                        <button class="explain__icon bubble-handler" type="button">
+                                            Подсказка
+                                        </button>
+                                        <div class="bubble">
+                                            <div class="bubble__body">
+                                                <div class="bubble__heading">Премия «Золотая медаль»</div>
+                                                <div class="bubble__description">Многоканальный телефон</div>
+                                            </div>
+                                            <i class="bubble__chevron"></i>
+                                        </div>
+                                    </div>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="all-cases__reset">
+                            <button class="button button--outline-blue" type="button">
+                                Очистить
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="all-cases__list">
                     <div class="project">

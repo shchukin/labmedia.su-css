@@ -1,0 +1,219 @@
+.services-preview {
+    padding-top: 100px;
+    padding-bottom: 113px;
+}
+    .services-preview__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .services-preview__body {
+        margin-top: 33px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+        .services-preview__item {
+            position: relative;
+            padding: 40px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-scale-hover);
+        }
+
+        .services-preview__item:hover {
+            transform: scale(102%);
+        }
+
+        .services-preview__item--online-courses {
+            grid-row: span 2;
+        }
+            .services-preview__sub-heading {
+                position: relative;
+                margin-top: 0;
+                margin-bottom: 0;
+                color: #FFFFFF;
+            }
+
+            .services-preview__description {
+                position: relative;
+                margin-top: 12px;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+
+            .services-preview__details {
+                position: relative;
+                margin-top: auto;
+                padding-top: 24px;
+            }
+                .services-preview__details .button__icon {
+                    stroke: var(--fill-total-white);
+                }
+                .services-preview__details .button:hover .button__icon {
+                    stroke: var(--fill-dark-blue);
+                }
+
+
+
+/* Градиенты как дефолтный фон */
+
+.services-preview__item--online-courses {
+    background-image: linear-gradient(to bottom right, #64A4FF, #A2CCFF, #D8EFFF);
+}
+
+.services-preview__item--gamification {
+    background-image: linear-gradient(to bottom right, #E199FF, #EBBBFF, #F8E7FF);
+}
+
+.services-preview__item--video-courses {
+    background-image: linear-gradient(to bottom right, #8A8CFF, #B8B9FF, #D8D9FF);
+}
+
+
+/* Картинки на отдельном слое */
+
+.services-preview__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+
+.services-preview__item--online-courses::before {
+    background-image: url("../images/services-preview/services-preview-a-desktop@1x.png");
+}
+
+.services-preview__item--gamification::before {
+    background-image: url("../images/services-preview/services-preview-b-desktop@1x.png");
+}
+
+.services-preview__item--video-courses::before {
+    background-image: url("../images/services-preview/services-preview-c-desktop@1x.png");
+}
+
+@media (min-resolution: 1.5dppx) {
+
+    .services-preview__item--online-courses::before {
+        background-image: url("../images/services-preview/services-preview-a-desktop@2x.png");
+    }
+
+    .services-preview__item--gamification::before {
+        background-image: url("../images/services-preview/services-preview-b-desktop@2x.png");
+    }
+
+    .services-preview__item--video-courses::before {
+        background-image: url("../images/services-preview/services-preview-c-desktop@2x.png");
+    }
+}
+
+
+
+
+@media (width < 740px) {
+
+    .services-preview {
+        padding-top: 72px;
+        padding-bottom: 88px;
+    }
+        .services-preview__heading {
+
+        }
+            .services-preview__heading.title,
+            .services-preview__heading .title {
+
+            }
+
+        .services-preview__body {
+            margin-top: 32px;
+            display: block;
+        }
+            .services-preview__item {
+                margin-top: 16px;
+                padding: 32px;
+                min-height: 316px;
+            }
+
+            .services-preview__item:first-child {
+                margin-top: 0;
+            }
+
+            .services-preview__item:hover {
+
+            }
+
+            .services-preview__item--online-courses {
+
+            }
+                .services-preview__sub-heading {
+
+                }
+
+                .services-preview__item--online-courses .services-preview__sub-heading {
+                    max-width: 270px;
+                }
+
+                .services-preview__sub-heading.title,
+                .services-preview__sub-heading title {
+                    font-size: 32px;
+                    line-height: 38px;
+                }
+
+                .services-preview__description {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+                .services-preview__details {
+
+                }
+                    .services-preview__details .button__icon {
+
+                    }
+                    .services-preview__details .button:hover .button__icon {
+
+                    }
+
+
+
+    .services-preview__item::before {
+        background-size: 546px 316px;
+        background-position: center bottom;
+    }
+
+
+    .services-preview__item--online-courses::before {
+        background-image: url("../images/services-preview/services-preview-a-smartphone@1x.png");
+    }
+
+    .services-preview__item--gamification::before {
+        background-image: url("../images/services-preview/services-preview-b-smartphone@1x.png");
+    }
+
+    .services-preview__item--video-courses::before {
+        background-image: url("../images/services-preview/services-preview-c-smartphone@1x.png");
+    }
+
+    @media (min-resolution: 1.5dppx) {
+
+        .services-preview__item--online-courses::before {
+            background-image: url("../images/services-preview/services-preview-a-smartphone@2x.png");
+        }
+
+        .services-preview__item--gamification::before {
+            background-image: url("../images/services-preview/services-preview-b-smartphone@2x.png");
+        }
+
+        .services-preview__item--video-courses::before {
+            background-image: url("../images/services-preview/services-preview-c-smartphone@2x.png");
+        }
+    }
+}
+
+

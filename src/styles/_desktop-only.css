@@ -2,7 +2,7 @@
 
 }
 
-@media (740px <= width) {
+@media (width < 740px) {
 
     .desktop-only {
         display: none !important;

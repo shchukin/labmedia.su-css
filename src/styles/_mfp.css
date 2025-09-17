@@ -74,6 +74,9 @@ button.mfp-close:focus-visible {
     .mfp-smartphone-only {
         display: block !important;
     }
+        .window__close {
+            display: none !important;
+        }
 }
 
 
