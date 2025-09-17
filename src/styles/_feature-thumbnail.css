@@ -23,7 +23,7 @@
         height: 7px;
         background-color: var(--fill-total-white-15);
         backdrop-filter: var(--blur-15);
-        mask-image: url('data:image/svg+xml;utf8,<svg width="16" height="7" viewBox="0 0 16 7" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M-2.36337 9.83379L6.62334 1.30631C7.39505 0.574039 8.60495 0.574039 9.37666 1.30631L18.3634 9.83379C19.6743 11.0777 18.7939 13.2846 16.9867 13.2846H8H-0.98671C-2.79391 13.2846 -3.67431 11.0777 -2.36337 9.83379Z"/></svg>');
+        mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==');
         opacity: 0;
         transition: opacity var(--transition-hover);
     }
@@ -38,7 +38,7 @@
         width: 16px;
         height: 7px;
         background-color: #FFFFFF;
-        mask-image: url('data:image/svg+xml;utf8,<svg width="16" height="7" viewBox="0 0 16 7" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M-2.36337 9.83379L6.62334 1.30631C7.39505 0.574039 8.60495 0.574039 9.37666 1.30631L18.3634 9.83379C19.6743 11.0777 18.7939 13.2846 16.9867 13.2846H8H-0.98671C-2.79391 13.2846 -3.67431 11.0777 -2.36337 9.83379Z"/></svg>');
+        mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==');
         opacity: 0;
         transition: opacity var(--transition-hover);
     }
