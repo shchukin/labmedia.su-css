@@ -128,6 +128,10 @@
     /* Инициализация mfp-smartphone-only-handler, только если не десктоп */
     if (!isDesktop) {
         $('.mfp-smartphone-only-handler').magnificPopup(magnificPopupSettings);
+    } else {
+        $('.mfp-smartphone-only-handler').on('click', function(event){
+            event.preventDefault();
+        });
     }
 
     
@@ -169,7 +173,7 @@
     /* Карусели */
 
     document.querySelectorAll('.carousel').forEach(($carousel) => {
-
+        
         if( $carousel.classList.contains('carousel--js-init-case') ) {
             new Swiper($carousel.querySelector('.swiper'), {
                 slidesPerView: 3,
@@ -195,7 +199,7 @@
                 },
                 pagination: {
                     clickable: true,
-                    el: '.carousel__pagination',
+                    el: $carousel.querySelector('.carousel__pagination'),
                     bulletClass: 'carousel__bullet',
                     bulletActiveClass: 'carousel__bullet--current',
                 },
@@ -206,20 +210,69 @@
             new Swiper($carousel.querySelector('.swiper'), {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
-                navigation: {
-                    prevEl: $carousel.querySelector('.carousel__button--prev'),
-                    nextEl: $carousel.querySelector('.carousel__button--next'),
-                    disabledClass: 'carousel__button--disabled',
-                },
                 pagination: {
                     clickable: true,
-                    el: '.carousel__pagination',
+                    el: $carousel.querySelector('.carousel__pagination'),
                     bulletClass: 'carousel__bullet',
                     bulletActiveClass: 'carousel__bullet--current',
                 },
             });
         }
     });
+
+
+    /* В секции announcement два слайдера: основной и фоновый */
+    const $announcementBodyCarousel = document.querySelector('.carousel--js-init-announcement-body');
+    const $announcementBackgroundCarousel = document.querySelector('.carousel--js-init-announcement-background');
+
+    let announcementBodyInstance;
+    let announcementBackgroundInstance;
+
+    /* Основной слайдер с контентом и органами управления */
+
+    if ($announcementBodyCarousel) {
+        announcementBodyInstance = new Swiper($announcementBodyCarousel.querySelector('.swiper'), {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            speed: 500,
+            navigation: {
+                prevEl: $announcementBodyCarousel.querySelector('.carousel__button--prev'),
+                nextEl: $announcementBodyCarousel.querySelector('.carousel__button--next'),
+                disabledClass: 'carousel__button--disabled',
+            },
+            pagination: {
+                clickable: true,
+                el: $announcementBodyCarousel.querySelector('.carousel__pagination'),
+                bulletClass: 'carousel__bullet',
+                bulletActiveClass: 'carousel__bullet--current',
+            },
+            breakpoints: {
+                740: {
+                    pagination: {
+                        type: 'fraction',
+                    }
+                }
+            }
+        });
+    }
+
+
+    /* Фоновый слайдер с картинками */
+
+    if ($announcementBackgroundCarousel) {
+        announcementBackgroundInstance = new Swiper($announcementBackgroundCarousel.querySelector('.swiper'), {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            controller: {
+                control: announcementBodyInstance, // Связываем с announcementBodyInstance
+            },
+        });
+
+        /* Устанавливаем двустороннюю синхронизацию */
+        if (announcementBodyInstance) {
+            announcementBodyInstance.controller.control = announcementBackgroundInstance;
+        }
+    }
 
 
 
@@ -456,5 +509,75 @@
     $(window).on('scroll', scrollSpy);
     $(window).on('load', scrollSpy);
     $(document).on('ready', scrollSpy);
+
+
+
+
+    /* Бегущая строка -- галерея на главной
+     *
+     * Иногда браузер подтупливает и запускает анимацию с разной скоростью.
+     * Что-то типа: 100% ширины для анимации в стилях может просчитаться
+     * с учётом клонирования в скрипте, или без. Решается явной простановкой
+     * класса marquee--init-animation
+     */
+    $('.marquee').each(function() {
+        const $marquee = $(this);
+        const $content = $marquee.find('.marquee__content');
+
+        const contentWidth = $content.width();
+        const containerWidth = $marquee.width();
+
+        /* Скорость анимации (чтобы не зависела от количества плиток) */
+        const baseSpeed = 30;
+        const animationDuration = contentWidth / baseSpeed;
+        $content.css('animation-duration', animationDuration + 's');
+
+        /* Дублируем контент для создания эффекта бесконечной строки */
+        $content.append($content.html());
+        $content.append($content.html());
+
+        /* Устанавливаем ширину контента, чтобы он был достаточно длинным */
+        $content.css('width', contentWidth * 3 + 'px');
+
+        $marquee.addClass('marquee--init-animation');
+    });
+
+
+    /* Фильтр */
+
+    /* На смартфонах будет mfp, на десктопах обычные выпадайки: */
+    if(isDesktop) {
+
+        function showFilter($filter) {
+            hideFilter();
+            $filter.addClass('filter--expanded');
+        }
+
+        function hideFilter($filter) {
+            $('.filter').removeClass('filter--expanded');
+        }
+
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.filter').length) {
+                $('.filter').removeClass('filter--expanded');
+            }
+        });
+
+        $(document).on('keyup', function(event) {
+            if (event.keyCode === 27) {
+                hideFilter();
+            }
+        });
+
+        $('.filter__handler').on('click', function() {
+            const $filter = $(this).parents('.filter');
+            if( ! $filter.hasClass('filter--expanded') ) {
+                showFilter($filter);
+            } else {
+                hideFilter();
+            }
+        });
+    }
+
 
 })(jQuery);
