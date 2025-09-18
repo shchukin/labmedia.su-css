@@ -618,4 +618,20 @@
     }
 
 
+    /* Клиенты (работает как обычные табы) */
+
+    $('.clients .thermometer__action').on('click', function() {
+        const $this = $(this);
+        const $clients = $this.closest('.clients');
+        if( ! $this.hasClass('thermometer__action--current')) {
+            const index = $this.index();
+
+            $this.siblings().removeClass('thermometer__action--current');
+            $this.addClass('thermometer__action--current');
+
+            $clients.find('.clients__tab--current').removeClass('clients__tab--current');
+            $clients.find('.clients__tab:nth-child('+ (index + 1) +')').addClass('clients__tab--current');
+        }
+    });
+
 })(jQuery);
