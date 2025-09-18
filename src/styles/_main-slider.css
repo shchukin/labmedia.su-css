@@ -58,7 +58,6 @@
                                 padding-top: 20px;
                                 margin-left: calc(-1 * var(--container-padding));
                                 margin-right: calc(-1 * var(--container-padding));
-                                touch-action: auto;
                             }
                                 .main-slider__nav-wrap .swiper-wrapper {
                                     display: inline-flex !important;
