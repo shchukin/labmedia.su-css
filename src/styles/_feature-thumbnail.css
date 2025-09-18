@@ -23,7 +23,7 @@
         height: 7px;
         background-color: var(--fill-total-white-15);
         backdrop-filter: var(--blur-15);
-        mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==');
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==");
         opacity: 0;
         transition: opacity var(--transition-hover);
     }
@@ -38,7 +38,7 @@
         width: 16px;
         height: 7px;
         background-color: #FFFFFF;
-        mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==');
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDE2IDciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0tMi4zNjMzNyA5LjgzMzc5TDYuNjIzMzQgMS4zMDYzMUM3LjM5NTA1IDAuNTc0MDM5IDguNjA0OTUgMC41NzQwMzkgOS4zNzY2NiAxLjMwNjMxTDE4LjM2MzQgOS44MzM3OUMxOS42NzQzIDExLjA3NzcgMTguNzkzOSAxMy4yODQ2IDE2Ljk4NjcgMTMuMjg0Nkg4SC0wLjk4NjcxQy0yLjc5MzkxIDEzLjI4NDYgLTMuNjc0MzEgMTEuMDc3NyAtMi4zNjMzNyA5LjgzMzc5WiIvPjwvc3ZnPg==");
         opacity: 0;
         transition: opacity var(--transition-hover);
     }
