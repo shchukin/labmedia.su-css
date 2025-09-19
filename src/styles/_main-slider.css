@@ -18,54 +18,93 @@
         backdrop-filter: var(--blur-15);
     }
         .main-slider__nav-wrap {
-            padding-left: 70px;
-            padding-right: 70px;
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
         }
+            .main-slider__button {
+                width: 60px;
+                flex-shrink: 0;
+                border: none;
+                padding: 0;
+                background-color: var(--fill-total-white-15);
+                backdrop-filter: var(--blur-15);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: background-color var(--transition-hover);
+            }
+
+            .main-slider__button:hover {
+                background-color: var(--fill-total-white);
+            }
+                .main-slider__chevron {
+                    stroke: var(--stroke-total-white);
+                    transition: stroke var(--transition-hover);
+                }
+
+                .main-slider__button:hover .main-slider__chevron {
+                    stroke: var(--fill-dark-blue);
+                }
+
+
+            .main-slider__nav-list {
+                display: flex;
+                align-items: stretch;
+                gap: 10px;
+            }
+                .main-slider__nav-item {
+                    flex-grow: 1;
+                }
+
+
 
 
 
 @media (width < 740px) {
 
     .main-slider {
-        overflow: hidden;
+        position: relative;
+        margin-top: calc(-1 * var(--header-height));
     }
         .main-slider__background {
 
         }
 
         .main-slider__navigation {
-            bottom: 0;
-            padding-top: 4px;
-            padding-bottom: 16px;
+            /*position: absolute;*/
+            /*z-index: 40;*/
+            /*left: 0;*/
+            /*right: 0;*/
+            /*bottom: 40px;*/
+            /*padding-top: 6px;*/
+            /*padding-bottom: 6px;*/
+            /*background-color: var(--fill-total-white-15);*/
+            /*backdrop-filter: var(--blur-15);*/
         }
             .main-slider__nav-wrap {
-                padding-left: 0;
-                padding-right: 0;
+                /*display: flex;*/
+                /*align-items: stretch;*/
+                /*gap: 10px;*/
+                max-width: none;
+                overflow-x: auto;
             }
-                .main-slider__nav-wrap.container,
-                .main-slider__nav-wrap .container {
+                .main-slider__nav-wrap.container {
                     max-width: none;
+                    border: none;
+                    margin: 0;
                 }
-                    .main-slider__nav-wrap .carousel {
 
+                .main-slider__button {
+                    display: none;
+                }
+
+                .main-slider__nav-list {
+                    display: inline-flex;
+                    align-items: stretch;
+                    padding-left: var(--container-padding);
+                    padding-right: var(--container-padding);
+                }
+                    .main-slider__nav-item {
+                        /*flex-grow: 1;*/
                     }
-                        .main-slider__nav-wrap .carousel__widget {
-
-                        }
-                            .main-slider__nav-wrap .swiper {
-                                overflow-x: auto;
-                                margin-top: -20px; /* даём абсолютно-спозионированной пипке бабла больше места, чтобы не обрезалась */
-                                padding-top: 20px;
-                                margin-left: calc(-1 * var(--container-padding));
-                                margin-right: calc(-1 * var(--container-padding));
-                                touch-action: auto;
-                            }
-                                .main-slider__nav-wrap .swiper-wrapper {
-                                    display: inline-flex !important;
-                                    width: auto !important;
-                                    align-items: stretch !important;
-                                    gap: 8px;
-                                    padding-left: var(--container-padding);
-                                    padding-right: var(--container-padding);
-                                }
 }

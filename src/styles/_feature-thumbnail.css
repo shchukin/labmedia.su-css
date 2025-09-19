@@ -12,7 +12,6 @@
 .feature-thumbnail:hover {
     background-color: var(--fill-total-white-32);
 }
-
     .feature-thumbnail::before {
         content: "";
         position: absolute;
@@ -83,7 +82,7 @@
         display: none;
     }
 
-    .swiper-slide-thumb-active .feature-thumbnail__progress {
+    .feature-thumbnail--current .feature-thumbnail__progress {
         display: block;
     }
 
@@ -114,57 +113,51 @@
 
 
 
-.carousel--css-skin-main-slider-background .swiper-slide-thumb-active .feature-thumbnail {
-
+.feature-thumbnail--current,
+.feature-thumbnail--current:hover {
+    background-color: #FFFFFF;
+    cursor: default;
 }
-
-
-.swiper-slide-thumb-active {
-
-}
-    .swiper-slide-thumb-active .feature-thumbnail {
-        background-color: #FFFFFF;
+    .feature-thumbnail--current::before {
+        opacity: 100%;
     }
-        .swiper-slide-thumb-active .feature-thumbnail::before {
-            opacity: 100%;
-        }
-        .swiper-slide-thumb-active .feature-thumbnail::after {
-            opacity: 100%;
-            margin-bottom: -2px;
-        }
+    .feature-thumbnail--current::after {
+        opacity: 100%;
+        margin-bottom: -2px;
+    }
 
-        .swiper-slide-thumb-active .feature-thumbnail--vovlekai .feature-thumbnail__icon {
-            fill: #1A1A1A;
-        }
-            .swiper-slide-thumb-active .feature-thumbnail--vovlekai #feature-icon-content {
-                fill: #F5E76E;
-            }
-
-            .swiper-slide-thumb-active .feature-thumbnail--vovlekai #feature-icon-border {
-                stroke: #F5E76E;
-            }
-
-        .swiper-slide-thumb-active .feature-thumbnail--delai-kurs .feature-thumbnail__icon {
-            fill: #9944FF;
+    .feature-thumbnail--current.feature-thumbnail--vovlekai .feature-thumbnail__icon {
+        fill: #1A1A1A;
+    }
+        .feature-thumbnail--current.feature-thumbnail--vovlekai #feature-icon-content {
+            fill: #F5E76E;
         }
 
-        .swiper-slide-thumb-active .feature-thumbnail--gotovie-kursi .feature-thumbnail__icon {
-            fill: #00AFF0;
+        .feature-thumbnail--current.feature-thumbnail--vovlekai #feature-icon-border {
+            stroke: #F5E76E;
         }
 
-        .swiper-slide-thumb-active .feature-thumbnail--obuchai .feature-thumbnail__icon {
-            fill: #198C5E;
-        }
+    .feature-thumbnail--current.feature-thumbnail--delai-kurs .feature-thumbnail__icon {
+        fill: #9944FF;
+    }
+
+    .feature-thumbnail--current.feature-thumbnail--gotovie-kursi .feature-thumbnail__icon {
+        fill: #00AFF0;
+    }
+
+    .feature-thumbnail--current.feature-thumbnail--obuchai .feature-thumbnail__icon {
+        fill: #198C5E;
+    }
 
 
 
-        .swiper-slide-thumb-active .feature-thumbnail__heading {
-            color: var(--txt-dark-blue);
-        }
+    .feature-thumbnail--current .feature-thumbnail__heading {
+        color: var(--txt-dark-blue);
+    }
 
-        .swiper-slide-thumb-active .feature-thumbnail__description {
-            color: var(--txt-dark-blue);
-        }
+    .feature-thumbnail--current .feature-thumbnail__description {
+        color: var(--txt-dark-blue);
+    }
 
 
 @media (width < 740px) {
@@ -210,7 +203,7 @@
 
         }
 
-        .swiper-slide-thumb-active .feature-thumbnail__progress {
+        .feature-thumbnail--current .feature-thumbnail__progress {
 
         }
 
@@ -219,26 +212,26 @@
             }
 
 
-    .carousel--css-skin-main-slider-background .swiper-slide-thumb-active .feature-thumbnail {
+    .carousel--css-skin-main-slider-background .feature-thumbnail--current .feature-thumbnail {
 
     }
 
 
-    .swiper-slide-thumb-active {
+    .feature-thumbnail--current {
 
     }
-        .swiper-slide-thumb-active .feature-thumbnail {
+        .feature-thumbnail--current .feature-thumbnail {
 
         }
-            .swiper-slide-thumb-active .feature-thumbnail::before {
+            .feature-thumbnail--current .feature-thumbnail::before {
 
             }
 
-            .swiper-slide-thumb-active .feature-thumbnail__heading {
+            .feature-thumbnail--current .feature-thumbnail__heading {
                 position: relative;
             }
 
-            .swiper-slide-thumb-active .feature-thumbnail__heading::after {
+            .feature-thumbnail--current .feature-thumbnail__heading::after {
                 content: "";
                 position: absolute;
                 right: 0;
@@ -252,11 +245,11 @@
                 transition: opacity var(--transition-hover);
             }
 
-            .swiper-slide-thumb-active .feature-thumbnail__description {
+            .feature-thumbnail--current .feature-thumbnail__description {
 
             }
 
-            .swiper-slide-thumb-active .feature-thumbnail::after {
+            .feature-thumbnail--current .feature-thumbnail::after {
 
             }
 }

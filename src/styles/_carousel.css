@@ -223,48 +223,6 @@
 .carousel--css-skin-main-slider-background {
 
 }
-    .carousel--css-skin-main-slider-background .carousel__button {
-        position: absolute;
-        z-index: 50;
-        bottom: 46px;
-        width: 60px;
-        height: 209px;
-        background-color: var(--fill-total-white-15);
-        backdrop-filter: var(--blur-15);
-        border-radius: 12px;
-        transition: background-color var(--transition-hover);
-    }
-
-    .carousel--css-skin-main-slider-background .carousel__button:hover {
-        background-color: var(--fill-total-white);
-    }
-
-    .carousel--css-skin-main-slider-background .carousel__button--prev {
-        right: calc(50% + var(--container-width) / 2 - 60px);
-    }
-
-    .carousel--css-skin-main-slider-background .carousel__button--next {
-        left: calc(50% + var(--container-width) / 2 - 60px);
-    }
-        .carousel--css-skin-main-slider-background .carousel__chevron {
-            stroke: var(--stroke-total-white);
-            transition: stroke var(--transition-hover);
-        }
-
-        .carousel--css-skin-main-slider-background .carousel__button:hover .carousel__chevron {
-            stroke: var(--fill-dark-blue);
-        }
-
-
-
-/* Скин Main Slider Navigation */
-
-.carousel--css-skin-main-slider-navigation {
-
-}
-    .carousel--css-skin-main-slider-navigation .swiper {
-        overflow: visible; /* чтобы не обрезалась пипка активного элемента */
-    }
 
 
 
