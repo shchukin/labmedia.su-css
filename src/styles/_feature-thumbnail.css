@@ -1,4 +1,5 @@
 .feature-thumbnail {
+    position: relative;
     height: 100%;
     padding: 16px 24px 24px;
     background-color: var(--fill-total-white-15);
