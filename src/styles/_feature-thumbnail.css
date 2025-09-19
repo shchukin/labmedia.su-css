@@ -1,4 +1,5 @@
 .feature-thumbnail {
+    height: 100%;
     padding: 16px 24px 24px;
     background-color: var(--fill-total-white-15);
     backdrop-filter: var(--blur-15);
@@ -105,6 +106,10 @@
             background-color: #00AFF0;
         }
 
+        .feature-thumbnail--obuchai .feature-thumbnail__bar {
+            background-color: #198C5E;
+        }
+
 
 
 
@@ -145,6 +150,10 @@
 
         .swiper-slide-thumb-active .feature-thumbnail--gotovie-kursi .feature-thumbnail__icon {
             fill: #00AFF0;
+        }
+
+        .swiper-slide-thumb-active .feature-thumbnail--obuchai .feature-thumbnail__icon {
+            fill: #198C5E;
         }
 
 

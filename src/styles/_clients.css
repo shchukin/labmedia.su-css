@@ -27,6 +27,7 @@
 
         .clients__tab--current {
             display: grid;
+            animation: slide-down var(--transition-slide);
         }
 
             .clients__item {

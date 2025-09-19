@@ -330,7 +330,6 @@
     }
         .carousel--css-disable-on-desktop .swiper {
             overflow: visible;
-            touch-action: auto;
         }
             .carousel--css-disable-on-desktop .swiper-wrapper {
                 display: block !important;
@@ -340,7 +339,6 @@
                 .carousel--css-disable-on-desktop .swiper-slide {
                     width: auto !important;
                     margin-right: 0 !important;
-                    backface-visibility: visible !important;
                 }
 
         .carousel--css-disable-on-desktop .carousel__pagination {
@@ -371,7 +369,6 @@
     }
         .carousel--css-disable-on-smartphone .swiper {
             overflow: visible;
-            touch-action: auto;
         }
             .carousel--css-disable-on-smartphone .swiper-wrapper {
                 display: block !important;
@@ -381,7 +378,6 @@
                 .carousel--css-disable-on-smartphone .swiper-slide {
                     width: auto !important;
                     margin-right: 0 !important;
-                    backface-visibility: visible !important;
                 }
 
         .carousel--css-disable-on-smartphone .carousel__pagination {
