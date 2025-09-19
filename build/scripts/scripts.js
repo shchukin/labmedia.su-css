@@ -134,7 +134,7 @@
         });
     }
 
-    
+
     /* Поиск -- отдельная специфичная модалка */
 
     $('.mfp-search-handler').magnificPopup({
@@ -173,7 +173,7 @@
     /* Карусели */
 
     document.querySelectorAll('.carousel').forEach(($carousel) => {
-        
+
         if( $carousel.classList.contains('carousel--js-init-case') ) {
             new Swiper($carousel.querySelector('.swiper'), {
                 slidesPerView: 3,
@@ -217,6 +217,73 @@
                     bulletActiveClass: 'carousel__bullet--current',
                 },
             });
+        }
+
+        // if ($carousel.classList.contains("carousel--js-init-main-slider")) {
+        //     new Swiper($carousel.querySelector(".swiper"), {
+        //         slidesPerView: 1,
+        //         slidesPerGroup: 1,
+        //         loop: true,
+        //         spaceBetween: 0,
+        //         navigation: {
+        //             prevEl: ".main-slider__button--prev",
+        //             nextEl: ".main-slider__button--next",
+        //         },
+        //         autoplay: {
+        //             delay: 6000,
+        //             disableOnInteraction: false,
+        //         },
+        //         on: {
+        //             autoplayTimeLeft(s, time, progress) {
+        //                 document.documentElement.style.setProperty("--progress", `${(1 - progress) * 100}%`);
+        //             },
+        //         },
+        //     });
+        // }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Get all thumbnail elements first
+        const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
+
+        // Initialize Swiper for the main slider
+        const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: false,
+            navigation: {
+                nextEl: ".main-slider__button--next",
+                prevEl: ".main-slider__button--prev",
+            },
+            on: {
+                init: function () {
+                    // Set initial active thumbnail
+                    updateActiveThumbnail(this.activeIndex);
+                },
+                slideChange: function () {
+                    // Update active thumbnail on slide change
+                    updateActiveThumbnail(this.activeIndex);
+                },
+            },
+        });
+
+        // Add click event listeners to thumbnails
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener("click", () => {
+                // Navigate to the corresponding slide
+                mainSlider.slideTo(index);
+            });
+        });
+
+        // Function to update active thumbnail
+        function updateActiveThumbnail(activeIndex) {
+            // Remove active class from all thumbnails
+            thumbnails.forEach(thumbnail => {
+                thumbnail.classList.remove("feature-thumbnail--current");
+            });
+            // Add active class to the current thumbnail
+            thumbnails[activeIndex].classList.add("feature-thumbnail--current");
         }
     });
 
@@ -271,45 +338,6 @@
         if (announcementBodyInstance) {
             announcementBodyInstance.controller.control = announcementBackgroundInstance;
         }
-    }
-
-
-    /* На главном экране главной страницы два слайдера: навигационный и фоновый */
-    const $mainSliderNavigationCarousel = document.querySelector('.carousel--js-init-main-slider-navigation');
-    const $mainSliderBackgroundCarousel = document.querySelector('.carousel--js-init-main-slider-background');
-
-    let mainSliderNavigationInstance;
-    let mainSliderBackgroundInstance;
-
-    if ($mainSliderNavigationCarousel && $mainSliderBackgroundCarousel) {
-        mainSliderNavigationInstance = new Swiper($mainSliderNavigationCarousel.querySelector('.swiper'), {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-        });
-
-        mainSliderBackgroundInstance = new Swiper($mainSliderBackgroundCarousel.querySelector('.swiper'), {
-            loop: true,
-            spaceBetween: 0,
-            navigation: {
-                prevEl: ".carousel__button--prev",
-                nextEl: ".carousel__button--next",
-            },
-            thumbs: {
-                swiper: mainSliderNavigationInstance,
-            },
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false
-            },
-            on: {
-                autoplayTimeLeft(s, time, progress) {
-                    document.documentElement.style.setProperty("--progress", `${(1 - progress) * 100}%`);
-                }
-            }
-        });
     }
 
 
