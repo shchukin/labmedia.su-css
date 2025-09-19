@@ -219,81 +219,59 @@
             });
         }
 
-        // if ($carousel.classList.contains("carousel--js-init-main-slider")) {
-        //     new Swiper($carousel.querySelector(".swiper"), {
-        //         slidesPerView: 1,
-        //         slidesPerGroup: 1,
-        //         loop: true,
-        //         spaceBetween: 0,
-        //         navigation: {
-        //             prevEl: ".main-slider__button--prev",
-        //             nextEl: ".main-slider__button--next",
-        //         },
-        //         autoplay: {
-        //             delay: 6000,
-        //             disableOnInteraction: false,
-        //         },
-        //         on: {
-        //             autoplayTimeLeft(s, time, progress) {
-        //                 document.documentElement.style.setProperty("--progress", `${(1 - progress) * 100}%`);
-        //             },
-        //         },
-        //     });
-        // }
-    });
+        if ($carousel.classList.contains("carousel--js-init-main-slider")) {
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get all thumbnail elements
-        const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
+            /* В этом слайдере есть ещё превьюшки с навигацией: */
+            const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
 
-        // Initialize Swiper for the main slider
-        const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            loop: true, // Enable loop mode
-            navigation: {
-                nextEl: ".main-slider__button--next",
-                prevEl: ".main-slider__button--prev",
-            },
-            on: {
-                init: function () {
-                    // Set initial active thumbnail using realIndex
-                    updateActiveThumbnail(this.realIndex);
+            const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                navigation: {
+                    nextEl: ".main-slider__button--next",
+                    prevEl: ".main-slider__button--prev",
                 },
-                slideChange: function () {
-                    // Update active thumbnail on slide change using realIndex
-                    updateActiveThumbnail(this.realIndex);
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
                 },
-                slideChangeTransitionEnd: function () {
-                    // Ensure thumbnail is updated after transition completes using realIndex
-                    updateActiveThumbnail(this.realIndex);
+                on: {
+                    autoplayTimeLeft(s, time, progress) {
+                        document.documentElement.style.setProperty("--progress", `${(1 - progress) * 100}%`);
+                    },
+                    init: function () {
+                        updateActiveThumbnail(this.realIndex);
+                    },
+                    slideChange: function () {
+                        updateActiveThumbnail(this.realIndex);
+                    },
+                    slideChangeTransitionEnd: function () {
+                        updateActiveThumbnail(this.realIndex);
+                    },
                 },
-            },
-        });
-
-        // Add click event listeners to thumbnails
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener("click", () => {
-                // Navigate to the corresponding slide using real index
-                mainSlider.slideToLoop(index);
-                // Update active thumbnail immediately
-                updateActiveThumbnail(index);
-            });
-        });
-
-        // Function to update active thumbnail
-        function updateActiveThumbnail(realIndex) {
-            // Ensure realIndex is within bounds
-            const index = Math.max(0, Math.min(realIndex, thumbnails.length - 1));
-
-            // Remove active class from all thumbnails
-            thumbnails.forEach(thumbnail => {
-                thumbnail.classList.remove("feature-thumbnail--current");
             });
 
-            // Add active class to the current thumbnail
-            if (thumbnails[index]) {
-                thumbnails[index].classList.add("feature-thumbnail--current");
+            /* Клики по превьюшкам */
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener("click", () => {
+                    mainSlider.slideToLoop(index);
+                    updateActiveThumbnail(index);
+                });
+            });
+
+            /* Синхронизация слайдера с превьюшками */
+            function updateActiveThumbnail(realIndex) {
+                const index = Math.max(0, Math.min(realIndex, thumbnails.length - 1));
+
+                /* Изначально свайпер возвращает неправильные значение из-за клонирования. Забираем правильное из DOM: */
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.classList.remove("feature-thumbnail--current");
+                });
+
+                if (thumbnails[index]) {
+                    thumbnails[index].classList.add("feature-thumbnail--current");
+                }
             }
         }
     });
