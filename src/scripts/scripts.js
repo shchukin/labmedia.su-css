@@ -243,27 +243,30 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-
-        // Get all thumbnail elements first
+        // Get all thumbnail elements
         const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
 
         // Initialize Swiper for the main slider
         const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
             slidesPerView: 1,
             spaceBetween: 0,
-            loop: false,
+            loop: true, // Enable loop mode
             navigation: {
                 nextEl: ".main-slider__button--next",
                 prevEl: ".main-slider__button--prev",
             },
             on: {
                 init: function () {
-                    // Set initial active thumbnail
-                    updateActiveThumbnail(this.activeIndex);
+                    // Set initial active thumbnail using realIndex
+                    updateActiveThumbnail(this.realIndex);
                 },
                 slideChange: function () {
-                    // Update active thumbnail on slide change
-                    updateActiveThumbnail(this.activeIndex);
+                    // Update active thumbnail on slide change using realIndex
+                    updateActiveThumbnail(this.realIndex);
+                },
+                slideChangeTransitionEnd: function () {
+                    // Ensure thumbnail is updated after transition completes using realIndex
+                    updateActiveThumbnail(this.realIndex);
                 },
             },
         });
@@ -271,19 +274,27 @@
         // Add click event listeners to thumbnails
         thumbnails.forEach((thumbnail, index) => {
             thumbnail.addEventListener("click", () => {
-                // Navigate to the corresponding slide
-                mainSlider.slideTo(index);
+                // Navigate to the corresponding slide using real index
+                mainSlider.slideToLoop(index);
+                // Update active thumbnail immediately
+                updateActiveThumbnail(index);
             });
         });
 
         // Function to update active thumbnail
-        function updateActiveThumbnail(activeIndex) {
+        function updateActiveThumbnail(realIndex) {
+            // Ensure realIndex is within bounds
+            const index = Math.max(0, Math.min(realIndex, thumbnails.length - 1));
+
             // Remove active class from all thumbnails
             thumbnails.forEach(thumbnail => {
                 thumbnail.classList.remove("feature-thumbnail--current");
             });
+
             // Add active class to the current thumbnail
-            thumbnails[activeIndex].classList.add("feature-thumbnail--current");
+            if (thumbnails[index]) {
+                thumbnails[index].classList.add("feature-thumbnail--current");
+            }
         }
     });
 

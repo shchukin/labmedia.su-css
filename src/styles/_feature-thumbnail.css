@@ -33,7 +33,6 @@
         position: absolute;
         left: 50%;
         bottom: 100%;
-        margin-bottom: -1px;
         margin-left: -8px;
         width: 16px;
         height: 7px;
@@ -121,9 +120,9 @@
     .feature-thumbnail--current::before {
         opacity: 100%;
     }
+
     .feature-thumbnail--current::after {
         opacity: 100%;
-        margin-bottom: -2px;
     }
 
     .feature-thumbnail--current.feature-thumbnail--vovlekai .feature-thumbnail__icon {
@@ -176,7 +175,7 @@
     }
 
         .feature-thumbnail::before {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .feature-thumbnail__icon {
