@@ -285,7 +285,7 @@
         mainSliderNavigationInstance = new Swiper($mainSliderNavigationCarousel.querySelector('.swiper'), {
             loop: true,
             spaceBetween: 10,
-            slidesPerView: 3,
+            slidesPerView: 4,
             freeMode: true,
             watchSlidesProgress: true,
         });
