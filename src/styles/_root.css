@@ -15,12 +15,8 @@
     --popup-horizontal-padding: 64px;
     --top-padding: 64px;
     --main-slider-height: 694px;
-    /*--action-color-hover: #2FA5ED;*/
-    /*--input-border: #B3B3B3;*/
-    /*--input-border-hover-and-focus: #7E7E7E;*/
-    /*--placeholder-color: #999999;*/
-    /*--disabled-background: #F6F6F6;*/
-    /*--disabled-color: #999999;*/
+    --carousel-pagination-height: 38px;
+    --carousel-arrow-button-heigt: 48px;
     --error: #F34141;
     --progress: 0;
 }

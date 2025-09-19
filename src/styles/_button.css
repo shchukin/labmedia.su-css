@@ -213,18 +213,18 @@
 }
 
 
-.button-inner-slider-action {
+.button--inner-slider-action {
     background-color: var(--fill-dark-blue-80);
     color: #FFFFFF;
 }
 
-.button-inner-slider-action:hover {
+.button--inner-slider-action:hover {
     background-color: var(--fill-dark-blue-60);
     color: #FFFFFF;
 }
 
-.button-inner-slider-action:disabled,
-.button-inner-slider-action:disabled:hover {
+.button--inner-slider-action:disabled,
+.button--inner-slider-action:disabled:hover {
     background-color: var(--fill-dark-blue-80);
     color: #FFFFFF;
     opacity: 50%;

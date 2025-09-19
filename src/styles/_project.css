@@ -48,7 +48,7 @@
                         visibility 200ms ease;
         }
 
-        .project__preview:hover .project__screenshot-wrap {
+        .project:hover .project__screenshot-wrap {
             opacity: 100%;
             visibility: visible;
         }

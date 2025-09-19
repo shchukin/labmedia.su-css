@@ -86,8 +86,9 @@
 
 
  /* Скин Article Gallery */
-.carousel--css-article-gallery {
 
+.carousel--css-article-gallery {
+    position: relative;
 }
     .carousel--css-article-gallery .carousel__pagination {
         position: static !important;
@@ -110,6 +111,34 @@
             .carousel--css-article-gallery .carousel__bullet--current::after {
                 background-color: var(--fill-dark-blue);
             }
+
+
+    .carousel--css-article-gallery .carousel__button {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        margin-top: calc(-1 * var(--carousel-arrow-button-heigt) / 2);
+    }
+
+    .carousel--css-article-gallery:has(.carousel__pagination) .carousel__button {
+        margin-top: calc(-1 * (var(--carousel-arrow-button-heigt) + var(--carousel-pagination-height)) / 2);
+    }
+
+    .carousel--css-article-gallery .carousel__button--prev {
+        left: 16px;
+    }
+
+    .carousel--css-article-gallery .carousel__button--next {
+        right: 16px;
+    }
+
+    @media (width < 740px) {
+
+        .carousel--css-article-gallery .carousel__button {
+            display: none;
+        }
+    }
+
 
 
 
@@ -144,33 +173,6 @@
     .carousel--css-top-right-arrows .carousel__button--next {
         right: 4px;
     }
-
-
-/* Скин для стрелок Inner */
-
-.carousel--css-inner-arrows {
-    position: relative;
-}
-    .carousel--css-inner-arrows .carousel__button {
-        position: absolute;
-        z-index: 10;
-        top: 50%;
-        margin-top: -24px;
-    }
-
-    .carousel--css-inner-arrows .carousel__button--prev {
-        left: 16px;
-    }
-
-    .carousel--css-inner-arrows .carousel__button--next {
-        right: 16px;
-    }
-
-@media (width < 740px) {
-    .carousel--css-inner-arrows .carousel__button {
-        display: none;
-    }
-}
 
 
 

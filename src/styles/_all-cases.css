@@ -1,4 +1,5 @@
 .all-cases {
+    position: relative;
     padding-top: var(--top-padding);
     padding-bottom: 136px;
 }
@@ -36,6 +37,14 @@
         gap: 24px;
     }
 
+    .all-cases__fader {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 611px;
+        background-image: linear-gradient(to bottom, rgb(247 246 251 / 0%), rgb(247 246 251 / 100%));
+    }
 
 
 @media (width < 740px) {
