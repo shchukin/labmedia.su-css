@@ -19,7 +19,7 @@
         justify-content: center;
         position: relative;
         padding-top: var(--header-height);
-        padding-bottom: 256px;
+        padding-bottom: 276px;
     }
         .explained-feature__heading {
             margin-top: 0;
