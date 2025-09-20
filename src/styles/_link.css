@@ -13,7 +13,8 @@
     text-decoration-thickness: 1px;
     text-underline-offset: 0.25em;
     cursor: pointer;
-    transition: text-decoration-color var(--transition-hover);
+    transition: text-decoration-color var(--transition-hover),
+                color var(--transition-hover);
 }
 
 .link:hover,
@@ -27,6 +28,7 @@
     color: inherit;
 }
 
+
 .link--inverted-text-alike,
 .wysiwyg .link--inverted-text-alike {
     color: inherit;
@@ -36,6 +38,18 @@
 .link--inverted-text-alike:hover,
 .wysiwyg .link--inverted-text-alike:hover {
     text-decoration-color: currentColor;
+}
+
+
+.link--gray-text-alike,
+.wysiwyg .link--gray-text-alike {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link--gray-text-alike:hover,
+.wysiwyg .link--gray-text-alike:hover {
+    color: #646464;
 }
 
 

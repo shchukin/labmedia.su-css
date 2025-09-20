@@ -174,6 +174,49 @@
 
     document.querySelectorAll('.carousel').forEach(($carousel) => {
 
+        if ($carousel.classList.contains("carousel--js-init-default-gallery")) {
+            new Swiper($carousel.querySelector(".swiper"), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 24,
+                navigation: {
+                    prevEl: $carousel.querySelector(".carousel__button--prev"),
+                    nextEl: $carousel.querySelector(".carousel__button--next"),
+                },
+                pagination: {
+                    clickable: true,
+                    el: $carousel.querySelector(".carousel__pagination"),
+                    bulletClass: "carousel__bullet",
+                    bulletActiveClass: "carousel__bullet--current",
+                },
+            });
+        }
+
+        if ($carousel.classList.contains("carousel--js-init-thanks")) {
+            new Swiper($carousel.querySelector(".swiper"), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 16,
+                pagination: {
+                    clickable: true,
+                    el: $carousel.querySelector(".carousel__pagination"),
+                    bulletClass: "carousel__bullet",
+                    bulletActiveClass: "carousel__bullet--current",
+                },
+                navigation: {
+                    prevEl: $carousel.querySelector(".carousel__button--prev"),
+                    nextEl: $carousel.querySelector(".carousel__button--next"),
+                },
+                breakpoints: {
+                    740: {
+                        pagination: {
+                            type: "fraction",
+                        },
+                    },
+                },
+            });
+        }
+
         if( $carousel.classList.contains('carousel--js-init-case') ) {
             new Swiper($carousel.querySelector('.swiper'), {
                 slidesPerView: 3,
@@ -181,40 +224,7 @@
                 spaceBetween: 24,
                 navigation: {
                     prevEl: $carousel.querySelector('.carousel__button--prev'),
-                    nextEl: $carousel.querySelector('.carousel__button--next'),
-                    disabledClass: 'carousel__button--disabled',
-                },
-            });
-        }
-
-        if( $carousel.classList.contains('carousel--js-article-gallery') ) {
-            new Swiper($carousel.querySelector('.swiper'), {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                spaceBetween: 24,
-                navigation: {
-                    prevEl: $carousel.querySelector('.carousel__button--prev'),
-                    nextEl: $carousel.querySelector('.carousel__button--next'),
-                    disabledClass: 'carousel__button--disabled',
-                },
-                pagination: {
-                    clickable: true,
-                    el: $carousel.querySelector('.carousel__pagination'),
-                    bulletClass: 'carousel__bullet',
-                    bulletActiveClass: 'carousel__bullet--current',
-                },
-            });
-        }
-
-        if( $carousel.classList.contains('carousel--js-init-striped-gallery') ) {
-            new Swiper($carousel.querySelector('.swiper'), {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                pagination: {
-                    clickable: true,
-                    el: $carousel.querySelector('.carousel__pagination'),
-                    bulletClass: 'carousel__bullet',
-                    bulletActiveClass: 'carousel__bullet--current',
+                    nextEl: $carousel.querySelector('.carousel__button--next')
                 },
             });
         }
@@ -295,7 +305,6 @@
             navigation: {
                 prevEl: $announcementBodyCarousel.querySelector('.carousel__button--prev'),
                 nextEl: $announcementBodyCarousel.querySelector('.carousel__button--next'),
-                disabledClass: 'carousel__button--disabled',
             },
             pagination: {
                 clickable: true,

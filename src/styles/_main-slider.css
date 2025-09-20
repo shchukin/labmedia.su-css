@@ -22,6 +22,13 @@
             align-items: stretch;
             gap: 10px;
         }
+        
+        @media (640px <= width) {
+            .main-slider__nav-wrap {
+                justify-content: center;
+            }
+        }
+        
             .main-slider__button {
                 width: 60px;
                 flex-shrink: 0;

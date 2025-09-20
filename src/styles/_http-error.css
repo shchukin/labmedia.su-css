@@ -1,0 +1,82 @@
+.http-error {
+    padding-top: 86px;
+    padding-bottom: 100px;
+}
+    .http-error__panel {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 87px;
+        padding: 64px;
+        background-color: #FFFFFF;
+        border-radius: 32px;
+    }
+        .http-error__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            .http-error__heading {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .http-error__description {
+                margin-top: 24px;
+                font-size: 18px;
+                line-height: 25px;
+            }
+
+            .http-error__action {
+                margin-top: 48px;
+            }
+
+        .http-error__preview {
+
+        }
+            .http-error__illustration {
+                vertical-align: top;
+                width: 100%;
+                height: auto;
+                border-radius: 16px;
+            }
+
+
+
+@media (width < 740px) {
+
+    .http-error {
+        padding-top: 58px;
+        padding-bottom: 88px;
+    }
+        .http-error__panel {
+            display: block;
+            padding: 32px;
+        }
+            .http-error__content {
+
+            }
+                .http-error__heading {
+
+                }
+
+                .http-error__description {
+                    margin-top: 16px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .http-error__action {
+                    margin-top: 24px;
+                }
+                    .http-error__action .button {
+                        width: 100%;
+                    }
+
+            .http-error__preview {
+                margin: 32px -16px -16px;
+            }
+                .http-error__illustration {
+                    height: 400px;
+                    object-fit: cover;
+                }
+}

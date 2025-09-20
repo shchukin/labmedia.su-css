@@ -19,40 +19,80 @@
 
         .carousel__controls {
             display: flex;
-            align-items: flex-start;
+        }
+
+        /* По-умолчанию, на смартфонах стрелки отсутствуют: */
+
+        @media (width < 740px) {
+
+            .carousel__controls {
+                display: none;
+            }
         }
             .carousel__button {
+                position: absolute;
+                z-index: 10;
+                top: 50%;
+                margin-top: -24px;
+                width: 48px;
+                height: 48px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border: none;
+                background-color: var(--fill-total-white-20);
+                backdrop-filter: var(--blur-20);
+                border-radius: 6px;
                 padding: 0;
                 cursor: pointer;
+                transition: background-color var(--transition-hover);
             }
 
-            .carousel__button--disabled {
-                cursor: default;
+            .carousel__button:hover {
+
+            }
+
+            .carousel__button:disabled {
+                opacity: 50%;
+                pointer-events: none;
+            }
+
+            .carousel__button--prev {
+                left: 16px;
+            }
+
+            .carousel__button--next {
+                right: 16px;
             }
                 .carousel__chevron {
                     vertical-align: top;
+                    fill: none;
+                    stroke: #FFFFFF;
+                    transition: stroke var(--transition-hover);
                 }
+
 
 
         /* По-умолчанию белые точечки поверх слайдера: */
 
-        .carousel__pagination {
+        .carousel__pagination.swiper-pagination-horizontal { /* Класс .swiper-pagination-horizontal нужен чтобы перебить стили оригинального селектора */
             position: absolute;
             z-index: 10;
-            bottom: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            left: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            right: 0 !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            width: auto !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            height: auto !important; /* !important потому что конфлик с оригинальными стилями свайпера */
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
             display: flex; /* Уберёт пробелы, если тип fraction */
             align-items: center;
             justify-content: center;
-            font-size: 16px; /* Если тип fraction */
+
+            /* Если тип fraction: */
+            min-width: 40px;
+            font-size: 16px;
             line-height: 22px;
+            color: #FFFFFF;
+            text-align: center;
         }
             .carousel__bullet {
                 display: flex;
@@ -85,138 +125,206 @@
                 }
 
 
- /* Скин Article Gallery */
+ /* Скин Thanks */
 
-.carousel--css-article-gallery {
-    position: relative;
+.carousel--css-skin-thanks {
+
 }
-    .carousel--css-article-gallery .carousel__pagination {
-        position: static !important;
-    }
-        .carousel--css-article-gallery .carousel__bullet {
+    .carousel--css-skin-thanks .carousel__widget {
 
+    }
+        .carousel--css-skin-thanks .swiper {
+            border-radius: 16px; /* чтобы при двежении слайдов углы не заполнялись их фоном */
+            overflow: hidden;
         }
 
-        .carousel--css-article-gallery .carousel__bullet--current {
+    @media (740px <= width) {
 
+        .carousel--css-skin-thanks .carousel__pagination {
+            position: absolute;
+            right: auto;
+            left: 32px;
+            bottom: 53px;
         }
-            .carousel--css-article-gallery .carousel__bullet::after {
-                background-color: var(--fill-dark-blue-32);
-            }
-
-            .carousel--css-article-gallery .carousel__bullet:hover::after {
-                background-color: var(--fill-dark-blue-80);
-            }
-
-            .carousel--css-article-gallery .carousel__bullet--current::after {
-                background-color: var(--fill-dark-blue);
-            }
-
-
-    .carousel--css-article-gallery .carousel__button {
-        position: absolute;
-        z-index: 10;
-        top: 50%;
-        margin-top: calc(-1 * var(--carousel-arrow-button-heigt) / 2);
-    }
-
-    .carousel--css-article-gallery:has(.carousel__pagination) .carousel__button {
-        margin-top: calc(-1 * (var(--carousel-arrow-button-heigt) + var(--carousel-pagination-height)) / 2);
-    }
-
-    .carousel--css-article-gallery .carousel__button--prev {
-        left: 16px;
-    }
-
-    .carousel--css-article-gallery .carousel__button--next {
-        right: 16px;
     }
 
     @media (width < 740px) {
 
-        .carousel--css-article-gallery .carousel__button {
-            display: none;
+        .carousel--css-skin-thanks .carousel__pagination {
+            bottom: 16px;
         }
     }
 
-
-
-
-
-/* Скин для стрелок Top Right */
-
-.carousel--css-top-right-arrows {
-    position: relative;
-}
-    .carousel--css-top-right-arrows::before {
-        content: "";
+    .carousel--css-skin-thanks .carousel__controls {
         position: absolute;
-        right: 0;
-        bottom: 100%;
-        margin-bottom: 48px;
-        width: 104px;
-        height: 56px;
-        background-color: var(--fill-wite-purple-darker);
+        z-index: 10;
+        right: 40px;
+        bottom: 40px;
+        padding: 4px;
+        backdrop-filter: var(--blur-20);
+        background-color: rgb(255 255 255 / 50%);
         border-radius: 8px;
     }
+        .carousel--css-skin-thanks .carousel__button {
+            position: static;
+            backdrop-filter: none;
+            background-color: transparent;
+            margin: 0;
+            width: 40px;
+            height: 40px;
+        }
 
-    .carousel--css-top-right-arrows .carousel__button {
-        position: absolute;
-        bottom: 100%;
-        margin-bottom: 52px;
-    }
+        .carousel--css-skin-thanks .carousel__button:hover {
+            background-color: #FFFFFF;
+        }
 
-    .carousel--css-top-right-arrows .carousel__button--prev {
-        right: 52px;
-    }
+        .carousel--css-skin-thanks .carousel__button--prev {
 
-    .carousel--css-top-right-arrows .carousel__button--next {
-        right: 4px;
-    }
+        }
+
+        .carousel--css-skin-thanks .carousel__button--next {
+
+        }
+            .carousel--css-skin-thanks .carousel__chevron {
+                width: 12px;
+                height: 12px;
+                stroke: #FFFFFF;
+            }
+
+            .carousel--css-skin-thanks .carousel__button:hover .carousel__chevron {
+                stroke: var(--stroke-darkblue);
+            }
 
 
 
-
-/* Карусель "Похожие кейсы" */
+ /* Скин Cases */
 
 .carousel--css-skin-cases {
 
 }
-
-@media (740px <= width) {
-
-    .carousel--css-skin-cases .carousel {
+    .carousel--css-skin-cases .carousel__widget {
 
     }
-        .carousel--css-skin-cases .carousel__widget {
+        .carousel--css-skin-cases .swiper {
+            overflow: visible; /* Разрешаем ленте карусели идти вправо до упора (до края экран). А там его обрежет родительский компонент .related */
+        }
+
+        @media (width < 740px) {
+
+            /* Исходим из того, что на смартфонах эта карусель заблокирована
+               классом carousel--css-disable-on-smartphone
+               Остаётся добавить отступ и скрыть всё кроме первых двух элементов
+             */
+
+            .carousel--css-skin-cases .swiper-slide {
+                margin-top: 8px;
+            }
+
+            .carousel--css-skin-cases .swiper-slide:first-child {
+                margin-top: 0;
+            }
+        }
+
+
+    .carousel--css-skin-cases .carousel__controls {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        bottom: 100%;
+        margin-bottom: 48px;
+        padding: 4px;
+        background-color: var(--fill-wite-purple-darker);
+        border-radius: 8px;
+    }
+        .carousel--css-skin-cases .carousel__button {
+            position: static;
+            backdrop-filter: none;
+            background-color: transparent;
+            margin: 0;
+        }
+
+        .carousel--css-skin-cases .carousel__button:hover {
+            background-color: #FFFFFF;
+        }
+
+        .carousel--css-skin-cases .carousel__button--prev {
 
         }
-            .carousel--css-skin-cases .swiper {
-                overflow: visible; /* Разрешаем ленте карусели идти вправо до упора (до края экран). А там его обрежет родительский компонент .related */
+
+        .carousel--css-skin-cases .carousel__button--next {
+
+        }
+            .carousel--css-skin-cases .carousel__chevron {
+                stroke: var(--fill-dark-blue);
             }
-                .carousel--css-skin-cases .swiper-wrapper {
 
-                }
-                    .carousel--css-skin-cases .swiper-slide {
 
-                    }
+
+/* Скин Announcement body */
+
+.carousel--css-skin-announcement-body {
+    overflow: hidden;
 }
+    .carousel--css-skin-announcement-body .carousel__widget {
 
-@media (width < 740px) {
-
-    /* Исходим из того, что на смартфонах эта карусель заблокирована
-       классом carousel--css-disable-on-smartphone
-       Остаётся добавить отступ и скрыть всё кроме первых двух элементов
-     */
-
-    .carousel--css-skin-cases .swiper-slide {
-        margin-top: 8px;
     }
 
-    .carousel--css-skin-cases .swiper-slide:first-child {
-        margin-top: 0;
+
+    .carousel--css-skin-announcement-body .carousel__controls {
+        position: absolute;
+        z-index: 10;
+        right: 40px;
+        top: 40px;
+        padding: 4px;
+        background-color: var(--fill-total-white-15);
+        border-radius: 8px;
     }
-}
+        .carousel--css-skin-announcement-body .carousel__button {
+            position: static;
+            backdrop-filter: none;
+            background-color: transparent;
+            margin: 0;
+            width: 40px;
+            height: 40px;
+        }
+
+        .carousel--css-skin-announcement-body .carousel__button:hover {
+            background-color: #FFFFFF;
+        }
+
+        .carousel--css-skin-announcement-body .carousel__button--prev {
+
+        }
+
+        .carousel--css-skin-announcement-body .carousel__button--next {
+
+        }
+            .carousel--css-skin-announcement-body .carousel__chevron {
+                width: 12px;
+                height: 12px;
+                stroke: #FFFFFF;
+            }
+
+            .carousel--css-skin-announcement-body .carousel__button:hover .carousel__chevron {
+                stroke: var(--fill-dark-blue);
+            }
+
+
+    @media (740px <= width) {
+
+        .carousel--css-skin-announcement-body .carousel__pagination {
+            position: absolute;
+            z-index: 10;
+            left: 32px; /* !important потому что конфлик с оригинальными стилями свайпера */
+            top: 53px; /* !important потому что конфлик с оригинальными стилями свайпера */
+            bottom: auto;
+            right: auto;
+        }
+    }
+
+
+
+
 
 
 
@@ -226,51 +334,6 @@
 
 }
 
-
-
-/* Скин Announcement body */
-
-.carousel--css-skin-announcement-body {
-    overflow: hidden;
-}
-    @media (740px <= width) {
-
-        .carousel--css-skin-announcement-body .carousel__pagination {
-            position: absolute;
-            z-index: 20;
-            left: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            top: 53px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            bottom: auto !important;
-            right: auto !important;
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        .carousel--css-skin-announcement-body .carousel__controls {
-            position: absolute;
-            z-index: 20;
-            right: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            top: 40px !important; /* !important потому что конфлик с оригинальными стилями свайпера */
-            padding: 4px;
-            background-color: var(--fill-total-white-15);
-            border-radius: 8px;
-        }
-            .carousel--css-skin-announcement-body .carousel__button {
-
-            }
-    }
-
-
-@media (width < 740px) {
-
-    .carousel--css-skin-announcement-body .carousel__pagination {
-        bottom: 8px !important;
-    }
-
-    .carousel--css-skin-announcement-body .carousel__controls {
-        display: none;
-    }
-}
 
 
 

@@ -1,0 +1,39 @@
+.online {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+    .online__dot {
+        position: relative;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: #2ED57D;
+        border-radius: 50%;
+    }
+        @keyframes online-pulse {
+            0% {
+                transform: scale(100%);
+                opacity: 1;
+            }
+            60% {
+                transform: scale(100%);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(300%);
+                opacity: 0;
+            }
+        }
+
+        .online__dot::before {
+            content: "";
+            display: block;
+            position: absolute;
+            inset: 0;
+            background-color: #2ED57D;
+            border-radius: 8px;
+            animation: online-pulse 3000ms ease infinite;
+        }

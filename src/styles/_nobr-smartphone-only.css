@@ -1,0 +1,10 @@
+.nobr-smartphone-only {
+
+}
+
+@media (width < 740px) {
+
+    .nobr-smartphone-only {
+        white-space: nowrap;
+    }
+}

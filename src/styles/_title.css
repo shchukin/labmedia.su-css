@@ -3,6 +3,7 @@
     letter-spacing: -0.025em;
 }
 
+
 .title--main {
     font-size: 48px;
     line-height: 53px;
@@ -13,6 +14,36 @@
     .title--main {
         font-size: 32px;
         line-height: 38px;
+    }
+}
+
+
+
+.title--service {
+    font-size: 48px;
+    line-height: 53px;
+}
+
+@media (width < 740px) {
+
+    .title--service {
+        font-size: 40px;
+        line-height: 44px;
+    }
+}
+
+
+
+.title--alternate {
+    font-size: 36px;
+    line-height: 40px;
+}
+
+@media (width < 740px) {
+
+    .title--alternate {
+        font-size: 24px;
+        line-height: 29px;
     }
 }
 

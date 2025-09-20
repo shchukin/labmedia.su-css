@@ -15,7 +15,9 @@
             height: auto;
             aspect-ratio: 376/251;
             object-fit: cover;
+            border-radius: 16px;
         }
+
 
 
 @media (width < 442px) {
@@ -24,11 +26,7 @@
         margin-left: calc(-1 * var(--container-padding));
         margin-right: calc(-1 * var(--container-padding));
     }
-}
-
-@media (442px <= width) {
-
-    .theater__image {
-        border-radius: 16px;
-    }
+        .theater__image {
+            border-radius: 0;
+        }
 }

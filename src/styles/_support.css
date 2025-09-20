@@ -1,0 +1,123 @@
+.support {
+    padding-top: 84px;
+    padding-bottom: 100px;
+}
+    .support__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .support__body {
+        margin-top: 56px;
+        padding: 48px;
+        display: grid;
+        grid-template-columns: 364px 640px;
+        background-color: var(--bg-total-white);
+        gap: 40px;
+        border-radius: 16px;
+    }
+        .support__summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+            .support__description {
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+            .support__working-hours {
+                display: flex;
+                align-items: flex-start;
+                font-size: 16px;
+                line-height: 22px;
+            }
+                .support__working-hours .online {
+                    margin-left: -6px;
+                }
+
+        .support__data {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px 24px;
+        }
+            .support__channel {
+
+            }
+                .support__channel-title {
+
+                }
+                    .support__channel-link {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+
+                .support__channel-note {
+                    margin-top: 12px;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+
+
+@media (width < 740px) {
+
+    .support {
+        padding-top: 58px;
+        padding-bottom: 88px;
+    }
+        .support__heading {
+
+        }
+
+        .support__body {
+            margin-top: 48px;
+            padding: 32px 32px 38px;
+            display: block;
+            /*border-radius: 16px;*/
+        }
+            .support__summary {
+                display: block;
+                /*flex-direction: column;*/
+                /*justify-content: space-between;*/
+            }
+                .support__description {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .support__working-hours {
+                    margin-top: 24px;
+                    /*display: flex;*/
+                    /*align-items: flex-start;*/
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                    .support__working-hours .online {
+                        /*margin-left: -6px;*/
+                    }
+
+            .support__data {
+                margin-top: 40px;
+                display: block;
+            }
+                .support__channel {
+                    margin-top: 32px;
+                }
+
+                .support__channel:first-child {
+                    margin-top: 0;
+                }
+                    .support__channel-title {
+
+                    }
+                        .support__channel-link {
+
+                        }
+
+                    .support__channel-note {
+                        margin-top: 8px;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+}
