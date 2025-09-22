@@ -87,7 +87,6 @@
 
 .related--gradient-background {
     background-image: linear-gradient(204deg, transparent, transparent 50%, #F7F6FB 50%, #C0DCFF);
-
 }
 
 @media (width < 740px) {

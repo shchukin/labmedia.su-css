@@ -1,0 +1,12 @@
+.counter {
+    display: inline-block;
+    vertical-align: baseline;
+    min-width: 20px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}

@@ -5,9 +5,9 @@
         display: flex;
         align-items: center;
         width: fit-content;
-        padding: 16px;
+        padding: 15px;
+        border: 1px solid transparent;
         background-color: #EEECF4;
-        border: none;
         border-radius: 8px;
         font-family: inherit;
         font-size: 14px;
@@ -27,6 +27,16 @@
     .filter--expanded .filter__handler {
         background-color: #FFFFFF;
     }
+
+    .filter--selected .filter__handler {
+        background-color: #FFFFFF;
+        border-color: var(--accent-main-blue-50);
+        color: var(--accent-main-blue);
+    }
+        .filter__handler .counter {
+            margin-left: 8px;
+        }
+
         .filter__chevron {
             margin-left: 8px;
             stroke: currentColor;

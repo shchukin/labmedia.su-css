@@ -54,7 +54,6 @@
             padding-right: var(--container-padding);
             background-color: transparent;
             border-radius: 0;
-
         }
             .thermometer__ribbon {
                 background-color: var(--fill-wite-purple-darker);
