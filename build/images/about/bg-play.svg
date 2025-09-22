@@ -1,0 +1,13 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3_2)">
+<foreignObject x="-8" y="-8" width="916" height="916"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(4px);clip-path:url(#bgblur_1_3_2_clip_path);height:100%;width:100%"></div></foreignObject><circle data-figma-bg-blur-radius="8" cx="450" cy="450" r="450" fill="white" fill-opacity="0.08"/>
+<foreignObject x="287" y="196.91" width="449" height="506.18"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(4px);clip-path:url(#bgblur_2_3_2_clip_path);height:100%;width:100%"></div></foreignObject><path data-figma-bg-blur-radius="8" d="M712 422.287C733.333 434.604 733.333 465.396 712 477.713L343 690.755C321.667 703.072 295 687.676 295 663.042L295 236.958C295 212.324 321.667 196.928 343 209.245L712 422.287Z" fill="white" fill-opacity="0.08"/>
+</g>
+<defs>
+<clipPath id="bgblur_1_3_2_clip_path" transform="translate(8 8)"><circle cx="450" cy="450" r="450"/>
+</clipPath><clipPath id="bgblur_2_3_2_clip_path" transform="translate(-287 -196.91)"><path d="M712 422.287C733.333 434.604 733.333 465.396 712 477.713L343 690.755C321.667 703.072 295 687.676 295 663.042L295 236.958C295 212.324 321.667 196.928 343 209.245L712 422.287Z"/>
+</clipPath><clipPath id="clip0_3_2">
+<rect width="900" height="900" fill="white"/>
+</clipPath>
+</defs>
+</svg>

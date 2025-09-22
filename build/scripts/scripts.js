@@ -284,6 +284,59 @@
                 }
             }
         }
+
+        if( $carousel.classList.contains('carousel--js-about-hero-slider') ) {
+            // Сохраняем состояние видео для каждого слайда
+            const videoStates = new Map();
+
+            new Swiper($carousel.querySelector('.swiper'), {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                pagination: {
+                    clickable: true,
+                    el: '.carousel--js-about-hero-slider__pagination',
+                    bulletClass: 'carousel--js-about-hero-slider__bullet',
+                    bulletActiveClass: 'carousel--js-about-hero-slider__bullet--current',
+                },
+                on: {
+                    slideChange: function() {
+                        handleVideoPlayback(this.activeIndex);
+                    },
+                    init: function() {
+                        handleVideoPlayback(0);
+                    }
+                }
+            });
+            
+            /* Пауза + плей видео на текущем слайде */
+            function handleVideoPlayback(activeIndex) {
+                const allSlides = $carousel.querySelectorAll('.swiper-slide');
+                
+                allSlides.forEach((slide, index) => {
+                    const video = slide.querySelector('video');
+                    
+                    if (video) {
+                        if (index === activeIndex) {
+                            // Активируем видео на текущем слайде
+                            if (videoStates.has(index)) {
+                                // Восстанавливаем время воспроизведения
+                                video.currentTime = videoStates.get(index);
+                            }
+                            
+                            video.play().catch(e => {
+                                console.log('Автовоспроизведение заблокировано:', e);
+                            });
+                        } else {
+                            // Сохраняем текущее время и ставим на паузу
+                            if (!video.paused) {
+                                videoStates.set(index, video.currentTime);
+                                video.pause();
+                            }
+                        }
+                    }
+                });
+            }
+        }
     });
 
 
@@ -506,7 +559,7 @@
 
     const tocMap = [];
     const $tocList = $('.table-of-contains__list');
-    const $tocTargetedHeadings = $('.case__content h2');
+    const $tocTargetedHeadings = $(".article__body h2");
     let $tocLinks;
 
     /* Список заголовков */
@@ -659,5 +712,71 @@
             $clients.find('.clients__tab:nth-child('+ (index + 1) +')').addClass('clients__tab--current');
         }
     });
+
+
+    /* About experts video */
+    function initAboutExpertsVideo() {
+        const video = $('.about-experts__video video')[0];
+        const progressCircle = $('.about-experts__video-progress-circle');
+        const volumeButton = $('.about-experts__video-volume');
+        const volumeStub = $('.about-experts__video-volume-stub');
+
+        if (!video) {
+            throw new Error('[page-about]: Не найдено видео в разделе "Эксперты"');
+        }
+
+        /* Прогресс видео */
+        if (progressCircle.length) {
+            const radius = 99;
+            const circumference = 2 * Math.PI * radius;
+            
+            video.addEventListener('timeupdate', function() {
+                if (video.duration > 0) {
+                    const progress = (video.currentTime / video.duration) * 100;
+                    const offset = circumference - (progress / 100) * circumference;
+                    progressCircle.css('stroke-dashoffset', offset);
+                }
+            });
+            
+            video.addEventListener('loadedmetadata', function() {
+                progressCircle.css('stroke-dashoffset', circumference);
+            });
+            
+            video.addEventListener('ended', function() {
+                progressCircle.css('stroke-dashoffset', circumference);
+            });
+        }
+
+        /* Звук видео */
+        if (volumeButton.length) {
+            updateVolumeUI();
+            
+            volumeButton.on('click', function(e) {
+                e.preventDefault();
+                toggleVideoVolume();
+            });
+            
+            video.addEventListener('volumechange', updateVolumeUI);
+            video.addEventListener('loadedmetadata', updateVolumeUI);
+        }
+        
+        function toggleVideoVolume() {
+            video.muted = !video.muted;
+            if (!video.muted) {
+                video.volume = 1;
+            }
+        }
+        
+        function updateVolumeUI() {
+            if (video.muted) {
+                volumeStub.css('opacity', '0');
+            } else {
+                volumeStub.css('opacity', '1');
+            }
+        }
+    }    
+
+    initAboutExpertsVideo();
+
 
 })(jQuery);
