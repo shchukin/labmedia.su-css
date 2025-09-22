@@ -1,0 +1,45 @@
+.author {
+    position: relative;
+    padding-left: 64px;
+}
+    .author__photo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -24px;
+        border-radius: 50%;
+    }
+
+    .author__name {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .author__post {
+        margin-top: 4px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+
+@media (width < 740px) {
+
+    .author {
+        /*position: relative;*/
+        /*padding-left: 64px;*/
+    }
+        .author__photo {
+
+        }
+
+        .author__name {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .author__post {
+            font-size: 12px;
+            line-height: 17px;
+        }
+}

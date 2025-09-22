@@ -59,6 +59,10 @@
             border-radius: 8px;
             white-space: nowrap;
         }
+            .filter__mobile-heading {
+                display: none;
+            }
+
             .filter__list {
 
             }
@@ -128,8 +132,13 @@
             .filter__body {
 
             }
-                .filter__list {
+                .filter__mobile-heading {
+                    display: block;
+                }
 
+                .filter__list {
+                    margin-top: 16px;
+                    padding-bottom: 36px;
                 }
                     .filter__body .choice {
 
@@ -143,7 +152,9 @@
 
                     }
                         .filter__actions .button {
-
+                            height: 52px;
+                            padding-top: 16px;
+                            padding-bottom: 16px;
                         }
 
 

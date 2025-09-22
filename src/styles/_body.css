@@ -6,3 +6,7 @@ body {
     font-size: 16px;
     line-height: 22px;
 }
+
+html:not(.burger-expanded) body.body--about {
+    background-color: var(--bg-violet);
+}

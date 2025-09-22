@@ -37,14 +37,6 @@
         gap: 24px;
     }
 
-    .all-cases__fader {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 611px;
-        background-image: linear-gradient(to bottom, rgb(247 246 251 / 0%), rgb(247 246 251 / 100%));
-    }
 
 
 @media (width < 740px) {
@@ -68,7 +60,6 @@
                 margin-right: calc(-1 * var(--container-padding));
             }
         }
-
             .all-cases__filters-ribbon {
                 width: fit-content;
                 padding-left: var(--container-padding);
@@ -97,6 +88,7 @@
                     }
 
         .all-cases__list {
+            margin-top: 24px;
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: 16px;
         }

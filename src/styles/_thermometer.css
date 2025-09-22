@@ -2,16 +2,16 @@
 
 }
     .thermometer__background {
-        display: block;
-        width: fit-content;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         background-color: var(--fill-wite-purple-darker);
         border-radius: 12px;
-        padding: 6px;
     }
         .thermometer__ribbon {
-            display: flex;
+            display: inline-flex;
             vertical-align: top;
             gap: 6px;
+            padding: 6px;
         }
             .thermometer__action {
                 flex-shrink: 0;
@@ -44,31 +44,34 @@
 
     .thermometer {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
     }
-
-    @media (width < 442px) {
-
-        .thermometer {
-            margin-left: calc(-1 * var(--container-padding));
-            margin-right: calc(-1 * var(--container-padding));
+        .thermometer__background {
+            overflow-x: visible;
+            display: inline-block;
             padding-left: var(--container-padding);
             padding-right: var(--container-padding);
+            background-color: transparent;
+            border-radius: 0;
+
         }
-    }
-        .thermometer__ribbon {
-            width: fit-content;
-        }
-            .thermometer__action {
-
+            .thermometer__ribbon {
+                background-color: var(--fill-wite-purple-darker);
+                border-radius: 8px;
             }
+                .thermometer__action {
 
-            .thermometer__action:hover {
+                }
 
-            }
+                .thermometer__action:hover {
 
-            .thermometer__action--current,
-            .thermometer__action--current:hover {
+                }
 
-            }
+                .thermometer__action--current,
+                .thermometer__action--current:hover {
+
+                }
 }
+
+

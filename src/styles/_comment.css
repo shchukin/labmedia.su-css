@@ -1,19 +1,26 @@
 .comment {
-    padding-left: 25px;
-    border-left: 3px solid var(--accent-main-blue);
+
 }
     .comment__body {
-
+        padding-left: 25px;
+        border-left: 3px solid var(--accent-main-blue);
     }
+        .comment__heading {
 
-    .comment__author {
-        margin-top: 40px;
-        font-size: 16px;
-        line-height: 22px;
-    }
-        .comment__name {
-            font-weight: 500;
         }
+
+        .comment__content {
+            margin-top: 36px;
+        }
+
+        .comment__author {
+            margin-top: 40px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+            .comment__name {
+                font-weight: 500;
+            }
 
 
 
@@ -25,13 +32,20 @@
         .comment__body {
 
         }
-
-        .comment__author {
-            margin-top: 32px;
-            font-size: 14px;
-            line-height: 20px;
-        }
-            .comment__name {
+            .comment__heading {
 
             }
+
+            .comment__content {
+                margin-top: 22px;
+            }
+
+            .comment__author {
+                margin-top: 32px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+                .comment__name {
+
+                }
 }

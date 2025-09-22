@@ -24,6 +24,7 @@
 @media (width < 740px) {
     :root {
         --container-padding: 16px;
+        --top-padding: 48px;
         --popup-vertical-padding: 64px;
         --popup-horizontal-padding: var(--container-padding);
     }

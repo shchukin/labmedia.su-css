@@ -1,0 +1,111 @@
+.teaser {
+    text-decoration: none;
+    color: inherit;
+}
+    .teaser__preview {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+        .teaser__illustration {
+            vertical-align: top;
+            width: 100%;
+            aspect-ratio: 364/208;
+            background-color: var(--image-fallback);
+            object-fit: cover;
+        }
+
+        .teaser__preview::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transition: backdrop-filter var(--transition-scale-hover);
+        }
+
+        .teaser:hover .teaser__preview::after {
+            backdrop-filter: blur(32px); /* Здесь честные 32px (не из кастомного свойства) -- выглядят норм */
+        }
+
+        .teaser__details {
+            position: absolute;
+            z-index: 10;
+            inset: 0;
+            margin: auto;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--fill-total-white-20);
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity var(--transition-scale-hover);
+        }
+
+        .teaser:hover .teaser__details {
+            opacity: 100%;
+        }
+
+    .teaser__body {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 20px 8px 0;
+    }
+        .teaser__filters {
+
+        }
+
+        .teaser__heading {
+            margin-top: 12px;
+            margin-bottom: 0;
+        }
+            .teaser__link {
+
+            }
+
+        .teaser__description {
+            margin-top: 12px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .teaser__data {
+            margin-top: 12px;
+        }
+
+
+
+@media (width < 740px) {
+
+    .teaser {
+
+    }
+        .teaser__preview {
+
+        }
+
+        .teaser__body {
+
+        }
+            .teaser__filters {
+
+            }
+
+            .teaser__heading {
+
+            }
+                .teaser__link {
+
+                }
+
+            .teaser__description {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .teaser__data {
+
+            }
+}

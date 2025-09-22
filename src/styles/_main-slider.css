@@ -22,8 +22,9 @@
             align-items: stretch;
             gap: 10px;
         }
-        
+
         @media (640px <= width) {
+
             .main-slider__nav-wrap {
                 justify-content: center;
             }

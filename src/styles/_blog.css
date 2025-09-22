@@ -1,0 +1,42 @@
+.blog {
+    position: relative;
+    padding-top: var(--top-padding);
+    padding-bottom: 136px;
+}
+    .blog__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .blog__filter {
+        margin-top: 52px;
+    }
+
+    .blog__list {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 48px 24px;
+    }
+
+
+
+@media (width < 740px) {
+
+    .blog {
+        padding-bottom: 80px;
+    }
+        .blog__heading {
+
+        }
+
+        .blog__filter {
+            margin-top: 32px;
+        }
+
+        .blog__list {
+            margin-top: 24px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 40px;
+        }
+}

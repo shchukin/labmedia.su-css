@@ -5,13 +5,12 @@
     padding: 8px;
     background-color: #FFFFFF;
     border-radius: 16px;
-}
-
-.project--enlarged-on-hover {
+    text-decoration: none;
+    color: inherit;
     transition: transform var(--transition-scale-hover);
 }
 
-.project--enlarged-on-hover:hover {
+.project:hover {
     transform: scale(105%);
 }
     .project__preview {
@@ -63,29 +62,21 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        padding: 8px 16px 22px;
+        padding: 16px 16px 22px;
     }
         .project__filters {
 
         }
 
         .project__heading {
-            margin-top: 4px;
+            margin-top: 12px;
             margin-bottom: 0;
             font-size: 24px;
             line-height: 29px;
             letter-spacing: -0.5px;
         }
             .project__link {
-                padding-top: 4px;
-                padding-bottom: 4px;
-                color: inherit;
-                text-decoration: 1.5px underline transparent;
-                text-underline-offset: 3px;
-            }
 
-            .project__link:hover {
-                text-decoration-color: currentColor;
             }
 
         .project__description {
@@ -136,21 +127,30 @@
             position: absolute;
             right: 16px;
             bottom: 16px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 1px solid var(--stroke-gray-border-2);
+            border-radius: 8px;
+            padding: 0;
+            transition: background-color var(--transition-hover);
         }
+
+        .project:hover .project__details {
+            background-color: var(--fill-light-gray);
+        }
+            .project__arrow {
+                stroke: var(--stroke-darkblue);
+            }
 
 
 
 @media (width < 740px) {
 
     .project {
-
-    }
-
-    .project--enlarged-on-hover {
-
-    }
-
-    .project--enlarged-on-hover:hover {
 
     }
         .project__preview {
@@ -178,33 +178,6 @@
         .project__body {
             padding-bottom: 16px;
         }
-            .simplified-filters {
-
-            }
-                .simplified-filters__item {
-
-                }
-
-                .simplified-filters__item:first-child {
-
-                }
-                    .simplified-filters__item::before {
-                        top: 13px;
-                    }
-
-                    .simplified-filters__item:first-child::before {
-
-                    }
-
-                    .simplified-filters__link {
-                        font-size: 12px;
-                        line-height: 17px;
-                    }
-
-                    .simplified-filters__link:hover {
-
-                    }
-
             .project__heading {
                 margin-top: 2px;
             }

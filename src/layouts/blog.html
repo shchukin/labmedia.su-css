@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/Thing">
+    <head>
+        <meta charset="utf-8">
+        <title>Блог</title>
+        <meta name="description" content="[%description%]">
+
+        <!-- schema.org (google plus) -->
+        <meta itemprop="url" content="[%url%]">
+        <meta itemprop="image" content="[%img%]">
+        <meta itemprop="name" content="[%title%]">
+        <meta itemprop="description" content="[%description%]">
+
+        <!-- ogp.me (facebook & vkontakte) -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="[%url%]">
+        <meta property="og:image" content="[%img%]">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="675">
+        <meta property="og:title" content="[%title%]">
+        <meta property="og:description" content="[%description%]">
+        <meta property="fb:app_id" content="[%facebook-app-id%]">
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="[%url%]">
+        <meta name="twitter:image" content="[%img%]">
+        <meta name="twitter:title" content="[%title%]">
+        <meta name="twitter:description" content="[%description%]">
+        <meta name="twitter:site" content="@user">
+        <meta name="twitter:creator" content="@user">
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#FFFFFF">
+
+        <!-- manifest -->
+        <link rel="manifest" href="../manifest.json">
+        <meta name="theme-color" content="#FFFFFF">
+        <meta name="msapplication-config" content="../browserconfig.xml">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+
+        <!-- assets -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/styles.css">
+
+    </head>
+    <body>
+
+        <!--[if IE]>
+            <div class="browser">
+                Вы используете устаревший браузер. Для корректной работы этого сайта и большинства других вам необходимо перейти на современный&nbsp;браузер.
+            </div>
+        <![endif]-->
+
+
+        <!-- Здесь либо вёрстка. Любой вариант любой высоты. ВАЖНО! Не используем слова типа Banner -- блокировщики рекламы забанят. У меня кодовое слово info: -->
+        <a class="info" href="#">
+            <picture>
+                <source srcset="../temp/banner/banner-desktop@2x.jpg 2x, ../temp/banner/banner-desktop@1x.jpg 1x" media="(min-width: 740px)">
+                <source srcset="../temp/banner/banner-smartphone@2x.jpg 2x, ../temp/banner/banner-smartphone@1x.jpg 1x" media="(max-width: 739px)">
+                <img class="info__image" src="../temp/banner/banner-desktop@1x.jpg" width="1920" height="56" alt="">
+            </picture>
+        </a>
+
+        <header class="header">
+            <div class="header__wrap container">
+                <div class="header__panel">
+                    <div class="header__smartphone">
+                        <div class="header__smartphone-wrap container">
+                            <div class="header__smartphone-panel">
+                                <a class="header__logo" href="#">
+                                    Лабмедиа
+                                </a>
+                                <div class="header__actions">
+                                    <div class="header__phone">
+                                        <a class="button button--square button--smaller button--header-action mfp-search-handler" href="#search">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                                            </svg>
+                                            <span class="visuallyhidden">Поиск</span>
+                                        </a>
+                                    </div>
+                                    <div class="header__request">
+                                        <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
+                                            <svg class="button__icon smartphone-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
+                                            </svg>
+                                            <span class="desktop-only">Связаться</span>
+                                        </a>
+                                    </div>
+                                    <button class="header__burger">
+                                        <svg class="header__burger-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.25H13M3 11.75H13M3 8H13" stroke-width="1.3" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="header__burger-cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 11.5L11.5 4.5M4.5 4.5L11.5 11.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="visuallyhidden">Меню</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__nav">
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             src="../content/product-icons/vovlekai.svg"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Вовлекай</div>
+                                        <div class="header__product-description">Система для корпоративного обучения сотрудников любых отраслей</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/delai-kurs@2x.png 2x"
+                                             src="../content/product-icons/delai-kurs@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">ДелайКурс</div>
+                                        <div class="header__product-description">ИИ-платформа для создания электронных курсов будущего</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/gotovie-kursi@2x.png 2x"
+                                             src="../content/product-icons/gotovie-kursi@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Готовые курсы</div>
+                                        <div class="header__product-description">Универсальный набор базовых навыков для широкой аудитории</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Кейсы</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Услуги</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__sub-link" href="#">О нас</a>
+                                    <a class="header__sub-link" href="#">Документы</a>
+                                    <a class="header__sub-link" href="#">Вакансии</a>
+                                    <a class="header__sub-link" href="#">Партнерам</a>
+                                    <a class="header__sub-link" href="#">Контакты</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Блог</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Поддержка</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page">
+
+            <div class="blog container">
+                <h1 class="blog__heading title title--main">
+                    Блог
+                </h1>
+                <div class="blog__filter">
+                    <div class="thermometer hide-scrollbar">
+                        <div class="thermometer__background hide-scrollbar">
+                            <div class="thermometer__ribbon">
+                                <button class="thermometer__action thermometer__action--current">Все темы</button>
+                                <button class="thermometer__action">Обновления и релизы</button>
+                                <button class="thermometer__action">Полезное</button>
+                                <button class="thermometer__action">Интересное</button>
+                                <button class="thermometer__action">От экспертов</button>
+                                <button class="thermometer__action">Мероприятия</button>
+                                <button class="thermometer__action">Библиотека курсов</button>
+                                <button class="thermometer__action">BoxBattle</button>
+                                <button class="thermometer__action">Готовые курсы</button>
+                                <button class="thermometer__action">Обновления и релизы</button>
+                                <button class="thermometer__action">Полезное</button>
+                                <button class="thermometer__action">Интересное</button>
+                                <button class="thermometer__action">От экспертов</button>
+                                <button class="thermometer__action">Мероприятия</button>
+                                <button class="thermometer__action">Библиотека курсов</button>
+                                <button class="thermometer__action">BoxBattle</button>
+                                <button class="thermometer__action">Готовые курсы</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog__list">
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-a@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-a@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Обновления и релизы</div>
+                                    <div class="summary__item summary__item--text-alike">01.04.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Релиз ДелайКурс #29</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                31 марта вышел новый релиз на платформе ДелайКурс. Ещё больше функций и удобных инструментов для работы с тестами и курсами. Рассказываем в статье о нововведениях
+                            </div>
+                            <div class="teaser__data">
+	                            <div class="metrics">
+	                                <div class="metrics__item">
+	                                    <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+	                                        <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+	                                    </svg>
+	                                    10 мин
+	                                </div>
+	                                <div class="metrics__item">
+	                                    <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+	                                        <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+	                                        <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+	                                    </svg>
+	                                    1337
+	                                </div>
+	                            </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-b@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-b@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Обновления и релизы</div>
+                                    <div class="summary__item summary__item--text-alike">28.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Зимний технический релиз Авторских курсов</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                24 февраля команда Авторских курсов выпускает технический релиз. Пока новые курсы в разработке, мы не забываем об уже выпущенных и совершенствуем их. В этой статье поделюсь, зачем мы десятки раз перечитываем свои курсы и какие сюрпризы нам порой преподносят браузерыы
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-c@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-c@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Мероприятия</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Конференция «Вовлекай!»: как это было</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                23 октября в Технопарке «Сколково» компания Лабмедиа успешно провела конференцию «Вовлекай!». Рассказываем подробно обо всём, что было на мероприятии
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-d@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-d@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Интересное</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Авторские курсы по безопасности для Казахстана</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                В течение сентября команда Авторских курсов трудилась над адаптацией Охраны труда, Антифишинга, ГОиЧС и ещё пяти курсов под требования законодательства Казахстана. С 1 октября они будут доступны к заказу и покупке. В этой статье расскажем, как изменили курсы и чем они полезны компаниям РК.
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-e@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-e@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Полезное</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Как сделать программу курса, которую обязательно пройдут</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                Создание учебной программы – многокомпонентная задача. Важно знать, с чего начать, на что обратить внимание, какие нюансы учесть. Основное правило – составить план и его придерживаться. В статье предлагаем рассмотреть шаги разработки авторских онлайн-программ.
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-f@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-f@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Обновления и релизы</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Релиз ДелайКурс #28</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                31 марта вышел новый релиз на платформе ДелайКурс. Ещё больше функций и удобных инструментов для работы с тестами и курсами. Рассказываем в статье о нововведениях
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-g@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-g@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Полезное</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Битрикс24: краткий обзор функционала и возможностей</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                Рассказываем о ключевых функциях Битрикс24, которые делают его востребованным инструментом среди компаний различных размеров.
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-h@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-h@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Полезное</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Оценка эффективности онлайн-обучения персонала</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                Некоторые компании при организации дистанционного учебного процесса уделяют недостаточное внимание вопросу проверки его результатов. Решить эту проблему помогут специальные методики. Ниже мы расскажем вам о критериях и современных моделях оценки продуктивности онлайн-курсов.
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="teaser" href="#">
+                        <div class="teaser__preview">
+                            <img class="teaser__illustration"
+                                 srcset="../temp/blog-previews/blog-preview-i@2x.jpg 2x"
+                                 src="../temp/blog-previews/blog-preview-i@1x.jpg"
+                                 alt=""
+                            >
+                            <div class="teaser__details">
+                                <svg class="teaser__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="teaser__body">
+                            <div class="teaser__filters">
+                                <div class="summary">
+                                    <div class="summary__item">Полезное</div>
+                                    <div class="summary__item summary__item--text-alike">24.02.2025</div>
+                                </div>
+                            </div>
+                            <div class="teaser__heading title title--smallest ellipsis ellipsis--2-lines">
+                                <div class="teaser__link">Как создать видеоурок: пошаговое руководство</div>
+                            </div>
+                            <div class="teaser__description ellipsis ellipsis--4-lines">
+                                Видеоурок – это эффективный и современный инструмент передачи информации. При желании каждый может создать видеоурок самостоятельно при помощи видеокамеры, микрофона и видеоредактора. Мы подготовили для вас пошаговую инструкцию по созданию видеоурока с нуля.
+                            </div>
+                            <div class="teaser__data">
+                                <div class="metrics">
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M7 3.524a5.23 5.23 0 0 0-3.5-1.337c-.614 0-1.203.106-1.75.3v8.312A5.243 5.243 0 0 1 3.5 10.5 5.23 5.23 0 0 1 7 11.837m0-8.313a5.23 5.23 0 0 1 3.5-1.337c.614 0 1.203.106 1.75.3v8.312a5.243 5.243 0 0 0-1.75-.299A5.23 5.23 0 0 0 7 11.837m0-8.313v8.313" />
+                                        </svg>
+                                        10 мин
+                                    </div>
+                                    <div class="metrics__item">
+                                        <svg class="metrics__icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M1.187 7.188a.59.59 0 0 1 0-.373 6.128 6.128 0 0 1 11.625-.003.59.59 0 0 1 0 .373 6.128 6.128 0 0 1-11.625.003Z" />
+                                            <path stroke="#0E1726" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M8.75 7a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Z" />
+                                        </svg>
+                                        1337
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="fader">
+                        <!-- Это градиент фейдящий конец списка. Он должен появляться при бесконечном скролл, как в соц. сетях.
+                        По-идее если доскроллировали до конца, то его нужно убирать из DOM
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="footer__request container">
+                    <div class="callback">
+                        <div class="callback__intro">
+                            <h2 class="callback__heading">
+                                Поможем решить все&nbsp;вопросы
+                            </h2>
+                            <div class="callback__description">
+                                Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку — и мы перезвоним
+                            </div>
+                        </div>
+                        <div class="callback__form">
+                            <div class="callback__name">
+                                <div class="input">
+                                    <input class="input__widget" type="text" placeholder="Имя*">
+                                </div>
+                            </div>
+                            <div class="callback__channel-fields">
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="tel" placeholder="Телефон*">
+                                    </div>
+                                </div>
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="email" placeholder="Email*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callback__footer">
+                                <div class="callback__agreement">
+                                    <label class="choice choice--smaller">
+                                        <input class="choice__widget" type="checkbox">
+                                        <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                        <i class="choice__icon" role="presentation"></i>
+                                    </label>
+                                </div>
+                                <div class="callback__submit">
+                                    <button class="button" type="button">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__main container">
+                    <div class="footer__contacts">
+                        <div class="footer__call">
+                            <a class="link link--no-hover" href="tel:+74951368606">+7 495 136–86–06</a>
+                            <div class="explain bubble-context">
+                                <button class="explain__icon bubble-handler" type="button">
+                                    Подсказка
+                                </button>
+                                <div class="bubble">
+                                    <div class="bubble__body">
+                                        <div class="bubble__heading">
+                                        Многоканальный телефон
+                                        </div>
+                                        <div class="bubble__description">
+                                            Для связи с нужным отделом позвоните<br> по номеру и введите добавочный номер
+                                        </div>
+                                    </div>
+                                    <i class="bubble__chevron"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__number-extensions">
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 1</div>
+                                <div class="footer__department">служба сервиса<br>по учебному процессу</div>
+                            </div>
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 2</div>
+                                <div class="footer__department">вопросы по покупке,<br> оплате и продуктам</div>
+                            </div>
+                        </div>
+                        <div class="footer__quality-head">
+                            <a class="footer__quality-person" href="#">
+                                <img class="footer__headshot"
+                                     srcset="../content/footer-headshot/footer-headshot@3x.jpg 3x,
+                                             ../content/footer-headshot/footer-headshot@2x.jpg 2x,
+                                             ../content/footer-headshot/footer-headshot@1x.jpg 1x
+                                    "
+                                     src="../content/footer-headshot/footer-headshot@1x.jpg"
+                                     width="32"
+                                     height="32"
+                                     alt="Фото Александра Рябинина"
+                                >
+                            </a>
+                            <div class="footer__quality-heading">
+                                Есть вопросы и предложения?
+                            </div>
+                        </div>
+                        <div class="footer__quality-feedback">
+                            Напишите <a class="link" href="#">Александру Рябинину</a> — ответственному за&nbsp;качество&nbsp;курсов
+                        </div>
+                    </div>
+                    <nav class="footer__nav">
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">О нас</a>
+                                <a class="footer__sub-link" href="#">Документы</a>
+                                <a class="footer__sub-link" href="#">Вакансии</a>
+                                <a class="footer__sub-link" href="#">Партнерам</a>
+                                <a class="footer__sub-link" href="#">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">Вовлекай</a>
+                                <a class="footer__sub-link" href="#">ДелайКурс</a>
+                                <a class="footer__sub-link" href="#">Готовые курсы</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Кейсы
+                            </a>
+                            <div class="footer__alt-menu">
+                                <a class="footer__link" href="#">Услуги</a>
+                                <a class="footer__link" href="#">Блог</a>
+                                <a class="footer__link" href="#">Поддержка</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer__separator container container--wide" role="presentation" aria-hidden="true">
+                    <div class="footer__line"></div>
+                </div>
+                <div class="footer__info container">
+                    <div class="footer__info-inner">
+                        <button class="footer__info-handler" type="button">
+                            Правовая информация
+                        </button>
+                        <div class="footer__info-body">
+                            <div class="footer__brands">
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/skolkovo@3x.jpg 3x,
+                                                 ../content/footer-brands/skolkovo@2x.jpg 2x,
+                                                 ../content/footer-brands/skolkovo@1x.jpg 1x
+                                        "
+                                         src="../content/footer-brands/skolkovo@1x.jpg"
+                                         width="50"
+                                         height="40"
+                                         alt="Логотип «Сколково»"
+                                    >
+                                    <div class="footer__brand-title">
+                                        Грантовая поддержка<br> Фонда «Сколково»
+                                    </div>
+                                </div>
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/innovations@3x.jpg 3x,
+                                                ../content/footer-brands/innovations@2x.jpg 2x,
+                                                ../content/footer-brands/innovations@1x.jpg 1x
+                                         "
+                                         src="../content/footer-brands/innovations@1x.jpg"
+                                         width="84"
+                                         height="40"
+                                         alt="Логотип фонда содействия инновациям"
+                                    >
+                                    <div class="footer__brand-title">
+                                        При поддержке Фонда<br> содействия инновациям
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__description">
+                                <div class="footer__about">
+                                    Лабмедиа разрабатывает электронные курсы, учебные видео и геймификацию для обучения. ООО «Лабмедиа» входит в Реестр малых технологических компаний с 03.11.2023 года. Программные продукты Лабмедиа включены в Реестр российского ПО
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО Вовлекай</a>
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО ДелайКурс</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__legalities container">
+                    <div class="footer__copyright-and-policy">
+                        <div class="footer__copyright">
+                            © 1999–2024 Лабмедиа. Номер DUNS: <a class="link link--fake" href="#">685898065</a>
+                        </div>
+                        <div class="footer__policy">
+                            <a class="link link--inverted-text-alike" href="#">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                    <div class="footer__media-and-developers">
+                        <div class="footer__media">
+                            <div class="media">
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="m10.254 14.193-.268 3.834a.932.932 0 0 0 .75-.37l1.8-1.746 3.74 2.773c.682.39 1.163.186 1.35-.637L20.078 6.38c.217-1.027-.353-1.439-1.034-1.18L4.635 10.798c-.996.399-.973.957-.167 1.213l3.687 1.162L16.45 8.26c.403-.276.773-.123.472.146l-6.668 5.787Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Телеграм
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M22.572 6.413c.154-.505 0-.876-.733-.876h-2.425c-.617 0-.901.32-1.055.674 0 0-1.234 2.952-2.98 4.87-.566.555-.823.732-1.131.732-.154 0-.385-.177-.385-.681v-4.72c0-.605-.171-.875-.685-.875h-3.81c-.386 0-.618.281-.618.548 0 .574.873.706.964 2.321v3.508c0 .769-.142.908-.45.908-.822 0-2.822-2.965-4.008-6.359-.233-.66-.466-.926-1.085-.926H1.746c-.693 0-.832.32-.832.674 0 .63.822 3.76 3.828 7.898 2.004 2.827 4.827 4.359 7.397 4.359 1.541 0 1.732-.34 1.732-.927v-2.136c0-.68.146-.816.634-.816.36 0 .976.176 2.415 1.54 1.644 1.614 1.915 2.339 2.84 2.339h2.425c.693 0 1.04-.34.84-1.012-.22-.67-1.004-1.64-2.046-2.791-.565-.657-1.413-1.363-1.67-1.717-.36-.454-.257-.656 0-1.06 0 0 2.955-4.087 3.263-5.475Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        ВКонтакте
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M21.367 7.292a2.446 2.446 0 0 0-1.725-1.726C18.119 5.154 12 5.154 12 5.154s-6.119 0-7.641.412a2.445 2.445 0 0 0-1.726 1.726A25.239 25.239 0 0 0 2.221 12c-.01 1.579.128 3.155.412 4.708a2.445 2.445 0 0 0 1.726 1.725c1.522.413 7.641.413 7.641.413s6.119 0 7.642-.413a2.445 2.445 0 0 0 1.725-1.725A25.24 25.24 0 0 0 21.779 12a25.24 25.24 0 0 0-.412-4.708Zm-11.323 7.642V9.066L15.122 12l-5.078 2.934Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        YouTube
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M13.84 10.884H6.23V7.836h7.61c.444 0 .753.078.908.215.155.137.251.391.251.762v1.095c0 .391-.096.645-.251.782s-.464.196-.909.196v-.002Zm.521-5.923H3.001V18H6.23v-4.242h5.948L14.999 18h3.614L15.5 13.738c1.147-.172 1.663-.528 2.088-1.115.424-.586.637-1.524.637-2.776V8.87c0-.742-.077-1.328-.213-1.778a2.973 2.973 0 0 0-.695-1.192 3.138 3.138 0 0 0-1.199-.724c-.464-.137-1.044-.215-1.758-.215v.001ZM21.09 4.959a2.48 2.48 0 1 0 0-4.959 2.48 2.48 0 0 0 0 4.959Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Rutube
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__developers">
+                            Сделано в <a class="link link--inverted-text-alike" href="#">Манки</a> и <a class="link link--inverted-text-alike" href="#">Редстар</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div class="window mfp-hide" id="search">
+            <div class="search">
+                <div class="search__form container">
+                    <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                    </svg>
+                    <div class="search__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Что ищем?">
+                        </div>
+                        <button class="search__close" type="button">
+                            <svg class="search__cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12L12 4M4 4L12 12"/>
+                            </svg>
+                            <span class="visuallyhidden">
+                                Очистить и закрыть
+                            </span>
+                        </button>
+                    </div>
+                    <div class="search__submit">
+                        <button class="button button--smaller" type="button">
+                            Найти
+                        </button>
+                    </div>
+                </div>
+                <div class="search__results container">
+                    <button class="search__item" type="button">Разработка электронных курсов</button>
+                    <button class="search__item" type="button">Создание видеоконтента</button>
+                    <button class="search__item" type="button">Геймификация</button>
+                    <button class="search__item" type="button">HR-автоматизация</button>
+                    <button class="search__item" type="button">Дизайн-мышление</button>
+                    <button class="search__item" type="button">Готовые курсы</button>
+                    <button class="search__item" type="button">Техническая поддержка</button>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <div class="window mfp-hide" id="full-request">
+            <div class="request">
+                <h2 class="request__heading">
+                    Напишите свой вопрос!
+                </h2>
+                <div class="request__description">
+                    Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку
+                </div>
+                <div class="request__form">
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Имя*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="email" placeholder="Email*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Компания*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input input--expandable">
+                            <textarea class="input__widget" placeholder="Напишите свой вопрос...*" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="request__footer">
+                        <div class="request__agreement">
+                            <label class="choice choice--smaller">
+                                <input class="choice__widget" type="checkbox">
+                                <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                <i class="choice__icon" role="presentation"></i>
+                            </label>
+                        </div>
+                        <div class="request__submit">
+                            <button class="button" type="button">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
+        <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="../vendors/swiper/swiper-bundle.min.js"></script>
+        <script src="../scripts/scripts.js"></script>
+
+    </body>
+</html>

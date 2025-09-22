@@ -137,6 +137,25 @@
     color: var(--txt-dark-blue);
 }
 
+@media (width < 740px) {
+
+    .button--share {
+        position: relative;
+        min-width: 0;
+        width: 40px;
+        padding-left: 0;
+        padding-right: 0;
+        text-indent: 200%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+        .button--share .button__icon {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+        }
+}
+
 
 
 /* Больше скинов */
@@ -151,18 +170,6 @@
     color: var(--stroke-darkblue);
 }
 
-
-.button--case-action {
-    background-color: transparent;
-    box-shadow: inset 0 0 0 1px var(--stroke-gray);
-    color: var(--fill-dark-blue);
-}
-
-.button--case-action:hover {
-    background-color: var(--fill-light-gray);
-    box-shadow: inset 0 0 0 1px var(--stroke-gray-border-2);
-    color: var(--stroke-darkblue);
-}
 
 
 .button--product-action {

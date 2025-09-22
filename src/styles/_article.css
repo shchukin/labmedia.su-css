@@ -1,0 +1,231 @@
+.article {
+    display: grid;
+    grid-template-columns: 267px 558px 267px;
+    gap: 24px;
+    padding-top: 86px;
+}
+    .article__sidebar {
+
+    }
+        .article__table-of-contains {
+            position: sticky;
+            top: 40px;
+            transition: top var(--header-visibility-transition);
+        }
+
+        /* Если возвращается шапка */
+        .scrolling-up .article__table-of-contains {
+            top: calc(40px + var(--header-height));
+        }
+
+
+    .article__body {
+
+    }
+        .article__header {
+
+        }
+            .article__date {
+                float: right;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--txt-dark-blue);
+            }
+
+            .article__filters {
+
+            }
+
+        .article__heading {
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+
+        .article__intro {
+            margin-top: 24px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .article__stats {
+            margin-top: 24px;
+        }
+
+        .article__featured-image {
+            margin-top: 40px;
+            display: block;
+            border-radius: 16px;
+            overflow: hidden; /* Обрезаем наведение */
+        }
+            .article__featured-image-illustration {
+                vertical-align: top;
+                transition: transform var(--transition-scale-hover);
+            }
+
+            .article__featured-image:hover .article__featured-image-illustration {
+                transform: scale(105%);
+            }
+
+        .article__author {
+            margin-top: 56px;
+            border-top: 1px solid var(--stroke-gray-border);
+            border-bottom: 1px solid var(--stroke-gray-border);
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        .article__content {
+            margin-top: 24px;
+        }
+
+        .article__author + .article__content {
+            margin-top: 56px;
+        }
+
+        .article__feedback {
+            margin-top: 72px;
+        }
+
+        .article__checkpoint {
+            margin-top: 72px;
+        }
+
+        .article__connect {
+            margin-top: 72px;
+            border-top: 1px solid var(--stroke-gray-border);
+            padding-top: 72px;
+        }
+            .article__share {
+
+            }
+
+            .article__subscribe {
+                margin-top: 32px;
+            }
+
+    .article__aside {
+
+    }
+        .article__desktop-poster {
+            position: sticky;
+            top: 40px;
+            transition: top var(--header-visibility-transition);
+        }
+
+        /* Если возвращается шапка */
+        .scrolling-up .article__desktop-poster {
+            top: calc(40px + var(--header-height));
+        }
+
+
+
+@media (width < 740px) {
+
+    .article {
+        display: block;
+        /*grid-template-columns: 267px 558px 267px;*/
+        /*gap: 24px;*/
+        padding-top: 58px;
+    }
+        .article__sidebar {
+            display: none;
+        }
+            .article__table-of-contains {
+                /*position: sticky;*/
+                /*top: 40px;*/
+                /*transition: top var(--header-visibility-transition);*/
+            }
+
+            /* Если возвращается шапка */
+            .scrolling-up .article__table-of-contains {
+                /*top: calc(40px + var(--header-height));*/
+            }
+
+
+        .article__body {
+
+        }
+            .article__header {
+
+            }
+                .article__date {
+                    margin-right: 0;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                .article__filters {
+
+                }
+
+            .article__heading {
+                margin-top: 8px;
+            }
+
+            .article__intro {
+                margin-top: 16px;
+            }
+
+            .article__stats {
+                margin-top: 16px;
+            }
+
+            .article__featured-image {
+                margin-top: 32px;
+            }
+                .article__featured-image-illustration {
+
+                }
+
+                .article__featured-image:hover .article__featured-image-illustration {
+
+                }
+
+            .article__author {
+                margin-top: 32px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .article__content {
+                margin-top: 16px;
+            }
+
+            .article__author + .article__content {
+                margin-top: 32px;
+            }
+
+            .article__feedback {
+                margin-top: 48px;
+            }
+
+            .article__checkpoint {
+                margin-top: 48px;
+            }
+
+        .article__connect {
+            margin-top: 48px;
+            padding-top: 48px;
+        }
+            .article__share {
+
+            }
+
+            .article__subscribe {
+                margin-top: 24px;
+            }
+
+        .article__aside {
+            display: none;
+        }
+            .article__desktop-poster {
+
+            }
+
+            /* Если возвращается шапка */
+            .scrolling-up .article__desktop-poster {
+
+            }
+}

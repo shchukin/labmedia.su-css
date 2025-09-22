@@ -495,3 +495,72 @@
 
                     }
 }
+
+/* Блюр хедер, модификация стилей */
+html:not(.burger-expanded) .header--blur .header__panel {
+    background-color: var(--fill-total-white-15);
+    backdrop-filter: var(--blur-32);
+}
+html:not(.burger-expanded) .header--blur .header__burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: var(--fill-total-white-15);
+
+    @media (width < 740px) {
+        display: flex;
+    }
+}
+html:not(.burger-expanded) .header--blur .header__burger-icon {
+    stroke: var(--stroke-total-white);
+    transition: stroke var(--transition-hover);
+}
+
+html:not(.burger-expanded) .header--blur .header__burger:hover {
+    background-color: var(--fill-total-white);
+    transition: background-color var(--transition-hover);
+}
+
+html:not(.burger-expanded) .header--blur .header__burger:hover .header__burger-icon {
+    stroke: var(--stroke-darkblue);
+}
+html:not(.burger-expanded) .header--blur .header__logo {
+    background-image: url("../images/logo-total-white.svg");
+}
+html:not(.burger-expanded) .header--blur .button--blur:not(:hover) {
+    color: var(--txt-total-white);
+}
+html:not(.burger-expanded) .header--blur .button--blur:not(:hover) {
+    color: var(--txt-total-white);
+}
+html:not(.burger-expanded) .header--blur .header__link {
+    color: var(--txt-total-white);
+}
+html:not(.burger-expanded) .header--blur .header__link:hover {
+    color: inherit;
+}
+html:not(.burger-expanded) .header--blur .header__item:has(.header__menu-dropdown) .header__link:not(:hover)::after {
+    filter: brightness(0) invert(1);
+}
+html:not(.burger-expanded) .header--blur .button--header-action {
+    background-color: transparent;
+    color: var(--stroke-total-white);
+}
+html:not(.burger-expanded) .header--blur .button--header-action:hover {
+    background-color: var(--fill-light-gray);
+    color: var(--stroke-darkblue);
+}
+
+html:not(.burger-expanded) .header--blur .button--header-action-call {
+    background-color: var(--fill-total-white-15);
+
+    @media (width < 740px) {
+        background-color: transparent;
+    }
+}
