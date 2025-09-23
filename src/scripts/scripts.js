@@ -370,32 +370,32 @@
         }
 
         if ($carousel.classList.contains("carousel--js-init-thermometer")) {
-            // Сохраняем состояние видео для каждого слайда
-            const videoStates = new Map();
 
-            new Swiper($carousel.querySelector(".swiper"), {
-                ...trackpadSwipeConfig,
-                slidesPerView: "auto",
-                slidesPerGroup: 8,
-                spaceBetween: 6,
+            if(isDesktop) {
+                new Swiper($carousel.querySelector(".swiper"), {
+                    ...trackpadSwipeConfig,
+                    slidesPerView: "auto",
+                    slidesPerGroup: 8,
+                    spaceBetween: 6,
 
-                /* свайп на трекпаде: */
-                direction: "horizontal",
-                simulateTouch: true, // Эмуляция touch для мыши/трекпада
-                threshold: 20, // Минимальное расстояние для свайпа (px)
-                touchAngle: 45, // Угол свайпа (для горизонтального — меньше 45°)
+                    /* свайп на трекпаде: */
+                    direction: "horizontal",
+                    simulateTouch: true, // Эмуляция touch для мыши/трекпада
+                    threshold: 20, // Минимальное расстояние для свайпа (px)
+                    touchAngle: 45, // Угол свайпа (для горизонтального — меньше 45°)
 
-                mousewheel: {
-                    enabled: true, // Включить mousewheel
-                    forceToAxis: true, // Привязка к горизонтальной оси (только влево-вправо)
-                    sensitivity: 1, // Чувствительность
-                    releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
-                },
-                navigation: {
-                    prevEl: $carousel.querySelector(".carousel__button--prev"),
-                    nextEl: $carousel.querySelector(".carousel__button--next"),
-                },
-            });
+                    mousewheel: {
+                        enabled: true, // Включить mousewheel
+                        forceToAxis: true, // Привязка к горизонтальной оси (только влево-вправо)
+                        sensitivity: 1, // Чувствительность
+                        releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
+                    },
+                    navigation: {
+                        prevEl: $carousel.querySelector(".carousel__button--prev"),
+                        nextEl: $carousel.querySelector(".carousel__button--next"),
+                    },
+                });
+            }
         }
     });
 
@@ -614,6 +614,7 @@
 
     adjustBubblePosition();
     $(window).on('resize', adjustBubblePosition)
+    $(window).on('load', adjustBubblePosition)
 
 
 

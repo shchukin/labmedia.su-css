@@ -410,17 +410,99 @@
             }
 
 
-    @media (740px <= width) {
 
-        .carousel--css-skin-announcement-body .carousel__pagination {
-            position: absolute;
-            z-index: 10;
-            left: 32px; /* !important потому что конфлик с оригинальными стилями свайпера */
-            top: 53px; /* !important потому что конфлик с оригинальными стилями свайпера */
-            bottom: auto;
-            right: auto;
-        }
+@media (width < 740px) {
+
+    .carousel--css-skin-thermometer {
+        /*overflow: hidden; !* Обрезаем и саму ленту, и уголки фейдящего градиента по бордер-радиусу *!*/
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+        overflow-x: auto;
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
     }
+        .carousel--css-skin-thermometer .carousel__widget {
+            display: inline-block;
+            padding-left: var(--container-padding);
+            padding-right: var(--container-padding);
+        }
+            .carousel--css-skin-thermometer .swiper {
+                background-color: var(--fill-wite-purple-darker);
+                border-radius: 12px;
+                padding: 6px;
+            }
+                .carousel--css-skin-thermometer .swiper-wrapper {
+
+                }
+                    .carousel--css-skin-thermometer .swiper-slide {
+                        /*width: auto;*/
+                    }
+
+
+        .carousel--css-skin-thermometer .carousel__controls {
+
+        }
+            .carousel--css-skin-thermometer .carousel__button {
+                /*position: absolute;*/
+                /*z-index: 10;*/
+                /*top: 0;*/
+                /*margin-top: 0;*/
+                /*bottom: 0;*/
+                /*width: 56px;*/
+                /*height: auto;*/
+                /*background-color: transparent;*/
+                /*backdrop-filter: none;*/
+                /*border-radius: 8px;*/
+            }
+
+            .carousel--css-skin-thermometer .carousel__button:hover {
+                /*background-color: transparent;*/
+            }
+
+            .carousel--css-skin-thermometer .carousel__button:disabled {
+                /*opacity: 0;*/
+                /*visibility: hidden;*/
+            }
+
+            .carousel--css-skin-thermometer .carousel__button--prev {
+                /*left: 0;*/
+            }
+
+            .carousel--css-skin-thermometer .carousel__button--next {
+                /*right: 0;*/
+            }
+                .carousel--css-skin-thermometer .carousel__button::before {
+                    /*content: "";*/
+                    /*position: absolute;*/
+                    /*top: 0;*/
+                    /*bottom: 0;*/
+                    /*display: block;*/
+                    /*width: 127px;*/
+                    /*pointer-events: none;*/
+                }
+
+                .carousel--css-skin-thermometer .carousel__button--prev::before {
+                    /*left: 0;*/
+                    /*background-image: linear-gradient(to right, rgb(240 239 245 / 100%), rgb(240 239 245 / 100%) 21%, rgb(240 239 245 / 0%) 94%, rgb(240 239 245 / 0%));*/
+                }
+
+                .carousel--css-skin-thermometer .carousel__button--next::before {
+                    /*right: 0;*/
+                    /*background-image: linear-gradient(to left, rgb(240 239 245 / 100%), rgb(240 239 245 / 100%) 21%, rgb(240 239 245 / 0%) 94%, rgb(240 239 245 / 0%));*/
+                }
+
+                .carousel--css-skin-thermometer .carousel__chevron {
+                    /*position: relative;*/
+                    /*width: 16px;*/
+                    /*height: 16px;*/
+                    /*stroke: var(--stroke-darkblue);*/
+                }
+
+                .carousel--css-skin-thermometer .carousel__button:hover .carousel__chevron {
+                    /*stroke: var(--fill-dark-blue);*/
+                }
+}
 
 
 
