@@ -32,7 +32,7 @@
                 font-size: 16px;
                 line-height: 22px;
             }
-                .support__working-hours .online {
+                .support__working-hours:has(.online) {
                     margin-left: -6px;
                 }
 

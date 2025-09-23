@@ -21,7 +21,7 @@
     }
 
     .explain .bubble {
-        bottom: calc(100% - 2px);
+        bottom: calc(100% - 12px);
     }
 
 
@@ -34,5 +34,5 @@
     }
 
     .explain--larger .bubble {
-        bottom: calc(100% + 5px);
+        bottom: calc(100% - 5px);
     }

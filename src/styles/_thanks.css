@@ -4,14 +4,14 @@
 }
     .thanks__panel {
         display: grid;
-        grid-template-columns: 492px 632px;
+        grid-template-columns: 465px 659px;
         gap: 16px;
     }
         .thanks__content {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 64px 48px;
+            padding: 64px 64px;
             background-color: #FFFFFF;
             border-radius: 16px;
         }
