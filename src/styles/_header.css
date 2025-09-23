@@ -565,14 +565,19 @@ html:not(.burger-expanded) .header--blur .button--header-action-call {
     }
 }
 
-html:not(.burger-expanded) .header--blur .header__request .button {
+html:not(.burger-expanded) .header--blur .header__request .button:not(:hover) {
     box-shadow: none;
     background-color: var(--fill-total-white-15);
     backdrop-filter: var(--blur-15);
     color: #FFFFFF;
+
+    @media (width < 740px) {
+        background-color: transparent;
+        backdrop-filter: none;
+    }
 }
 
 html:not(.burger-expanded) .header--blur .header__request .button:hover {
-    background-color: var(--fill-light-gray);
-    color: var(--txt-dark-blue);
+    box-shadow: none;
+    backdrop-filter: var(--blur-15);
 }
