@@ -172,10 +172,37 @@
 
     /* Карусели */
 
+    /* Будем симулировать свайп на десктопах, чтобы работал свайп на тачпаде: */
+    const trackpadSwipeConfig = {
+        simulateTouch: true,
+        threshold: 10,
+        touchAngle: 45,
+        mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
+        }
+    };
+
+    /* Избавляемся от неприятного баунсинга, который будет появляться при симулясии тачпада: */
+    document.querySelectorAll(".carousel .swiper").forEach(swiper => {
+        swiper.addEventListener(
+            "wheel",
+            event => {
+                if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                    event.preventDefault();
+                }
+            },
+            { passive: false }
+        );
+    });
+
     document.querySelectorAll('.carousel').forEach(($carousel) => {
 
         if ($carousel.classList.contains("carousel--js-init-default-gallery")) {
             new Swiper($carousel.querySelector(".swiper"), {
+                ...trackpadSwipeConfig,
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 24,
@@ -194,6 +221,7 @@
 
         if ($carousel.classList.contains("carousel--js-init-thanks")) {
             new Swiper($carousel.querySelector(".swiper"), {
+                ...trackpadSwipeConfig,
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 16,
@@ -219,6 +247,7 @@
 
         if( $carousel.classList.contains('carousel--js-init-case') ) {
             new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
                 slidesPerView: 3,
                 slidesPerGroup: 3,
                 spaceBetween: 24,
@@ -235,6 +264,7 @@
             const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
 
             const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
+                ...trackpadSwipeConfig,
                 slidesPerView: 1,
                 spaceBetween: 0,
                 loop: true,
@@ -290,6 +320,7 @@
             const videoStates = new Map();
 
             new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 pagination: {
@@ -337,6 +368,35 @@
                 });
             }
         }
+
+        if ($carousel.classList.contains("carousel--js-init-thermometer")) {
+            // Сохраняем состояние видео для каждого слайда
+            const videoStates = new Map();
+
+            new Swiper($carousel.querySelector(".swiper"), {
+                ...trackpadSwipeConfig,
+                slidesPerView: "auto",
+                slidesPerGroup: 8,
+                spaceBetween: 6,
+
+                /* свайп на трекпаде: */
+                direction: "horizontal",
+                simulateTouch: true, // Эмуляция touch для мыши/трекпада
+                threshold: 20, // Минимальное расстояние для свайпа (px)
+                touchAngle: 45, // Угол свайпа (для горизонтального — меньше 45°)
+
+                mousewheel: {
+                    enabled: true, // Включить mousewheel
+                    forceToAxis: true, // Привязка к горизонтальной оси (только влево-вправо)
+                    sensitivity: 1, // Чувствительность
+                    releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
+                },
+                navigation: {
+                    prevEl: $carousel.querySelector(".carousel__button--prev"),
+                    nextEl: $carousel.querySelector(".carousel__button--next"),
+                },
+            });
+        }
     });
 
 
@@ -352,6 +412,7 @@
         /* Основной слайдер с контентом и органами управления */
 
         announcementBodyInstance = new Swiper($announcementBodyCarousel.querySelector('.swiper'), {
+            ...trackpadSwipeConfig,
             slidesPerView: 1,
             slidesPerGroup: 1,
             speed: 500,
@@ -378,6 +439,7 @@
         /* Фоновый слайдер с картинками */
 
         announcementBackgroundInstance = new Swiper($announcementBackgroundCarousel.querySelector('.swiper'), {
+            ...trackpadSwipeConfig,
             slidesPerView: 1,
             slidesPerGroup: 1,
             controller: {
