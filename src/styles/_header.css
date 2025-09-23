@@ -564,3 +564,15 @@ html:not(.burger-expanded) .header--blur .button--header-action-call {
         background-color: transparent;
     }
 }
+
+html:not(.burger-expanded) .header--blur .header__request .button {
+    box-shadow: none;
+    background-color: var(--fill-total-white-15);
+    backdrop-filter: var(--blur-15);
+    color: #FFFFFF;
+}
+
+html:not(.burger-expanded) .header--blur .header__request .button:hover {
+    background-color: var(--fill-light-gray);
+    color: var(--txt-dark-blue);
+}

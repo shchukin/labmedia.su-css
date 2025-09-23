@@ -759,6 +759,10 @@
                 hideFilter();
             }
         });
+
+        $('.filter__actions').on('click', function(){
+            $(this).closest('.filter').removeClass('filter--expanded');
+        });
     }
 
 
