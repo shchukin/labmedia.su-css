@@ -186,17 +186,19 @@
     };
 
     /* Избавляемся от неприятного баунсинга, который будет появляться при симулясии тачпада: */
-    document.querySelectorAll(".carousel .swiper").forEach(swiper => {
-        swiper.addEventListener(
-            "wheel",
-            event => {
-                if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-                    event.preventDefault();
-                }
-            },
-            { passive: false }
-        );
-    });
+    if(isDesktop) {
+        document.querySelectorAll(".carousel .swiper").forEach(swiper => {
+            swiper.addEventListener(
+                "wheel",
+                event => {
+                    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                        event.preventDefault();
+                    }
+                },
+                { passive: false }
+            );
+        });
+    }
 
     document.querySelectorAll('.carousel').forEach(($carousel) => {
 
