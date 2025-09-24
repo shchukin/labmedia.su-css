@@ -783,6 +783,23 @@
     });
 
 
+    /* Блог (обычные табы, но тут в карусели) */
+
+    $('.blog__navigation .inner-thermometer-button').on('click', function() {
+        const $this = $(this);
+        const $blog = $this.closest('.blog');
+        if( ! $this.hasClass('inner-thermometer-button--current')) {
+            const index = $this.closest('.swiper-slide').index();
+
+            $blog.find('.inner-thermometer-button').removeClass('inner-thermometer-button--current');
+            $this.addClass('inner-thermometer-button--current');
+
+            $blog.find('.blog__tab--current').removeClass('blog__tab--current');
+            $blog.find('.blog__tab:nth-child('+ (index + 1) +')').addClass('blog__tab--current');
+        }
+    });
+
+
     /* About experts video */
     function initAboutExpertsVideo() {
         const video = $('.about-experts__video video')[0];
