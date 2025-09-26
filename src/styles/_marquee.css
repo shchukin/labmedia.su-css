@@ -40,6 +40,7 @@
             padding-left: 12px;
             padding-right: 12px;
         }
+
             .marquee__image {
                 vertical-align: top;
                 background-color: var(--image-fallback);
@@ -50,6 +51,22 @@
                 transition: transform var(--transition-scale-hover);
             }
 
-            .marquee__link:hover .marquee__image {
+            a.marquee__link:hover .marquee__image {
                 transform: scale(105%);
+            }
+
+
+.marquee--partners {
+
+}
+    .marquee--partners .marquee__content {
+
+    }
+        .marquee--partners .marquee__link {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+            .marquee--partners .marquee__image {
+                width: 280px;
+                height: 148px;
             }

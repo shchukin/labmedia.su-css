@@ -1,0 +1,105 @@
+.audience {
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+.partnership + .audience {
+    padding-top: 0;
+}
+    .audience__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .audience__list {
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+        .audience__item {
+            display: block;
+            padding: 8px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+        }
+            .audience__illustration {
+                border-radius: 12px;
+                background-color: var(--image-fallback);
+            }
+
+            .audience__item-body {
+                padding: 16px;
+            }
+                .audience__sub-heading {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                .audience__description {
+                    margin-top: 12px;
+                }
+
+                .audience__details {
+                    margin-top: 24px;
+                }
+
+                .audience__item:hover .audience__details .button {
+                    background-color: var(--fill-light-gray);
+                }
+
+
+@media (width < 740px) {
+
+    .audience {
+        padding-top: 88px;
+        padding-bottom: 88px;
+    }
+        .audience__heading {
+
+        }
+
+        .audience__list {
+            margin-top: 32px;
+            display: block;
+        }
+            .audience__item {
+                margin-top: 16px;
+            }
+
+            .audience__item:first-child {
+                margin-top: 0;
+            }
+                .audience__illustration {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                }
+
+                .audience__item-body {
+                    padding: 8px;
+                }
+                    .audience__sub-heading {
+
+                    }
+
+                    .audience__description {
+                        margin-top: 8px;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+
+                    .audience__details {
+
+                    }
+
+                    .audience__details .button {
+                        width: 100%;
+                    }
+
+                    .audience__item:hover .audience__details .button {
+
+                    }
+}

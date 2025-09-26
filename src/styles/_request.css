@@ -14,9 +14,6 @@
 
     .request__description {
         margin-top: 12px;
-        max-width: 456px;
-        margin-left: auto;
-        margin-right: auto;
         font-size: 16px;
         line-height: 22px;
         text-align: center;
@@ -29,21 +26,52 @@
             margin-top: 16px;
         }
 
-    .request__footer {
-        margin-top: 16px;
-        display: flex;
-        align-items: flex-start;
-        gap: 24px;
+        .request__addition {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .request__footer {
+            margin-top: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+            .request__agreement {
+                margin-top: 4px;
+                flex-grow: 1;
+            }
+
+            .request__submit {
+
+            }
+
+
+
+.request--referrals {
+
+}
+    .request--referrals .request__heading {
+
     }
+
+    .request--referrals .request__description {
+
+    }
+
+    .request--referrals .request__footer {
+        margin-top: 32px;
+
+    }
+        .request--referrals .request__submit {
+
+        }
+
         .request__agreement {
-            margin-top: 4px;
-            flex-grow: 1;
-        }
-
-        .request__submit {
 
         }
-
 
 
 @media (width < 740px) {
@@ -54,23 +82,14 @@
         padding: 40px 24px 32px;
     }
         .request__heading {
-            /*margin-top: 0;*/
-            /*margin-bottom: 0;*/
-            /*font-weight: normal;*/
             font-size: 32px;
             line-height: 38px;
-            /*text-align: center;*/
-            /*letter-spacing: -0.75px;*/
         }
 
         .request__description {
-            /*margin-top: 12px;*/
             max-width: 247px;
-            /*margin-left: auto;*/
-            /*margin-right: auto;*/
             font-size: 12px;
             line-height: 17px;
-            /*text-align: center;*/
         }
 
         .request__form {
@@ -80,15 +99,17 @@
                 margin-top: 12px;
             }
 
+            .request__addition {
+                margin-top: 32px;
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+
         .request__footer {
             margin-top: 18px;
             display: block;
-            /*align-items: flex-start;*/
-            /*gap: 24px;*/
         }
             .request__agreement {
                 margin-top: 0;
-                /*flex-grow: 1;*/
             }
 
             .request__submit {
@@ -97,6 +118,35 @@
                 .request__submit .button {
                     width: 100%;
                 }
+
+
+
+
+    .request--referrals {
+        padding: 32px;
+        max-width: none;
+    }
+        .request--referrals .request__heading {
+            text-align: left;
+        }
+
+        .request--referrals .request__description {
+            text-align: left;
+        }
+
+        .request--referrals .request__footer {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: stretch;
+            gap: 12px;
+        }
+            .request--referrals .request__submit {
+                margin-top: 0;
+            }
+
+            .request__agreement {
+
+            }
 }
 
 

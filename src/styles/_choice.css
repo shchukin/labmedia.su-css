@@ -40,11 +40,11 @@
                     border-color var(--transition-hover);
     }
 
-    .choice__widget[type="checkbox"]:checked ~ .choice__icon {
+    .choice__widget[type="checkbox"] ~ .choice__icon {
 
     }
 
-    .choice__widget[type="radio"]:checked ~ .choice__icon {
+    .choice__widget[type="radio"] ~ .choice__icon {
         border-radius: 50%;
     }
 
