@@ -370,35 +370,41 @@
                 });
             }
         }
+    });
 
-        if ($carousel.classList.contains("carousel--js-init-thermometer")) {
 
-            if(isDesktop) {
-                new Swiper($carousel.querySelector(".swiper"), {
-                    ...trackpadSwipeConfig,
-                    slidesPerView: "auto",
-                    slidesPerGroup: 8,
-                    spaceBetween: 6,
+    /* В этих каруселях важно дождаться момента, когда прогрузились и применились шрифты -- от этого зависит ширина слайдов: */
+    window.addEventListener("load", (event) => {
+        document.querySelectorAll('.carousel').forEach(($carousel) => {
+            if ($carousel.classList.contains("carousel--js-init-thermometer")) {
 
-                    /* свайп на трекпаде: */
-                    direction: "horizontal",
-                    simulateTouch: true, // Эмуляция touch для мыши/трекпада
-                    threshold: 20, // Минимальное расстояние для свайпа (px)
-                    touchAngle: 45, // Угол свайпа (для горизонтального — меньше 45°)
+                if(isDesktop) {
+                    new Swiper($carousel.querySelector(".swiper"), {
+                        ...trackpadSwipeConfig,
+                        slidesPerView: "auto",
+                        slidesPerGroup: 8,
+                        spaceBetween: 6,
 
-                    mousewheel: {
-                        enabled: true, // Включить mousewheel
-                        forceToAxis: true, // Привязка к горизонтальной оси (только влево-вправо)
-                        sensitivity: 1, // Чувствительность
-                        releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
-                    },
-                    navigation: {
-                        prevEl: $carousel.querySelector(".carousel__button--prev"),
-                        nextEl: $carousel.querySelector(".carousel__button--next"),
-                    },
-                });
+                        /* свайп на трекпаде: */
+                        direction: "horizontal",
+                        simulateTouch: true, // Эмуляция touch для мыши/трекпада
+                        threshold: 20, // Минимальное расстояние для свайпа (px)
+                        touchAngle: 45, // Угол свайпа (для горизонтального — меньше 45°)
+
+                        mousewheel: {
+                            enabled: true, // Включить mousewheel
+                            forceToAxis: true, // Привязка к горизонтальной оси (только влево-вправо)
+                            sensitivity: 1, // Чувствительность
+                            releaseOnEdges: true, // Отпускать события на краях (для скролла страницы)
+                        },
+                        navigation: {
+                            prevEl: $carousel.querySelector(".carousel__button--prev"),
+                            nextEl: $carousel.querySelector(".carousel__button--next"),
+                        },
+                    });
+                }
             }
-        }
+        });
     });
 
 
@@ -797,6 +803,13 @@
             $blog.find('.blog__tab--current').removeClass('blog__tab--current');
             $blog.find('.blog__tab:nth-child('+ (index + 1) +')').addClass('blog__tab--current');
         }
+    });
+
+
+    /* FAQ */
+
+    $('.faq__question').on('click', function() {
+        $(this).closest('.faq__item').toggleClass('faq__item--expanded');
     });
 
 

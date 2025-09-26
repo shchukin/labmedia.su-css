@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/Thing">
+    <head>
+        <meta charset="utf-8">
+        <title>Рефералы</title>
+        <meta name="description" content="[%description%]">
+
+        <!-- schema.org (google plus) -->
+        <meta itemprop="url" content="[%url%]">
+        <meta itemprop="image" content="[%img%]">
+        <meta itemprop="name" content="[%title%]">
+        <meta itemprop="description" content="[%description%]">
+
+        <!-- ogp.me (facebook & vkontakte) -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="[%url%]">
+        <meta property="og:image" content="[%img%]">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="675">
+        <meta property="og:title" content="[%title%]">
+        <meta property="og:description" content="[%description%]">
+        <meta property="fb:app_id" content="[%facebook-app-id%]">
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="[%url%]">
+        <meta name="twitter:image" content="[%img%]">
+        <meta name="twitter:title" content="[%title%]">
+        <meta name="twitter:description" content="[%description%]">
+        <meta name="twitter:site" content="@user">
+        <meta name="twitter:creator" content="@user">
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#FFFFFF">
+
+        <!-- manifest -->
+        <link rel="manifest" href="../manifest.json">
+        <meta name="theme-color" content="#FFFFFF">
+        <meta name="msapplication-config" content="../browserconfig.xml">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+
+        <!-- assets -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/styles.css?1758885417">
+
+    </head>
+    <body>
+
+        <!--[if IE]>
+            <div class="browser">
+                Вы используете устаревший браузер. Для корректной работы этого сайта и большинства других вам необходимо перейти на современный&nbsp;браузер.
+            </div>
+        <![endif]-->
+
+
+        <!-- Здесь либо вёрстка. Любой вариант любой высоты. ВАЖНО! Не используем слова типа Banner -- блокировщики рекламы забанят. У меня кодовое слово info: -->
+        <a class="info" href="#">
+            <picture>
+                <source srcset="../temp/banner/banner-desktop@2x.jpg 2x, ../temp/banner/banner-desktop@1x.jpg 1x" media="(min-width: 740px)">
+                <source srcset="../temp/banner/banner-smartphone@2x.jpg 2x, ../temp/banner/banner-smartphone@1x.jpg 1x" media="(max-width: 739px)">
+                <img class="info__image" src="../temp/banner/banner-desktop@1x.jpg" width="1920" height="56" alt="">
+            </picture>
+        </a>
+
+        <header class="header header--blur">
+            <div class="header__wrap container">
+                <div class="header__panel">
+                    <div class="header__smartphone">
+                        <div class="header__smartphone-wrap container">
+                            <div class="header__smartphone-panel">
+                                <a class="header__logo" href="#">
+                                    Лабмедиа
+                                </a>
+                                <div class="header__actions">
+                                    <div class="header__phone">
+                                        <a class="button button--square button--smaller button--header-action mfp-search-handler" href="#search">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                                            </svg>
+                                            <span class="visuallyhidden">Поиск</span>
+                                        </a>
+                                    </div>
+                                    <div class="header__request">
+                                        <a class="button button--smaller button--outline-white mfp-handler" href="#full-request">
+                                            <svg class="button__icon smartphone-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
+                                            </svg>
+                                            <span class="desktop-only">Связаться</span>
+                                        </a>
+                                    </div>
+                                    <button class="header__burger">
+                                        <svg class="header__burger-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.25H13M3 11.75H13M3 8H13" stroke-width="1.3" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="header__burger-cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 11.5L11.5 4.5M4.5 4.5L11.5 11.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="visuallyhidden">Меню</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__nav">
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             src="../content/product-icons/vovlekai.svg"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Вовлекай</div>
+                                        <div class="header__product-description">Система для корпоративного обучения сотрудников любых отраслей</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/delai-kurs@2x.png 2x"
+                                             src="../content/product-icons/delai-kurs@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">ДелайКурс</div>
+                                        <div class="header__product-description">ИИ-платформа для создания электронных курсов будущего</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/gotovie-kursi@2x.png 2x"
+                                             src="../content/product-icons/gotovie-kursi@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Готовые курсы</div>
+                                        <div class="header__product-description">Универсальный набор базовых навыков для широкой аудитории</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Кейсы</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Услуги</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__sub-link" href="#">О нас</a>
+                                    <a class="header__sub-link" href="#">Документы</a>
+                                    <a class="header__sub-link" href="#">Вакансии</a>
+                                    <a class="header__sub-link" href="#">Партнерам</a>
+                                    <a class="header__sub-link" href="#">Контакты</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Блог</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Поддержка</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page">
+            <div class="intro intro--referrals">
+                <div class="intro__background">
+                    <div class="intro__wrap container">
+                        <h1 class="intro__heading title title--main">
+                            Станьте партнером и&nbsp;зарабатывайте на продуктах компании
+                        </h1>
+                        <div class="intro__description">
+                            Предлагаем процент с&nbsp;продажи продуктов, а&nbsp;также интеграцию Вовлекай и&nbsp;ДелайКурс в&nbsp;ваши решения
+                        </div>
+                        <div class="intro__details">
+                            <a class="button button--secondary" href="#">Стать партнером</a>
+                        </div>
+                        <div class="intro__bubble intro__bubble--profit">
+                            <div class="intro__bubble-heading title--service">до 40%</div>
+                            <div class="intro__bubble-description">прибыли с каждой<br> продажи</div>
+                        </div>
+                        <div class="intro__bubble intro__bubble--support">
+                            <svg class="intro__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="none">
+                                <path fill="#fff" d="M16.8 15.6V18H0v-2.4s0-4.8 8.4-4.8 8.4 4.8 8.4 4.8ZM12.6 4.2a4.2 4.2 0 1 0-8.4 0 4.2 4.2 0 0 0 8.4 0Zm4.128 6.6a6.384 6.384 0 0 1 2.472 4.8V18H24v-2.4s0-4.356-7.272-4.8ZM15.6 0a4.068 4.068 0 0 0-2.316.708 6 6 0 0 1 0 6.984c.682.466 1.49.713 2.316.708a4.2 4.2 0 1 0 0-8.4Z"/>
+                            </svg>
+                            <div class="intro__bubble-description">Оказываем поддержку<br> демоматериалами,<br> маркетингом и техподдержкой</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee marquee--to-right marquee--partners">
+                <div class="marquee__content">
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-a@2x.jpg 2x"
+                             src="../temp/partners/partners-a@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-b@2x.jpg 2x"
+                             src="../temp/partners/partners-b@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-c@2x.jpg 2x"
+                             src="../temp/partners/partners-c@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-d@2x.jpg 2x"
+                             src="../temp/partners/partners-d@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-e@2x.jpg 2x"
+                             src="../temp/partners/partners-e@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-f@2x.jpg 2x"
+                             src="../temp/partners/partners-f@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-g@2x.jpg 2x"
+                             src="../temp/partners/partners-g@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                    <div class="marquee__link">
+                        <img class="marquee__image"
+                             srcset="../temp/partners/partners-h@2x.jpg 2x"
+                             src="../temp/partners/partners-h@1x.jpg"
+                             alt=""
+                        >
+                    </div>
+                </div>
+            </div>
+            <section class="partnership container">
+                <h2 class="partnership__heading title title--secondary">
+                    Виды партнерств
+                </h2>
+                <div class="partnership__list">
+                    <div class="partnership__item">
+                        <img class="partnership__illustration"
+                             srcset="../content/partnership/partnership-a@2x.png 2x"
+                             src="../content/partnership/partnership-a@1x.png"
+                             width="120"
+                             height="120"
+                             alt=""
+                        >
+                        <div class="partnership__item-body">
+                            <h3 class="partnership__sub-heading title title--smallest">
+                                Продажа продуктов и&nbsp;услуг
+                            </h3>
+                            <div class="partnership__description">
+                                Зарабатывайте на каждой сделке до 40% с простыми и прозрачными <a class="link" href="#">условиями</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partnership__item">
+                        <img class="partnership__illustration"
+                             srcset="../content/partnership/partnership-b@2x.png 2x"
+                             src="../content/partnership/partnership-b@1x.png"
+                             width="120"
+                             height="120"
+                             alt=""
+                        >
+                        <div class="partnership__item-body">
+                            <h3 class="partnership__sub-heading title title--smallest">
+                                Интеграция Вовлекай и&nbsp;ДелайКурс
+                            </h3>
+                            <div class="partnership__description">
+                                Добавьте бесплатных фичей в свой продукт для повышения лояльности клиентов
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partnership__item">
+                        <img class="partnership__illustration"
+                             srcset="../content/partnership/partnership-c@2x.png 2x"
+                             src="../content/partnership/partnership-c@1x.png"
+                             width="120"
+                             height="120"
+                             alt=""
+                        >
+                        <div class="partnership__item-body">
+                            <h3 class="partnership__sub-heading title title--smallest">
+                                Станьте амбассадором Лабмедиа
+                            </h3>
+                            <div class="partnership__description">
+                                Добавьте бесплатных фичей в свой продукт для повышения лояльности клиентов
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="audience container">
+                <h2 class="audience__heading title title--secondary">
+                    Для кого подойдет
+                </h2>
+                <div class="audience__list">
+                    <a class="audience__item" href="#">
+                        <img class="audience__illustration"
+                             srcset="../content/audience/audience-a@2x.jpg 2x"
+                             src="../content/audience/audience-a@1x.jpg"
+                             width="542"
+                             height="342"
+                             alt=""
+                        >
+                        <div class="audience__item-body">
+                            <h3 class="audience__sub-heading title title--smaller">
+                                Образовательные организации
+                            </h3>
+                            <div class="audience__description">
+                                Используйте наши платформы для грантовых проектов и дополнительного образования
+                            </div>
+                            <div class="audience__details">
+                                <div class="button button--outline-blue">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="audience__item" href="#">
+                        <img class="audience__illustration"
+                             srcset="../content/audience/audience-b@2x.jpg 2x"
+                             src="../content/audience/audience-b@1x.jpg"
+                             width="542"
+                             height="342"
+                             alt=""
+                        >
+                        <div class="audience__item-body">
+                            <h3 class="audience__sub-heading title title--smaller">
+                                Физические лица
+                            </h3>
+                            <div class="audience__description">
+                                Создавайте программы на платформе или предлагайте готовые решения клиентам, получая процент с продаж
+                            </div>
+                            <div class="audience__details">
+                                <div class="button button--outline-blue">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="audience__item" href="#">
+                        <img class="audience__illustration"
+                             srcset="../content/audience/audience-c@2x.jpg 2x"
+                             src="../content/audience/audience-c@1x.jpg"
+                             width="542"
+                             height="342"
+                             alt=""
+                        >
+                        <div class="audience__item-body">
+                            <h3 class="audience__sub-heading title title--smaller">
+                                Компании-дистрибьюторы
+                            </h3>
+                            <div class="audience__description">
+                                Продавайте наши курсы и платформы на выгодных условиях, получая комиссию и поддержку на всех этапах
+                            </div>
+                            <div class="audience__details">
+                                <div class="button button--outline-blue">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="audience__item" href="#">
+                        <img class="audience__illustration"
+                             srcset="../content/audience/audience-d@2x.jpg 2x"
+                             src="../content/audience/audience-d@1x.jpg"
+                             width="542"
+                             height="342"
+                             alt=""
+                        >
+                        <div class="audience__item-body">
+                            <h3 class="audience__sub-heading title title--smaller">
+                                Компании-интеграторы
+                            </h3>
+                            <div class="audience__description">
+                                Внедряйте наши технологии в свои продукты и предлагайте клиентам комплексные решения
+                            </div>
+                            <div class="audience__details">
+                                <div class="button button--outline-blue">Подробнее</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="join">
+                <div class="join__background">
+                    <div class="join__wrap container">
+                        <h2 class="join__heading title title--secondary">
+                            Станьте партнером в&nbsp;4&nbsp;шага
+                        </h2>
+                        <div class="join__wizard hide-scrollbar">
+                            <div class="join__ribbon">
+                                <div class="join__step">
+                                    <div class="join__index">
+                                        01
+                                    </div>
+                                    <div class="join__sub-heading title title--smallest">
+                                        Заявка
+                                    </div>
+                                    <div class="join__description">
+                                        Оставьте заявку на партнерство, свяжемся с вами и подберем условия партнерской программы
+                                    </div>
+                                </div>
+                                <div class="join__step">
+                                    <div class="join__index">
+                                        02
+                                    </div>
+                                    <div class="join__sub-heading title title--smallest">
+                                        Договор
+                                    </div>
+                                    <div class="join__description">
+                                        Подпишите договор на выгодных условиях — продавайте, интегрируйте или станьте амбассадором
+                                    </div>
+                                </div>
+                                <div class="join__step">
+                                    <div class="join__index">
+                                        03
+                                    </div>
+                                    <div class="join__sub-heading title title--smallest">
+                                        Заработок до&nbsp;40%
+                                    </div>
+                                    <div class="join__description">
+                                        Получите ежемесячное отчисление на ваш счет с прозрачным расчетом партнерской программы
+                                    </div>
+                                </div>
+                                <div class="join__step">
+                                    <div class="join__index">
+                                        04
+                                    </div>
+                                    <div class="join__sub-heading title title--smallest">
+                                        Поддержка
+                                    </div>
+                                    <div class="join__description">
+                                        Маркетинговая поддержкачч от Лабмедиа: материалы, обучение, помощь в переговорах
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="join__widget">
+                            <div class="request request--referrals">
+                                <h2 class="request__heading">
+                                    Оставьте заявку<br class="desktop-only"> на партнерство с&nbsp;Лабмедиа
+                                </h2>
+                                <div class="request__description">
+                                    Обсудим условия, выберем формат сотрудничества, презентуем маркетинговые материалы и&nbsp;образец договора
+                                </div>
+                                <div class="request__form">
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="text" placeholder="Имя*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="email" placeholder="Email*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="text" placeholder="Компания*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input input--expandable">
+                                            <textarea class="input__widget" placeholder="Напишите свой вопрос...*" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="request__addition">
+                                        <label class="choice choice--full-width choice--card">
+                                            <input class="choice__widget" type="radio" name="organisation-type" checked>
+                                            <span class="choice__label">Образоват. организация</span>
+                                            <i class="choice__icon" role="presentation"></i>
+                                        </label>
+                                        <label class="choice choice--full-width choice--card">
+                                            <input class="choice__widget" type="radio" name="organisation-type" checked>
+                                            <span class="choice__label">Физическое лицо</span>
+                                            <i class="choice__icon" role="presentation"></i>
+                                        </label>
+                                        <label class="choice choice--full-width choice--card">
+                                            <input class="choice__widget" type="radio" name="organisation-type" checked>
+                                            <span class="choice__label">Компания-дистрибьютор</span>
+                                            <i class="choice__icon" role="presentation"></i>
+                                        </label>
+                                        <label class="choice choice--full-width choice--card">
+                                            <input class="choice__widget" type="radio" name="organisation-type" checked>
+                                            <span class="choice__label">Компания-интегратор</span>
+                                            <i class="choice__icon" role="presentation"></i>
+                                        </label>
+                                    </div>
+                                    <div class="request__footer">
+                                        <div class="request__agreement">
+                                            <label class="choice choice--smaller">
+                                                <input class="choice__widget" type="checkbox">
+                                                <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                                <i class="choice__icon" role="presentation"></i>
+                                            </label>
+                                        </div>
+                                        <div class="request__submit">
+                                            <button class="button" type="button">Отправить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="faq container">
+                <h2 class="faq__heading title title--secondary">
+                    Часто задаваемые вопросы
+                </h2>
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Кто может участвовать в партнёрской программе?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto aspernatur at corporis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Как начать сотрудничество?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>Заполните заявку на странице партнёрской программы, и наш менеджер свяжется с вами, чтобы обсудить формат сотрудничества и условия</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Какие продукты можно продавать?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>debitis delectus dolores dolorum eveniet explicabo fugiat ipsum itaque libero magni maiores modi nam necessitatibus numquam omnis placeat quaerat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Как рассчитываются вознаграждения?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>quos rem similique sint tempora unde vero voluptates! Alias cumque distinctio dolore ducimus minus praesentium voluptatem! Distinctio, soluta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="footer__request container">
+                    <div class="callback">
+                        <div class="callback__intro">
+                            <h2 class="callback__heading">
+                                Поможем решить все&nbsp;вопросы
+                            </h2>
+                            <div class="callback__description">
+                                Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку — и мы перезвоним
+                            </div>
+                        </div>
+                        <div class="callback__form">
+                            <div class="callback__name">
+                                <div class="input">
+                                    <input class="input__widget" type="text" placeholder="Имя*">
+                                </div>
+                            </div>
+                            <div class="callback__channel-fields">
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="tel" placeholder="Телефон*">
+                                    </div>
+                                </div>
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="email" placeholder="Email*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callback__footer">
+                                <div class="callback__agreement">
+                                    <label class="choice choice--smaller">
+                                        <input class="choice__widget" type="checkbox">
+                                        <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                        <i class="choice__icon" role="presentation"></i>
+                                    </label>
+                                </div>
+                                <div class="callback__submit">
+                                    <button class="button" type="button">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__main container">
+                    <div class="footer__contacts">
+                        <div class="footer__call">
+                            <a class="link link--no-hover" href="tel:+74951368606">+7 495 136–86–06</a>
+                            <div class="explain bubble-context">
+                                <button class="explain__icon bubble-handler" type="button">
+                                    Подсказка
+                                </button>
+                                <div class="bubble">
+                                    <div class="bubble__body">
+                                        <div class="bubble__heading">
+                                        Многоканальный телефон
+                                        </div>
+                                        <div class="bubble__description">
+                                            Для связи с нужным отделом позвоните<br> по номеру и введите добавочный номер
+                                        </div>
+                                    </div>
+                                    <i class="bubble__chevron"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__number-extensions">
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 1</div>
+                                <div class="footer__department">служба сервиса<br>по учебному процессу</div>
+                            </div>
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 2</div>
+                                <div class="footer__department">вопросы по покупке,<br> оплате и продуктам</div>
+                            </div>
+                        </div>
+                        <div class="footer__quality-head">
+                            <a class="footer__quality-person" href="#">
+                                <img class="footer__headshot"
+                                     srcset="../content/footer-headshot/footer-headshot@3x.jpg 3x,
+                                             ../content/footer-headshot/footer-headshot@2x.jpg 2x,
+                                             ../content/footer-headshot/footer-headshot@1x.jpg 1x
+                                    "
+                                     src="../content/footer-headshot/footer-headshot@1x.jpg"
+                                     width="32"
+                                     height="32"
+                                     alt="Фото Александра Рябинина"
+                                >
+                            </a>
+                            <div class="footer__quality-heading">
+                                Есть вопросы и предложения?
+                            </div>
+                        </div>
+                        <div class="footer__quality-feedback">
+                            Напишите <a class="link" href="#">Александру Рябинину</a> — ответственному за&nbsp;качество&nbsp;курсов
+                        </div>
+                    </div>
+                    <nav class="footer__nav">
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">О нас</a>
+                                <a class="footer__sub-link" href="#">Документы</a>
+                                <a class="footer__sub-link" href="#">Вакансии</a>
+                                <a class="footer__sub-link" href="#">Партнерам</a>
+                                <a class="footer__sub-link" href="#">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">Вовлекай</a>
+                                <a class="footer__sub-link" href="#">ДелайКурс</a>
+                                <a class="footer__sub-link" href="#">Готовые курсы</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Кейсы
+                            </a>
+                            <div class="footer__alt-menu">
+                                <a class="footer__link" href="#">Услуги</a>
+                                <a class="footer__link" href="#">Блог</a>
+                                <a class="footer__link" href="#">Поддержка</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer__separator container container--wide" role="presentation" aria-hidden="true">
+                    <div class="footer__line"></div>
+                </div>
+                <div class="footer__info container">
+                    <div class="footer__info-inner">
+                        <button class="footer__info-handler" type="button">
+                            Правовая информация
+                        </button>
+                        <div class="footer__info-body">
+                            <div class="footer__brands">
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/skolkovo@3x.jpg 3x,
+                                                 ../content/footer-brands/skolkovo@2x.jpg 2x,
+                                                 ../content/footer-brands/skolkovo@1x.jpg 1x
+                                        "
+                                         src="../content/footer-brands/skolkovo@1x.jpg"
+                                         width="50"
+                                         height="40"
+                                         alt="Логотип «Сколково»"
+                                    >
+                                    <div class="footer__brand-title">
+                                        Грантовая поддержка<br> Фонда «Сколково»
+                                    </div>
+                                </div>
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/innovations@3x.jpg 3x,
+                                                ../content/footer-brands/innovations@2x.jpg 2x,
+                                                ../content/footer-brands/innovations@1x.jpg 1x
+                                         "
+                                         src="../content/footer-brands/innovations@1x.jpg"
+                                         width="84"
+                                         height="40"
+                                         alt="Логотип фонда содействия инновациям"
+                                    >
+                                    <div class="footer__brand-title">
+                                        При поддержке Фонда<br> содействия инновациям
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__description">
+                                <div class="footer__about">
+                                    Лабмедиа разрабатывает электронные курсы, учебные видео и геймификацию для обучения. ООО «Лабмедиа» входит в Реестр малых технологических компаний с 03.11.2023 года. Программные продукты Лабмедиа включены в Реестр российского ПО
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО Вовлекай</a>
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО ДелайКурс</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__legalities container">
+                    <div class="footer__copyright-and-policy">
+                        <div class="footer__copyright">
+                            © 1999–2024 Лабмедиа. Номер DUNS: <a class="link link--fake" href="#">685898065</a>
+                        </div>
+                        <div class="footer__policy">
+                            <a class="link link--inverted-text-alike" href="#">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                    <div class="footer__media-and-developers">
+                        <div class="footer__media">
+                            <div class="media">
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="m10.254 14.193-.268 3.834a.932.932 0 0 0 .75-.37l1.8-1.746 3.74 2.773c.682.39 1.163.186 1.35-.637L20.078 6.38c.217-1.027-.353-1.439-1.034-1.18L4.635 10.798c-.996.399-.973.957-.167 1.213l3.687 1.162L16.45 8.26c.403-.276.773-.123.472.146l-6.668 5.787Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Телеграм
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M22.572 6.413c.154-.505 0-.876-.733-.876h-2.425c-.617 0-.901.32-1.055.674 0 0-1.234 2.952-2.98 4.87-.566.555-.823.732-1.131.732-.154 0-.385-.177-.385-.681v-4.72c0-.605-.171-.875-.685-.875h-3.81c-.386 0-.618.281-.618.548 0 .574.873.706.964 2.321v3.508c0 .769-.142.908-.45.908-.822 0-2.822-2.965-4.008-6.359-.233-.66-.466-.926-1.085-.926H1.746c-.693 0-.832.32-.832.674 0 .63.822 3.76 3.828 7.898 2.004 2.827 4.827 4.359 7.397 4.359 1.541 0 1.732-.34 1.732-.927v-2.136c0-.68.146-.816.634-.816.36 0 .976.176 2.415 1.54 1.644 1.614 1.915 2.339 2.84 2.339h2.425c.693 0 1.04-.34.84-1.012-.22-.67-1.004-1.64-2.046-2.791-.565-.657-1.413-1.363-1.67-1.717-.36-.454-.257-.656 0-1.06 0 0 2.955-4.087 3.263-5.475Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        ВКонтакте
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M21.367 7.292a2.446 2.446 0 0 0-1.725-1.726C18.119 5.154 12 5.154 12 5.154s-6.119 0-7.641.412a2.445 2.445 0 0 0-1.726 1.726A25.239 25.239 0 0 0 2.221 12c-.01 1.579.128 3.155.412 4.708a2.445 2.445 0 0 0 1.726 1.725c1.522.413 7.641.413 7.641.413s6.119 0 7.642-.413a2.445 2.445 0 0 0 1.725-1.725A25.24 25.24 0 0 0 21.779 12a25.24 25.24 0 0 0-.412-4.708Zm-11.323 7.642V9.066L15.122 12l-5.078 2.934Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        YouTube
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M13.84 10.884H6.23V7.836h7.61c.444 0 .753.078.908.215.155.137.251.391.251.762v1.095c0 .391-.096.645-.251.782s-.464.196-.909.196v-.002Zm.521-5.923H3.001V18H6.23v-4.242h5.948L14.999 18h3.614L15.5 13.738c1.147-.172 1.663-.528 2.088-1.115.424-.586.637-1.524.637-2.776V8.87c0-.742-.077-1.328-.213-1.778a2.973 2.973 0 0 0-.695-1.192 3.138 3.138 0 0 0-1.199-.724c-.464-.137-1.044-.215-1.758-.215v.001ZM21.09 4.959a2.48 2.48 0 1 0 0-4.959 2.48 2.48 0 0 0 0 4.959Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Rutube
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__developers">
+                            Сделано в <a class="link link--inverted-text-alike" href="#">Манки</a> и <a class="link link--inverted-text-alike" href="#">Редстар</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div class="window mfp-hide" id="search">
+            <div class="search">
+                <div class="search__form container">
+                    <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                    </svg>
+                    <div class="search__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Что ищем?">
+                        </div>
+                        <button class="search__close" type="button">
+                            <svg class="search__cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12L12 4M4 4L12 12"/>
+                            </svg>
+                            <span class="visuallyhidden">
+                                Очистить и закрыть
+                            </span>
+                        </button>
+                    </div>
+                    <div class="search__submit">
+                        <button class="button button--smaller" type="button">
+                            Найти
+                        </button>
+                    </div>
+                </div>
+                <div class="search__results container">
+                    <button class="search__item" type="button">Разработка электронных курсов</button>
+                    <button class="search__item" type="button">Создание видеоконтента</button>
+                    <button class="search__item" type="button">Геймификация</button>
+                    <button class="search__item" type="button">HR-автоматизация</button>
+                    <button class="search__item" type="button">Дизайн-мышление</button>
+                    <button class="search__item" type="button">Готовые курсы</button>
+                    <button class="search__item" type="button">Техническая поддержка</button>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <div class="window mfp-hide" id="full-request">
+            <div class="request">
+                <h2 class="request__heading">
+                    Напишите свой вопрос!
+                </h2>
+                <div class="request__description">
+                    Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку
+                </div>
+                <div class="request__form">
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Имя*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="email" placeholder="Email*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Компания*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input input--expandable">
+                            <textarea class="input__widget" placeholder="Напишите свой вопрос...*" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="request__footer">
+                        <div class="request__agreement">
+                            <label class="choice choice--smaller">
+                                <input class="choice__widget" type="checkbox">
+                                <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                <i class="choice__icon" role="presentation"></i>
+                            </label>
+                        </div>
+                        <div class="request__submit">
+                            <button class="button" type="button">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
+        <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="../vendors/swiper/swiper-bundle.min.js"></script>
+        <script src="../scripts/scripts.js?1758885417"></script>
+
+    </body>
+</html>
