@@ -29,6 +29,7 @@
             font-size: 18px;
             line-height: 25px;
             text-align: left;
+            color: inherit;
             cursor: pointer;
         }
             .faq__question::after {
