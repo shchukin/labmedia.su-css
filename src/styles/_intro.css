@@ -101,6 +101,7 @@
 .intro--referrals {
 
 }
+    /* stylelint-disable */
     .intro--referrals .intro__background {
         background-image: url("../images/intro-referrals/intro-referrals-desktop@1x.png");
         background-image: image-set(
@@ -108,6 +109,7 @@
             url("../images/intro-referrals/intro-referrals-desktop@1x.avif") type("image/avif") 1x
         );
     }
+    /* stylelint-enable */
 
 
 
@@ -116,6 +118,7 @@
     .intro--referrals {
 
     }
+        /* stylelint-disable */
         .intro--referrals .intro__background {
             background-image: url("../images/intro-referrals/intro-referrals-smartphone@1x.png");
             background-image: image-set(
@@ -123,6 +126,7 @@
                 url("../images/intro-referrals/intro-referrals-smartphone@1x.avif") type("image/avif") 1x
             );
         }
+        /* stylelint-enable */
             .intro--referrals .intro__heading.title,
             .intro--referrals .intro__heading .title {
                 font-size: 36px;
