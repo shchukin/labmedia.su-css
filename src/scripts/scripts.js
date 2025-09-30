@@ -809,7 +809,9 @@
     /* FAQ */
 
     $('.faq__question').on('click', function() {
-        $(this).closest('.faq__item').toggleClass('faq__item--expanded');
+        const $currentItem = $(this).closest('.faq__item');
+        $('.faq__item').not($currentItem).removeClass('faq__item--expanded');
+        $currentItem.toggleClass('faq__item--expanded');
     });
 
 
