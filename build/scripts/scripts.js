@@ -813,6 +813,17 @@
     });
 
 
+
+    /* Плавная прокрутка */
+    $('.anchor').on('click', function(event) {
+        event.preventDefault();
+        const target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 800);
+    });
+
+
     /* About experts video */
     function initAboutExpertsVideo() {
         const video = $('.about-experts__video video')[0];
