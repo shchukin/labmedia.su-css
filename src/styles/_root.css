@@ -5,6 +5,7 @@
     --transition-dropdown: 100ms ease;
     --transition-scale-hover: 400ms var(--ease-out-quint);
     --transition-slide: 600ms var(--ease-out-quint);
+    --transition-expand: 600ms var(--ease-out-quint);
     --image-fallback: #EEECF4;
     --container-width: 1140px;
     --container-padding: 40px;
@@ -59,6 +60,7 @@
     --fill-white-purple-darker-2: #E7E6EC;
     --fill-white-purpule-darker-3: #EEECF4;
     --fill-white-purple-80: rgb(240 239 245 / 80%);
+    --fill-total-white-60: rgb(255 255 255 / 60%);
     --fill-total-white-32: rgb(255 255 255 / 32%);
     --fill-total-white-20: rgb(255 255 255 / 20%);
     --fill-total-white-15: rgb(255 255 255 / 15%);

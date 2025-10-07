@@ -324,7 +324,7 @@
             new Swiper($carousel.querySelector('.swiper'), {
                 ...trackpadSwipeConfig,
                 slidesPerView: 1,
-                slidesPerGroup: 1,
+                speed: 800,
                 pagination: {
                     clickable: true,
                     el: '.carousel--js-about-hero-slider__pagination',
@@ -369,6 +369,244 @@
                     }
                 });
             }
+        }
+
+
+        if( $carousel.classList.contains('carousel--js-about-gallery') ) {
+            // Конфигурация галереи
+            const GALLERY_CONFIG = {
+                data: [
+                    [
+                        '../temp/about/mock-gallery-photo.png',
+                        '../temp/about/mock-gallery-photo.png'
+                    ],
+                    [
+                        '../temp/about/mock-gallery-photo.png',
+                        '../temp/about/mock-gallery-photo.png'
+                    ],
+                    [
+                        '../temp/about/mock-gallery-photo.png',
+                        '../temp/about/mock-gallery-photo.png'
+                    ],
+                    [
+                        '../temp/about/mock-gallery-photo.png',
+                        '../temp/about/mock-gallery-photo.png'
+                    ],
+                ],
+                swiper: {
+                    slidesPerView: 1,
+                    loop: true,
+                    speed: 800,
+                    autoplay: {
+                        delay: 6000,
+                        disableOnInteraction: false,
+                    }
+                }
+            };
+
+            // CSS классы для элементов
+            const CSS_CLASSES = {
+                pagination: 'carousel--js-about-gallery__pagination',
+                bullet: 'carousel--js-about-gallery__bullet',
+                bulletCurrent: 'carousel--js-about-gallery__bullet--current',
+                gallery: 'about-gallery__gallery',
+                galleryMobile: 'about-gallery__gallery_mobile',
+                galleryCurrent: 'about-gallery__gallery--current',
+                swiperWrapper: 'swiper-wrapper',
+                swiperSlide: 'swiper-slide',
+                galleryItem: 'about-gallery__item'
+            };
+
+            // Селекторы DOM элементов
+            const SELECTORS = {
+                pagination: `.${CSS_CLASSES.pagination}`,
+                bullet: `.${CSS_CLASSES.bullet}`,
+                galleries: `.${CSS_CLASSES.gallery}`,
+                galleriesMobile: `.${CSS_CLASSES.galleryMobile}`,
+                swiper: '.swiper',
+                swiperWrapper: `.${CSS_CLASSES.swiperWrapper}`
+            };
+
+            // Состояние слайдера
+            let swiperInstance = null;
+            const galleries = $carousel.querySelectorAll(SELECTORS.galleries);
+            const galleriesMobile = $carousel.querySelectorAll(SELECTORS.galleriesMobile);
+
+            /**
+             * Создает HTML для пагинации галереи
+             * @param {Array} images - массив изображений
+             * @returns {string} HTML строка
+             */
+            function createPaginationHTML(images) {
+                return images.map((img, index) => `
+                    <div class="${CSS_CLASSES.bullet} ${index === 0 ? CSS_CLASSES.bulletCurrent : ''}" 
+                         data-index="${index}">
+                        <img src="${img}" alt="Gallery thumbnail">
+                    </div>
+                `).join('');
+            }
+
+            /**
+             * Создает HTML для слайдов галереи
+             * @param {Array} images - массив изображений
+             * @returns {string} HTML строка
+             */
+            function createSlidesHTML(images) {
+                return images.map(img => `
+                    <div class="${CSS_CLASSES.swiperSlide}">
+                        <div class="${CSS_CLASSES.galleryItem}">
+                            <img src="${img}" alt="Gallery image">
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            /**
+             * Заполняет пагинацию для выбранной галереи
+             * @param {number} galleryIndex - индекс галереи
+             * @param {Object} swiperInstance - экземпляр Swiper
+             */
+            function renderPagination(galleryIndex, swiperInstance) {
+                const pagination = $carousel.querySelector(SELECTORS.pagination);
+                const currentGalleryImages = GALLERY_CONFIG.data[galleryIndex];
+                
+                pagination.innerHTML = createPaginationHTML(currentGalleryImages);
+                
+                // Добавляем обработчики кликов на буллеты
+                pagination.querySelectorAll(SELECTORS.bullet).forEach((bullet, index) => {
+                    bullet.addEventListener('click', () => {
+                        swiperInstance.slideTo(index);
+                    });
+                });
+            }
+
+            /**
+             * Очищает все обработчики событий пагинации
+             */
+            function clearPaginationListeners() {
+                const pagination = $carousel.querySelector(SELECTORS.pagination);
+
+                if (pagination) {
+                    // Клонируем элемент, чтобы удалить все слушатели
+                    const newPagination = pagination.cloneNode(true);
+                    pagination.parentNode.replaceChild(newPagination, pagination);
+                }
+            }
+
+            /**
+             * Заполняет слайды для выбранной галереи
+             * @param {number} galleryIndex - индекс галереи
+             */
+            function renderSlides(galleryIndex) {
+                const slider = $carousel.querySelector(SELECTORS.swiperWrapper);
+                const currentGalleryImages = GALLERY_CONFIG.data[galleryIndex];
+                
+                slider.innerHTML = createSlidesHTML(currentGalleryImages);
+            }
+
+            /**
+             * Создает и настраивает экземпляр Swiper
+             * @returns {Object} экземпляр Swiper
+             */
+            function createSwiperInstance() {
+                return new Swiper($carousel.querySelector(SELECTORS.swiper), {
+                    ...trackpadSwipeConfig,
+                    ...GALLERY_CONFIG.swiper,
+                    on: {
+                        slideChange: function() {
+                            updatePaginationState(this.realIndex);
+                        }
+                    }
+                });
+            }
+
+            /**
+             * Обновляет состояние пагинации при смене слайда
+             * @param {number} currentIndex - текущий индекс слайда
+             */
+            function updatePaginationState(currentIndex) {
+                const pagination = $carousel.querySelector(SELECTORS.pagination);
+
+                pagination.querySelectorAll(SELECTORS.bullet).forEach((bullet, index) => {
+                    bullet.classList.toggle(CSS_CLASSES.bulletCurrent, index === currentIndex);
+                });
+            }
+
+            /**
+             * Уничтожает текущий экземпляр Swiper
+             */
+            function destroySwiperInstance() {
+                if (swiperInstance) {
+                    swiperInstance.destroy();
+                    swiperInstance = null;
+                }
+            }
+
+            /**
+             * Инициализирует слайдер для выбранной галереи
+             * @param {number} galleryIndex - индекс галереи
+             */
+            function initGallerySlider(galleryIndex) {
+                destroySwiperInstance();
+                clearPaginationListeners();
+                renderSlides(galleryIndex);
+                swiperInstance = createSwiperInstance();
+                renderPagination(galleryIndex, swiperInstance);
+            }
+
+            /**
+             * Обновляет визуальное состояние галерей
+             * @param {number} activeIndex - индекс активной галереи
+             */
+            function updateGalleriesState(activeIndex) {
+                galleries.forEach((gallery, index) => {
+                    gallery.classList.toggle(CSS_CLASSES.galleryCurrent, index === activeIndex);
+                });
+                galleriesMobile.forEach((gallery, index) => {
+                    gallery.classList.toggle(CSS_CLASSES.galleryCurrent, index === activeIndex);
+                });
+            }
+
+            /**
+             * Добавляет обработчики кликов на галереи
+             */
+            function attachGalleryListeners() {
+                galleries.forEach((gallery, index) => {
+                    gallery.addEventListener('click', () => {
+                        initGallerySlider(index);
+                        updateGalleriesState(index);
+                    });
+                });
+                galleriesMobile.forEach((gallery, index) => {
+                    gallery.addEventListener('click', () => {
+                        initGallerySlider(index);
+                        updateGalleriesState(index);
+                    });
+                });
+            }
+
+            // Инициализация галереи
+            attachGalleryListeners();
+            initGallerySlider(0);
+            updateGalleriesState(0);
+        }
+
+        if ($carousel.classList.contains('carousel--js-about-gallery-inner')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1.5,
+                spaceBetween: 8,
+                loop: false,
+            });
+        }
+
+        if ($carousel.classList.contains('carousel--js-about-news')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                loop: false,
+            });
         }
     });
 
@@ -498,16 +736,18 @@
 
     function scrolling() {
         scrolled = $(window).scrollTop();
-        if (scrolled > 0) {
+
+        if (scrolled > 10) {
             $html.addClass('scrolled');
         } else {
             $html.removeClass('scrolled');
         }
-        // if (scrolled > 126) {
-        //     $html.addClass('scrolled126plus');
-        // } else {
-        //     $html.removeClass('scrolled126plus');
-        // }
+
+        if (scrolled > 200) {
+            $html.addClass('scrolled-200px');
+        } else {
+            $html.removeClass('scrolled-200px');
+        }
 
         if (Math.abs(scrolled - scrolledBefore) > sensitivity) {
             if (scrolled > scrolledBefore) {
@@ -519,11 +759,9 @@
         }
     }
 
-    const throttledScrolling = throttle(scrolling, 100);
-
-    $(window).on('scroll', throttledScrolling);
-    $(window).on('resize', throttledScrolling);
-    $(document).ready(throttledScrolling);
+    $(window).on('scroll', scrolling);
+    $(window).on('resize', scrolling);
+    $(document).ready(scrolling);
 
 
 
@@ -889,6 +1127,31 @@
     }    
 
     initAboutExpertsVideo();
+
+    /* About экосистема. Аккордионы */
+    function initAboutEcoAccordions() {
+        $('.about-eco__graph-accordion').each(function() {
+            const $accordion = $(this);
+            const $trigger = $accordion.find('[data-type="accordion-trigger"]');
+            const $content = $accordion.find('.about-eco__graph-accordion-content');
+            const $topic = $accordion.find('.about-eco__graph-topic');
+
+            $trigger.on('click', function() {
+                const currentState = $content.attr('data-state');
+                const newState = currentState === 'closed' ? 'opened' : 'closed';
+                
+                $content.attr('data-state', newState);
+                
+                if (newState === 'opened') {
+                    $topic.addClass('about-eco__graph-topic_opened');
+                } else {
+                    $topic.removeClass('about-eco__graph-topic_opened');
+                }
+            });
+        });
+    }
+
+    initAboutEcoAccordions();
 
 
 })(jQuery);
