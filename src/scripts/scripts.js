@@ -1057,6 +1057,7 @@
     /* Плавная прокрутка */
     $('.anchor').on('click', function(event) {
         event.preventDefault();
+        $.magnificPopup.close();
         const target = $(this).attr('href');
         $('html, body').animate({
             scrollTop: $(target).offset().top
