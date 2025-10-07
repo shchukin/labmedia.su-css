@@ -22,4 +22,4 @@
             );background-image:image-set(
                 url("../images/intro-referrals/intro-referrals-smartphone@2x.avif") type("image/avif") 2x,
                 url("../images/intro-referrals/intro-referrals-smartphone@1x.avif") type("image/avif") 1x
-            )}.intro--referrals .intro__heading .title,.intro--referrals .intro__heading.title{font-size:36px;line-height:40px}}.intro__bubble--profit{position:absolute;right:-50px;top:154px}.intro__bubble--support{position:absolute;right:281px;bottom:18px}
+            )}.intro--referrals .intro__heading .title,.intro--referrals .intro__heading.title{font-size:36px;line-height:40px}}.intro__bubble--profit{position:absolute;right:-50px;top:154px}.intro__bubble--support{position:absolute;right:281px;bottom:18px}.info-popup{width:846px;padding:40px}.info-popup__heading{margin-top:0;margin-bottom:0;font-weight:400;font-size:36px;line-height:40px;letter-spacing:-.75px}.info-popup__body{margin-top:32px}.info-popup__action{margin-top:32px}@media (max-width: 739.98px){.info-popup{width:100%;max-width:384px;padding:40px 24px 32px}.info-popup__heading{font-size:32px;line-height:38px}}
