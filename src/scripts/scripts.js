@@ -608,6 +608,129 @@
                 loop: false,
             });
         }
+
+        if ($carousel.classList.contains('carousel--js-about-voices')) {
+            const swiper = new Swiper($carousel.querySelector('.swiper'), {
+                simulateTouch: true,
+                threshold: 10,
+                touchAngle: 45,
+                mousewheel: {
+                    enabled: false,
+                },
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                spaceBetween: -95,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                navigation: {
+                    prevEl: $carousel.querySelector(".about-voices__prev"),
+                    nextEl: $carousel.querySelector(".about-voices__next"),
+                },
+                loop: true,
+                on: {
+                    slideChange: function() {
+                        // Пауза всех видео и выключение звука
+                        const allVideos = $carousel.querySelectorAll('video');
+                        allVideos.forEach(video => {
+                            video.pause();
+                            video.muted = true;
+                        });
+                        
+                        // Воспроизведение видео на активном слайде (без звука)
+                        const activeSlide = this.slides[this.activeIndex];
+                        const activeVideo = activeSlide.querySelector('video');
+                        if (activeVideo) {
+                            activeVideo.muted = true;
+                            activeVideo.play();
+                        }
+                    },
+                    init: function() {
+                        // Воспроизведение видео на первом слайде при инициализации (без звука)
+                        const firstVideo = this.slides[0].querySelector('video');
+                        if (firstVideo) {
+                            firstVideo.muted = true;
+                            firstVideo.play();
+                        }
+                    }
+                }
+            });
+
+            // Обработчики для кнопок мьют - включаем звук и открываем полноэкранный режим
+            $carousel.addEventListener('click', function(e) {
+                if (e.target.classList.contains('about-voices__mute')) {
+                    const video = e.target.closest('.about-voices__item').querySelector('video');
+                    if (video) {
+                        // Включаем звук
+                        video.muted = false;
+                        
+                        // Открываем полноэкранный режим
+                        if (video.requestFullscreen) {
+                            video.requestFullscreen();
+                        } else if (video.webkitRequestFullscreen) {
+                            video.webkitRequestFullscreen();
+                        } else if (video.msRequestFullscreen) {
+                            video.msRequestFullscreen();
+                        }
+                    }
+                }
+            });
+
+            // Обработчик для полноэкранного режима при клике на видео
+            $carousel.addEventListener('click', function(e) {
+                if (e.target.tagName === 'VIDEO') {
+                    // Включаем звук
+                    e.target.muted = false;
+                    
+                    // Открываем полноэкранный режим
+                    if (e.target.requestFullscreen) {
+                        e.target.requestFullscreen();
+                    } else if (e.target.webkitRequestFullscreen) {
+                        e.target.webkitRequestFullscreen();
+                    } else if (e.target.msRequestFullscreen) {
+                        e.target.msRequestFullscreen();
+                    }
+                }
+            });
+
+            // Обработчик для закрытия полноэкранного режима - выключаем звук
+            document.addEventListener('fullscreenchange', function() {
+                if (!document.fullscreenElement) {
+                    // Полноэкранный режим закрыт, выключаем звук у всех видео
+                    const allVideos = $carousel.querySelectorAll('video');
+                    allVideos.forEach(video => {
+                        video.muted = true;
+                    });
+                }
+            });
+
+            // Обработчики для других браузеров
+            document.addEventListener('webkitfullscreenchange', function() {
+                if (!document.webkitFullscreenElement) {
+                    const allVideos = $carousel.querySelectorAll('video');
+                    allVideos.forEach(video => {
+                        video.muted = true;
+                    });
+                }
+            });
+
+            document.addEventListener('msfullscreenchange', function() {
+                if (!document.msFullscreenElement) {
+                    const allVideos = $carousel.querySelectorAll('video');
+                    allVideos.forEach(video => {
+                        video.muted = true;
+                    });
+                }
+            });
+
+            return swiper;
+        }
     });
 
 
@@ -1064,6 +1187,20 @@
         }, 800);
     });
 
+    /* About hero counter - days since April 1, 2009 */
+    function updateAboutHeroCounter() {
+        const startDate = new Date(2009, 3, 1); // 1 апреля 2009 года
+        const currentDate = new Date();
+        const timeDifference = currentDate - startDate;
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        
+        const counterElement = $('.about-hero__counter-value').first();
+        if (counterElement.length) {
+            counterElement.text(daysDifference);
+        }
+    }
+    
+    updateAboutHeroCounter();
 
     /* About experts video */
     function initAboutExpertsVideo() {
@@ -1153,6 +1290,65 @@
     }
 
     initAboutEcoAccordions();
+
+    /* About tour line-by-line animation */
+    function initAboutTourLineAnimation() {
+        const tourElement = document.querySelector('.about-tour h3');
+        if (!tourElement) return;
+
+        let hasAnimated = false;
+
+        // Создаем Intersection Observer для отслеживания появления блока
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    startLineAnimation(tourElement);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3 // Анимация запустится когда 30% элемента будет видно
+        });
+
+        observer.observe(tourElement);
+    }
+
+    function startLineAnimation(element) {
+        // Показываем элемент
+        element.classList.add('animation-ready');
+        
+        // Получаем HTML содержимое с br тегами
+        const originalHTML = element.innerHTML;
+        
+        // Разбиваем на строки по br тегам
+        const lines = originalHTML.split('<br>');
+        
+        // Очищаем элемент и создаем структуру для анимации
+        element.innerHTML = '';
+        
+        // Создаем контейнеры для каждой строки
+        lines.forEach((line, index) => {
+            const lineContainer = document.createElement('div');
+            lineContainer.className = 'about-tour__line';
+            lineContainer.innerHTML = line;
+            lineContainer.style.opacity = '0';
+            lineContainer.style.transform = 'translateY(20px)';
+            lineContainer.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            element.appendChild(lineContainer);
+        });
+        
+        // Анимируем появление строк с задержкой
+        const lineContainers = element.querySelectorAll('.about-tour__line');
+        lineContainers.forEach((lineContainer, index) => {
+            setTimeout(() => {
+                lineContainer.style.opacity = '1';
+                lineContainer.style.transform = 'translateY(0)';
+            }, 300 + (index * 500)); // Задержка 1 секунда + 500ms между строками
+        });
+    }
+
+    initAboutTourLineAnimation();
 
 
 })(jQuery);

@@ -62,8 +62,10 @@
     --fill-white-purple-80: rgb(240 239 245 / 80%);
     --fill-total-white-60: rgb(255 255 255 / 60%);
     --fill-total-white-32: rgb(255 255 255 / 32%);
+    --fill-total-white-30: rgb(255 255 255 / 32%);
     --fill-total-white-20: rgb(255 255 255 / 20%);
     --fill-total-white-15: rgb(255 255 255 / 15%);
+    --fill-total-white-10: rgb(255 255 255 / 5%);
     --fill-dark-blue-80: rgb(14 23 38 / 80%);
     --fill-dark-blue-60: rgb(14 23 38 / 60%);
     --fill-dark-blue-32: rgb(14 23 38 / 32%);
