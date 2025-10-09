@@ -2528,6 +2528,7 @@
 @media (width < 740px) {
     .about-voices {
         padding: 88px 0;
+        overflow: hidden;
     }
 }
 
