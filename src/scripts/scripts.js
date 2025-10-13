@@ -376,21 +376,44 @@
             // Конфигурация галереи
             const GALLERY_CONFIG = {
                 data: [
+                    // office (7 изображений)
                     [
-                        '../temp/about/mock-gallery-photo.png',
-                        '../temp/about/mock-gallery-photo.png'
+                        '../images/about/gallery/office/1.jpg',
+                        '../images/about/gallery/office/2.jpg',
+                        '../images/about/gallery/office/3.jpg',
+                        '../images/about/gallery/office/4.jpg',
+                        '../images/about/gallery/office/5.jpg',
+                        '../images/about/gallery/office/6.jpg',
+                        '../images/about/gallery/office/7.jpg'
                     ],
+                    // cafe (6 изображений)
                     [
-                        '../temp/about/mock-gallery-photo.png',
-                        '../temp/about/mock-gallery-photo.png'
+                        '../images/about/gallery/cafe/1.jpg',
+                        '../images/about/gallery/cafe/2.jpg',
+                        '../images/about/gallery/cafe/3.jpg',
+                        '../images/about/gallery/cafe/4.jpg',
+                        '../images/about/gallery/cafe/5.jpg',
+                        '../images/about/gallery/cafe/6.jpg'
                     ],
+                    // events (6 изображений)
                     [
-                        '../temp/about/mock-gallery-photo.png',
-                        '../temp/about/mock-gallery-photo.png'
+                        '../images/about/gallery/events/1.jpg',
+                        '../images/about/gallery/events/2.jpg',
+                        '../images/about/gallery/events/3.jpg',
+                        '../images/about/gallery/events/4.jpg',
+                        '../images/about/gallery/events/5.jpg',
+                        '../images/about/gallery/events/6.jpg'
                     ],
+                    // conf (8 изображений)
                     [
-                        '../temp/about/mock-gallery-photo.png',
-                        '../temp/about/mock-gallery-photo.png'
+                        '../images/about/gallery/conf/1.jpg',
+                        '../images/about/gallery/conf/2.jpg',
+                        '../images/about/gallery/conf/3.jpg',
+                        '../images/about/gallery/conf/4.jpg',
+                        '../images/about/gallery/conf/5.jpg',
+                        '../images/about/gallery/conf/6.jpg',
+                        '../images/about/gallery/conf/7.jpg',
+                        '../images/about/gallery/conf/8.jpg'
                     ],
                 ],
                 swiper: {
@@ -668,16 +691,7 @@
                     const video = e.target.closest('.about-voices__item').querySelector('video');
                     if (video) {
                         // Включаем звук
-                        video.muted = false;
-                        
-                        // Открываем полноэкранный режим
-                        if (video.requestFullscreen) {
-                            video.requestFullscreen();
-                        } else if (video.webkitRequestFullscreen) {
-                            video.webkitRequestFullscreen();
-                        } else if (video.msRequestFullscreen) {
-                            video.msRequestFullscreen();
-                        }
+                        video.muted = !video.muted;
                     }
                 }
             });
@@ -730,6 +744,129 @@
             });
 
             return swiper;
+        }
+
+        if ($carousel.classList.contains('carousel--js-courses-process')) {
+            // Данные для курсов процесса
+            const coursesProcessData = [
+                {
+                    title: "Графические элементы",
+                    description: "Разрабатываем дизайн, персонажей, сюжеты и практики под специфику конкретной компании, подбираем учебные сценарии под целевую аудиторию",
+                    image: "../temp/about/mock-gallery-photo.png"
+                },
+                {
+                    title: "Методология и сценарий",
+                    description: "Педагогические дизайнеры и сценаристы адаптируют материалы и выбирают лучшие форматы подачи с учетом целевой аудитории, чтобы обучение было логичным, понятным и эффективным",
+                    image: "../temp/about/mock-gallery-photo.png"
+                },
+                {
+                    title: "Сборка курса",
+                    description: "Разработчики собирают курс на платформе (ДелайКурс, CourseLab и т.д.), настраивая интерактив, анимацию, практические задания и баллы",
+                    image: "../temp/about/mock-gallery-photo.png"
+                },
+                {
+                    title: "Контроль качества",
+                    description: "Тестировщики проверяют работоспособность курса и соответствие техническому заданию. Корректоры исключают ошибки в тексте",
+                    image: "../temp/about/mock-gallery-photo.png"
+                },
+                {
+                    title: "Поддержка",
+                    description: "Специалисты службы сервиса отвечают за работоспособность и актуальность материалов после внедрения в процесс обучения",
+                    image: "../temp/about/mock-gallery-photo.png"
+                }
+            ];
+
+            // Отрисовываем слайды
+            const swiperWrapper = $carousel.querySelector('.swiper-wrapper');
+            swiperWrapper.innerHTML = '';
+            
+            coursesProcessData.forEach((item, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
+                swiperWrapper.appendChild(slide);
+            });
+
+            // Отрисовываем контент
+            const updateContent = (activeIndex) => {
+                const countElement = document.querySelector('.courses-process__count');
+                const titleElement = document.querySelector('.courses-process__info h3');
+                const descriptionElement = document.querySelector('.courses-process__info p');
+                
+                if (countElement) {
+                    countElement.textContent = `${activeIndex + 1}/${coursesProcessData.length}`;
+                }
+                if (titleElement) {
+                    titleElement.textContent = coursesProcessData[activeIndex].title;
+                }
+                if (descriptionElement) {
+                    descriptionElement.textContent = coursesProcessData[activeIndex].description;
+                }
+            };
+
+            // Инициализируем Swiper
+            const swiper = new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: false,
+                navigation: {
+                    prevEl: document.querySelector(".courses-process__controls-prev"),
+                    nextEl: document.querySelector(".courses-process__controls-next"),
+                },
+                on: {
+                    slideChange: function() {
+                        updateContent(this.activeIndex);
+                    }
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.carousel--js-courses-process__pagination',
+                    bulletClass: 'carousel--js-courses-process__bullet',
+                    bulletActiveClass: 'carousel--js-courses-process__bullet--current',
+                },
+            });
+
+            // Инициализируем контент для первого слайда
+            updateContent(0);
+
+            return swiper;
+        }
+
+        if ($carousel.classList.contains('carousel--js-courses-rewiews')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                loop: false,
+            });
+        }
+
+        if ($carousel.classList.contains('carousel--js-courses-choose')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                loop: false,
+            });
+        }
+
+        if ($carousel.classList.contains('carousel--js-videos-rewiews')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                loop: false,
+            });
+        }
+
+        if ($carousel.classList.contains('carousel--js-gamification-rewiews')) {
+            return new Swiper($carousel.querySelector('.swiper'), {
+                ...trackpadSwipeConfig,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                loop: false,
+            });
         }
     });
 
@@ -1187,9 +1324,9 @@
         }, 800);
     });
 
-    /* About hero counter - days since April 1, 2009 */
+    /* About hero counter - days since April 1, 1999 */
     function updateAboutHeroCounter() {
-        const startDate = new Date(2009, 3, 1); // 1 апреля 2009 года
+        const startDate = new Date(1999, 3, 1); // 1 апреля 1999 года
         const currentDate = new Date();
         const timeDifference = currentDate - startDate;
         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -1210,7 +1347,7 @@
         const volumeStub = $('.about-experts__video-volume-stub');
 
         if (!video) {
-            throw new Error('[page-about]: Не найдено видео в разделе "Эксперты"');
+            return;
         }
 
         /* Прогресс видео */
@@ -1350,5 +1487,99 @@
 
     initAboutTourLineAnimation();
 
+    /* Courses roadmap accordions */
+    function initCoursesRoadmapAccordions() {
+        $('.courses-roadmap__accordion-title').on('click', function() {
+            const $accordion = $(this).closest('.courses-roadmap__accordion');
+            
+            // Переключаем аккордион
+            $accordion.toggleClass('courses-roadmap__accordion_open');
+        });
+    }
 
+    initCoursesRoadmapAccordions();
+
+    /* Courses reviews expand/collapse */
+    function initCoursesReviews() {
+        $('.courses-reviews__full').on('click', function() {
+            const $button = $(this);
+            const $text = $button.siblings('p');
+            
+            if ($text.hasClass('expanded')) {
+                // Сворачиваем текст
+                $text.removeClass('expanded');
+                $button.text('Читать полностью');
+            } else {
+                // Разворачиваем текст
+                $text.addClass('expanded');
+                $button.text('Свернуть');
+            }
+        });
+    }
+
+    initCoursesReviews();
+
+    /* Videos roadmap accordions */
+    function initVideosRoadmapAccordions() {
+        $('.videos-roadmap__accordion-title').on('click', function() {
+            const $accordion = $(this).closest('.videos-roadmap__accordion');
+            
+            // Переключаем аккордион
+            $accordion.toggleClass('videos-roadmap__accordion_open');
+        });
+    }
+
+    initVideosRoadmapAccordions();
+
+    /* Videos reviews expand/collapse */
+    function initVideosReviews() {
+        $('.videos-reviews__full').on('click', function() {
+            const $button = $(this);
+            const $text = $button.siblings('p');
+            
+            if ($text.hasClass('expanded')) {
+                // Сворачиваем текст
+                $text.removeClass('expanded');
+                $button.text('Читать полностью');
+            } else {
+                // Разворачиваем текст
+                $text.addClass('expanded');
+                $button.text('Свернуть');
+            }
+        });
+    }
+
+    initVideosReviews();
+
+        /* Gamification roadmap accordions */
+    function initGamificationRoadmapAccordions() {
+        $('.gamification-roadmap__accordion-title').on('click', function() {
+            const $accordion = $(this).closest('.gamification-roadmap__accordion');
+            
+            // Переключаем аккордион
+            $accordion.toggleClass('gamification-roadmap__accordion_open');
+        });
+    }
+
+    initGamificationRoadmapAccordions();
+
+    /* Videos reviews expand/collapse */
+    function initGamificationReviews() {
+        $('.gamification-reviews__full').on('click', function() {
+            const $button = $(this);
+            const $text = $button.siblings('p');
+            
+            if ($text.hasClass('expanded')) {
+                // Сворачиваем текст
+                $text.removeClass('expanded');
+                $button.text('Читать полностью');
+            } else {
+                // Разворачиваем текст
+                $text.addClass('expanded');
+                $button.text('Свернуть');
+            }
+        });
+    }
+
+    initGamificationReviews();
 })(jQuery);

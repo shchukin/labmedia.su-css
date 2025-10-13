@@ -26,6 +26,16 @@
                 text-align: center;
             }
 
+            .join__description {
+                color: var(--fill-total-white);
+                font-size: 18px;
+                line-height: 140%;
+                letter-spacing: 0;
+                margin: 24px auto 0;
+                max-width: 628px;
+                text-align: center;
+            }
+
             .join__wizard {
                 margin-top: 48px;
             }
@@ -104,6 +114,11 @@
                     /*margin: 0 auto;*/
                     /*color: #FFFFFF;*/
                     text-align: left;
+                }
+
+                .join__description {
+                    font-size: 14px;
+                    text-align: center;
                 }
 
                 .join__wizard {

@@ -990,7 +990,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 16px;
+        padding: 16px 8px 16px 16px;
         border-radius: 16px;
         background-color: var(--fill-total-white-15);
         backdrop-filter: var(--blur-15);
@@ -1008,7 +1008,7 @@
         width: 145px;
         bottom: 9px;
         right: -5px;
-        padding: 12px;
+        padding: 12px 6px 12px 12px;
     }
 }
         .about-speed__courses-graph {
@@ -1147,6 +1147,10 @@
         gap: 32px;
     }
 
+    .about-more__item a {
+        color: var(--txt-total-white);
+    }
+
 @media (width < 740px) {
     .about-more__item {
         flex-direction: column;
@@ -1211,7 +1215,7 @@
 
 @media (width < 740px) {
     .about-gallery {
-        height: 530px;
+        height: 400px;
     }
 }
 
@@ -1307,7 +1311,7 @@
 
 @media (width < 740px) {
     .about-gallery__item {
-        height: 530px;
+        height: 400px;
     }
 }
 
@@ -1319,7 +1323,7 @@
 
 @media (width < 740px) {
     .about-gallery__item img {
-        object-position: left center;
+        object-position: center;
     }
 }
 
@@ -1372,7 +1376,7 @@
     letter-spacing: 0;
     font-size: 14px;
     font-weight: 400;
-    margin: 36px 0 0;
+    margin: 4px 0 0;
 }
 
 .carousel--js-about-gallery__pagination {
@@ -2251,13 +2255,13 @@
         transform: translate(0, 0) rotate(0deg);
     }
     25% {
-        transform: translate(8px, -6px) rotate(1deg);
+        transform: translate(24px, -18px) rotate(1deg);
     }
     50% {
-        transform: translate(-4px, -12px) rotate(-0.5deg);
+        transform: translate(-12px, -36px) rotate(-0.5deg);
     }
     75% {
-        transform: translate(-8px, 4px) rotate(0.8deg);
+        transform: translate(-24px, 12px) rotate(0.8deg);
     }
 }
 
@@ -2292,8 +2296,15 @@
     transition: opacity var(--transition-scale-hover);
 }
 
+@media (width < 740px) {
+    .about-achievements__info {
+        padding: 12px;
+    }
+}
+
+
 .about-achievements__info img {
-    width: 100%;
+    width: 40%;
     height: 48px;
     object-fit: contain;
     object-position: center left;
@@ -2307,7 +2318,7 @@
 
 
 .about-achievements__info h4 {
-    margin: 28px 0 0;
+    margin: 12px 0 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
@@ -2316,7 +2327,7 @@
 
 @media (width < 740px) {
     .about-achievements__info h4 {
-        margin: 8px 0 0;
+        margin: 12px 0 0;
         font-size: 10px;
         line-height: 110%;
     }
@@ -2325,15 +2336,16 @@
 .about-achievements__info p {
     margin: 4px 0 0;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 140%;
     letter-spacing: 0;
+    text-wrap: balance;
 }
 
 @media (width < 740px) {
     .about-achievements__info p {
-        margin: 8px 0 0;
-        font-size: 10px;
+        margin: 4px 0 0;
+        font-size: 8px;
         line-height: 110%;
     }
 }
@@ -2350,6 +2362,10 @@
     .about-achievements__item:nth-child(1) {
         top: 121px;
     }
+}
+
+.about-achievements__item:nth-child(1) .about-achievements__info img {
+    filter: invert(1);
 }
 
 .about-achievements__item:nth-child(2) {
@@ -2391,7 +2407,10 @@
 
 @media (width < 740px) {
     .about-achievements__item:nth-child(4) {
-        display: none;
+        top: 400px;
+        right: 80px;
+        animation-delay: 2s, 3s;
+        animation-duration: 13s, 17s;
     }
 }
 
@@ -2407,6 +2426,10 @@
         top: 764px;
         left: 0;
     }
+}
+
+.about-achievements__item:nth-child(5) .about-achievements__info img {
+    filter: invert(1);
 }
 
 .about-achievements__item:nth-child(6) {
@@ -2450,7 +2473,7 @@
     }
 }
 
-.about-tour video {
+.about-tour img {
     width: 100%;
     height: 100%;
     object-fit: cover;

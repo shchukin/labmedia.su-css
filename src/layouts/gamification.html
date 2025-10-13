@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/Thing">
+    <head>
+        <meta charset="utf-8">
+        <title>Геймификация бизнес-процессов и обучения</title>
+        <meta name="description" content="[%description%]">
+
+        <!-- schema.org (google plus) -->
+        <meta itemprop="url" content="[%url%]">
+        <meta itemprop="image" content="[%img%]">
+        <meta itemprop="name" content="[%title%]">
+        <meta itemprop="description" content="[%description%]">
+
+        <!-- ogp.me (facebook & vkontakte) -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="[%url%]">
+        <meta property="og:image" content="[%img%]">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="675">
+        <meta property="og:title" content="[%title%]">
+        <meta property="og:description" content="[%description%]">
+        <meta property="fb:app_id" content="[%facebook-app-id%]">
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="[%url%]">
+        <meta name="twitter:image" content="[%img%]">
+        <meta name="twitter:title" content="[%title%]">
+        <meta name="twitter:description" content="[%description%]">
+        <meta name="twitter:site" content="@user">
+        <meta name="twitter:creator" content="@user">
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+        <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#FFFFFF">
+
+        <!-- manifest -->
+        <link rel="manifest" href="../manifest.json">
+        <meta name="theme-color" content="#FFFFFF">
+        <meta name="msapplication-config" content="../browserconfig.xml">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+
+        <!-- assets -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/styles.css">
+
+    </head>
+    <body>
+
+        <!--[if IE]>
+            <div class="browser">
+                Вы используете устаревший браузер. Для корректной работы этого сайта и большинства других вам необходимо перейти на современный&nbsp;браузер.
+            </div>
+        <![endif]-->
+
+
+        <!-- Здесь либо вёрстка. Любой вариант любой высоты. ВАЖНО! Не используем слова типа Banner -- блокировщики рекламы забанят. У меня кодовое слово info: -->
+        <header class="header header--blur">
+            <div class="header__wrap container">
+                <div class="header__panel">
+                    <div class="header__smartphone">
+                        <div class="header__smartphone-wrap container">
+                            <div class="header__smartphone-panel">
+                                <a class="header__logo" href="#">
+                                    Лабмедиа
+                                </a>
+                                <div class="header__actions">
+                                    <div class="header__phone">
+                                        <a class="button button--square button--smaller button--header-action mfp-search-handler" href="#search">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                                            </svg>
+                                            <span class="visuallyhidden">Поиск</span>
+                                        </a>
+                                    </div>
+                                    <div class="header__request">
+                                        <a class="button button--smaller button--header-action button--header-action-call mfp-handler" href="#full-request">
+                                            <svg class="button__icon smartphone-only" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M4.425 1.662c.6 0 1.122.409 1.267.99l.646 2.58a1.307 1.307 0 0 1-.484 1.362l-.745.558a6.37 6.37 0 0 0 3.738 3.738l.56-.744c.315-.42.85-.611 1.36-.484l2.58.646c.582.145.99.668.99 1.267v.8a1.963 1.963 0 0 1-1.962 1.963h-1.313a9.4 9.4 0 0 1-9.4-9.4V3.625c0-1.084.88-1.963 1.963-1.963h.8Z"/>
+                                            </svg>
+                                            <span class="desktop-only">Связаться</span>
+                                        </a>
+                                    </div>
+                                    <button class="header__burger">
+                                        <svg class="header__burger-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.25H13M3 11.75H13M3 8H13" stroke-width="1.3" stroke-linecap="round"/>
+                                        </svg>
+                                        <svg class="header__burger-cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 11.5L11.5 4.5M4.5 4.5L11.5 11.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="visuallyhidden">Меню</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__nav">
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             src="../content/product-icons/vovlekai.svg"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Вовлекай</div>
+                                        <div class="header__product-description">Система для корпоративного обучения сотрудников любых отраслей</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/delai-kurs@2x.png 2x"
+                                             src="../content/product-icons/delai-kurs@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">ДелайКурс</div>
+                                        <div class="header__product-description">ИИ-платформа для создания электронных курсов будущего</div>
+                                    </a>
+                                    <a class="header__product" href="#">
+                                        <img class="header__product-icon"
+                                             srcset="../content/product-icons/gotovie-kursi@2x.png 2x"
+                                             src="../content/product-icons/gotovie-kursi@1x.png"
+                                             width="20"
+                                             height="20"
+                                             alt=""
+                                        >
+                                        <div class="header__product-title">Готовые курсы</div>
+                                        <div class="header__product-description">Универсальный набор базовых навыков для широкой аудитории</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Кейсы</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Услуги</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="header__menu-dropdown">
+                                <div class="header__sub-menu">
+                                    <a class="header__sub-link" href="#">О нас</a>
+                                    <a class="header__sub-link" href="#">Документы</a>
+                                    <a class="header__sub-link" href="#">Вакансии</a>
+                                    <a class="header__sub-link" href="#">Партнерам</a>
+                                    <a class="header__sub-link" href="#">Контакты</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Блог</a>
+                        </div>
+                        <div class="header__item">
+                            <a class="header__link" href="#">Поддержка</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page gamification">
+            <!-- Hero -->
+            <div class="gamification-hero">
+                <div class="container">
+                    <div class="gamification-hero__content">
+                        <h1>Геймификация бизнес-процессов и обучения</h1>
+
+                        <p>Повысим мотивацию сотрудников в корпоративном обучении, благодаря квестовым и игровым механикам</p>
+
+                        <button class="button button--secondary">Заказать геймификацию</button>
+                    </div>
+                    <img class="gamification-hero__image" src="../images/gamification/hero/bg.webp" alt="hero">
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="gamification-statistics">
+                <div class="container">
+                    <div class="gamification-statistics__items">
+                        <div class="gamification-statistics__item">
+                            <h3>26 лет</h3>
+                            <p class="desktop-only">опыта разработки курсов</p>
+                            <p class="smartphone-only">опыта<br>разработки курсов</p>
+                        </div>
+
+                        <div class="gamification-statistics__divider"></div>
+
+                        <div class="gamification-statistics__item">
+                            <h3>53%</h3>
+                            <p class="desktop-only">средний уровень вовлеченности</p>
+                            <p class="smartphone-only">средний уровень<br>вовлеченности</p>
+                        </div>
+
+                        <div class="gamification-statistics__divider"></div>
+
+                        <div class="gamification-statistics__item">
+                            <h3>+20%</h3>
+                            <p class="desktop-only">эффективности обучения</p>
+                            <p class="smartphone-only">эффективности<br>обучения</p>
+                        </div>
+
+                        <div class="gamification-statistics__divider"></div>
+
+                        <div class="gamification-statistics__item">
+                            <h3>5000+</h3>
+                            <p class="desktop-only">разработанных курсов</p>
+                            <p class="smartphone-only">разработанных<br>курсов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types -->
+            <div class="gamification-types">
+                <div class="container">
+                    <h2 class="gamification-types__heading">Виды геймификации</h2>
+                
+                    <div class="gamification-types__items">
+                        <div class="gamification-types__item">
+                            <div class="gamification-types__item-img">
+                                <img src="../images/gamification/types/business.webp" alt="business">
+                            </div>
+
+                            <div class="gamification-types__item-content">
+                                <h3>Бизнес-игры и тренажёры</h3>
+                                <p>Диалоговые тренажёры, экономические симуляторы или моделирование реальных рабочих ситуаций  безопасной среде</p>
+
+                                <button class="button button--outline-white">Заказать</button>
+                            </div>
+                        </div>
+
+                        <div class="gamification-types__item">
+                            <div class="gamification-types__item-img">
+                                <img src="../images/gamification/types/courses.webp" alt="courses">
+                            </div>
+
+                            <div class="gamification-types__item-content">
+                                <h3>Курсы с геймификацией</h3>
+                                <p>Курсы, включающие в себя квестовые и игровые механики: артефакты, баллы, игровая валюта, задания, сюжетные ветки</p>
+
+                                <button class="button button--outline-white">Заказать</button>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="gamification-benefits">
+                <div class="container">
+                    <h2 class="gamification-benefits__title">Почему мы</h2>
+
+                    <div class="gamification-benefits__items">
+                        <div class="gamification-benefits__item">
+                            <img src="../images/gamification/benefits/one.svg" alt="emotions">
+
+                            <h3>Вовлечение</h3>
+
+                            <p>Создаём игровые механики, которые вовлекают сотрудников, делают обучение естественным и интересным</p>
+                        </div>
+
+                        <div class="gamification-benefits__item">
+                            <img src="../images/gamification/benefits/two.svg" alt="quality">
+
+                            <h3>Без стресса</h3>
+
+                           <p>Игровой формат помогает быстрее освоиться, почувствовать себя частью команды и сразу включиться в процесс</p>
+                        </div>
+
+                        <div class="gamification-benefits__item">
+                            <img src="../images/gamification/benefits/three.svg" alt="interactive">
+
+                            <h3>Мотивация</h3>
+
+                            <p>С рейтинговыми системами и наградами даже рутинные процессы становятся мотивирующими</p>
+                        </div>
+
+                        <div class="gamification-benefits__item">
+                            <img src="../images/gamification/benefits/four.svg" alt="cycle">
+
+                            <h3>Объединение</h3>
+
+                            <p>Совместные челленджи и игровые сценарии Лабмедиа объединяют вокруг общих целей и создают сильное сообщество</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cases -->
+            <div class="gamification-cases">
+                <div class="related__wrap container">
+                    <div class="related__heading title title--secondary">
+                        Свежие кейсы
+                    </div>
+                    <div class="related__body">
+                        <div class="
+                            carousel
+                            carousel--js-init-case
+                            carousel--css-skin-cases
+                            carousel--css-disable-on-smartphone
+                        ">
+                            <div class="carousel__widget">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-a@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-a@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--new">Новый</div>
+                                                        <div class="badge badge--awards">Победители</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Курс
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                НЛМК
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Адаптационный курс сотрудников компании</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Систематизировать материалы и выстроить обучение в единую систему
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-b@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-b@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--vovlekai">Вовлекай</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Геймификация
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                М.Видео
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Основы Agile и продуктового подхода</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Сформировали у сотрудников комплекс знаний об Agile-подходе в компании
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-c@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-c@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--delai-kurs">Делай Курс</div>
+                                                        <div class="badge badge--awards">Победители</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Курс
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                Полиметалл
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Электронный курс «Инклюзивность»</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Эффективно донесли сотрудникам о политике инклюзивности в компании
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-d@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-d@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--new">Новый</div>
+                                                        <div class="badge badge--vovlekai">Вовлекай</div>
+                                                        <div class="badge badge--awards">Победители</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Курс
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                X5 Retail Group
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">«Введение в должность» для X5 Retail Group</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Уменьшили время разработки последующих курсов
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-e@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-e@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+    
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Геймификация
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                Komatsu
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Поточная разработка курсов для Komatsu</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Динамично рассказали об обслуживании гидравлических экскаваторов, бульдозеров
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-f@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-f@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--awards">Победители</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Курс
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                еНано
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Цифровой Наноград</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Организовали совместную образовательную деятельность в области естественных наук и нанотехнологий
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-g@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-g@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--new">Новый</div>
+                                                        <div class="badge badge--delai-kurs">Делай Курс</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Курс
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                Tele2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Мотивационный портал Tele2</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Увеличили рост выручки со страховок в 6 раз, с продажи устройств в 4 раза
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-h@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-h@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+                                                        <div class="badge badge--vovlekai">Вовлекай</div>
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Геймификация
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                Syngenta
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Курс для отдела продаж компании Сингента</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Сделали более эффективным обучение менеджеров по продажам
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a class="project" href="#">
+                                                <div class="project__preview">
+                                                    <img class="project__illustration"
+                                                         srcset="../temp/cases-previews/case-preview-i@2x.jpg 2x"
+                                                         src="../temp/cases-previews/case-preview-i@1x.jpg"
+                                                         alt=""
+                                                    >
+                                                    <div class="project__badges">
+    
+                                                    </div>
+                                                    <span class="project__screenshot-wrap">
+                                                        <img class="case__screenshot"
+                                                             srcset="../temp/case-preview-screenshot/case-preview-screenshot@2x.jpg 2x"
+                                                             src="../temp/case-preview-screenshot/case-preview-screenshot@1x.jpg"
+                                                             alt=""
+                                                        >
+                                                    </span>
+                                                </div>
+                                                <div class="project__body">
+                                                    <div class="project__filters">
+                                                        <div class="summary">
+                                                            <div class="summary__item">
+                                                                Геймификация
+                                                            </div>
+                                                            <div class="summary__item">
+                                                                МТС
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__heading">
+                                                        <div class="project__link">Курс по закупкам для сотрудников МТС</div>
+                                                    </div>
+                                                    <div class="project__description">
+                                                        Объяснили ярко и эмоционально весь процесс закупок в МТС
+                                                    </div>
+                                                    <div class="project__data">
+                                                        <div class="project__stat">
+                                                            <b class="project__param">80%</b>
+                                                            <span class="project__value">доходимость</span>
+                                                        </div>
+                                                        <div class="project__stat">
+                                                            <b class="project__param">1244</b>
+                                                            <span class="project__value">прошли курс</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project__details">
+                                                        <svg class="project__arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.344" d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__controls">
+                                <button class="carousel__button carousel__button--prev" type="button">
+                                    <svg class="carousel__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5 13L5.5 8L10.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="carousel__button carousel__button--next" type="button">
+                                    <svg class="carousel__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 13L10.5 8L5.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="gamification-cases__action_desktop desktop-only">
+                                <button class="button button--outline-blue">Все кейсы</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gamification-cases__action container smartphone-only">
+                    <button class="button button--secondary">Все кейсы</button>
+                </div>
+            </div>
+
+            <!-- Consulting -->
+            <div class="gamification-consulting">
+                <div class="container">
+                    <div class="gamification-consulting__wrap">
+                        <h3>Запишитесь на консультацию<br>и получите игровой сценарий</h3>
+
+                        <p>Совместно обсудим форматы и сценарии, которые смогут увлечь вашу команду</p>
+
+                        <button class="button button--secondary">Записаться</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="gamification-roadmap">
+                <div class="container">
+                    <h2 class="gamification-roadmap__title">
+                        Дорожная карта
+                        <img src="../images/gamification/roadmap/info.svg" alt="info">
+                    </h2>
+
+                    <div class="gamification-roadmap__map desktop-only">
+                        <div class="gamification-roadmap__steps">
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Исследование</span>
+                                    <span>~40ч</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Работа с гипотезами</span>
+                                    <span>~10ч</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Проектирование</span>
+                                    <span>~60ч</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Тестирование</span>
+                                    <span>~60ч</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Разработка</span>
+                                    <span>~120ч</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                            <div class="gamification-roadmap__step">
+                                <div class="gamification-roadmap__activator">
+                                    <span>Сопровождение</span>
+                                    <span>∞</span>
+                                </div>
+                                <div class="gamification-roadmap__tooltip">Текст</div>
+                            </div>
+                        </div>
+    
+
+                        <div class="gamification-roadmap__fields">
+                            <div class="gamification-roadmap__field">1 неделя</div>
+                            <div class="gamification-roadmap__field">2 неделя</div>
+                            <div class="gamification-roadmap__field">3 неделя</div>
+                            <div class="gamification-roadmap__field">4 неделя</div>
+                            <div class="gamification-roadmap__field">5 неделя</div>
+                            <div class="gamification-roadmap__field">6 неделя</div>
+                        </div>
+                    </div>
+
+                    <div class="gamification-roadmap__accordions smartphone-only">
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Исследование</span>
+                                <span>~40ч</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Работа с гипотезами</span>
+                                <span>~10ч</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Проектирование</span>
+                                <span>~60ч</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Тестирование</span>
+                                <span>~60ч</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Разработка</span>
+                                <span>~120ч</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                        <div class="gamification-roadmap__accordion">
+                            <div class="gamification-roadmap__accordion-title">
+                                <span>Сопровождение</span>
+                                <span>∞</span>
+                            </div>
+                            <div class="gamification-roadmap__accordion-content">Текст</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="gamification-reviews">
+                <div class="container">
+                    <h2 class="gamification-reviews__title">Отзывы</h2>
+
+                    <div class="gamification-reviews__grid desktop-only">
+                        <div class="gamification-reviews__item">
+                            <img src="../images/gamification/reviews/rtk.svg" alt="review">
+
+                            <p>Мы высоко ценим профессионализм Ваших сотрудников, клиентоориентированность и индивидуальный подход в реализации проекта. Благодарим за творческую и оперативную работу</p>
+
+                            <div class="gamification-reviews__full">Читать полностью</div>
+
+                            <div class="gamification-reviews__author">
+                                <span>Н. А. Черкасенко</span>
+                                <span>Директор департамента обучения, оценки и развития персонала</span>
+                            </div>
+                        </div>
+                        <div class="gamification-reviews__item">
+                            <img src="../images/gamification/reviews/tn.svg" alt="review">
+
+                            <p>В процессе взаимодействия были учтены все пожелания заказчика, проект реализован оперативно, на высоком техническом уровне, разработанные компанией «Лаборатория мультимедиа»</p>
+
+                            <div class="gamification-reviews__full">Читать полностью</div>
+
+                            <div class="gamification-reviews__author">
+                                <span>О. В. Китова</span>
+                                <span>Директор департамента обучения, оценки и развития персонала</span>
+                            </div>
+                        </div>
+                        <div class="gamification-reviews__item">
+                            <img src="../images/gamification/reviews/t2.svg" alt="review">
+
+                            <p>Выражаю благодарность ООО «Лаборатория мультимедиа» за высокий уровень профессионализма, проявленный в рамках проекта по созданию Мотивационного учебного портала на базе системы WebTutor. Проектная команда проявила индивидуальный подход</p>
+
+                            <div class="gamification-reviews__full">Читать полностью</div>
+
+                            <div class="gamification-reviews__author">
+                                <span>Крупенников Алексей</span>
+                                <span>Руководитель группы по развитию портальных решений</span>
+                            </div>
+                        </div>
+                        <div class="gamification-reviews__item">
+                            <img src="../images/gamification/reviews/otp.svg" alt="review">
+
+                            <p>Наша компания использует в обучении сотрудников готовые электронные курсы, разработанные компанией «Лаборатория мультимедиа». На рынке дистанционного обучения эти курсы отличаются понятной и доступной формой подачи.</p>
+
+                            <div class="gamification-reviews__full">Читать полностью</div>
+
+                            <div class="gamification-reviews__author">
+                                <span>О. А. Евтеева</span>
+                                <span>Начальник Управления обучения и развития персонала</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="carousel carousel--js-gamification-rewiews smartphone-only">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="gamification-reviews__item">
+                                        <img src="../images/gamification/reviews/rtk.svg" alt="review">
+            
+                                        <p>Мы высоко ценим профессионализм Ваших сотрудников, клиентоориентированность и индивидуальный подход в реализации проекта. Благодарим за творческую и оперативную работу</p>
+            
+                                        <div class="gamification-reviews__full">Читать полностью</div>
+            
+                                        <div class="gamification-reviews__author">
+                                            <span>Н. А. Черкасенко</span>
+                                            <span>Директор департамента обучения, оценки и развития персонала</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="gamification-reviews__item">
+                                        <img src="../images/gamification/reviews/tn.svg" alt="review">
+            
+                                        <p>В процессе взаимодействия были учтены все пожелания заказчика, проект реализован оперативно, на высоком техническом уровне, разработанные компанией «Лаборатория мультимедиа»</p>
+            
+                                        <div class="gamification-reviews__full">Читать полностью</div>
+            
+                                        <div class="gamification-reviews__author">
+                                            <span>О. В. Китова</span>
+                                            <span>Директор департамента обучения, оценки и развития персонала</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="gamification-reviews__item">
+                                        <img src="../images/gamification/reviews/t2.svg" alt="review">
+            
+                                        <p>Выражаю благодарность ООО «Лаборатория мультимедиа» за высокий уровень профессионализма, проявленный в рамках проекта по созданию Мотивационного учебного портала на базе системы WebTutor. Проектная команда проявила индивидуальный подход</p>
+            
+                                        <div class="gamification-reviews__full">Читать полностью</div>
+            
+                                        <div class="gamification-reviews__author">
+                                            <span>Крупенников Алексей</span>
+                                            <span>Руководитель группы по развитию портальных решений</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="gamification-reviews__item">
+                                        <img src="../images/gamification/reviews/otp.svg" alt="review">
+            
+                                        <p>Наша компания использует в обучении сотрудников готовые электронные курсы, разработанные компанией «Лаборатория мультимедиа». На рынке дистанционного обучения эти курсы отличаются понятной и доступной формой подачи.</p>
+            
+                                        <div class="gamification-reviews__full">Читать полностью</div>
+            
+                                        <div class="gamification-reviews__author">
+                                            <span>О. А. Евтеева</span>
+                                            <span>Начальник Управления обучения и развития персонала</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients -->
+            <div class="gamification-clients">
+                <div class="marquee marquee--to-right">
+                    <div class="marquee__content">
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                        <div class="gamification-clients__item">
+                            <img src="../images/gamification/clients/bhc.svg" alt="client">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join -->
+            <section class="join gamification-join" id="join">
+                <div class="join__background">
+                    <div class="join__wrap container">
+                        <h2 class="join__heading title">
+                            Геймификация — путь к быстрой адаптации
+                        </h2>
+
+                        <p class="join__desc">
+                            Используйте игровые механики для ускорения обучения и формирования корпоративной культуры
+                        </p>
+
+                        <div class="join__widget">
+                            <div class="request request--referrals">
+                                <h2 class="request__heading">
+                                    Запишитесь на консультацию
+                                </h2>
+                                <div class="request__description">
+                                    Поделитесь своими задачами, и мы предложим оптимальные решения для обучения ваших сотрудников
+                                </div>
+                                <div class="request__form">
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="text" placeholder="Имя*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="email" placeholder="Email*">
+                                        </div>
+                                    </div>
+                                    <div class="request__field">
+                                        <div class="input">
+                                            <input class="input__widget" type="text" placeholder="Компания*">
+                                        </div>
+                                    </div>
+                                    <div class="request__footer">
+                                        <div class="request__agreement">
+                                            <label class="choice choice--smaller">
+                                                <input class="choice__widget" type="checkbox">
+                                                <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                                <i class="choice__icon" role="presentation"></i>
+                                            </label>
+                                        </div>
+                                        <div class="request__submit">
+                                            <button class="button" type="button">Отправить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq container">
+                <h2 class="faq__heading title title--secondary">
+                    Часто задаваемые вопросы
+                </h2>
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Как вы анализируете бизнес-процессы, чтобы понять, где необходима геймификация?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto aspernatur at corporis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Как я могу заказать геймификацию для своей компании?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>Просто свяжитесь с нами через форму обратной связи на сайте, позвоните по телефону или напишите нам. Мы обсудим ваши потребности, проведем анализ и предложим оптимальное решение для вашего бизнеса. Начните улучшать свои показатели уже сегодня!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Какие игровые механики вы используете?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>debitis delectus dolores dolorum eveniet explicabo fugiat ipsum itaque libero magni maiores modi nam necessitatibus numquam omnis placeat quaerat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
+                            Как происходит внедрение геймификации в бизнес?
+                        </button>
+                        <div class="faq__answer">
+                            <div class="wysiwyg">
+                                <p>quos rem similique sint tempora unde vero voluptates! Alias cumque distinctio dolore ducimus minus praesentium voluptatem! Distinctio, soluta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses -->
+            <div class="gamification-vovlekay">
+                <div class="container">
+                    <div class="gamification-vovlekay__wrap">
+                        <div class="gamification-vovlekay__content">
+                            <h3>Разработаем ваш курс<br>на платформе Вовлекай</h3>
+                            <p class="desktop-only">Человекоцентричное и комфортное обучение сотрудников</p>
+                            <p class="smartphone-only">Человекоцентричное и комфортное<br>обучение сотрудников</p>
+                            <a class="button button--secondary" href="#choose">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer__request container">
+                    <div class="callback">
+                        <div class="callback__intro">
+                            <h2 class="callback__heading">
+                                Поможем решить все&nbsp;вопросы
+                            </h2>
+                            <div class="callback__description">
+                                Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку — и мы перезвоним
+                            </div>
+                        </div>
+                        <div class="callback__form">
+                            <div class="callback__name">
+                                <div class="input">
+                                    <input class="input__widget" type="text" placeholder="Имя*">
+                                </div>
+                            </div>
+                            <div class="callback__channel-fields">
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="tel" placeholder="Телефон*">
+                                    </div>
+                                </div>
+                                <div class="callback__contact">
+                                    <div class="input">
+                                        <input class="input__widget" type="email" placeholder="Email*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callback__footer">
+                                <div class="callback__agreement">
+                                    <label class="choice choice--smaller">
+                                        <input class="choice__widget" type="checkbox">
+                                        <span class="choice__label">Я согласен(а) на обработку моих персональных данных в соответствии с<a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                        <i class="choice__icon" role="presentation"></i>
+                                    </label>
+                                </div>
+                                <div class="callback__submit">
+                                    <button class="button" type="button">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__main container">
+                    <div class="footer__contacts">
+                        <div class="footer__call">
+                            <a class="link link--no-hover" href="tel:+74951368606">+7 495 136–86–06</a>
+                            <div class="explain bubble-context">
+                                <button class="explain__icon bubble-handler" type="button">
+                                    Подсказка
+                                </button>
+                                <div class="bubble">
+                                    <div class="bubble__body">
+                                        <div class="bubble__heading">
+                                        Многоканальный телефон
+                                        </div>
+                                        <div class="bubble__description">
+                                            Для связи с нужным отделом позвоните<br> по номеру и введите добавочный номер
+                                        </div>
+                                    </div>
+                                    <i class="bubble__chevron"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__number-extensions">
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 1</div>
+                                <div class="footer__department">служба сервиса<br>по учебному процессу</div>
+                            </div>
+                            <div class="footer__extension">
+                                <div class="footer__digit">Добавочный — 2</div>
+                                <div class="footer__department">вопросы по покупке,<br> оплате и продуктам</div>
+                            </div>
+                        </div>
+                        <div class="footer__quality-head">
+                            <a class="footer__quality-person" href="#">
+                                <img class="footer__headshot"
+                                     srcset="../content/footer-headshot/footer-headshot@3x.jpg 3x,
+                                             ../content/footer-headshot/footer-headshot@2x.jpg 2x,
+                                             ../content/footer-headshot/footer-headshot@1x.jpg 1x
+                                    "
+                                     src="../content/footer-headshot/footer-headshot@1x.jpg"
+                                     width="32"
+                                     height="32"
+                                     alt="Фото Александра Рябинина"
+                                >
+                            </a>
+                            <div class="footer__quality-heading">
+                                Есть вопросы и предложения?
+                            </div>
+                        </div>
+                        <div class="footer__quality-feedback">
+                            Напишите <a class="link" href="#">Александру Рябинину</a> — ответственному за&nbsp;качество&nbsp;курсов
+                        </div>
+                    </div>
+                    <nav class="footer__nav">
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                О Лабмедиа
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">О нас</a>
+                                <a class="footer__sub-link" href="#">Документы</a>
+                                <a class="footer__sub-link" href="#">Вакансии</a>
+                                <a class="footer__sub-link" href="#">Партнерам</a>
+                                <a class="footer__sub-link" href="#">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Продукты
+                            </a>
+                            <div class="footer__sub-menu">
+                                <a class="footer__sub-link" href="#">Вовлекай</a>
+                                <a class="footer__sub-link" href="#">ДелайКурс</a>
+                                <a class="footer__sub-link" href="#">Готовые курсы</a>
+                            </div>
+                        </div>
+                        <div class="footer__menu-column">
+                            <a class="footer__link" href="#">
+                                Кейсы
+                            </a>
+                            <div class="footer__alt-menu">
+                                <a class="footer__link" href="#">Услуги</a>
+                                <a class="footer__link" href="#">Блог</a>
+                                <a class="footer__link" href="#">Поддержка</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer__separator container container--wide" role="presentation" aria-hidden="true">
+                    <div class="footer__line"></div>
+                </div>
+                <div class="footer__info container">
+                    <div class="footer__info-inner">
+                        <button class="footer__info-handler" type="button">
+                            Правовая информация
+                        </button>
+                        <div class="footer__info-body">
+                            <div class="footer__brands">
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/skolkovo@3x.jpg 3x,
+                                                 ../content/footer-brands/skolkovo@2x.jpg 2x,
+                                                 ../content/footer-brands/skolkovo@1x.jpg 1x
+                                        "
+                                         src="../content/footer-brands/skolkovo@1x.jpg"
+                                         width="50"
+                                         height="40"
+                                         alt="Логотип «Сколково»"
+                                    >
+                                    <div class="footer__brand-title">
+                                        Грантовая поддержка<br> Фонда «Сколково»
+                                    </div>
+                                </div>
+                                <div class="footer__brand-item">
+                                    <img class="footer__brand-logo"
+                                         srcset="../content/footer-brands/innovations@3x.jpg 3x,
+                                                ../content/footer-brands/innovations@2x.jpg 2x,
+                                                ../content/footer-brands/innovations@1x.jpg 1x
+                                         "
+                                         src="../content/footer-brands/innovations@1x.jpg"
+                                         width="84"
+                                         height="40"
+                                         alt="Логотип фонда содействия инновациям"
+                                    >
+                                    <div class="footer__brand-title">
+                                        При поддержке Фонда<br> содействия инновациям
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__description">
+                                <div class="footer__about">
+                                    Лабмедиа разрабатывает электронные курсы, учебные видео и геймификацию для обучения. ООО «Лабмедиа» входит в Реестр малых технологических компаний с 03.11.2023 года. Программные продукты Лабмедиа включены в Реестр российского ПО
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО Вовлекай</a>
+                                </div>
+                                <div class="footer__description-link">
+                                    <a class="link" href="#">Скачать сведения о государственной регистрации ПО ДелайКурс</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__legalities container">
+                    <div class="footer__copyright-and-policy">
+                        <div class="footer__copyright">
+                            © 1999–2024 Лабмедиа. Номер DUNS: <a class="link link--fake" href="#">685898065</a>
+                        </div>
+                        <div class="footer__policy">
+                            <a class="link link--inverted-text-alike" href="#">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                    <div class="footer__media-and-developers">
+                        <div class="footer__media">
+                            <div class="media">
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="m10.254 14.193-.268 3.834a.932.932 0 0 0 .75-.37l1.8-1.746 3.74 2.773c.682.39 1.163.186 1.35-.637L20.078 6.38c.217-1.027-.353-1.439-1.034-1.18L4.635 10.798c-.996.399-.973.957-.167 1.213l3.687 1.162L16.45 8.26c.403-.276.773-.123.472.146l-6.668 5.787Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Телеграм
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M22.572 6.413c.154-.505 0-.876-.733-.876h-2.425c-.617 0-.901.32-1.055.674 0 0-1.234 2.952-2.98 4.87-.566.555-.823.732-1.131.732-.154 0-.385-.177-.385-.681v-4.72c0-.605-.171-.875-.685-.875h-3.81c-.386 0-.618.281-.618.548 0 .574.873.706.964 2.321v3.508c0 .769-.142.908-.45.908-.822 0-2.822-2.965-4.008-6.359-.233-.66-.466-.926-1.085-.926H1.746c-.693 0-.832.32-.832.674 0 .63.822 3.76 3.828 7.898 2.004 2.827 4.827 4.359 7.397 4.359 1.541 0 1.732-.34 1.732-.927v-2.136c0-.68.146-.816.634-.816.36 0 .976.176 2.415 1.54 1.644 1.614 1.915 2.339 2.84 2.339h2.425c.693 0 1.04-.34.84-1.012-.22-.67-1.004-1.64-2.046-2.791-.565-.657-1.413-1.363-1.67-1.717-.36-.454-.257-.656 0-1.06 0 0 2.955-4.087 3.263-5.475Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        ВКонтакте
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M21.367 7.292a2.446 2.446 0 0 0-1.725-1.726C18.119 5.154 12 5.154 12 5.154s-6.119 0-7.641.412a2.445 2.445 0 0 0-1.726 1.726A25.239 25.239 0 0 0 2.221 12c-.01 1.579.128 3.155.412 4.708a2.445 2.445 0 0 0 1.726 1.725c1.522.413 7.641.413 7.641.413s6.119 0 7.642-.413a2.445 2.445 0 0 0 1.725-1.725A25.24 25.24 0 0 0 21.779 12a25.24 25.24 0 0 0-.412-4.708Zm-11.323 7.642V9.066L15.122 12l-5.078 2.934Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        YouTube
+                                    </span>
+                                </a>
+                                <a class="media__link" href="#">
+                                    <svg class="media__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M13.84 10.884H6.23V7.836h7.61c.444 0 .753.078.908.215.155.137.251.391.251.762v1.095c0 .391-.096.645-.251.782s-.464.196-.909.196v-.002Zm.521-5.923H3.001V18H6.23v-4.242h5.948L14.999 18h3.614L15.5 13.738c1.147-.172 1.663-.528 2.088-1.115.424-.586.637-1.524.637-2.776V8.87c0-.742-.077-1.328-.213-1.778a2.973 2.973 0 0 0-.695-1.192 3.138 3.138 0 0 0-1.199-.724c-.464-.137-1.044-.215-1.758-.215v.001ZM21.09 4.959a2.48 2.48 0 1 0 0-4.959 2.48 2.48 0 0 0 0 4.959Z"/>
+                                    </svg>
+                                    <span class="visuallyhidden">
+                                        Rutube
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer__developers">
+                            Сделано в <a class="link link--inverted-text-alike" href="#">Манки</a> и <a class="link link--inverted-text-alike" href="#">Редстар</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div class="window mfp-hide" id="search">
+            <div class="search">
+                <div class="search__form container">
+                    <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m14 14-3.464-3.464m0 0a5 5 0 1 0-7.071-7.071 5 5 0 0 0 7.07 7.07Z"/>
+                    </svg>
+                    <div class="search__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Что ищем?">
+                        </div>
+                        <button class="search__close" type="button">
+                            <svg class="search__cross" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12L12 4M4 4L12 12"/>
+                            </svg>
+                            <span class="visuallyhidden">
+                                Очистить и закрыть
+                            </span>
+                        </button>
+                    </div>
+                    <div class="search__submit">
+                        <button class="button button--smaller" type="button">
+                            Найти
+                        </button>
+                    </div>
+                </div>
+                <div class="search__results container">
+                    <button class="search__item" type="button">Разработка электронных курсов</button>
+                    <button class="search__item" type="button">Создание видеоконтента</button>
+                    <button class="search__item" type="button">Геймификация</button>
+                    <button class="search__item" type="button">HR-автоматизация</button>
+                    <button class="search__item" type="button">Дизайн-мышление</button>
+                    <button class="search__item" type="button">Готовые курсы</button>
+                    <button class="search__item" type="button">Техническая поддержка</button>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <div class="window mfp-hide" id="full-request">
+            <div class="request">
+                <h2 class="request__heading">
+                    Напишите свой вопрос!
+                </h2>
+                <div class="request__description">
+                    Если вы хотите больше узнать о Лабмедиа или не знаете, какой продукт или услугу выбрать, оставьте заявку
+                </div>
+                <div class="request__form">
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Имя*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="tel" placeholder="Телефон*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="email" placeholder="Email*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input">
+                            <input class="input__widget" type="text" placeholder="Компания*">
+                        </div>
+                    </div>
+                    <div class="request__field">
+                        <div class="input input--expandable">
+                            <textarea class="input__widget" placeholder="Напишите свой вопрос...*" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="request__footer">
+                        <div class="request__agreement">
+                            <label class="choice choice--smaller">
+                                <input class="choice__widget" type="checkbox">
+                                <span class="choice__label">Я согласен(а) на обработку моих персональных данныхв соответствии с <a class="link" href="#">«Политикой конфиденциальности»</a></span>
+                                <i class="choice__icon" role="presentation"></i>
+                            </label>
+                        </div>
+                        <div class="request__submit">
+                            <button class="button" type="button">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="window__close mfp-close" type="button">
+                Закрыть
+            </button>
+        </div>
+
+        <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
+        <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="../vendors/swiper/swiper-bundle.min.js"></script>
+        <script src="../scripts/scripts.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
