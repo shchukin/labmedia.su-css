@@ -264,6 +264,7 @@
 
             /* В этом слайдере есть ещё превьюшки с навигацией: */
             const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
+            const navWrap = document.querySelector(".main-slider__nav-wrap");
 
             const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
                 ...trackpadSwipeConfig,
@@ -287,6 +288,11 @@
                     },
                     slideChange: function () {
                         updateActiveThumbnail(this.realIndex);
+                        if (this.realIndex < 2) {
+                            navWrap.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            navWrap.scrollTo({ left: navWrap.scrollWidth - navWrap.clientWidth, behavior: 'smooth' });
+                        }
                     },
                     slideChangeTransitionEnd: function () {
                         updateActiveThumbnail(this.realIndex);
