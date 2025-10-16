@@ -44,7 +44,7 @@
 
         <!-- assets -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../styles/styles.css?1760617590">
+        <link rel="stylesheet" href="../styles/styles.css?1760632797">
 
     </head>
     <body>
@@ -285,7 +285,7 @@
                             </div>
 
                             <div class="videos-types__item-content">
-                                <h3>Трейлер к запуску обучения</h3>
+                                <h3>Интерактивный видеокурс</h3>
                                 <p>Проводите проверку знаний не покидая курс. Упаковываем готовые видео в SCORM-пакет и встраиваем тесты и интерактивы внутрь ролика</p>
 
                                 <button class="button button--outline-white">Заказать</button>
@@ -299,7 +299,7 @@
 
                             <div class="videos-types__item-content">
                                 <h3>Трейлер к запуску обучения</h3>
-                                <p>Проводите проверку знаний не покидая курс. Упаковываем готовые видео в SCORM-пакет и встраиваем тесты и интерактивы внутрь ролика</p>
+                                <p>Вовлекайте в обучение с помощью короткого ролика-кейса, который расскажет о целях курса и введет в обучение сюжетную линию</p>
 
                                 <button class="button button--outline-white">Заказать</button>
                             </div>
@@ -902,99 +902,87 @@
                 <div class="container">
                     <h2 class="videos-roadmap__title">
                         Дорожная карта
-                        <img src="../images/videos/roadmap/info.svg" alt="info">
+                        <div class="videos-roadmap__info">
+                            <img src="../images/videos/roadmap/info.svg" alt="info">
+                            
+                            <div class="videos-roadmap__tooltip">Дорожная карта носит ориентировочный характер — этапы и сроки могут варьироваться в зависимости от особенностей проекта</div>
+                        </div>
                     </h2>
 
                     <div class="videos-roadmap__tabs">
-                        <div class="videos-roadmap__tab active">Анимация</div>
-                        <div class="videos-roadmap__tab">Видеоролик</div>
+                        <div class="videos-roadmap__tab active" data-tab="animation">Анимация</div>
+                        <div class="videos-roadmap__tab" data-tab="video">Видеоролик</div>
                     </div>
 
-                    <div class="videos-roadmap__map desktop-only">
+                    <div class="videos-roadmap__map videos-roadmap__map_animation desktop-only">
                         <div class="videos-roadmap__steps">
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
-                                    <span>Сценарий</span>
+                                    <span>Создание сценария</span>
                                     <span>~24ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
-                            </div>
-                            <div class="videos-roadmap__step">
-                                <div class="videos-roadmap__activator">
-                                    <span>Согласование</span>
-                                    <span>~24ч</span>
-                                </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Определяем и согласовываем с вами структуру, концепцию и стиль курса. Пишем сценарий с учётом всех вводных</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
                                     <span>Раскадровка</span>
-                                    <span>~10ч</span>
+                                    <span>~24ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Детализируем визуальное и информационное содержание каждой сцены</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
                                     <span>Согласование</span>
-                                    <span>~24ч</span>
+                                    <span>~10ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
-                                    <span>ГЭК</span>
-                                    <span>~10ч</span>
+                                    <span>ГЗК</span>
+                                    <span>~24ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Записываем закадровый голос. Мы работаем с профессиональными дикторами и ведущими, которые правильно расставят акценты в речи и сделают курс более живым и эмоциональным</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
                                     <span>Согласование</span>
-                                    <span>~24ч</span>
+                                    <span>~10ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
-                                    <span>Разработка персонажей и сцене</span>
+                                    <span>Подготовка иллюстраций</span>
                                     <span>~24ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Иллюстраторы создают сцены и персонажей будущего ролика. Это могут быть реальные локации вашего офиса и сотрудники компании</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
                                     <span>Подбор музыки и звуков</span>
-                                    <span>~20ч</span>
+                                    <span>~24ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Наполняем курс звуками. Подбираем музыкальное сопровождение</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
                                     <span>Анимация и моушен дизайн</span>
                                     <span>~20ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Соединяем голос за кадром и скетчи из раскадровки. Анимируем персонажей и все необходимые детали, доводим до идеального результата</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
-                                    <span>Компоузинг</span>
+                                    <span>Компоузинг и саунд-дизайн</span>
                                     <span>~20ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">Проводим работу над аудиосопровождением курса. Расставляем звуковые акценты, чтобы управлять вниманием зрителя</div>
                             </div>
                             <div class="videos-roadmap__step">
                                 <div class="videos-roadmap__activator">
-                                    <span>Саунд-дизайн</span>
+                                    <span>Передача готового проекта</span>
                                     <span>~20ч</span>
                                 </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
-                            </div>
-                            <div class="videos-roadmap__step">
-                                <div class="videos-roadmap__activator">
-                                    <span>Согласование</span>
-                                    <span>~16ч</span>
-                                </div>
-                                <div class="videos-roadmap__tooltip">Текст</div>
+                                <div class="videos-roadmap__tooltip">При необходимости добавляем в видео интерактивы и интегрируем в электронный SCORM-курс</div>
                             </div>
                         </div>
     
@@ -1009,91 +997,231 @@
                         </div>
                     </div>
 
-                    <div class="videos-roadmap__accordions smartphone-only">
+                    <div class="videos-roadmap__map videos-roadmap__map_video desktop-only" style="display: none;">
+                        <div class="videos-roadmap__steps">
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Создание сценария</span>
+                                    <span>~24ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Определяем и согласовываем с вами структуру, концепцию и стиль курса. Пишем сценарий с учётом всех вводных</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Раскадровка</span>
+                                    <span>~24ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Детализируем визуальное и информационное содержание каждой сцены</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Демо-версия</span>
+                                    <span>~10ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Снимаем короткий фрагмент для согласования формата, стиля подачи и визуального решения перед запуском полной съемки.</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Согласование</span>
+                                    <span>~24ч</span>
+                                </div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Подготовка к съемкам</span>
+                                    <span>~10ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Подбираем актёров, локации и любые атрибуты для успешных съемок (в том числе домашних животных и погоду).</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Съемка</span>
+                                    <span>~24ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Проводим съемку согласно сценарию и раскадровке.</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Монтаж курса</span>
+                                    <span>~24ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Отбираем лучшие дубли и объединяем их в единый фильм. Не забываем провести цветокоррекцию</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Моушн-дизайн</span>
+                                    <span>~20ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Оживляем ролик за счёт добавления инфографики, заставок и переходов</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Саунд-дизайн</span>
+                                    <span>~20ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">Проводим работу над аудиосопровождением курса. Расставляем звуковые акценты, чтобы управлять вниманием зрителя</div>
+                            </div>
+                            <div class="videos-roadmap__step">
+                                <div class="videos-roadmap__activator">
+                                    <span>Передача готового проекта</span>
+                                    <span>~20ч</span>
+                                </div>
+                                <div class="videos-roadmap__tooltip">При необходимости добавляем в видео интерактивы и интегрируем в электронный SCORM-курс</div>
+                            </div>
+                        </div>
+    
+
+                        <div class="videos-roadmap__fields">
+                            <div class="videos-roadmap__field">1 неделя</div>
+                            <div class="videos-roadmap__field">2 неделя</div>
+                            <div class="videos-roadmap__field">3 неделя</div>
+                            <div class="videos-roadmap__field">4 неделя</div>
+                            <div class="videos-roadmap__field">5 неделя</div>
+                            <div class="videos-roadmap__field">6 неделя</div>
+                        </div>
+                    </div>
+
+                    <div class="videos-roadmap__accordions videos-roadmap__accordions_animation smartphone-only">
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>1. Сценарий</span>
+                                <span>1. Создание сценария</span>
                                 <span>~24ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Определяем и согласовываем с вами структуру, концепцию и стиль курса. Пишем сценарий с учётом всех вводных</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>2. Согласование</span>
+                                <span>2. Раскадровка</span>
                                 <span>~24ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Детализируем визуальное и информационное содержание каждой сцены</div>
                         </div>
                         <div class="videos-roadmap__accordion">
-                            <div class="videos-roadmap__accordion-title">
-                                <span>3. Раскадровка</span>
+                            <div class="videos-roadmap__accordion-title no-content">
+                                <span>3. Согласование</span>
                                 <span>~10ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
+                                <span>4. ГЗК</span>
+                                <span>~24ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Записываем закадровый голос. Мы работаем с профессиональными дикторами и ведущими, которые правильно расставят акценты в речи и сделают курс более живым и эмоциональным</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title no-content">
+                                <span>5. Согласование</span>
+                                <span>~10ч</span>
+                            </div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>6. Подготовка иллюстраций</span>
+                                <span>~24ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Иллюстраторы создают сцены и персонажей будущего ролика. Это могут быть реальные локации вашего офиса и сотрудники компании</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>7. Подбор музыки и звуков</span>
+                                <span>~24ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Наполняем курс звуками. Подбираем музыкальное сопровождение</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>8. Анимация и моушен дизайн</span>
+                                <span>~20ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Соединяем голос за кадром и скетчи из раскадровки. Анимируем персонажей и все необходимые детали, доводим до идеального результата</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>9. Компоузинг и саунд-дизайн</span>
+                                <span>~20ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Проводим работу над аудиосопровождением курса. Расставляем звуковые акценты, чтобы управлять вниманием зрителя</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>10. Передача готового проекта</span>
+                                <span>~20ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">При необходимости добавляем в видео интерактивы и интегрируем в электронный SCORM-курс</div>
+                        </div>    
+                    </div>
+
+                    <div class="videos-roadmap__accordions videos-roadmap__accordions_video smartphone-only" style="display: none;">
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>1. Создание сценария</span>
+                                <span>~24ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Определяем и согласовываем с вами структуру, концепцию и стиль курса. Пишем сценарий с учётом всех вводных</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>2. Раскадровка</span>
+                                <span>~24ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Детализируем визуальное и информационное содержание каждой сцены</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title">
+                                <span>3. Демо-версия</span>
+                                <span>~10ч</span>
+                            </div>
+                            <div class="videos-roadmap__accordion-content">Снимаем короткий фрагмент для согласования формата, стиля подачи и визуального решения перед запуском полной съемки.</div>
+                        </div>
+                        <div class="videos-roadmap__accordion">
+                            <div class="videos-roadmap__accordion-title no-content">
                                 <span>4. Согласование</span>
                                 <span>~24ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>5. ГЭК</span>
+                                <span>5. Подготовка к съемкам</span>
                                 <span>~10ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Подбираем актёров, локации и любые атрибуты для успешных съемок (в том числе домашних животных и погоду).</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>6. Согласование</span>
+                                <span>6. Съемка</span>
                                 <span>~24ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Проводим съемку согласно сценарию и раскадровке.</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>7. Разработка персонажей и сцене</span>
+                                <span>7. Монтаж курса</span>
                                 <span>~24ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Отбираем лучшие дубли и объединяем их в единый фильм. Не забываем провести цветокоррекцию</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>8. Подбор музыки и звуков</span>
+                                <span>8. Моушн-дизайн</span>
                                 <span>~20ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Оживляем ролик за счёт добавления инфографики, заставок и переходов</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>9. Анимация и моушен дизайн</span>
+                                <span>9. Саунд-дизайн</span>
                                 <span>~20ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
+                            <div class="videos-roadmap__accordion-content">Проводим работу над аудиосопровождением курса. Расставляем звуковые акценты, чтобы управлять вниманием зрителя</div>
                         </div>
                         <div class="videos-roadmap__accordion">
                             <div class="videos-roadmap__accordion-title">
-                                <span>10. Компоузинг</span>
+                                <span>10. Передача готового проекта</span>
                                 <span>~20ч</span>
                             </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
-                        </div>
-                        <div class="videos-roadmap__accordion">
-                            <div class="videos-roadmap__accordion-title">
-                                <span>11. Саунд-дизайн</span>
-                                <span>~20ч</span>
-                            </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
-                        </div>
-                        <div class="videos-roadmap__accordion">
-                            <div class="videos-roadmap__accordion-title">
-                                <span>12. Согласование</span>
-                                <span>~16ч</span>
-                            </div>
-                            <div class="videos-roadmap__accordion-content">Текст</div>
-                        </div>
+                            <div class="videos-roadmap__accordion-content">При необходимости добавляем в видео интерактивы и интегрируем в электронный SCORM-курс</div>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -1174,22 +1302,334 @@
                 <div class="marquee marquee--to-right">
                     <div class="marquee__content">
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/1.svg" alt="client">
                         </div>
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/2.svg" alt="client">
                         </div>
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/3.svg" alt="client">
                         </div>
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/4.svg" alt="client">
                         </div>
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/5.svg" alt="client">
                         </div>
                         <div class="videos-clients__item">
-                            <img src="../images/videos/clients/bhc.svg" alt="client">
+                            <img src="../images/clients/6.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/7.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/8.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/9.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/10.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/11.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/12.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/13.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/14.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/15.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/16.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/17.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/18.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/19.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/20.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/21.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/22.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/23.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/24.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/25.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/26.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/27.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/28.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/29.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/30.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/31.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/32.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/33.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/34.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/35.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/36.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/37.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/38.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/39.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/40.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/41.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/42.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/43.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/44.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/45.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/46.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/47.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/48.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/49.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/50.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/51.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/52.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/53.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/54.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/55.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/56.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/57.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/58.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/59.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/60.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/61.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/62.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/63.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/64.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/65.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/66.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/67.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/68.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/69.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/70.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/71.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/72.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/73.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/74.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/75.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/76.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/77.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/78.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/79.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/80.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/81.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/82.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/83.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/84.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/85.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/86.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/87.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/88.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/89.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/90.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/91.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/92.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/93.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/94.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/95.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/96.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/97.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/98.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/99.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/100.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/101.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/102.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/103.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/104.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/105.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/106.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/107.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/108.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/109.svg" alt="client">
+                        </div>
+                        <div class="videos-clients__item">
+                            <img src="../images/clients/110.svg" alt="client">
                         </div>
                     </div>
                 </div>
@@ -1310,7 +1750,7 @@
                     <div class="videos-courses__wrap">
                         <div class="videos-courses__content">
                             <h3>Разработка электронных<br>учебных курсов</h3>
-                            <p class="desktop-only">Загружайте SCORM‑видео и проходите тесты во время просмотра</p>
+                            <p class="desktop-only">Встраивайте видео в формат SCORM и проходите тесты во время просмотра</p>
                             <p class="smartphone-only">Загружайте SCORM‑видео<br>и проходите тесты во время<br>просмотра</p>
                             <a class="button button--secondary" href="#choose">Заказать</a>
                         </div>
@@ -1655,7 +2095,7 @@
         <script src="../vendors/jquery/jquery-3.7.1.min.js"></script>
         <script src="../vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
         <script src="../vendors/swiper/swiper-bundle.min.js"></script>
-        <script src="../scripts/scripts.js?1760617590"></script>
+        <script src="../scripts/scripts.js?1760632797"></script>
 
     </body>
 </html>
