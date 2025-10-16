@@ -124,9 +124,8 @@
                 }
 
         .project__details {
-            position: absolute;
-            right: 16px;
-            bottom: 16px;
+            margin-top: 24px;
+            margin-left: auto;
             width: 48px;
             height: 48px;
             display: flex;
@@ -145,6 +144,17 @@
             .project__arrow {
                 stroke: var(--stroke-darkblue);
             }
+
+
+.project:has(.project__data) {
+
+}
+    .project:has(.project__data) .project__details {
+        position: absolute;
+        margin-top: 0;
+        right: 16px;
+        bottom: 16px;
+    }
 
 
 
