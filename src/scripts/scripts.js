@@ -758,27 +758,27 @@
                 {
                     title: "Графические элементы",
                     description: "Разрабатываем дизайн, персонажей, сюжеты и практики под специфику конкретной компании, подбираем учебные сценарии под целевую аудиторию",
-                    image: "../temp/about/mock-gallery-photo.png"
+                    image: "../images/courses/process/1.webp"
                 },
                 {
                     title: "Методология и сценарий",
                     description: "Педагогические дизайнеры и сценаристы адаптируют материалы и выбирают лучшие форматы подачи с учетом целевой аудитории, чтобы обучение было логичным, понятным и эффективным",
-                    image: "../temp/about/mock-gallery-photo.png"
+                    image: "../images/courses/process/2.webp"
                 },
                 {
                     title: "Сборка курса",
                     description: "Разработчики собирают курс на платформе (ДелайКурс, CourseLab и т.д.), настраивая интерактив, анимацию, практические задания и баллы",
-                    image: "../temp/about/mock-gallery-photo.png"
+                    image: "../images/courses/process/3.webp"
                 },
                 {
                     title: "Контроль качества",
                     description: "Тестировщики проверяют работоспособность курса и соответствие техническому заданию. Корректоры исключают ошибки в тексте",
-                    image: "../temp/about/mock-gallery-photo.png"
+                    image: "../images/courses/process/4.webp"
                 },
                 {
                     title: "Поддержка",
                     description: "Специалисты службы сервиса отвечают за работоспособность и актуальность материалов после внедрения в процесс обучения",
-                    image: "../temp/about/mock-gallery-photo.png"
+                    image: "../images/courses/process/5.webp"
                 }
             ];
 
@@ -1588,4 +1588,35 @@
     }
 
     initGamificationReviews();
+
+    // Videos roadmap tabs functionality
+    function initVideosRoadmapTabs() {
+        const tabs = document.querySelectorAll('.videos-roadmap__tab');
+        const maps = document.querySelectorAll('.videos-roadmap__map');
+        const accordions = document.querySelectorAll('.videos-roadmap__accordions');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabType = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Hide all maps and accordions
+                maps.forEach(map => map.style.display = 'none');
+                accordions.forEach(accordion => accordion.style.display = 'none');
+
+                // Show corresponding map and accordion
+                const targetMap = document.querySelector(`.videos-roadmap__map_${tabType}`);
+                const targetAccordion = document.querySelector(`.videos-roadmap__accordions_${tabType}`);
+                
+                if (targetMap) targetMap.style.display = 'block';
+                if (targetAccordion) targetAccordion.style.display = 'flex';
+            });
+        });
+    }
+
+    initVideosRoadmapTabs();
 })(jQuery);

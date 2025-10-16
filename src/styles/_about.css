@@ -1849,11 +1849,11 @@
 }
 
 .about-eco__graph-link[data-value="obuchai"]::before {
-    background-color: #18273E;
+    background: linear-gradient(153.85deg, #198C5E 1.3%, #3FB485 50.65%, #71F0BD 100%);
 }
 
 .about-eco__graph-link[data-value="obuchai"]::after {
-    background: linear-gradient(92.11deg, rgba(24, 39, 62, 0.18) -10.35%, #00000000 107.84%);
+    background: linear-gradient(92.11deg, #198C5E3D -10.35%, #00000000 107.84%);
 }
 
 .about-eco__graph-link[data-value="videocourses"]::before {
