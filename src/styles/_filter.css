@@ -68,6 +68,10 @@
             box-shadow: var(--shadow-large);
             border-radius: 8px;
             white-space: nowrap;
+            max-height: calc(80vh - 100px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-gutter: auto;
         }
             .filter__mobile-heading {
                 display: none;
@@ -140,7 +144,7 @@
             }
 
             .filter__body {
-
+                
             }
                 .filter__mobile-heading {
                     display: block;

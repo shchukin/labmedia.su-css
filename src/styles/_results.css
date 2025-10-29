@@ -1,0 +1,141 @@
+.results {
+    padding-top: 48px;
+    padding-bottom: 100px;
+}
+    .results__inner {
+        max-width: 735px;
+    }
+        .results__heading {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .results__form {
+            margin-top: 48px;
+            position: relative;
+        }
+            .results__field {
+                vertical-align: top;
+                width: 100%;
+                height: 52px;
+                padding: 15px 94px 15px 44px;
+                background-color: #FFFFFF; /* reset grey background in some cases, such as <select> */
+                background-clip: border-box; /* hack for iOS to make box-shadow works (same as border-radius in the past) */
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                font-family: inherit;
+                font-size: 16px; /* not less than 16px (otherwise mobile browsers will zoom in on focus) */
+                line-height: 22px;
+                color: var(--txt-dark-blue);
+                opacity: 1; /* reset select:disabled default fade on iOS */
+                -webkit-tap-highlight-color: transparent;
+                transition: background-color var(--transition-hover),
+                            border-color var(--transition-hover),
+                            color var(--transition-hover);
+            }
+
+            .results__field::placeholder {
+                opacity: 1; /* reset opacity drop Firefox */
+                color: var(--txt-simple-gray);
+                transition: color var(--transition-hover);
+            }
+
+            .results__icon {
+                position: absolute;
+                left: 14px;
+                top: 18px;
+                stroke: var(--txt-dark-blue);
+            }
+
+            .results__submit {
+                position: absolute;
+                right: 4px;
+                top: 4px;
+            }
+
+        .results__list {
+            margin-top: 56px;
+        }
+            .results__item {
+                margin-top: 40px;
+            }
+
+            .results__item:first-child {
+                margin-top: 0;
+            }
+
+                .results__sub-heading {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                .results__preview {
+                    margin-top: 12px;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+
+
+
+@media (width < 740px) {
+
+    .results {
+        padding-top: 58px;
+        padding-bottom: 80px;
+    }
+        .results__inner {
+
+        }
+            .results__heading {
+
+            }
+
+            .results__form {
+                margin-top: 32px;
+            }
+                .results__field {
+
+                }
+
+                .results__field::placeholder {
+
+                }
+
+                .results__icon {
+
+                }
+
+                .results__submit {
+
+                }
+
+            .results__list {
+                margin-top: 48px;
+            }
+                .results__item {
+                    margin-top: 32px;
+                }
+
+                .results__item:first-child {
+                    /*margin-top: 0;*/
+                }
+
+                    .results__sub-heading {
+                        /*margin-top: 0;*/
+                        /*margin-bottom: 0;*/
+                    }
+                        .results__sub-heading.title,
+                        .results__sub-heading .title {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+
+                    .results__preview {
+                        /*margin-top: 12px;*/
+                        /*font-size: 16px;*/
+                        /*line-height: 22px;*/
+                    }
+}
+
+
