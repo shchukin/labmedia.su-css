@@ -79,6 +79,7 @@
         }
     }
         .search__item {
+            display: block;
             width: 100%;
             padding: 8px 12px;
             background-color: transparent;
@@ -89,6 +90,7 @@
             line-height: 22px;
             color: var(--txt-dark-blue);
             text-align: left;
+            text-decoration: none;
             cursor: pointer;
             transition: background-color var(--transition-hover);
         }
