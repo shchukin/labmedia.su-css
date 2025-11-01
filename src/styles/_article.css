@@ -61,10 +61,13 @@
         }
             .article__featured-image-illustration {
                 vertical-align: top;
+                width: 100%;
+                height: auto;
+                background-image: var(--image-fallback);
                 transition: transform var(--transition-scale-hover);
             }
 
-            .article__featured-image:hover .article__featured-image-illustration {
+            a.article__featured-image:hover .article__featured-image-illustration {
                 transform: scale(105%);
             }
 

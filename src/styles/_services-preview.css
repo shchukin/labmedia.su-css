@@ -19,6 +19,8 @@
             border-radius: 16px;
             display: flex;
             flex-direction: column;
+            text-decoration: none;
+            color: inherit;
             transition: transform var(--transition-scale-hover);
         }
 
