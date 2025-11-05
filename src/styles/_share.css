@@ -13,11 +13,11 @@
     }
 
     .share__list {
+        flex-shrink: 0;
         margin-left: auto;
         display: flex;
         align-items: flex-start;
     }
-
 
 
 @media (width < 740px) {

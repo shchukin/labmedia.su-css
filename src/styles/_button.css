@@ -202,10 +202,15 @@
     padding-right: 16px;
 }
     .button__icon {
+        flex-shrink: 0;
         width: 20px;
         height: 20px;
         stroke: currentColor;
         transition: stroke var(--transition-hover);
+    }
+
+    .button__label {
+        flex-shrink: 0;
     }
 
 
