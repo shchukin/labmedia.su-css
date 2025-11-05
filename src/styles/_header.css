@@ -514,11 +514,14 @@ html:not(.burger-expanded):not(.scrolled-200px) .header--blur .header__burger {
     border-color: transparent;
     background-color: var(--fill-total-white-15);
     transition: background-color var(--transition-hover), border-color var(--transition-hover);
+}
 
-    @media (width < 740px) {
+@media (width < 740px) {
+    html:not(.burger-expanded):not(.scrolled-200px) .header--blur .header__burger {
         display: flex;
     }
 }
+
 html:not(.burger-expanded):not(.scrolled-200px) .header--blur .header__burger-icon {
     stroke: var(--stroke-total-white);
     transition: stroke var(--transition-hover);
@@ -570,8 +573,10 @@ html:not(.burger-expanded):not(.scrolled-200px) .header--blur .button--header-ac
 html:not(.burger-expanded):not(.scrolled-200px) .header--blur .button--header-action-call {
     background-color: var(--fill-total-white-15);
     transition: background-color var(--transition-hover);
+}
 
-    @media (width < 740px) {
+@media (width < 740px) {
+    html:not(.burger-expanded):not(.scrolled-200px) .header--blur .button--header-action-call {
         background-color: transparent;
     }
 }
@@ -582,8 +587,10 @@ html:not(.burger-expanded):not(.scrolled-200px) .header--blur .header__request .
     backdrop-filter: var(--blur-15);
     color: #FFFFFF;
     transition: background-color var(--transition-hover), backdrop-filter var(--transition-hover), color var(--transition-hover);
+}
 
-    @media (width < 740px) {
+@media (width < 740px) {
+    html:not(.burger-expanded):not(.scrolled-200px) .header--blur .header__request .button:not(:hover) {
         background-color: transparent;
         backdrop-filter: none;
     }

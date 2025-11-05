@@ -125,6 +125,40 @@
                 }
 
 
+/* Серый скин для точек: */
+
+.carousel--css-alt-bullets {
+
+}
+    .carousel--css-alt-bullets .carousel__pagination {
+        position: static;
+    }
+        .carousel--css-alt-bullets .carousel__bullet {
+
+        }
+
+        .carousel--css-alt-bullets .carousel__bullet--current {
+
+        }
+            .carousel--css-alt-bullets .carousel__bullet::after {
+                background-color: rgb(0 0 0 / 50%);
+            }
+
+            .carousel--css-alt-bullets .carousel__bullet:hover::after {
+                background-color: rgb(0 0 0 / 80%);
+            }
+
+            .carousel--css-alt-bullets .carousel__bullet--current::after,
+            .carousel--css-alt-bullets .carousel__bullet--current:hover::after {
+                background-color: #000000;
+            }
+
+    /* Поскольку точки изменяют высоту карусели, нужно изменить смещение кнопок завясящих от top: 50% */
+    .carousel--css-alt-bullets .carousel__button {
+        margin-top: -43px;
+    }
+
+
  /* Скин Thanks */
 
 .carousel--css-skin-thanks {
