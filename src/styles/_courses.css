@@ -822,6 +822,7 @@
 
 .courses-process__swiper {
     width: calc(100% - 310px - 16px);
+    height: 484px;
 }
 
 @media (width < 740px) {
@@ -839,7 +840,8 @@
 .courses-process__swiper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: var(--fill-total-white);
 }
 
 .carousel--js-courses-process__pagination {
@@ -913,6 +915,10 @@
     opacity: 1;
 }
 
+.courses-roadmap__info_active .courses-roadmap__tooltip {
+    opacity: 1;
+}
+
 @media (width < 740px) {
     .courses-roadmap__tooltip {
         width: 172px;
@@ -978,7 +984,7 @@
     letter-spacing: 0;
     white-space: nowrap;
     background-color: var(--fill-total-white);
-    width: 100%;
+    min-width: 100%;
     transition: background-color var(--transition-hover);
     cursor: pointer;
 }
@@ -1022,49 +1028,49 @@
 .courses-roadmap__step:nth-child(1) {
     top: 50px;
     left: 0;
-    width: 217px;
+    min-width: 217px;
 }
 
 .courses-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
     left: 59px;
-    width: 197px;
+    min-width: 197px;
 }
 
 .courses-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
     left: 217px;
-    width: 128px;
+    min-width: 128px;
 }
 
 .courses-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
     left: 317px;
-    width: 635px;
+    min-width: 635px;
 }
 
 .courses-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
     left: 463px;
-    width: 298px;
+    min-width: 298px;
 }
 
 .courses-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
     left: 570px;
-    width: 381px;
+    min-width: 381px;
 }
 
 .courses-roadmap__step:nth-child(7) {
     top: calc(50px + 44px * 6 + 8px * 6);
     left: 760px;
-    width: 225px;
+    min-width: 225px;
 }
 
 .courses-roadmap__step:nth-child(8) {
     top: calc(50px + 44px * 7 + 8px * 7);
     right: 1px;
-    width: 243px;
+    min-width: 243px;
 }
 
 .courses-roadmap__accordions {
@@ -1292,7 +1298,7 @@
 /* Clients */
 .courses-clients {
     overflow: hidden;
-    padding: 48px 0;
+    padding: 24px 0;
 }
 
 @media (width < 740px) {
@@ -1302,18 +1308,19 @@
 }
 
 .courses-clients__item {
-    width: auto;
-    height: 64px;
+    width: 280px;
+    height: 164px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 128px;
+    padding: 12px 32px;
 }
 
 @media (width < 740px) {
     .courses-clients__item {
-        width: auto;
-        height: 48px;
+        width: 140px;
+        height: 80px;
+        padding: 0 16px;
     }
 }
 

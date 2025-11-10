@@ -29,7 +29,7 @@
 }
 
 .gamification-hero__image {
-    height: 130%;
+    height: 100%;
     aspect-ratio: 1;
     flex-shrink: 0;
     object-fit: contain;
@@ -37,7 +37,7 @@
     animation: herogamificationImageFloat 4s ease-in-out infinite;
     transform: translateY(0) scale(1.4);
     position: absolute;
-    right: -90px;
+    right: 0;
     bottom: 0;
 }
 
@@ -60,7 +60,7 @@
         height: auto;
         aspect-ratio: 1;
         object-position: center bottom;
-        margin-top: -80px;
+        margin-top: 0;
         margin-right: -40px;
     }
 }
@@ -620,6 +620,10 @@
     opacity: 1;
 }
 
+.gamification-roadmap__info_active .gamification-roadmap__tooltip {
+    opacity: 1;
+}
+
 @media (width < 740px) {
     .gamification-roadmap__tooltip {
         width: 172px;
@@ -685,7 +689,7 @@
     letter-spacing: 0;
     white-space: nowrap;
     background-color: var(--fill-total-white);
-    width: 100%;
+    min-width: 100%;
     transition: background-color var(--transition-hover);
     cursor: pointer;
 }
@@ -729,37 +733,37 @@
 .gamification-roadmap__step:nth-child(1) {
     top: 50px;
     left: 0;
-    width: 190px;
+    min-width: 190px;
 }
 
 .gamification-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
     left: 35px;
-    width: 327px;
+    min-width: 327px;
 }
 
 .gamification-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
     left: 190px;
-    width: 287px;
+    min-width: 287px;
 }
 
 .gamification-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
     left: 380px;
-    width: 285px;
+    min-width: 285px;
 }
 
 .gamification-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
     left: 380px;
-    width: 665px;
+    min-width: 665px;
 }
 
 .gamification-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
     right: 1px;
-    width: 290px;
+    min-width: 290px;
 }
 
 .gamification-roadmap__accordions {
@@ -1030,7 +1034,7 @@
 /* Clients */
 .gamification-clients {
     overflow: hidden;
-    padding: 48px 0;
+    padding: 24px 0;
 }
 
 @media (width < 740px) {
@@ -1040,18 +1044,19 @@
 }
 
 .gamification-clients__item {
-    width: auto;
-    height: 64px;
+    width: 280px;
+    height: 164px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 128px;
+    padding: 12px 32px;
 }
 
 @media (width < 740px) {
     .gamification-clients__item {
-        width: auto;
-        height: 48px;
+        width: 140px;
+        height: 80px;
+        padding: 0 16px;
     }
 }
 

@@ -629,7 +629,7 @@
     .about-novators__vovlekai {
         position: absolute;
         bottom: 109px;
-        left: 203px;
+        right: 203px;
         width: 120px;
         aspect-ratio: 1;
         display: flex;
@@ -643,7 +643,7 @@
 
 @media (width < 740px) {
     .about-novators__vovlekai {
-        left: 0;
+        right: 0;
         bottom: 32px;
         width: 72px;
         border-radius: 12px;
@@ -674,6 +674,7 @@
         bottom: 21px;
         width: 210px;
         height: 372px;
+        display: none;
     }
 
 @media (width < 740px) {
@@ -792,7 +793,7 @@
     /* Карточка с Городом */
     .about-experts__city {
         position: absolute;
-        top: 109px;
+        bottom: 109px;
         left: 203px;
         width: 120px;
         aspect-ratio: 1;
@@ -803,8 +804,8 @@
 
 @media (width < 740px) {
     .about-experts__city {
-        left: 16px;
-        top: initial;
+        right: 16px;
+        left: initial;
         bottom: 12px;
         width: 72px;
         border-radius: 12px;
@@ -822,6 +823,7 @@
         height: 200px;
         border-radius: 50%;
         overflow: hidden;
+        display: none;
     }
 
 @media (width < 740px) {
@@ -910,6 +912,86 @@
 
 
     /* Эффективность */
+    /* Карточка с DC */
+    .about-speed__dc {
+        position: absolute;
+        bottom: 109px;
+        left: 203px;
+        width: 120px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--fill-total-white);
+        border-radius: 16px;
+        box-shadow: 0 15px 35px 0 #322F3D14;
+        transition: all 200ms ease;
+    }
+
+@media (width < 740px) {
+    .about-speed__dc {
+        left: 0;
+        bottom: 32px;
+        width: 72px;
+        border-radius: 12px;
+    }
+}
+
+.about-speed__dc:hover {
+    transform: translateY(-8px);
+}
+
+.about-speed__dc img {
+    width: 56px;
+    aspect-ratio: 1;
+}
+
+@media (width < 740px) {
+    .about-speed__dc img {
+        width: 34px;
+    }
+}
+
+    /* Карточка с Courses */
+    .about-speed__ac {
+        position: absolute;
+        top: 109px;
+        right: 203px;
+        width: 120px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--fill-total-white);
+        border-radius: 16px;
+        box-shadow: 0 15px 35px 0 #322F3D14;
+        transition: all 200ms ease;
+    }
+
+@media (width < 740px) {
+    .about-speed__ac {
+        right: 0;
+        top: 32px;
+        width: 72px;
+        border-radius: 12px;
+    }
+}
+
+.about-speed__ac:hover {
+    transform: translateY(-8px);
+}
+
+.about-speed__ac img {
+    width: 56px;
+    aspect-ratio: 1;
+}
+
+@media (width < 740px) {
+    .about-speed__ac img {
+        width: 34px;
+    }
+}
+
     /* Карточка возраст */
     .about-speed__age {
         display: flex;
@@ -1133,7 +1215,7 @@
     .about-more__grid {
         margin-top: 48px;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: auto;
         gap: 16px;
     }
 }
@@ -2181,6 +2263,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 @media (width < 740px) {
@@ -2274,6 +2357,15 @@
     opacity: 1;
 }
 
+.about-achievements__item_active {
+    opacity: 1 !important;
+    animation-play-state: paused;
+}
+
+.about-achievements__item_active .about-achievements__info {
+    opacity: 1;
+}
+
 .about-achievements__item > img {
     width: 100%;
     height: 100%;
@@ -2364,10 +2456,6 @@
     }
 }
 
-.about-achievements__item:nth-child(1) .about-achievements__info img {
-    filter: invert(1);
-}
-
 .about-achievements__item:nth-child(2) {
     top: 168px;
     left: 356px;
@@ -2428,10 +2516,6 @@
     }
 }
 
-.about-achievements__item:nth-child(5) .about-achievements__info img {
-    filter: invert(1);
-}
-
 .about-achievements__item:nth-child(6) {
     top: 956px;
     right: 406px;
@@ -2467,6 +2551,16 @@
     position: relative;
 }
 
+.about-tour::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #242424 100%);
+}
+
 @media (width < 740px) {
     .about-tour {
         height: 670px;
@@ -2491,6 +2585,7 @@
     font-weight: 400;
     text-align: center;
     color: var(--txt-total-white);
+    z-index: 1;
 }
 
 @media (width < 740px) {
@@ -2736,6 +2831,10 @@
     height: 100%;
     object-fit: cover;
     cursor: pointer;
+}
+
+.about-voices__item video:fullscreen {
+    object-fit: contain;
 }
 
 .about-voices .swiper-slide-active .about-voices__overlay {

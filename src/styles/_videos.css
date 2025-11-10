@@ -635,6 +635,10 @@
     opacity: 1;
 }
 
+.videos-roadmap__info_active .videos-roadmap__tooltip {
+    opacity: 1;
+}
+
 @media (width < 740px) {
     .videos-roadmap__tooltip {
         width: 172px;
@@ -700,7 +704,7 @@
     letter-spacing: 0;
     white-space: nowrap;
     background-color: var(--fill-total-white);
-    width: 100%;
+    min-width: 100%;
     transition: background-color var(--transition-hover);
     cursor: pointer;
 }
@@ -744,122 +748,122 @@
 .videos-roadmap__step:nth-child(1) {
     top: 50px;
     left: 0;
-    width: 206px;
+    min-width: 206px;
 }
 
 .videos-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
     left: 110px;
-    width: 178px;
+    min-width: 178px;
 }
 
 .videos-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
     left: 194px;
-    width: 178px;
+    min-width: 178px;
 }
 
 .videos-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
     left: 292px;
-    width: 178px;
+    min-width: 178px;
 }
 
 .videos-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
     left: 367px;
-    width: 178px;
+    min-width: 178px;
 }
 
 .videos-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
     left: 485px;
-    width: 207px;
+    min-width: 207px;
 }
 
 .videos-roadmap__step:nth-child(7) {
     top: calc(50px + 44px * 6 + 8px * 6);
     left: 572px;
-    width: 198px;
+    min-width: 198px;
 }
 
 .videos-roadmap__step:nth-child(8) {
     top: calc(50px + 44px * 7 + 8px * 7);
     left: 644px;
-    width: 221px;
+    min-width: 221px;
 }
 
 .videos-roadmap__step:nth-child(9) {
     top: calc(50px + 44px * 8 + 8px * 8);
     left: 788px;
-    width: 224px;
+    min-width: 224px;
 }
 
 .videos-roadmap__step:nth-child(10) {
     top: calc(50px + 44px * 9 + 8px * 9);
     right: 1px;
-    width: 219px;
+    min-width: 219px;
 }
 
 /* Video roadmap */
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(1) {
     top: 50px;
     left: 0;
-    width: 210px;
+    min-width: 210px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
     left: 147px;
-    width: 181px;
+    min-width: 181px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
     left: 248px;
-    width: 181px;
+    min-width: 181px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
     left: 385px;
-    width: 130px;
+    min-width: 130px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
     left: 474px;
-    width: 229px;
+    min-width: 229px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
     left: 563px;
-    width: 257px;
+    min-width: 257px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(7) {
     top: calc(50px + 44px * 6 + 8px * 6);
     left: 653px;
-    width: 253px;
+    min-width: 253px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(8) {
     top: calc(50px + 44px * 7 + 8px * 7);
     left: 784px;
-    width: 169px;
+    min-width: 169px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(9) {
     top: calc(50px + 44px * 8 + 8px * 8);
     left: 839px;
-    width: 192px;
+    min-width: 192px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(10) {
     top: calc(50px + 44px * 9 + 8px * 9);
     right: 1px;
-    width: 223px;
+    min-width: 223px;
 }
 
 .videos-roadmap__accordions {
@@ -1128,9 +1132,10 @@
 
 
 /* Clients */
+/* Clients */
 .videos-clients {
     overflow: hidden;
-    padding: 48px 0;
+    padding: 24px 0;
 }
 
 @media (width < 740px) {
@@ -1140,18 +1145,19 @@
 }
 
 .videos-clients__item {
-    width: auto;
-    height: 64px;
+    width: 280px;
+    height: 164px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 128px;
+    padding: 12px 32px;
 }
 
 @media (width < 740px) {
     .videos-clients__item {
-        width: auto;
-        height: 48px;
+        width: 140px;
+        height: 80px;
+        padding: 0 16px;
     }
 }
 

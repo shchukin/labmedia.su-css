@@ -1,5 +1,8 @@
 .author {
     position: relative;
+}
+
+.author:has(.author__photo) {
     padding-left: 64px;
 }
     .author__photo {

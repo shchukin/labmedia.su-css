@@ -11,7 +11,7 @@
         .teaser__illustration {
             vertical-align: top;
             width: 100%;
-            aspect-ratio: 364/208;
+            height: auto;
             background-color: var(--image-fallback);
             object-fit: cover;
         }
