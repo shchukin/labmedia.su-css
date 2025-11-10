@@ -756,13 +756,13 @@
             // Данные для курсов процесса
             const coursesProcessData = [
                 {
-                    title: "Графические элементы",
-                    description: "Разрабатываем дизайн, персонажей, сюжеты и практики под специфику конкретной компании, подбираем учебные сценарии под целевую аудиторию",
+                    title: "Методология и сценарий",
+                    description: "Педагогические дизайнеры и сценаристы адаптируют материалы и выбирают лучшие форматы подачи с учетом целевой аудитории, чтобы обучение было логичным, понятным и эффективным",
                     image: "../images/courses/process/1.webp"
                 },
                 {
-                    title: "Методология и сценарий",
-                    description: "Педагогические дизайнеры и сценаристы адаптируют материалы и выбирают лучшие форматы подачи с учетом целевой аудитории, чтобы обучение было логичным, понятным и эффективным",
+                    title: "Графические элементы",
+                    description: "Разрабатываем дизайн, персонажей, сюжеты и практики под специфику конкретной компании, подбираем учебные сценарии под целевую аудиторию",
                     image: "../images/courses/process/2.webp"
                 },
                 {
@@ -1619,4 +1619,41 @@
     }
 
     initVideosRoadmapTabs();
+
+    function addAboutAchievementsTouckeEvents() {
+        const ITEM_CLASS = '.about-achievements__item';
+        const ITEM_ACTIVE_CLASS = 'about-achievements__item_active';
+
+        $(ITEM_CLASS).on('touchstart', function(e) {
+            $(this).addClass(ITEM_ACTIVE_CLASS);
+        });
+
+        $(ITEM_CLASS).on('touchend touchcancel', function(e) {
+            setTimeout(() => {
+                $(this).removeClass(ITEM_ACTIVE_CLASS);
+            }, 3000);
+        });
+    }
+
+    addAboutAchievementsTouckeEvents()
+
+    function addRoadmapInfoActiveEvents() {
+        const pages = ['courses', 'videos', 'gamification'];
+
+        pages.forEach(page => {
+            $(`.${page}-roadmap__info`).on('touchstart', function(e) {
+                $(this).addClass(`${page}-roadmap__info_active`);
+            });
+
+            $(`.${page}-roadmap__info`).on('touchend touchcancel', function(e) {
+                setTimeout(() => {
+                    $(this).removeClass(`${page}-roadmap__info_active`);
+                }, 3000);
+            });
+        })
+
+
+    }
+
+    addRoadmapInfoActiveEvents();
 })(jQuery);
