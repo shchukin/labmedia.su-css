@@ -63,22 +63,21 @@
         }
     }
         .filter__body {
-            padding: 24px;
             background-color: #FFFFFF;
             box-shadow: var(--shadow-large);
             border-radius: 8px;
             white-space: nowrap;
-            max-height: calc(80vh - 100px);
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-gutter: auto;
         }
             .filter__mobile-heading {
                 display: none;
             }
 
             .filter__list {
-
+                max-height: calc(50vh - 100px);
+                overflow-y: auto;
+                scrollbar-width: thin;
+                scrollbar-gutter: auto;
+                padding: 20px 24px 0;
             }
                 .filter__body .choice {
                     width: 100%;
@@ -90,6 +89,7 @@
 
                 .filter__actions {
                     margin-top: 12px;
+                    padding: 0 24px 24px;
                     display: flex;
                     align-items: center;
                     gap: 6px;
