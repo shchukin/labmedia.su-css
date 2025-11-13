@@ -47,7 +47,7 @@
                 .breadcrumbs__link {
                     display: block;
                     padding: var(--breadcrumbs-padding);
-                    font-size: 14px;
+                    font-size: 12px;
                     line-height: 20px;
                     color: var(--accent-main-blue);
                     text-decoration: 1px underline transparent;
@@ -65,7 +65,7 @@
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    font-size: 14px;
+                    font-size: 12px;
                     line-height: 20px;
                     color: var(--txt-simple-gray);
                 }
