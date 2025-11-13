@@ -3,6 +3,8 @@
 }
 
 .breadcrumbs {
+    position: relative;
+    z-index: 100; /* выше блоков типа .all-cases (которые натягиваются поверх) */
     padding-top: 16px;
     margin-bottom: -52px;
 }
