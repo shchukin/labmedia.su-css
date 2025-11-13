@@ -1,0 +1,120 @@
+.breadcrumbs {
+    --breadcrumbs-padding: 8px;
+}
+
+.breadcrumbs {
+    padding-top: 16px;
+    margin-bottom: -52px;
+}
+    .breadcrumbs__scroll {
+        margin-left: calc(-1 * var(--breadcrumbs-padding));
+        margin-right: calc(-1 * var(--breadcrumbs-padding));
+    }
+        .breadcrumbs__ribbon {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+            .breadcrumbs__item {
+                position: relative;
+                padding-right: var(--breadcrumbs-padding);
+                white-space: nowrap;
+            }
+
+            .breadcrumbs__item:last-child {
+                padding-right: 0;
+                flex-grow: 1;
+                overflow: hidden; /* Имеет смысл на смартфонах, последний айтем -- сколько влезло, столько влезло */
+            }
+                .breadcrumbs__item::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: calc(var(--breadcrumbs-padding) + 4px);
+                    width: 12px;
+                    height: 12px;
+                    background-image: url("../vectors/breadcrumbs-chevron.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                .breadcrumbs__item:last-child::after {
+                    display: none;
+                }
+
+                .breadcrumbs__link {
+                    display: block;
+                    padding: var(--breadcrumbs-padding);
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: var(--accent-main-blue);
+                    text-decoration: 1px underline transparent;
+                    text-underline-offset: 3px;
+                    transition: text-decoration-color var(--transition-hover);
+                }
+
+                .breadcrumbs__link:hover {
+                    text-decoration-color: currentColor;
+                }
+
+                .breadcrumbs__title {
+                    max-width: 600px;
+                    padding: var(--breadcrumbs-padding);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: var(--txt-simple-gray);
+                }
+
+
+@media (width < 740px) {
+
+    .breadcrumbs {
+
+    }
+        .breadcrumbs__scroll {
+            overflow-x: auto;
+            margin-left: calc(-1 * var(--container-padding));
+            margin-right: calc(-1 * var(--container-padding));
+            padding-left: calc(var(--container-padding) - var(--breadcrumbs-padding));
+            padding-right: calc(var(--container-padding) - var(--breadcrumbs-padding));
+        }
+            .breadcrumbs__ribbon {
+                display: inline-flex;
+                align-items: flex-start;
+            }
+                .breadcrumbs__item {
+                    padding-right: 4px;
+                }
+
+                .breadcrumbs__item:last-child {
+
+                }
+                    .breadcrumbs__item::after {
+                        right: -3px;
+                        top: calc(var(--breadcrumbs-padding) + 8px);
+                    }
+
+                    .breadcrumbs__item:last-child::after {
+
+                    }
+
+                    .breadcrumbs__link {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+
+                    .breadcrumbs__link:hover {
+
+                    }
+
+                    .breadcrumbs__title {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+}
+

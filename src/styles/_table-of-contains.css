@@ -12,6 +12,10 @@
         line-height: 29px;
     }
 
+    .table-of-contains__heading:first-child {
+        margin-top: -5px;
+    }
+
     .table-of-contains__list {
         margin-top: 16px;
     }
