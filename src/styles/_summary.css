@@ -8,7 +8,7 @@
         padding-right: 22px;
         font-size: 14px;
         line-height: 20px;
-        color: var(--accent-main-blue);
+        color: var(--txt-simple-gray);
         white-space: nowrap;
         text-decoration: none;
     }
@@ -33,7 +33,7 @@
 
 
 .summary__item--text-alike {
-    color: inherit;
+    color: var(--txt-simple-gray);
 }
 
 
