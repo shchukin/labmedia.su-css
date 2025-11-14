@@ -98,7 +98,7 @@
                 }
                     .breadcrumbs__item::after {
                         right: -3px;
-                        top: calc(var(--breadcrumbs-padding) + 8px);
+                        top: calc(var(--breadcrumbs-padding) + 2px);
                     }
 
                     .breadcrumbs__item:last-child::after {
