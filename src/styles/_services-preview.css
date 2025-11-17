@@ -87,7 +87,7 @@
 @media (min-resolution: 1.5dppx) {
 
     .services-preview__item--online-courses::before {
-        background-image: url("../images/services-preview/services-preview-a-desktop@2x.png"), linear-gradient(to bottom right, #64A4FF, #A2CCFF, #D8EFFF)
+        background-image: url("../images/services-preview/services-preview-a-desktop@2x.png"), linear-gradient(to bottom right, #64A4FF, #A2CCFF, #D8EFFF);
     }
 
     .services-preview__item--gamification::before {
