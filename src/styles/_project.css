@@ -7,11 +7,6 @@
     border-radius: 16px;
     text-decoration: none;
     color: inherit;
-    transition: transform var(--transition-scale-hover);
-}
-
-.project:hover {
-    transform: scale(105%);
 }
     .project__preview {
         position: relative;
@@ -25,6 +20,11 @@
             aspect-ratio: 348/264;
             background-color: #EEECF4;
             object-fit: cover;
+            transition: transform var(--transition-scale-hover);
+        }
+
+        .project:hover .project__illustration {
+            transform: scale(105%);
         }
 
         .project__badges {
