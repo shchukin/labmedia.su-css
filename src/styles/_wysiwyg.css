@@ -35,6 +35,18 @@
         }
     }
 
+.wysiwyg--smaller {
+    --font-size: 15px;
+    --line-height: 22px;
+}
+    @media (width < 740px) {
+
+        .wysiwyg--smaller {
+            --font-size: 12px;
+            --line-height: 17px;
+        }
+    }
+
 .wysiwyg--listing {
     --font-size: 16px;
     --line-height: 22px;

@@ -7,11 +7,24 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
 }
-    .stats__heading {
-        max-width: 411px;
-        margin-top: 8px;
-        margin-bottom: 0;
+    .stats__summary {
+
     }
+
+        .stats__heading {
+            max-width: 411px;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .stats__note {
+            margin-top: 24px;
+        }
+
+    .stats__details {
+        margin-top: 48px;
+    }
+
 
     .stats__data {
         display: grid;
@@ -35,12 +48,6 @@
                 line-height: 22px;
             }
 
-    .stats__details {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-    }
-
 
 
 @media (width < 740px) {
@@ -48,7 +55,7 @@
     .stats {
         /*position: relative;*/
         padding-top: 40px;
-        padding-bottom: 80px;
+        padding-bottom: 188px;
         border-bottom: none;
         display: block;
     }
@@ -59,17 +66,14 @@
         .stats__data {
             margin-top: 56px;
             display: grid;
-            /*grid-template-columns: repeat(2, minmax(0, 1fr));*/
             gap: 56px 16px;
         }
             .stats__item {
 
             }
                 .stats__param {
-                    /*font-weight: 300;*/
                     font-size: 56px;
                     line-height: 67px;
-                    /*letter-spacing: -1px;*/
                 }
 
                 .stats__value {
@@ -81,11 +85,10 @@
                 }
 
         .stats__details {
-            margin-top: 56px;
-            position: static;
-            /*position: absolute;*/
-            /*left: 0;*/
-            /*bottom: 0;*/
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
         }
             .stats__details .button {
                 width: 100%;
