@@ -46,6 +46,7 @@
 
     .feature-thumbnail__heading {
         margin-top: 16px;
+        margin-bottom: 0;
         color: #FFFFFF;
     }
 
@@ -133,6 +134,11 @@
 
     .feature-thumbnail--current.feature-thumbnail--obuchai .feature-thumbnail__icon {
         fill: #198C5E;
+    }
+
+
+    .feature-thumbnail--current.feature-thumbnail--labmedia .feature-thumbnail__icon {
+        fill: #06B0F0;
     }
 
 
