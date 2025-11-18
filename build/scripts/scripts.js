@@ -301,9 +301,9 @@
                         const scrollStep = getScrollStep();
                         const scrollPosition = (this.realIndex - 1) * scrollStep;
                         const maxScroll = navWrap.scrollWidth - navWrap.clientWidth;
-                        navWrap.scrollTo({ 
-                            left: Math.min(scrollPosition, maxScroll), 
-                            behavior: 'smooth' 
+                        navWrap.scrollTo({
+                            left: Math.min(scrollPosition, maxScroll),
+                            behavior: 'smooth'
                         });
                     },
                     slideChangeTransitionEnd: function () {
@@ -516,7 +516,9 @@
                 // Добавляем обработчики кликов на буллеты
                 pagination.querySelectorAll(SELECTORS.bullet).forEach((bullet, index) => {
                     bullet.addEventListener('click', () => {
-                        swiperInstance.slideTo(index);
+                        if (!swiperInstance) return;
+                        swiperInstance.loopFix();
+                        swiperInstance.slideToLoop(index, 800);
                     });
                 });
             }
@@ -553,6 +555,7 @@
                 return new Swiper($carousel.querySelector(SELECTORS.swiper), {
                     ...trackpadSwipeConfig,
                     ...GALLERY_CONFIG.swiper,
+                    speed: 800,
                     on: {
                         slideChange: function() {
                             updatePaginationState(this.realIndex);
@@ -710,6 +713,12 @@
                     if (video) {
                         // Включаем звук
                         video.muted = !video.muted;
+
+                        if (!video.muted) {
+                            e.target.classList.add("unmuted");
+                        } else {
+                            e.target.classList.remove("unmuted");  
+                        }
                     }
                 }
             });
