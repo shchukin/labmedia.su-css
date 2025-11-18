@@ -150,7 +150,6 @@
 
     .feature-thumbnail {
         flex-shrink: 0;
-        width: 142px;
         height: 142px;
         padding: 12px 16px 16px;
         display: flex;
