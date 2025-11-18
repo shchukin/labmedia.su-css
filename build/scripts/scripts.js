@@ -264,7 +264,17 @@
 
             /* В этом слайдере есть ещё превьюшки с навигацией: */
             const thumbnails = document.querySelectorAll(".main-slider__nav-item .feature-thumbnail");
-            const navWrap = document.querySelector(".main-slider__nav-wrap");
+            const navWrap = document.querySelector(".main-slider__nav-scroll");
+            const navList = document.querySelector(".main-slider__nav-list");
+            const firstNavItem = document.querySelector(".main-slider__nav-item");
+
+            /* Вычисляем ширину слайда и отступ между ними */
+            const getScrollStep = () => {
+                if (!firstNavItem || !navList) return 0;
+                const itemWidth = firstNavItem.offsetWidth;
+                const gap = parseFloat(getComputedStyle(navList).gap) || 10;
+                return itemWidth + gap;
+            };
 
             const mainSlider = new Swiper(".carousel--js-init-main-slider .swiper", {
                 ...trackpadSwipeConfig,
@@ -288,11 +298,13 @@
                     },
                     slideChange: function () {
                         updateActiveThumbnail(this.realIndex);
-                        if (this.realIndex < 2) {
-                            navWrap.scrollTo({ left: 0, behavior: 'smooth' });
-                        } else {
-                            navWrap.scrollTo({ left: navWrap.scrollWidth - navWrap.clientWidth, behavior: 'smooth' });
-                        }
+                        const scrollStep = getScrollStep();
+                        const scrollPosition = (this.realIndex - 1) * scrollStep;
+                        const maxScroll = navWrap.scrollWidth - navWrap.clientWidth;
+                        navWrap.scrollTo({ 
+                            left: Math.min(scrollPosition, maxScroll), 
+                            behavior: 'smooth' 
+                        });
                     },
                     slideChangeTransitionEnd: function () {
                         updateActiveThumbnail(this.realIndex);
