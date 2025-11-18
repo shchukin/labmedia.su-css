@@ -6,8 +6,11 @@
     height: 56px;
     background-color: #271718;
 }
-    .info__image {
-        vertical-align: top;
-        width: auto;
+    .info picture {
         height: 100%;
     }
+        .info__image {
+            vertical-align: top;
+            width: auto;
+            height: 100%;
+        }
