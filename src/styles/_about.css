@@ -2039,13 +2039,13 @@
 
 .about-news {
     background-color: var(--fill-dark-blue);
-    padding-top: 120px;
+    padding-top: 180px;
     position: relative;
 }
 
 @media (width < 740px) {
     .about-news {
-        padding-top: 72px;
+        padding-top: 80px;
         position: relative;
     }
 }
@@ -2109,6 +2109,7 @@
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    object-position: left top;
     border-radius: 16px;
     opacity: 0.8;
     transition: opacity var(--transition-hover);
@@ -2625,6 +2626,7 @@
     bottom: 56px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 @media (width < 740px) {
@@ -2811,6 +2813,18 @@
 }
 
 .about-voices__mute {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: url("../vectors/unmute.svg") no-repeat center / contain;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.about-voices__mute.unmuted {
     position: absolute;
     top: 24px;
     right: 24px;

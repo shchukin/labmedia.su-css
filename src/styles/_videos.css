@@ -753,117 +753,100 @@
 
 .videos-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
-    left: 110px;
-    min-width: 178px;
+    left: 130px;
+    min-width: 200px;
 }
 
 .videos-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
-    left: 194px;
-    min-width: 178px;
+    left: 270px;
+    min-width: 200px;
 }
 
 .videos-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
-    left: 292px;
-    min-width: 178px;
+    left: 390px;
+    min-width: 206px;
 }
 
 .videos-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
-    left: 367px;
+    left: 530px;
     min-width: 178px;
 }
 
 .videos-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
-    left: 485px;
+    left: 640px;
     min-width: 207px;
 }
 
 .videos-roadmap__step:nth-child(7) {
     top: calc(50px + 44px * 6 + 8px * 6);
-    left: 572px;
+    left: 780px;
     min-width: 198px;
 }
 
 .videos-roadmap__step:nth-child(8) {
     top: calc(50px + 44px * 7 + 8px * 7);
-    left: 644px;
-    min-width: 221px;
-}
-
-.videos-roadmap__step:nth-child(9) {
-    top: calc(50px + 44px * 8 + 8px * 8);
-    left: 788px;
-    min-width: 224px;
-}
-
-.videos-roadmap__step:nth-child(10) {
-    top: calc(50px + 44px * 9 + 8px * 9);
     right: 1px;
-    min-width: 219px;
+    min-width: 221px;
 }
 
 /* Video roadmap */
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(1) {
     top: 50px;
     left: 0;
-    min-width: 210px;
+    min-width: 206px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(2) {
     top: calc(50px + 44px * 1 + 8px);
-    left: 147px;
-    min-width: 181px;
+    left: 115px;
+    min-width: 200px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(3) {
     top: calc(50px + 44px * 2 + 8px * 2);
     left: 248px;
-    min-width: 181px;
+    min-width: 200px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(4) {
     top: calc(50px + 44px * 3 + 8px * 3);
-    left: 385px;
-    min-width: 130px;
+    left: 365px;
+    min-width: 200px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(5) {
     top: calc(50px + 44px * 4 + 8px * 4);
     left: 474px;
-    min-width: 229px;
+    min-width: 220px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(6) {
     top: calc(50px + 44px * 5 + 8px * 5);
-    left: 563px;
-    min-width: 257px;
+    left: 575px;
+    min-width: 220px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(7) {
     top: calc(50px + 44px * 6 + 8px * 6);
-    left: 653px;
-    min-width: 253px;
+    left: 680px;
+    min-width: 220px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(8) {
     top: calc(50px + 44px * 7 + 8px * 7);
-    left: 784px;
-    min-width: 169px;
+    left: 820px;
+    right: auto;
+    min-width: 205px;
 }
 
 .videos-roadmap__map_video .videos-roadmap__step:nth-child(9) {
     top: calc(50px + 44px * 8 + 8px * 8);
-    left: 839px;
+    right: 27px;
     min-width: 192px;
-}
-
-.videos-roadmap__map_video .videos-roadmap__step:nth-child(10) {
-    top: calc(50px + 44px * 9 + 8px * 9);
-    right: 1px;
-    min-width: 223px;
 }
 
 .videos-roadmap__accordions {
