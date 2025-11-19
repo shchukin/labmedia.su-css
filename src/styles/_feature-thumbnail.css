@@ -32,6 +32,8 @@
     .feature-thumbnail__icon {
         vertical-align: top;
         margin-left: -8px;
+        width: 56px;
+        height: 56px;
         transition: fill var(--transition-hover);
     }
         #feature-icon-border {
