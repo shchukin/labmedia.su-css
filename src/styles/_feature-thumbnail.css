@@ -113,6 +113,10 @@
         opacity: 100%;
     }
 
+    .feature-thumbnail--current.feature-thumbnail--labmedia #feature-icon-border {
+        fill: #00AFF0;
+    }
+
     .feature-thumbnail--current.feature-thumbnail--vovlekai .feature-thumbnail__icon {
         fill: #1A1A1A;
     }
@@ -134,11 +138,6 @@
 
     .feature-thumbnail--current.feature-thumbnail--obuchai .feature-thumbnail__icon {
         fill: #198C5E;
-    }
-
-
-    .feature-thumbnail--current.feature-thumbnail--labmedia .feature-thumbnail__icon {
-        fill: #06B0F0;
     }
 
 
