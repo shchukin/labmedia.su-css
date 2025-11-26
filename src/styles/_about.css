@@ -2621,7 +2621,7 @@
 }
 
 
-.about-tour button {
+.about-tour .button {
     position: absolute;
     bottom: 56px;
     left: 50%;
@@ -2630,7 +2630,7 @@
 }
 
 @media (width < 740px) {
-    .about-tour button {
+    .about-tour .button {
         bottom: 32px;
         display: block;
         width: 410px;

@@ -1,0 +1,61 @@
+.seo {
+    padding-bottom: 100px;
+}
+
+.article + .seo {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.about-tour + .seo {
+    padding-top: 100px;
+}
+
+    .seo__content {
+        position: relative;
+        max-height: 265px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .seo__content::after {
+        content: "";
+        position: absolute;
+        z-index: 1000;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100px;
+        background-image: linear-gradient(transparent, var(--bg-white-purple));
+    }
+
+    .seo--expanded .seo__content {
+        max-height: none;
+    }
+
+    .seo--expanded .seo__content::after {
+        display: none;
+    }
+
+    .seo__handler {
+        margin-top: 24px;
+    }
+
+
+@media (width < 740px) {
+
+    .seo {
+        padding-top: 88px;
+        padding-bottom: 88px;
+    }
+
+        .seo__content {
+            max-height: 200px;
+        }
+
+        .seo__handler {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+}
+
