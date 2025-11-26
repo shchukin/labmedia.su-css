@@ -1677,4 +1677,22 @@
     }
 
     addRoadmapInfoActiveEvents();
+
+    /* SEO блок - свернуть/развернуть */
+    function initSeoBlock() {
+        $('.seo__handler .link').on('click', function() {
+            const $seo = $(this).closest('.seo');
+            const $toggle = $(this);
+            
+            $seo.toggleClass('seo--expanded');
+            
+            if ($seo.hasClass('seo--expanded')) {
+                $toggle.text('Свернуть');
+            } else {
+                $toggle.text('Подробнее');
+            }
+        });
+    }
+
+    initSeoBlock();
 })(jQuery);
