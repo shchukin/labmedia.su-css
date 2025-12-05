@@ -21,7 +21,13 @@
         color: var(--txt-dark-blue);
         cursor: pointer;
         user-select: none;
+        text-decoration: none;
     }
+        .choice__link {
+            color: inherit;
+            text-decoration: none;
+            pointer-events: none;
+        }
 
     .choice__icon {
         position: absolute;

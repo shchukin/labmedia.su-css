@@ -22,6 +22,11 @@
         cursor: pointer;
         user-select: none;
     }
+        .switch__link {
+            color: inherit;
+            text-decoration: none;
+            pointer-events: none;
+        }
 
     .switch__icon {
         position: absolute;
