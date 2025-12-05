@@ -1113,35 +1113,37 @@
 
     function adjustBubblePosition() {
 
-        const $bubbleAll = $('.bubble')
+        const $bubbleAll = $('.bubble');
 
         /* Сбрасываем предыдущие замеры */
         $bubbleAll.css('margin-right', 0);
 
-        /* Запускаем перерасчёт сдвигов: */
-        $bubbleAll.each(function() {
-            const $bubble = $(this);
-            const $bubbleChevron = $bubble.find('.bubble__chevron')
-            const rect = $bubble[0].getBoundingClientRect();
-            const windowWidth = window.innerWidth;
+        requestAnimationFrame(function() {
+            /* Запускаем перерасчёт сдвигов: */
+            $bubbleAll.each(function() {
+                const $bubble = $(this);
+                const $bubbleChevron = $bubble.find('.bubble__chevron')
+                const rect = $bubble[0].getBoundingClientRect();
+                const windowWidth = window.innerWidth;
 
-            /* Выходит ли за левый край */
-            if (rect.left < 0) {
-                const shiftDistance = rect.left - (containerPadding / 2);
-                $bubble.css('margin-right', shiftDistance + 'px');
-                $bubbleChevron.css('left', (shiftDistance * 2) + 'px');
-            }
-            /* Выходит ли за правый край */
-            else if (rect.right > windowWidth) {
-                const shiftDistance = rect.right - windowWidth + (containerPadding / 2);
-                $bubble.css('margin-right', shiftDistance + 'px');
-                $bubbleChevron.css('right', (-1 * shiftDistance * 2) + 'px');
-            /* Иначе сбрасываем значение в ноль, потому что могло остаться с прошлого замера */
-            } else {
-                $bubble.css('margin-right', 0);
-                $bubbleChevron.css('right', 0); /* Значение по умолчанию 'auto', но здесь нужен ноль, потому что в вёрстке ноль */
-                $bubbleChevron.css('left', 0); /* Значение по умолчанию 'auto', но здесь нужен ноль, потому что в вёрстке ноль */
-            }
+                /* Выходит ли за левый край */
+                if (rect.left < 0) {
+                    const shiftDistance = rect.left - (containerPadding / 2);
+                    $bubble.css('margin-right', shiftDistance + 'px');
+                    $bubbleChevron.css('left', (shiftDistance * 2) + 'px');
+                }
+                /* Выходит ли за правый край */
+                else if (rect.right > windowWidth) {
+                    const shiftDistance = rect.right - windowWidth + (containerPadding / 2);
+                    $bubble.css('margin-right', shiftDistance + 'px');
+                    $bubbleChevron.css('right', (-1 * shiftDistance * 2) + 'px');
+                /* Иначе сбрасываем значение в ноль, потому что могло остаться с прошлого замера */
+                } else {
+                    $bubble.css('margin-right', 0);
+                    $bubbleChevron.css('right', 0); /* Значение по умолчанию 'auto', но здесь нужен ноль, потому что в вёрстке ноль */
+                    $bubbleChevron.css('left', 0); /* Значение по умолчанию 'auto', но здесь нужен ноль, потому что в вёрстке ноль */
+                }
+            });
         });
     }
 
