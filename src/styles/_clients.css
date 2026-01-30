@@ -31,6 +31,7 @@
         }
 
             .clients__item {
+                display: block;
                 padding-top: 10px; /* на десктопах плитки чуть более квадратные */
                 padding-bottom: 10px; /* на десктопах плитки чуть более квадратные */
                 background-color: var(--fill-wite-purple-darker);
@@ -47,15 +48,15 @@
                     vertical-align: top;
                     width: 100%;
                     height: auto;
-                    filter: grayscale(100%);
-                    opacity: 40%;
+                    filter: var(--client-logo-fade-filter);
+                    opacity: var(--client-logo-fade-opacity);
                     transition: filter var(--transition-hover),
                                 opacity var(--transition-hover);
                 }
 
                 .clients__item:hover .clients__logo {
-                    filter: grayscale(0);
-                    opacity: 100%;
+                    filter: var(--client-logo-fade-hover);
+                    opacity: var(--client-logo-fade-opacity-hover);
                 }
 
 

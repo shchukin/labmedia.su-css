@@ -281,6 +281,27 @@ hr {
 }
 
 
+.wysiwyg table {
+    border-collapse: collapse;
+}
+
+    @media (width < 740px) {
+        .wysiwyg table {
+            min-width: 558px;
+        }
+    }
+
+    .wysiwyg th,
+    .wysiwyg td {
+        padding: 12px;
+        border: 1px solid var(--stroke-gray-border);
+        font-size: calc(var(--font-size) - 2px);
+        line-height: calc(var(--line-height) - 3px);
+    }
+
+    .wysiwyg th {
+        font-weight: 500;
+    }
 
 .wysiwyg p:first-child,
 .wysiwyg ul:first-child,

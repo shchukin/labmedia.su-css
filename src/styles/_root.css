@@ -20,6 +20,10 @@
     --carousel-arrow-button-heigt: 48px;
     --error: #F34141;
     --progress: 0;
+    --client-logo-fade-filter: grayscale(100%);
+    --client-logo-fade-opacity: 40%;
+    --client-logo-fade-hover: grayscale(0);
+    --client-logo-fade-opacity-hover: 100%;
 }
 
 @media (width < 740px) {

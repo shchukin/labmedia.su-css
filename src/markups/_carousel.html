@@ -13,10 +13,10 @@
             <br>
             <h1>.carousel</h1>
             <p>
-                Две сущности: либа свайпер и компонент carousel
-                Одинаковая разметка
-                Сложно выделить дефолт.
-                За исключением этой первой
+                В этом компоненте: библиотека свайпер и сам компонент carousel (обёртка).
+            </p>
+            <p>
+                Карусель со стилями по-умолчанию:
             </p>
 
             <div class="carousel carousel--js-init-default-gallery">
@@ -121,6 +121,65 @@
                             <path d="M10.5 13L5.5 8L10.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
+                    <button class="carousel__button carousel__button--next" type="button">
+                        <svg class="carousel__chevron" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 13L10.5 8L5.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <h2>.carousel--css-alt-arrows</h2>
+            <p>
+                По-мимо класс <b><i>.carousel--css-alt-arrows</i></b> здесь ещё отличается разметка стрелочек и пагинации:
+            </p>
+            <div class="carousel carousel--css-alt-bullets carousel--css-alt-arrows carousel--js-init-default-gallery">
+                <div class="carousel__widget">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+
+                                <!-- temp -->
+                                <div style="height: 400px;  display: flex; align-items: center; justify-content: center; background: purple; color: white;">Это слайд</div>
+                                <!--/temp -->
+
+                            </div>
+                            <div class="swiper-slide">
+
+                                <!-- temp -->
+                                <div style="height: 400px;  display: flex; align-items: center; justify-content: center; background: purple; color: white;">Это слайд</div>
+                                <!--/temp -->
+
+                            </div>
+                            <div class="swiper-slide">
+
+                                <!-- temp -->
+                                <div style="height: 400px;  display: flex; align-items: center; justify-content: center; background: purple; color: white;">Это слайд</div>
+                                <!--/temp -->
+
+                            </div>
+                            <div class="swiper-slide">
+
+                                <!-- temp -->
+                                <div style="height: 400px;  display: flex; align-items: center; justify-content: center; background: purple; color: white;">Это слайд</div>
+                                <!--/temp -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__navigation">
+                    <button class="carousel__button carousel__button--prev" type="button">
+                        <svg class="carousel__chevron" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.5 13L5.5 8L10.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="carousel__pagination">
+
+                    </div>
                     <button class="carousel__button carousel__button--next" type="button">
                         <svg class="carousel__chevron" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.5 13L10.5 8L5.5 3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>

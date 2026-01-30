@@ -26,6 +26,9 @@
             font-size: 16px;
             line-height: 22px;
             color: var(--txt-dark-blue);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             text-decoration: 1px underline transparent;
             text-underline-offset: 4px;
             transition: text-decoration-color var(--transition-hover),

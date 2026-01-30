@@ -159,7 +159,95 @@
     }
 
 
- /* Скин Thanks */
+
+.carousel--css-alt-arrows {
+
+}
+
+@media (width < 740px) {
+
+    /* По-умолчанию, на смартфонах стрелки отсутствуют. В этой версии включаем их: */
+    .carousel--css-alt-arrows .carousel__controls {
+        display: block;
+    }
+}
+    .carousel--css-alt-arrows .carousel__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel--css-alt-arrows .carousel__button {
+        position: relative;
+        /*z-index: 10;*/
+        inset: auto;
+        margin: 0;
+        width: 60px;
+        height: 38px;
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+        /*border: none;*/
+        background-color: transparent;
+        backdrop-filter: none;
+        /*border-radius: 6px;*/
+        /*padding: 0;*/
+        /*cursor: pointer;*/
+        /*transition: background-color var(--transition-hover);*/
+    }
+
+    .carousel--css-alt-arrows .carousel__button:hover {
+
+    }
+
+    .carousel--css-alt-arrows .carousel__button:disabled {
+        /*opacity: 50%;*/
+        /*pointer-events: none;*/
+    }
+
+    .carousel--css-alt-arrows .carousel__button--prev {
+
+    }
+
+    .carousel--css-alt-arrows .carousel__button--next {
+
+    }
+        .carousel--css-alt-arrows .carousel__button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: 4px;
+            border-radius: 4px;
+            transition: background-color var(--transition-hover);
+        }
+
+        .carousel--css-alt-arrows .carousel__button:hover::before {
+            background-color: var(--fill-blue-gray-2);
+        }
+
+        .carousel--css-alt-arrows .carousel__chevron {
+            position: relative;
+            /*vertical-align: top;*/
+            /*fill: none;*/
+            stroke: #000000;
+            /*transition: stroke var(--transition-hover);*/
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Скин Thanks */
 
 .carousel--css-skin-thanks {
 
