@@ -208,6 +208,7 @@
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 24,
+                autoHeight: true,
                 navigation: {
                     prevEl: $carousel.querySelector(".carousel__button--prev"),
                     nextEl: $carousel.querySelector(".carousel__button--next"),
@@ -227,6 +228,7 @@
                 slidesPerView: 1,
                 slidesPerGroup: 1,
                 spaceBetween: 16,
+                autoHeight: true,
                 pagination: {
                     clickable: true,
                     el: $carousel.querySelector(".carousel__pagination"),
@@ -253,6 +255,7 @@
                 slidesPerView: 3,
                 slidesPerGroup: 3,
                 spaceBetween: 24,
+                autoHeight: true,
                 navigation: {
                     prevEl: $carousel.querySelector('.carousel__button--prev'),
                     nextEl: $carousel.querySelector('.carousel__button--next')
@@ -281,6 +284,7 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 loop: true,
+                autoHeight: true,
                 navigation: {
                     nextEl: ".main-slider__button--next",
                     prevEl: ".main-slider__button--prev",
@@ -343,6 +347,7 @@
                 ...trackpadSwipeConfig,
                 slidesPerView: 1,
                 speed: 800,
+                autoHeight: true,
                 pagination: {
                     clickable: true,
                     el: '.carousel--js-about-hero-slider__pagination',
@@ -556,6 +561,7 @@
                     ...trackpadSwipeConfig,
                     ...GALLERY_CONFIG.swiper,
                     speed: 800,
+                    autoHeight: true,
                     on: {
                         slideChange: function() {
                             updatePaginationState(this.realIndex);
@@ -641,6 +647,7 @@
                 slidesPerView: 1.5,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
 
@@ -650,6 +657,7 @@
                 slidesPerView: 1,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
 
@@ -661,6 +669,7 @@
                 mousewheel: {
                     enabled: false,
                 },
+                autoHeight: true,
                 effect: 'coverflow',
                 grabCursor: true,
                 centeredSlides: true,
@@ -837,6 +846,7 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 loop: false,
+                autoHeight: true,
                 navigation: {
                     prevEl: document.querySelector(".courses-process__controls-prev"),
                     nextEl: document.querySelector(".courses-process__controls-next"),
@@ -866,6 +876,7 @@
                 slidesPerView: 1,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
 
@@ -875,6 +886,7 @@
                 slidesPerView: 1,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
 
@@ -884,6 +896,7 @@
                 slidesPerView: 1,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
 
@@ -893,6 +906,7 @@
                 slidesPerView: 1,
                 spaceBetween: 8,
                 loop: false,
+                autoHeight: true,
             });
         }
     });
@@ -909,6 +923,7 @@
                         slidesPerView: "auto",
                         slidesPerGroup: 8,
                         spaceBetween: 6,
+                        autoHeight: true,
 
                         /* свайп на трекпаде: */
                         direction: "horizontal",
@@ -949,6 +964,7 @@
             slidesPerView: 1,
             slidesPerGroup: 1,
             speed: 500,
+            autoHeight: true,
             navigation: {
                 prevEl: $announcementBodyCarousel.querySelector('.carousel__button--prev'),
                 nextEl: $announcementBodyCarousel.querySelector('.carousel__button--next'),
@@ -975,6 +991,7 @@
             ...trackpadSwipeConfig,
             slidesPerView: 1,
             slidesPerGroup: 1,
+            autoHeight: true,
             controller: {
                 control: announcementBodyInstance, // Связываем с announcementBodyInstance
             },
